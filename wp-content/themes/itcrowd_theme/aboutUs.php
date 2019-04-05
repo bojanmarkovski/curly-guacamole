@@ -39,12 +39,10 @@
 
                             foreach ( $myposts as $term ) {
 
-                                var_dump(get_the_post_thumbnail($term)['src']); 
-                                die();
-                                ?>
+                              ?>
                                 <div class="card card-10">
                                     <div class="inner-slider-team">
-                                        <div class="img-team" style="background-image: url('<?php echo $term->post_title; ?>');">
+                                        <div class="img-team" style="background-image: url('<?php echo get_the_post_thumbnail_url($term); ?>');">
                                         </div>
                                         <div class="text-team">
                                             <div class="card-name">
