@@ -3,7 +3,7 @@
 
 ?>
 
-<?php get_header( 'transparent' ); ?>
+<?php get_header(); ?>
 
 <h1>Home Page</h1>
 

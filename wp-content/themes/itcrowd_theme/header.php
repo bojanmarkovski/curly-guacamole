@@ -36,8 +36,8 @@
                 <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-brand logo">
-                    <a href="Home.html">
-                    <img src="http://localhost/wordpress/wp-content/uploads/2019/04/logo.png" class="img-responsive"></a>
+                    <a href="/">
+                    <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2019/04/logo.png" class="img-responsive"></a>
                 </div>
                 <div class="clear"></div>
                 <div class="collapse navbar-collapse" id="mynavbar">
@@ -56,31 +56,14 @@
                         
                     <?php endif; ?>
 
-                    <!-- <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                        <a href="Home.html" class="">Home</a>
-                        </li>
-                        <li>
-                        <a href="AboutUs.html">About Us</a>
-                        </li>
-                        <li>
-                        <a href="OurServices.html">Our Services</a>
-                        </li>
-                        <li>
-                        <a href="Career.html">Career</a>
-                        </li>
-                        <li>
-                        <a href="Contact.html">Contact</a>
-                        </li>
-                    </ul> -->
                 </div>
             </div>
         </div>
         </div>
     </div>
 
-    <!-- <div class="loader">
+    <div class="loader">
         <div class="lds-dual-ring"></div>
-    </div> -->
+    </div>
 
 	<div id="content" class="site-content">
