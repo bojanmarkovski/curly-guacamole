@@ -5,6 +5,9 @@
 
 <?php get_header(); ?>
 
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/slick/slick-theme.css"/>
+
 <!-- Content -->
 
 <!-- MAIN SLIDER -->
@@ -14,7 +17,9 @@
         <?php
             $args = array( 
                 'category'            => '5', 
-                'posts_per_page'      => 500 
+                'posts_per_page'      => 500,
+                'orderby'             => 'timestamp',
+                'order'               => 'asc'
             );
             $myposts = get_posts( $args );
         ?>
