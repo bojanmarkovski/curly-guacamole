@@ -95,7 +95,7 @@
                                                 $spanContainer .= '<span class="color-red">';
                                                 $spanContainer .= $firstWord[$i]; 
                                                 $spanContainer .= '</span>';
-                                            } 
+                                            }
                                         ?>
 
                                         <?php echo $spanContainer; ?>
@@ -215,5 +215,7 @@
          </div>
       </div>
 <!-- Content END -->
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/OurServices.js"></script>
 
 <?php get_footer(); ?>

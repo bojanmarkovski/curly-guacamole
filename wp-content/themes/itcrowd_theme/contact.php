@@ -135,6 +135,7 @@
 
 <!-- Content END -->
 
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/Contact.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"

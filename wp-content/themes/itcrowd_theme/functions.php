@@ -13,5 +13,5 @@ function load_stylesheet() {
   wp_enqueue_script( 'bootstrap.min', get_stylesheet_directory_uri() . '/assets/bootstrap-3.3.7-dist/js/bootstrap.min.js' );
   wp_enqueue_script( 'slick.min', get_stylesheet_directory_uri() . '/assets/slick/slick.min.js' );
 
-  wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/custom.js' );
+  wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/custom.js' );
 }

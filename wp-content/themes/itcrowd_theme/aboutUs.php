@@ -70,4 +70,6 @@
 
 <!-- Content END -->
 
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/AboutUs.js"></script>
+
 <?php get_footer(); ?>

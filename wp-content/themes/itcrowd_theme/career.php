@@ -4,6 +4,7 @@
 
 <?php get_header(); ?>
 
+    <!-- Content -->
     <div class="container-fluid career blur-modal">
         <!-- CARE TO JOIN US TITLE -->
         <div class="row pd-top-70px">
@@ -246,5 +247,8 @@
             </div>
         </div>
     </div>
+    <!-- Content END -->
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/Career.js"></script>
 
 <?php get_footer(); ?>
