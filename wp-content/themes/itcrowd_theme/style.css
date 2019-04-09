@@ -117,9 +117,6 @@ a{
   width: 100%;
   text-align: center !important;
 }
-.wrap-about-us{
-  margin-top: 65px;
-}
 .shrink{
   padding: 0px;
 }
@@ -671,9 +668,6 @@ color: #C0392B !important;
 width: 100%;
 text-align: center !important;
 }
-.wrap-about-us{
-margin-top: 80px;
-}
 .shrink{
 padding: 0px;
 }
@@ -837,8 +831,8 @@ color: lightgray;
 padding-top: 20px;
 }
 .our-services{
-padding-top: 80px;
-padding-bottom: 30px;
+padding-top: 50px;
+padding-bottom: 20px;
 }
 .our-services .our-services-box{
 padding: 20px 0px;
@@ -1009,6 +1003,29 @@ a.animated-button.thar-three:before {
   color: #C0392B;
 }
 
+.page-template-services hr{
+  height: 3px;
+  background-image: linear-gradient(to left, #C0392B , #222222);
+  margin-top: 0px;
+  margin-bottom: 5px;
+  display: none;
+}
+.our-services-box .custom{
+  width: 160px;
+  margin-bottom: 15px;
+}
+/* .our-services-box .web{
+  width: 168px;
+}
+.our-services-box .mobile{
+  width: 163px;
+}
+.our-services-box .digital{
+  width: 135px;
+} */
+.col-md-4.col-md-offset-4{
+  display: none;
+}
 @media screen and (min-width: 768px) {
   .clear{
     clear: none;
@@ -1041,7 +1058,7 @@ a.animated-button.thar-three:before {
   .our-services .our-services-box {
     padding: 10px 0px;
   }
-  hr{
+  .page-template-services hr{
     display: inline-block;
   }
   .right-side-services .image-box i{
@@ -1054,10 +1071,13 @@ a.animated-button.thar-three:before {
   .header .logo {
     padding-top: 2px;
   }
+  .page-template-services .our-services-box hr{
+    margin-bottom: 5px;
+  }
 }
 @media screen and (max-width: 767px) {
   .our-services{
-    padding: 60px 0px;
+    padding: 0px 0px 30px 0px;
   }
   .right-side-services .image-box i{
     top: -10%;
@@ -1072,29 +1092,7 @@ a.animated-button.thar-three:before {
 }
 
 
-.page-template-services hr{
-  height: 3px;
-  background-image: linear-gradient(to left, #C0392B , #222222);
-  margin-top: 0px;
-  margin-bottom: 5px;
-  display: none;
-}
-.our-services-box .custom{
-  width: 160px;
-  margin-bottom: 15px;
-}
-/* .our-services-box .web{
-  width: 168px;
-}
-.our-services-box .mobile{
-  width: 163px;
-}
-.our-services-box .digital{
-  width: 135px;
-} */
-.col-md-4.col-md-offset-4{
-  display: none;
-}
+
 
 
 
@@ -1297,7 +1295,7 @@ textarea::-webkit-scrollbar-track {
 
 @media (max-width: 767px) and (max-height: 523px) {
   .modal-dialog{
-      overflow-y: initial !important
+      overflow-y: initial !important;
   }
   .modal-body{
       height: 60vh;
@@ -1430,10 +1428,6 @@ color: #C0392B !important;
 width: 100%;
 text-align: center !important;
 }
-.wrap-about-us{
-margin-top: 65px;
-/*height: 100vh;*/
-}
 .shrink{
 padding: 0px;
 }
@@ -1480,9 +1474,7 @@ background-color: transparent;
 .header #mynavbar ul {
   display: inline-block;
 }
-.wrap-about-us{
-  margin-top: 60px;
-}
+
 }
 /*FOOTER*/
 .page-template-aboutUs .footer{
@@ -1571,7 +1563,9 @@ text-decoration: none;
 color: lightgray;
 }
 
-
+.wrap-about-us{
+  margin-top: 30px;
+}
 /*RIGHT SIDE*/
 .page-template-aboutUs .display-none{
 display: none;
@@ -1611,9 +1605,6 @@ font-weight: 700;
 }
 .header{
   padding: 0 !important;
-}
-.wrap-about-us{
-  margin-top: 80px;
 }
 h2{
   margin-top: 0;
@@ -1664,6 +1655,9 @@ h2{
 .copyright{
   margin-top: 0;
   margin-bottom: 0;
+}
+.wrap-about-us{
+  margin-top: 0px;
 }
 }
 @media screen and (min-width: 768px) {
@@ -1991,9 +1985,6 @@ color: #C0392B !important;
 #mynavbar{
 width: 100%;
 text-align: center !important;
-}
-.wrap-about-us{
-margin-top: 65px;
 }
 .shrink{
 padding: 0px;
@@ -2551,15 +2542,12 @@ border-bottom: 5px solid #C0392B;
 }
 
 .header ul .active a{
-background-color: transparent !important;
-color: #C0392B !important;
+  background-color: transparent !important;
+  color: #C0392B !important;
 }
 #mynavbar{
 width: 100%;
 text-align: center !important;
-}
-.wrap-about-us{
-margin-top: 80px;
 }
 .shrink{
 padding: 0px;
@@ -3107,7 +3095,7 @@ box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
 
 
 .modal-dialog{
-  overflow-y: initial !important
+  overflow-y: initial !important;
 }
 .modal-body{
   height: 60vh;
@@ -3281,10 +3269,6 @@ animation: lds-dual-ring 1.2s linear infinite;
 }
 }
 
-@font-face {
-font-family: Roboto Condensed;
-src: url("./fonts/Roboto-Regular.ttf");
-}
 body{
 font-family: Roboto Condensed;
 }
@@ -3344,7 +3328,6 @@ padding: 5px 0;
 .header ul li:hover{
 border-bottom: 5px solid #C0392B;
 }
-
 .header ul .active a{
 background-color: transparent !important;
 color: #C0392B !important;
@@ -3352,9 +3335,6 @@ color: #C0392B !important;
 #mynavbar{
 width: 100%;
 text-align: center !important;
-}
-.wrap-about-us{
-margin-top: 65px;
 }
 .shrink{
 padding: 0px;
@@ -3492,7 +3472,7 @@ padding-top: 20px;
 .header ul li a{
   font-size: 13px;
 }
-.header {
+.page-template-homepage .header {
   padding: 0px;
   transition: 0.3s;
   -webkit-transition: 0.3s;
@@ -3644,11 +3624,11 @@ background-image: url('images/water1.png');
 background-size: 50% 100px;
 }
 .waveAnimation .waveBottom {
--webkit-animation-name: move_wave 23s linear infinite; 
--moz-animation-name: move_wave 23s linear infinite;
--ms-animation-name: move_wave 23s linear infinite;
--o-animation-name: move_wave 23s linear infinite;
-animation: move_wave 23s linear infinite;
+  -webkit-animation-name: move_wave 23s linear infinite; 
+  -moz-animation-name: move_wave 23s linear infinite;
+  -ms-animation-name: move_wave 23s linear infinite;
+  -o-animation-name: move_wave 23s linear infinite;
+  animation: move_wave 23s linear infinite;
 }
 .banner-objects{
 background-color: rgba(192, 57, 43, 0.6);
@@ -3685,8 +3665,6 @@ background-position: center;
 }
 }
 
-/*WORK PROGRESS*/
-/*==================================================================*/
 /*==================================================================*/
 /*WORK PROCESS*/
 
@@ -4843,7 +4821,7 @@ ul p{
 }
 .progress-container .container{
     width: 100%;
-    height: 110px;
+    /* height: 110px; */
     padding: 0;
 }
 .icon-progress{
@@ -4858,24 +4836,6 @@ ul p{
   width: 50px;
   height: 50px;
   position: absolute;
-}
-.icon-progress.first-title{
-  background-image: url(images/planning.png);
-}
-.icon-progress.second-title{
-  background-image: url(images/content.png);
-}
-.icon-progress.third-title{
-  background-image: url(images/design.png);
-}
-.icon-progress.fourth-title{
-  background-image: url(images/development.png);
-}
-.icon-progress.fifth-title{
-  background-image: url(images/soft-testing.png);
-}
-.icon-progress.sixth-title{
-  background-image: url(images/support.png);
 }
 .progress-container:nth-child(2){
   left: 190px;
@@ -5764,7 +5724,7 @@ transform: translate(-50%, -50%);
 .one-time{
 display: none;
 }
-.slick-next{
+.page-template-homepage .slick-next{
 right: 0px !important;
 display: none !important;
 }
@@ -5788,9 +5748,6 @@ display: none;
 }
 .header #mynavbar ul {
   display: inline-block;
-}
-.wrap-about-us{
-  margin-top: 60px;
 }
 .iq-banner .banner-objects .banner-objects-03 {
   position: absolute;
@@ -6033,7 +5990,6 @@ opacity: 0;
   opacity: 0;
 }
 /* HAMBURGER MENU END */
-
 
 .box-justify-text{
   text-align: justify;

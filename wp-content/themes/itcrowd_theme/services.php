@@ -12,7 +12,9 @@
                 <?php
                     $args = array( 
                         'category'            => '7', 
-                        'posts_per_page'      => 500 
+                        'posts_per_page'      => 500,
+                        'orderby'             => 'timestamp',
+                        'order'               => 'asc'
                     );
                     $myposts = get_posts( $args );
                 ?>
