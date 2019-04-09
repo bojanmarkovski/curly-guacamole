@@ -10,19 +10,24 @@
  Text Domain:  itcrowd-theme
 */
 
-/* Contact */
-/*LOADER*/
+
+
+
+/* ALL PAGES */
+a{
+  text-decoration: none !important;
+}
 .loader {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .lds-dual-ring {
   display: inline-block;
@@ -48,6 +53,9 @@
     transform: rotate(360deg);
   }
 }
+/* Contact */
+/*LOADER*/
+
 
 @font-face {
   font-family: Roboto Condensed;
@@ -618,9 +626,6 @@ font-family: Roboto Condensed;
 .clear{
 clear: both;
 }
-a{
-text-decoration: none !important;
-}
 .header{
 position: fixed;
 top: 0;
@@ -827,8 +832,9 @@ color: lightgray;
   }
 }
 
-.pd-top-30px{
+.pd-20px{
 padding-top: 20px;
+padding-bottom: 20px;
 }
 .our-services{
 padding-top: 50px;
@@ -1011,18 +1017,9 @@ a.animated-button.thar-three:before {
   display: none;
 }
 .our-services-box .custom{
-  width: 160px;
+  width: 100%;
   margin-bottom: 15px;
 }
-/* .our-services-box .web{
-  width: 168px;
-}
-.our-services-box .mobile{
-  width: 163px;
-}
-.our-services-box .digital{
-  width: 135px;
-} */
 .col-md-4.col-md-offset-4{
   display: none;
 }
@@ -1072,7 +1069,7 @@ a.animated-button.thar-three:before {
     padding-top: 2px;
   }
   .page-template-services .our-services-box hr{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1080,7 +1077,7 @@ a.animated-button.thar-three:before {
     padding: 0px 0px 30px 0px;
   }
   .right-side-services .image-box i{
-    top: -10%;
+    top: -3%;
   }
   .left-side-services .image-box i{
     top: 0%;
@@ -1377,9 +1374,6 @@ overflow-y: scroll;
 }
 .clear{
 clear: both;
-}
-a{
-text-decoration: none !important;
 }
 .header{
 position: fixed;
@@ -1925,9 +1919,6 @@ font-family: Roboto Condensed;
 }
 .clear{
 clear: both;
-}
-a{
-text-decoration: none !important;
 }
 hr{
 width: 85px;
@@ -2495,9 +2486,6 @@ font-family: Roboto Condensed;
 }
 .clear{
 clear: both;
-}
-a{
-text-decoration: none !important;
 }
 .btn:active:focus, .btn:focus{
 outline: none;
@@ -3232,7 +3220,7 @@ height: 41px;
 /* Home Page ======================================================= */
 
 /*LOADER*/
-.loader {
+.page-template-homepage .loader {
   position: fixed;
   z-index: 99;
   top: 0;
@@ -3244,12 +3232,12 @@ height: 41px;
   justify-content: center;
   align-items: center;
 }
-.lds-dual-ring {
+.page-template-homepage .lds-dual-ring {
 display: inline-block;
 width: 64px;
 height: 64px;
 }
-.lds-dual-ring:after {
+.page-template-homepage .lds-dual-ring:after {
 content: " ";
 display: block;
 width: 46px;
@@ -3274,9 +3262,6 @@ font-family: Roboto Condensed;
 }
 .clear{
 clear: both;
-}
-a{
-text-decoration: none !important;
 }
 hr{
 width: 85px;
@@ -3565,7 +3550,7 @@ animation-iteration-count: infinite;
 }
 .iq-banner { position: relative; overflow: hidden; }
 .iq-banner .container-fluid { padding: 0 90px; }
-.iq-banner .banner-text { z-index: 9; position: relative; margin-top: 13%; }
+.iq-banner .banner-text { z-index: 9; position: relative; margin-top: 13%; color:white !important; }
 .iq-banner .banner-text h1 { font-size: 55px; line-height: normal; }
 .iq-banner .banner-img { width: 100%; }
 .iq-banner .banner-objects { position: absolute; left: 0; top: 0; display: inline-block; width: 100%; height: 100%; }
@@ -5696,23 +5681,23 @@ position: relative; }
 width: 100%;
 }
 .iq-fancy-boxnew.text-center .icon-bg { 
-text-align: center; 
-display: flex; 
-align-content: center; 
-align-items: center; 
-justify-content: center;
-width: 86px; 
-height: 86px; 
-margin: auto; 
-position: relative; 
-background-color: #C0392B; 
-background-image: linear-gradient(-45deg, #C0392B 0%, #C0392B 100%); 
-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
--webkit-box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
--moz-box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
-box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
-animation: one-animated 10s infinite; 
-overflow: hidden; 
+  text-align: center;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 86px; 
+  height: 86px; 
+  margin: auto; 
+  position: relative; 
+  background-color: #C0392B; 
+  background-image: linear-gradient(-45deg, #C0392B 0%, #C0392B 100%); 
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+  -webkit-box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
+  -moz-box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
+  box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
+  animation: one-animated 10s infinite; 
+  overflow: hidden; 
 }
 .iq-icon.icon-bg i{
 position: absolute;

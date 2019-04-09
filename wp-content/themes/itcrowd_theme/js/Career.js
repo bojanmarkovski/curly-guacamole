@@ -5,7 +5,6 @@ window.addEventListener("load", function() {
 });
 
 $(document).ready(function() {
-
     // NAVBAR BUTTON CHANGED TO X (HAMBURGER MENU)
     $('#nav-icon3').click(function() {
         $(this).toggleClass('open');
@@ -211,3 +210,9 @@ $(document).ready(function() {
         $(".form-check-input").prop('checked', true);
       })
   });
+
+  var onloadCallback = function() {
+    grecaptcha.render('re-captcha', {
+      'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'
+    });
+  };

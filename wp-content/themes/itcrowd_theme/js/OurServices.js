@@ -101,3 +101,9 @@ $(document)
     $(".col-md-4.col-md-offset-4").fadeIn(1300);
     $(".our-services-box").css("height", "auto");
   });
+
+  var onloadCallback = function() {
+    grecaptcha.render('re-captcha', {
+      'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'
+    });
+  };

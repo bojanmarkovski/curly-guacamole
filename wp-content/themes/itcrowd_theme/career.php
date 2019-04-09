@@ -135,13 +135,21 @@
                                         <div class="holder">
                                             <div class="input-holder dropdown">
                                                 <select placeholder=" " class="input select">
-                                                    <option class="first-option">I am applying for *</option>
-                                                    <option>Junior Front-end Developer</option>
-                                                    <option>Android Developer</option>
-                                                    <option>Middleware Intergration Developer</option>
-                                                    <option>Mobile Developer</option>
-                                                    <option>Software Engineer</option>
-                                                    <option>Intership</option>
+                                                    <option class="first-option">
+                                                        I am applying for *
+                                                    </option>
+
+                                                    <?php if ( $myposts ) {
+
+                                                        foreach ( $myposts as $term ) { ?>
+
+                                                            <option value="<?php echo $term->post_title; ?>">
+                                                                <?php echo $term->post_title; ?>
+                                                            </option>
+
+                                                        <?php } ?>
+                                                    <?php } ?>
+
                                                 </select>
                                                 <div class="placeholder">I am applying for *</div>
                                                 <div class="error">Please enter a job</div>
@@ -165,6 +173,7 @@
                                             
                                         </label>
                                     </div>
+                                    <div id="re-captcha"></div>
                                     <button type="submit" class="btn btn-block">
                                     <small>SEND E-MAIL</small>
                                     </button>
@@ -250,5 +259,8 @@
     <!-- Content END -->
 
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/Career.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer></script>
 
 <?php get_footer(); ?>

@@ -24,9 +24,9 @@
                     $counter = 0;
                     foreach ( $myposts as $term ) {
 
-                        $classHelper = 'left-side-services';
+                        $classHelper = 'right-side-services';
                         if ($counter % 2 == 0) {
-                            $classHelper = 'right-side-services';
+                            $classHelper = 'left-side-services';
                         }
 
                         ?>
@@ -41,9 +41,10 @@
                                         <?php echo get_the_post_thumbnail($term); ?>
                                     </div>
                                 </div>
-                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pd-top-30px">
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pd-20px">
                                     <div class="title-text">
-                                        <div>
+                                        <div style="display: inline-block">
+                                            
                                         
                                         <?php 
                                             $firstWord = explode(' ', $term->post_title)[0];
@@ -74,8 +75,10 @@
                                         <span>
                                             <?php echo $restOfTheTitle; ?>
                                         </span>
-                                        </div>
                                         <hr align="left" class="custom">
+                                        </div>
+                                        
+                                        
                                     </div>
                                     <p>
                                         <?php echo $term->post_content; ?>
@@ -84,9 +87,9 @@
 
                             <?php } else { ?>
 
-                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pd-top-30px">
+                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pd-20px">
                                     <div class="title-text">
-                                        <div>
+                                        <div style="display: inline-block">
                                         
                                         <?php 
                                             $firstWord = explode(' ', $term->post_title)[0];
@@ -117,8 +120,9 @@
                                         <span>
                                             <?php echo $restOfTheTitle; ?>
                                         </span>
-                                        </div>
                                         <hr align="left" class="custom">
+
+                                        </div>
                                     </div>
                                     <p>
                                         <?php echo $term->post_content; ?>
@@ -206,6 +210,9 @@
                               <div class="error">Please enter a valid message</div>
                            </div>
                         </div>
+                        
+                        <div id="re-captcha"></div>
+
                      </div>
                   </form>
                </div>
@@ -219,5 +226,8 @@
 <!-- Content END -->
 
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/OurServices.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer></script>
 
 <?php get_footer(); ?>
