@@ -2126,53 +2126,52 @@ color: #C0392B;
 text-decoration: none;
 color: lightgray;
 }
-
 @media screen and (max-width: 991px) {
-.header ul li a{
-  font-size: 13px;
-}
-.page-template-contact .header {
-  padding: 0px;
-  transition: 0.3s;
-  background-color: transparent;
-}
-.footer .border-bottom{
-  text-align: center;
-}
-.footer img{
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-.footer #map{
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.copyright{
-  margin-top: 15px;
-  margin-bottom: 5px;
-}
+  .header ul li a{
+    font-size: 13px;
+  }
+  .page-template-contact .header {
+    padding: 0px;
+    transition: 0.3s;
+    background-color: transparent;
+  }
+  .footer .border-bottom{
+    text-align: center;
+  }
+  .footer img{
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .footer #map{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .copyright{
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
 }
 
 
 .page-template-contact .input-holder {
-position: relative;
-margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 10px;
 }
 .page-template-contact .input {
-font-size: 14px;
-padding: 10px 15px;
-border-radius: 9px;
-border: 1px solid lightgray;
-width: 100%;
-outline: none;
-color: white;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 9px;
+  border: 1px solid lightgray;
+  width: 100%;
+  outline: none;
+  color: white;
 }
 .input:not(:placeholder-shown).input:not(:focus) {
-border: 1px solid #363636;
+  border: 1px solid #363636;
 }
 .input:not(:placeholder-shown).input:not(:focus) + .placeholder {
-transform: scale(0.75) translateY(-26px) translateX(-5px);
-color: grey;
+  transform: scale(0.75) translateY(-26px) translateX(-5px);
+  color: grey;
 }
 .input:not(:placeholder-shown).input:not(:focus).input:not(:valid) {
 border: 1px solid lightgray;
@@ -2186,7 +2185,7 @@ color: lightgray;
 visibility: visible;
 }
 .input:focus {
-border-color: #3636363;
+border-color: #363636;
 }
 .input:focus + .placeholder {
 transform: scale(0.75) translateY(-26px) translateX(-5px);
@@ -3242,8 +3241,8 @@ height: 41px;
 
 /* END Career ======================================================= */
 
-
 /* Home Page ======================================================= */
+
 /*LOADER*/
 .loader {
   position: fixed;
@@ -3282,6 +3281,10 @@ animation: lds-dual-ring 1.2s linear infinite;
 }
 }
 
+@font-face {
+font-family: Roboto Condensed;
+src: url("./fonts/Roboto-Regular.ttf");
+}
 body{
 font-family: Roboto Condensed;
 }
@@ -3291,7 +3294,7 @@ clear: both;
 a{
 text-decoration: none !important;
 }
-.page-template-homepage hr{
+hr{
 width: 85px;
 height: 5px;
 background-color: #C0392B;
@@ -3301,7 +3304,7 @@ margin-bottom: 30px;
 h2{
 font-weight: 700;
 }
-.page-template-homepage .header{
+.header{
 position: fixed;
 top: 0;
 z-index: 2;
@@ -3350,13 +3353,13 @@ color: #C0392B !important;
 width: 100%;
 text-align: center !important;
 }
-.page-template-homepage .wrap-about-us{
+.wrap-about-us{
 margin-top: 65px;
 }
-.page-template-homepage .shrink{
+.shrink{
 padding: 0px;
 }
-.page-template-homepage .nav-down {
+.nav-down {
 position: fixed;
 top: 0;
 transition: top 0.4s ease-in-out;
@@ -3364,27 +3367,26 @@ transition: top 0.4s ease-in-out;
 width: 100%;
 }
 
-.page-template-homepage .nav-up {
+.nav-up {
 top: -65px;
 position: fixed;
 transition: top 0.4s ease-in-out;
 -webkit-transition: top 0.4s ease-in-out;
 }
 
-.page-template-homepage .second-nav-down{
+.second-nav-down{
 transition: top 0.4s ease-in-out;
 -webkit-transition: top 0.4s ease-in-out;
 width: 100%;
 }
-.page-template-homepage .second-nav-up {
+.second-nav-up {
 top: 0px;
-transition: 0.3s;
 }
-.page-template-homepage .navbar-inverse .navbar-toggle{
+.navbar-inverse .navbar-toggle{
 background-color: transparent;
 border-color: transparent;
 }
-.page-template-homepage .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
 background-color: transparent;
 }
 
@@ -4078,7 +4080,7 @@ animation-delay: 1.2s;
 
 .chart-skills.third *,
 .chart-skills.third::before {
-  box-sizing: border-box;
+box-sizing: border-box;
 }
 
 
@@ -4910,14 +4912,15 @@ ul p{
 }
 
 
+
 /*OUR TECHNOLOGIES*/
 .our-skills-process{
   background-color: #b5554d;
 }
-.container {
+.container-technologies {
 width: 750px;
 }
-.page-template-homepage .container-fluid h2{
+.container-fluid h2{
 padding-top: 15px;
 }
 .our-skills-process .bg-color{
@@ -5009,12 +5012,11 @@ padding-left: 50px;
 }
 [data-page=index] section.testimonies {
   overflow: hidden;
-  position: relative;
 }
-[data-page=index] section.testimonies .container {
+[data-page=index] section.testimonies .container-technologies {
   height: 440px;
 }
-[data-page=index] section.testimonies .container .carousel-quotes {
+[data-page=index] section.testimonies .container-technologies .carousel-quotes {
   display: inline-block;
   height: 100%;
   overflow: hidden;
@@ -5022,23 +5024,23 @@ padding-left: 50px;
   position: relative;
   width: 569px;
 }
-[data-page=index] section.testimonies .container .carousel-quotes-fade-out-mask {
+[data-page=index] section.testimonies .container-technologies .carousel-quotes-fade-out-mask {
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%
 }
-[data-page=index] section.testimonies .container .carousel-quotes-fade-out-mask .container {
+[data-page=index] section.testimonies .container-technologies .carousel-quotes-fade-out-mask .container-technologies {
   height: 100%
 }
-[data-page=index] section.testimonies .container .company-icons {
+[data-page=index] section.testimonies .container-technologies .company-icons {
   display: inline-block;
   height: 100%;
   position: relative;
   vertical-align: top;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container {
   align-items: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -5072,63 +5074,63 @@ padding-left: 50px;
   box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
   background-color: white;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon-ring-4-logo {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-4-logo {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -1px -1px;
   background-repeat: no-repeat;
   height: 100px;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon-ring-3-logo {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-3-logo {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -103px -1px;
   background-repeat: no-repeat;
   height: 112px;
   width: 112px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon-ring-2-logo {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-2-logo {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -1px -115px;
   background-repeat: no-repeat;
   height: 21px;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon-ring-1-logo {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-1-logo {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -103px -115px;
   background-repeat: no-repeat;
   height: 29px;
   width: 125px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon-ring-6-logo {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-6-logo {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -217px -1px;
   background-repeat: no-repeat;
   height: 105px;
   width: 140px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon-ring-8-logo {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-8-logo {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -230px -108px;
   background-repeat: no-repeat;
   height: 25px;
   width: 93px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon-ring-9-logo {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-9-logo {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -230px -135px;
   background-repeat: no-repeat;
   height: 21px;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon-ring-7-logo {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-7-logo {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -1px -158px;
   background-repeat: no-repeat;
   height: 31px;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-1 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-1 {
   -webkit-animation-duration: 4s;
   animation-duration: 4s;
   height: 144px;
@@ -5138,14 +5140,14 @@ padding-left: 50px;
   width: 144px;
   padding: 30px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-1 .company-icon {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-1 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -103px -115px;
   background-repeat: no-repeat;
   height: 29px;
   width: 125px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-2 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-2 {
   -webkit-animation-delay: -1.8s;
   animation-delay: -1.8s;
   -webkit-animation-duration: 4s;
@@ -5158,14 +5160,14 @@ padding-left: 50px;
   transition-delay: .1s;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-2 .company-icon {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-2 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -1px -115px;
   background-repeat: no-repeat;
   height: 21px;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-3 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-3 {
   -webkit-animation-delay: -2.2s;
   animation-delay: -2.2s;
   -webkit-animation-duration: 4s;
@@ -5179,14 +5181,14 @@ padding-left: 50px;
   width: 104px;
   padding: 15px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-3 .company-icon {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-3 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -103px -1px;
   background-repeat: no-repeat;
   height: 112px;
   width: 112px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-4 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-4 {
   -webkit-animation-delay: -3.4s;
   animation-delay: -3.4s;
   -webkit-animation-duration: 4s;
@@ -5199,14 +5201,14 @@ padding-left: 50px;
   transition-delay: .3s;
   width: 136px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-4 .company-icon {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-4 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -1px -1px;
   background-repeat: no-repeat;
   height: 100px;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-5 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-5 {
   -webkit-animation-delay: -2.4s;
   animation-delay: -2.4s;
   -webkit-animation-duration: 4s;
@@ -5221,7 +5223,7 @@ padding-left: 50px;
   width: 122px;
   padding: 28px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-6 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-6 {
   -webkit-animation-delay: -.3s;
   animation-delay: -.3s;
   -webkit-animation-duration: 4s;
@@ -5235,14 +5237,14 @@ padding-left: 50px;
   width: 100px;
   padding: 15px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-6 .company-icon {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-6 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -217px -1px;
   background-repeat: no-repeat;
   height: 105px;
   width: 140px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-7 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-7 {
   -webkit-animation-delay: -2.9s;
   animation-delay: -2.9s;
   -webkit-animation-duration: 4s;
@@ -5256,14 +5258,14 @@ padding-left: 50px;
   width: 122px;
   padding: 10px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-7 .company-icon {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-7 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -1px -158px;
   background-repeat: no-repeat;
   height: 31px;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-8 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-8 {
   -webkit-animation-delay: -.9s;
   animation-delay: -.9s;
   -webkit-animation-duration: 4s;
@@ -5277,14 +5279,14 @@ padding-left: 50px;
   width: 105px;
   padding: 15px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-8 .company-icon {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-8 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -230px -108px;
   background-repeat: no-repeat;
   height: 25px;
   width: 93px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-9 {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-9 {
   -webkit-animation-delay: -3.9s;
   animation-delay: -3.9s;
   -webkit-animation-duration: 4s;
@@ -5298,14 +5300,14 @@ padding-left: 50px;
   width: 136px;
   padding: 22px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-9 .company-icon {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-9 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
   background-position: -230px -135px;
   background-repeat: no-repeat;
   height: 21px;
   width: 100px;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container.hidden {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.hidden {
   opacity: 0;
   margin-left: 300px;
   margin-top: 420px;
@@ -5316,16 +5318,16 @@ padding-left: 50px;
 
 
 
-[data-page=index] section.explore .container .resources-section-container .resources-panel-container .resources-carousel-panel-container .resources-carousel-panel .resource-detail-container.news .resource-info .news.resource-title.no-logo {
+[data-page=index] section.explore .container-technologies .resources-section-container .resources-panel-container .resources-carousel-panel-container .resources-carousel-panel .resource-detail-container.news .resource-info .news.resource-title.no-logo {
   padding-left: 0!important;
 }
-[data-page=index] section.testimonies .container .carousel-quotes .slick-list .carousel-row .carousel-row-content .customer-info .customer-icon-container .customer-icon {
+[data-page=index] section.testimonies .container-technologies .carousel-quotes .slick-list .carousel-row .carousel-row-content .customer-info .customer-icon-container .customer-icon {
   background-color: #fff;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container {
   overflow: hidden;
 }
-[data-page=index] section.testimonies .container .company-icons .company-icon-container .company-icon.image {
+[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon.image {
   width: 100px;
   height: 100px;
   background-size: contain;
@@ -5669,26 +5671,26 @@ body {
 }
 }
 @keyframes one-animated {
-  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   box-shadow:15px 15px 50px rgba(0, 0, 0, 0.2); }
   25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
   box-shadow:-10px -5px 50px rgba(0, 0, 0, 0.2); }
   75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
 }
 @keyframes two-animated {
-  0% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%
+  0% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
   box-shadow:15px 15px 50px rgba(0, 0, 0, 0.2); }
   25% { border-radius: 40% 80% 30% 90% / 72% 65% 35% 28%; }
-  50% { border-radius: 65% 35% 45% 55% / 22% 48% 52% 78%
+  50% { border-radius: 65% 35% 45% 55% / 22% 48% 52% 78%;
   box-shadow:-10px -5px 50px rgba(0, 0, 0, 0.2); }
   75% { border-radius: 24% 76% 10% 90% / 44% 68% 32% 56%; }
 }
 @keyframes three-animated {
-  0% { border-radius: 12% 88% 40% 40% / 20% 15% 85% 80%
+  0% { border-radius: 12% 88% 40% 40% / 20% 15% 85% 80%;
   box-shadow:15px 15px 50px rgba(0, 0, 0, 0.2); }
   25% { border-radius: 72% 28% 30% 90% / 15% 46% 54% 85%; }
-  50% { border-radius: 12% 88% 40% 40% / 20% 15% 85% 80%
+  50% { border-radius: 12% 88% 40% 40% / 20% 15% 85% 80%;
   box-shadow:-10px -5px 50px rgba(0, 0, 0, 0.2); }
   75% { border-radius: 18% 82% 10% 90% / 24% 68% 32% 76%; }
 }
@@ -5735,7 +5737,7 @@ width: 100%;
 }
 .iq-fancy-boxnew.text-center .icon-bg { 
 text-align: center; 
-/* display: flex;  */
+display: flex; 
 align-content: center; 
 align-items: center; 
 justify-content: center;
@@ -5759,15 +5761,17 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 
-
-/* .slick-next{
+.one-time{
+display: none;
+}
+.slick-next{
 right: 0px !important;
 display: none !important;
 }
 
 .slideInDown{
 display: none;
-} */
+}
 
 @media screen and (max-width: 767px) {
 .header ul li{
@@ -5887,6 +5891,76 @@ height: 48.8px;
   transform: rotate(-108.4deg);
   animation-delay: .8s;
 }
+/*HAMBURGER MENU*/
+#nav-icon3{
+width: 60px;
+position: relative;
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+cursor: pointer;
+}
+
+#nav-icon3 span {
+display: block;
+/*background: #d3531a;*/
+border-radius: 9px;
+opacity: 1;
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+-webkit-transition: .25s ease-in-out;
+-moz-transition: .25s ease-in-out;
+-o-transition: .25s ease-in-out;
+transition: .25s ease-in-out;
+}
+.navbar-toggle.pull-left{
+border: unset;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+position: absolute;
+}
+
+#nav-icon3.open span:nth-child(1) {
+top: 18px;
+opacity: 0;
+left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+transform: rotate(45deg);
+background-color: #C0392B;
+}
+
+#nav-icon3.open span:nth-child(3) {
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+transform: rotate(-45deg);
+background-color: #C0392B;
+}
+
+#nav-icon3.open span:nth-child(4) {
+top: 18px;
+width: 0%;
+left: 50%;
+}
+#nav-icon3.open span:nth-child(5) {
+top: 18px;
+left: 50%;
+opacity: 0;
+}
+
 /* END Home Page ======================================================= */
 
 /* HAMBURGER MENU */
@@ -5948,7 +6022,6 @@ height: 48.8px;
   transform: rotate(-45deg);
   background-color: #C0392B;
 }
-
 #nav-icon3.open span:nth-child(4) {
   top: 18px;
   width: 0%;
@@ -5962,4 +6035,6 @@ height: 48.8px;
 /* HAMBURGER MENU END */
 
 
-
+.box-justify-text{
+  text-align: justify;
+}

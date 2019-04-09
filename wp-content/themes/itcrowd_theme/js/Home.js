@@ -193,56 +193,61 @@ window.addEventListener("load", function() {
     $(".waveWrapper").removeClass("waveAnimation");
   }
 
-  if ($( window ).width() >= 992) {
-    // $(".z-index .slideInUpMobile").css("z-index", "2").animate({top: '40%'},1200);
-    $(".z-index .slideInUpWatch").animate({top: '45%'},2400);
-    $(".z-index .slideInUpMobile")
-       .animate({
-                top: '30%'
-       },800)
-       .animate({
-                top: "50%"
-       },700)
-       .animate({
-                top: "40%"
-       },600)
- }
- 
- /* Every time the window is scrolled ... */
- $(window).scroll( function(){
- 
-    /* Check the location of each desired element */
-    $('.our-skills-process').each( function(i){
-       var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
-       var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
-       if( bottomOfWindow > startingPositionOurSkills ){
-          $(".wrapper-technologies").addClass("testimonies");
-          $(".company-icons").css("visibility" , "visible");
-       }
-    });
-    $('.work-process-row-container').each( function(i){
+
+  $(document).ready(function() {
+    if ($( window ).width() >= 992) {
+       // $(".z-index .slideInUpMobile").css("z-index", "2").animate({top: '40%'},1200);
+       $(".z-index .slideInUpWatch").animate({top: '45%'},2400);
+       $(".z-index .slideInUpMobile")
+          .animate({
+                   top: '30%'
+          },800)
+          .animate({
+                   top: "50%"
+          },700)
+          .animate({
+                   top: "40%"
+          },600)
+    }
     
-       var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
-       var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
-       if( bottomOfWindow > startingPositionOurSkills ){
-          $(".work-process").css("display" , "block").addClass("newClass");
-       }
+    /* Every time the window is scrolled ... */
+    $(window).scroll( function(){
+    
+       /* Check the location of each desired element */
+       $('.our-skills-process').each( function(i){
+          var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
+          var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
+          if( bottomOfWindow > startingPositionOurSkills ){
+             $(".wrapper-technologies").addClass("testimonies");
+             $(".company-icons").css("visibility" , "visible");
+          }
+       });
+       $('.work-process-row-container').each( function(i){
+       
+          var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
+          var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
+          if( bottomOfWindow > startingPositionOurSkills ){
+             $(".work-process").css("display" , "block").addClass("newClass");
+          }
+       });
     });
+  // MAIN SLIDER
+    $('.one-time').slick({
+      dots: true,
+      infinite: true,
+      speed: 700,
+      slidesToShow: 1,
+      adaptiveHeight: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
+  });
  });
 
- // MAIN SLIDER
- $('.one-time').slick({
-  dots: true,
-  infinite: true,
-  speed: 700,
-  slidesToShow: 1,
-  adaptiveHeight: true,
-  autoplay: true,
-  autoplaySpeed: 5000,
-});
-// HAMBURGER MENU
-$(document).ready(function(){
-  $('#nav-icon3').click(function(){
-     $(this).toggleClass('open');
-  });
-});
+
+ 
+ // HAMBURGER MENU
+ $(document).ready(function(){
+    $('#nav-icon3').click(function(){
+       $(this).toggleClass('open');
+    });
+ });

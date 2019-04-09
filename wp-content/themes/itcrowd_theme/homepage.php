@@ -88,7 +88,9 @@
                 <?php
                     $args = array( 
                         'category'            => '4', 
-                        'posts_per_page'      => 3 
+                        'posts_per_page'      => 3,
+                        'orderby'             => 'timestamp',
+                        'order'               => 'asc'
                     );
                     $myposts = get_posts( $args );
                 ?>
@@ -160,7 +162,7 @@
         <div id="wrapper">
             <div class="marketing-page page-content" data-page="index">
                 <section class="wrapper-technologies" >
-                <div class="container">
+                <div class="container-technologies">
                     <div class="company-icons">
 
                         <?php 
@@ -341,5 +343,6 @@
 
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/slick/slick.min.js"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/Home.js"></script>
+
 
 <?php get_footer(); ?>
