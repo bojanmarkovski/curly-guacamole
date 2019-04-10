@@ -169,6 +169,7 @@ $(document).ready(function(){
                     // ALL PAGES
                     $(".header").removeClass("shrink");
                     $(".page-template-homepage .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
+                    $(".page-template-contact .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
                 }
             }
         }
