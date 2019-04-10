@@ -53,10 +53,6 @@ a{
     transform: rotate(360deg);
   }
 }
-/* Contact */
-/*LOADER*/
-
-
 @font-face {
   font-family: Roboto Condensed;
   src: url("./assets/fonts/Roboto-Regular.ttf");
@@ -67,9 +63,9 @@ body{
 .clear{
   clear: both;
 }
-a{
-  text-decoration: none !important;
-}
+/* Contact */
+/*LOADER*/
+
 .page-template-contact hr{
   width: 85px;
   height: 5px;
@@ -582,50 +578,6 @@ a{
 /* END Contact */
 
 /* Our Services */
-/*LOADER*/
-.loader {
-  position: fixed;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.lds-dual-ring {
-display: inline-block;
-width: 64px;
-height: 64px;
-}
-.lds-dual-ring:after {
-content: " ";
-display: block;
-width: 46px;
-height: 46px;
-margin: 1px;
-border-radius: 50%;
-border: 5px solid #C0392B;
-border-color: #C0392B transparent #C0392B transparent;
-animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-0% {
-  transform: rotate(0deg);
-}
-100% {
-  transform: rotate(360deg);
-}
-}
-
-body{
-font-family: Roboto Condensed;
-}
-.clear{
-clear: both;
-}
 .header{
 position: fixed;
 top: 0;
@@ -1325,51 +1277,8 @@ textarea::-webkit-scrollbar-track {
 /* END Our Services */
 
 /* About Us */
-/*LOADER*/
-.loader {
-  position: fixed;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.lds-dual-ring {
-display: inline-block;
-width: 64px;
-height: 64px;
-}
-.lds-dual-ring:after {
-content: " ";
-display: block;
-width: 46px;
-height: 46px;
-margin: 1px;
-border-radius: 50%;
-border: 5px solid #C0392B;
-border-color: #C0392B transparent #C0392B transparent;
-animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-0% {
-  transform: rotate(0deg);
-}
-100% {
-  transform: rotate(360deg);
-}
-}
 
-body{
-font-family: Roboto Condensed;
-overflow-y: scroll;
-}
-.clear{
-clear: both;
-}
+
 .header{
 position: fixed;
 top: 0;
@@ -1662,20 +1571,19 @@ h2{
 
 /*SLIDER TEAM*/
 .page-template-aboutUs .inner-slider-team{
-background-image: linear-gradient(lightgray, white);
+  background-image: linear-gradient(lightgray, white);
 }
 .page-template-aboutUs .slider-team .img-team{
-/* background-image: url(http://localhost/wordpress/wp-content/uploads/2019/04/girl-work.jpg); */
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-width: 100%;
-height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 250px;
 }
 .page-template-aboutUs .slick-slide{
--webkit-box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
--moz-box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
-box-shadow: 3px 7px 14px -3px rgba(0,0,0,0.33);
+  -webkit-box-shadow: 3px 4px 14px -3px rgba(0,0,0,0.33);
+  -moz-box-shadow: 3px 4px 14px -3px rgba(0,0,0,0.33);
+  box-shadow: 3px 4px 14px -3px rgba(0,0,0,0.33);
 }
 .page-template-aboutUs .slick-prev.slick-arrow{
 position: absolute;
@@ -1875,49 +1783,7 @@ transform: translate(50%, -50%);
 /* END About Us */
 
 /* Contact */
-/*LOADER*/
-.loader {
-  position: fixed;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.lds-dual-ring {
-display: inline-block;
-width: 64px;
-height: 64px;
-}
-.lds-dual-ring:after {
-content: " ";
-display: block;
-width: 46px;
-height: 46px;
-margin: 1px;
-border-radius: 50%;
-border: 5px solid #C0392B;
-border-color: #C0392B transparent #C0392B transparent;
-animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-0% {
-  transform: rotate(0deg);
-}
-100% {
-  transform: rotate(360deg);
-}
-}
-body{
-font-family: Roboto Condensed;
-}
-.clear{
-clear: both;
-}
+
 hr{
 width: 85px;
 height: 5px;
@@ -2441,50 +2307,6 @@ border-radius: 9px;
 
 /* Career ========================================================== */
 
-/*LOADER*/
-.loader {
-  position: fixed;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.lds-dual-ring {
-display: inline-block;
-width: 64px;
-height: 64px;
-}
-.lds-dual-ring:after {
-content: " ";
-display: block;
-width: 46px;
-height: 46px;
-margin: 1px;
-border-radius: 50%;
-border: 5px solid #C0392B;
-border-color: #C0392B transparent #C0392B transparent;
-animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-0% {
-  transform: rotate(0deg);
-}
-100% {
-  transform: rotate(360deg);
-}
-}
-
-body{
-font-family: Roboto Condensed;
-}
-.clear{
-clear: both;
-}
 .btn:active:focus, .btn:focus{
 outline: none;
 }
@@ -2886,7 +2708,7 @@ border-radius: 9px;
 }
 @media screen and (max-width: 767px){
 .container-fluid.career{
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .display-none-mobile{
   display: none;
@@ -3211,56 +3033,16 @@ height: 41px;
   .header .logo{
     padding-top: 2px;
   }
+  .form-group-20px{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 /* END Career ======================================================= */
 
 /* Home Page ======================================================= */
 
-/*LOADER*/
-.page-template-homepage .loader {
-  position: fixed;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.page-template-homepage .lds-dual-ring {
-display: inline-block;
-width: 64px;
-height: 64px;
-}
-.page-template-homepage .lds-dual-ring:after {
-content: " ";
-display: block;
-width: 46px;
-height: 46px;
-margin: 1px;
-border-radius: 50%;
-border: 5px solid #C0392B;
-border-color: #C0392B transparent #C0392B transparent;
-animation: lds-dual-ring 1.2s linear infinite;
-}
-@keyframes lds-dual-ring {
-0% {
-  transform: rotate(0deg);
-}
-100% {
-  transform: rotate(360deg);
-}
-}
-
-body{
-font-family: Roboto Condensed;
-}
-.clear{
-clear: both;
-}
 hr{
 width: 85px;
 height: 5px;

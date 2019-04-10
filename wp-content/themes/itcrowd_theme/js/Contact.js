@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+// GOOGLE MAPS
 	//set your google maps parameters
 	var $latitude = 42.006068,
 		$longitude = 21.392550,
@@ -244,6 +245,7 @@ jQuery(document).ready(function($){
   	map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
 });
 
+// RECAPCHA
 var onloadCallback = function() {
   grecaptcha.render('re-captcha', {
     'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'

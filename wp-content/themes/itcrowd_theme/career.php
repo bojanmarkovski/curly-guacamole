@@ -90,13 +90,13 @@
                     <!-- RIGHT SIDE JOB APLY FORM -->
                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 career-right">
                         <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group-20px">
                                 <h3>Job Apply Form</h3>
                             </div>
                         </div>
                         <!-- FORM GROUP -->
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group-20px">
                                 <form>
                                     <div class="form-group">
                                         <!-- NAME INPUT -->
