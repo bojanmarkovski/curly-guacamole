@@ -161,8 +161,8 @@
     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 bg-color">
         <div id="wrapper">
             <div class="marketing-page page-content" data-page="index">
-                <section class="wrapper-technologies" >
-                <div class="container container-technologies">
+                <section class="wrapper-technologies">
+                <div class="container-fluid container-technologies">
                     <div class="company-icons">
 
                         <?php 

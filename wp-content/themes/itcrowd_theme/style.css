@@ -837,7 +837,7 @@ padding-top: 20px;
 padding-bottom: 20px;
 }
 .our-services{
-padding-top: 50px;
+padding-top: 80px;
 padding-bottom: 20px;
 }
 .our-services .our-services-box{
@@ -1074,7 +1074,7 @@ a.animated-button.thar-three:before {
 }
 @media screen and (max-width: 767px) {
   .our-services{
-    padding: 0px 0px 30px 0px;
+    padding: 60px 0px 30px 0px;
   }
   .right-side-services .image-box i{
     top: -3%;
@@ -1087,11 +1087,6 @@ a.animated-button.thar-three:before {
     margin-bottom: 0;
   }
 }
-
-
-
-
-
 
 
 /*MODAL FORM*/
@@ -2733,7 +2728,7 @@ font-weight: bold;
 /*CAREER LEFT CARDS*/
 
 .career .career-left{
-height: 100%;
+height: 825px;
 overflow-y: auto;
 padding-top: 0;
 }
@@ -3642,10 +3637,14 @@ background-repeat: no-repeat;
 background-position: center;
 }
 @media screen and (max-width: 991px){
-.waveAnimation .waveBottom {
-  animation: unset;
-  background-size: 41% 90px;
-}
+  .waveAnimation .waveBottom {
+    animation: unset;
+    background-size: 50% 60px;
+  }
+  .waveWrapperInner {
+    height: 60px;
+    bottom: 20px;
+  }
 }
 @media screen and (max-width: 521px){
 .waveAnimation .waveBottom {
