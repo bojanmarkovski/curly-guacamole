@@ -4,14 +4,13 @@ $(document).ready(function(){
 
       var screenWidth = $( window ).width();
       var rightSpace = screenWidth - 1170;
-      if (screen.width > 992) {
 
+      if (screen.width > 992) {
         $(".work-process").css("margin-left", rightSpace / 2)
 
         $(window).on('resize', function() {
           var screenWidth = $( window ).width();
           var rightSpace = screenWidth - 1170;
-
           $(".work-process").css("margin-left", rightSpace / 2)
         });
       }
