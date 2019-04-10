@@ -395,12 +395,6 @@
         autoplay: true,
         autoplaySpeed: 5000,
     });
-    // HAMBURGER MENU
-    $(document).ready(function(){
-        $('#nav-icon3').click(function(){
-        $(this).toggleClass('open');
-        });
-    });
 
 </script>
 

@@ -1,28 +1,7 @@
 // LOADER
-window.addEventListener("load", function() {
-  const loader = document.querySelector(".loader");
-  loader.className += " hidden";
-});
 
 $(document).ready(function() {
 	
-	// NAVBAR BUTTON CHANGED TO X (HAMBURGER MENU)
-	$('#nav-icon3').click(function() {
-		$(this).toggleClass('open');
-    });
-
-	// CLOSE AN OPEN COLLAPSED NAVBAR WHEN CLICKING OUTSIDE
-	$(document)
-	  .click(function(event) {
-	    var clickover = $(event.target);
-	    var $navbar = $(".navbar-collapse");
-	    var _opened = $navbar.hasClass("in");
-	    if (_opened === true && !clickover.hasClass("navbar-toggle")) {
-	      $navbar.collapse('hide');
-	      $("#nav-icon3").toggleClass('open');
-	    }
-	  });
-
 	$(".header")
 	  .css("background-color", "rgba(0,0,0,0.6)");
 
