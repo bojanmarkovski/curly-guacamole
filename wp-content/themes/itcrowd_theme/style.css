@@ -1558,7 +1558,7 @@ color: lightgray;
 }
 
 .wrap-about-us{
-  margin-top: 30px;
+  margin-top: 50px;
 }
 /*RIGHT SIDE*/
 .page-template-aboutUs .display-none{
@@ -1611,6 +1611,9 @@ h2{
   position: relative;
   width: auto;
 }
+.wrap-about-us{
+  margin-top: 60px;
+}
 }
 
 
@@ -1651,7 +1654,7 @@ h2{
   margin-bottom: 0;
 }
 .wrap-about-us{
-  margin-top: 0px;
+  margin-top: 50px;
 }
 }
 @media screen and (min-width: 768px) {
@@ -3064,7 +3067,7 @@ border-bottom-right-radius: 9px;
 filter: blur(2px);
 }
 
-.modal-open button{
+.page-template-career .modal-open button{
 background-color: white;
 border: 1px solid #222222;
 color: #222222;
@@ -4976,7 +4979,7 @@ padding-left: 50px;
   top: 0;
   width: 100%
 }
-[data-page=index] section.testimonies .container-technologies .carousel-quotes-fade-out-mask .container-technologies {
+[data-page=index] section.testimonies .container-technologies .carousel-quotes-fade-out-mask {
   height: 100%
 }
 [data-page=index] section.testimonies .container-technologies .company-icons {
@@ -5104,6 +5107,7 @@ padding-left: 50px;
   -webkit-transition-delay: .1s;
   transition-delay: .1s;
   width: 100px;
+  padding: 10px;
 }
 [data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-2 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
@@ -5201,7 +5205,7 @@ padding-left: 50px;
   -webkit-transition-delay: .6s;
   transition-delay: .6s;
   width: 122px;
-  padding: 10px;
+  padding: 13px;
 }
 [data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-7 .company-icon {
   background-image: url(../images/company-icon-spritesheet.png);
@@ -5306,7 +5310,7 @@ body {
 }
 }
 @media (max-width:1279px) {
-  .container {
+  .container-technologies {
     width: 100%;
     max-width: 1200px;
     padding-left: 30px;
@@ -5348,66 +5352,66 @@ body {
 
 
 @media (max-width:1279px) {
-  .page-content[data-page=index] section.testimonies .container .company-icons {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons {
       min-height: 440px;
       margin-left: 0;
       margin-top: 50px;
       width: 100%}
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-1 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-1 {
       height: 130px;
       width: 130px;
       margin-left: 8vw;
       margin-top: 0px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-2 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-2 {
       height: 100px;
       width: 100px;
       margin-left: 28vw;
       margin-top: 10px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-3 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-3 {
       height: 104px;
       margin-left: 0px;
       margin-top: 130px;
       width: 104px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-4 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-4 {
       height: 125px;
       margin-left: 18vw;
       margin-top: 125px;
       width: 125px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-4 .company-icon {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-4 .company-icon {
       width: 69px !important;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-5 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-5 {
       height: 110px;
       margin-left: 42vw;
       margin-top: 260px;
       width: 110px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-5 .company-icon {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-5 .company-icon {
       width: 85%!important;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-6 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-6 {
       height: 100px;
       margin-left: 26vw;
       margin-top: 270px;
       width: 100px;
     }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-7 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-7 {
       height: 122px;
       margin-left: 7vw;
       margin-top: 240px;
       width: 122px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-8 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-8 {
       height: 105px;
       margin-left: 33vw;
       margin-top: 150px;
       width: 105px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-9 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-9 {
       animation-duration: 4s;
       height: 110px;
       margin-left: 43vw;
@@ -5418,112 +5422,115 @@ body {
       width: 110px;
       padding: 22px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-9 .company-icon {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-9 .company-icon {
       width: 96px!important;
       height: 64px!important;
   }
 }
 @media (max-width:991px) {
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-1 {
+  .container-technologies{
+    position: relative;
+  }
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-1 {
       margin-left: 17vw;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-2 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-2 {
       margin-left: 53vw;
   }
-  /*.page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-3 {
+  /*.page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-3 {
       margin-left: 53vw;
   }*/
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-4 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-4 {
       margin-left: 33vw;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-5 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-5 {
       margin-left: 76vw;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-6 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-6 {
       margin-left: 49vw;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-7 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-7 {
       margin-left: 14vw;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-8 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-8 {
       margin-left: 61vw;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-9 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-9 {
       margin-left: 78vw;
   }
 
 }
 @media (max-width:767px) {
-  .page-content[data-page=index] section.testimonies .container {
+  .page-content[data-page=index] section.testimonies .container-technologies {
       margin-left: 0;
       margin-right: 0;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons {
       min-height: 440px;
       margin-left: 0;
       margin-top: 40px;
       width: 100%
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-1 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-1 {
       height: 121px;
       width: 121px;
       margin-left: 11vw;
       margin-top: 0px;
       padding: 20px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-2 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-2 {
       height: 80px;
       width: 80px;
       margin-left: 46vw;
       margin-top: 10px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-3 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-3 {
       width: 80px;
       height: 80px;
       margin-left: 0px;
       margin-top: 130px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-4 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-4 {
       height: 125px;
       margin-left: 28vw;
       margin-top: 125px;
       width: 125px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-5 .company-icon {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-5 .company-icon {
       width: 85%!important;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-5 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-5 {
       height: 110px;
       margin-left: 69vw;
       margin-top: 260px;
       width: 110px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-6 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-6 {
       height: 100px;
       margin-left: 42vw;
       margin-top: 270px;
       width: 100px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-7 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-7 {
       height: 122px;
       margin-left: 7vw;
       margin-top: 240px;
       width: 122px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-8 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-8 {
       height: 90px;
       margin-left: 58vw;
       margin-top: 150px;
       width: 90px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-9 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-9 {
       width: 100px;
       height: 100px;
       margin-left: 69vw;
       margin-top: 30px;
       padding: 0;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-9 .company-icon {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-9 .company-icon {
       width: 96px!important;
       height: 46px!important;
   }
@@ -5533,61 +5540,61 @@ body {
 }
 
 @media (max-width:479px) {
-  .page-content[data-page=index] section.testimonies .container .company-icons {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons {
       min-height: 708px;
       margin-left: 0;
       margin-top: 40px;
       width: 100%
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-1 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-1 {
       height: 102px;
       width: 102px;
       margin-left: 2vw;
       margin-top: 15px;
       padding: 20px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-2 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-2 {
       height: 80px;
       width: 80px;
       margin-left: 41vw;
       margin-top: 0px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-3 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-3 {
       width: 80px;
       height: 80px;
       margin-left: 0px;
       margin-top: 160px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-4 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-4 {
       height: 103px;
       margin-left: 28vw;
       margin-top: 98px;
       width: 103px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-5 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-5 {
       height: 93px;
       margin-left: 66vw;
       margin-top: 290px;
       width: 93px;
       padding: 22px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-6 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-6 {
       height: 87px;
       margin-left: 41vw;
       margin-top: 222px;
       width: 87px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-7 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-7 {
     margin-top: 255px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-8 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-8 {
       height: 77px;
       margin-left: 66vw;
       margin-top: 165px;
       width: 77px;
 
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-9 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-9 {
       width: 90px;
       height: 90px;
       margin-left: 66vw;
@@ -5596,17 +5603,17 @@ body {
   }
 }
 @media (max-width:374px) {
-  .page-content[data-page=index] section.testimonies .container {
+  .page-content[data-page=index] section.testimonies .container-technologies {
     padding-left: 15px!important;
     padding-right: 15px!important;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-5 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-5 {
       margin-top: 294px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-6 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-6 {
       margin-top: 217px;
   }
-  .page-content[data-page=index] section.testimonies .container .company-icons .company-icon-container.ring-7 {
+  .page-content[data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-7 {
       margin-left: 2vw;
   }
 }
@@ -5616,11 +5623,9 @@ body {
 }
 }
 @keyframes one-animated {
-  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  box-shadow:15px 15px 50px rgba(0, 0, 0, 0.2); }
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;}
   25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-  box-shadow:-10px -5px 50px rgba(0, 0, 0, 0.2); }
+  50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;}
   75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
 }
 @keyframes two-animated {

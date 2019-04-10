@@ -162,7 +162,7 @@
         <div id="wrapper">
             <div class="marketing-page page-content" data-page="index">
                 <section class="wrapper-technologies" >
-                <div class="container-technologies">
+                <div class="container container-technologies">
                     <div class="company-icons">
 
                         <?php 
