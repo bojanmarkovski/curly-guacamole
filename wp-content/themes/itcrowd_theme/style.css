@@ -1158,6 +1158,11 @@ button.close:focus {
 
 .wrap-about-us {
 	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.card{
+	display: none;
 }
 
 .paragraph-career {
@@ -4387,6 +4392,14 @@ ul p {
 
 .error404 .error-wrapper{
 	height: 90vh;
+}
+
+.error404 .iq-banner .banner-objects .banner-objects-03 {
+	border: 30px solid rgba(255, 255, 255, 0.5);
+}
+
+.error404 .iq-banner .banner-objects .banner-objects-02{
+	border: 15px solid rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (max-width: 992px) {
