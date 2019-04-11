@@ -5473,3 +5473,24 @@ body {
 .box-justify-text {
 	text-align: justify;
 }
+
+/* ERROR PAGE ========================================================== */
+.error404 .iq-banner.overview-block-pt.iq-bg-over.iq-over-blue-90.iq-parallax {
+	width: auto;
+}
+
+.error404 .error-wrapper{
+	height: 90vh;
+}
+
+@media screen and (max-width: 992px) {
+	.error404 .error-img{
+		width: 100%;
+		margin-top: 10vh;
+	}
+	.error404 .error-wrapper{
+		height: auto;
+		padding-bottom: 10vh;
+	}
+}
+/* END ERROR PAGE ====================================================== */

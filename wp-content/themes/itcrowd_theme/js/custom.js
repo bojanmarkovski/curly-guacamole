@@ -24,6 +24,7 @@ $(document).ready(function(){
     // NAVBAR
     $(".page-template-homepage .header").css("background-color", "rgba(0,0,0,0.6)");
     $(".page-template-contact .header").css("background-color", "rgba(0,0,0,0.6)");
+    $(".error404 .header").css("background-color", "rgba(0,0,0,0.6)");
 
     if($( window ).width() > 991){
 
@@ -46,6 +47,10 @@ $(document).ready(function(){
                 $(".page-template-contact .logo").css({"padding-top" : "0px", "transition" : "0.4s"})
                 $(".page-template-contact .header ul li").css({"padding" : "0", "transition" : "0.4s"});
                 $(".page-template-contact .header").css({"background-color" : "#222222", "transition" : "0.4s"});
+                // ERROR PAGE
+                $(".error404 .logo").css({"padding-top" : "0px", "transition" : "0.4s"})
+                $(".error404 .header ul li").css({"padding" : "0", "transition" : "0.4s"});
+                $(".error404 .header").css({"background-color" : "#222222", "transition" : "0.4s"});
             }
             else {
                 // HOME PAGE PAGE
@@ -65,6 +70,10 @@ $(document).ready(function(){
                 $(".page-template-contact .logo").css({"padding-top" : "5px" ,"transition" : "0.4s"});
                 $(".page-template-contact .header ul li").css({"padding" : "5px 0px", "transition" : "0.4s"});
                 $(".page-template-contact .header").css({"background-color" : "rgba(0,0,0,0.6)", "transition" : "0.4s"});
+                // ERROR PAGE
+                $(".error404 .logo").css({"padding-top" : "5px" ,"transition" : "0.4s"});
+                $(".error404 .header ul li").css({"padding" : "5px 0px", "transition" : "0.4s"});
+                $(".error404 .header").css({"background-color" : "rgba(0,0,0,0.6)", "transition" : "0.4s"});
             }
         });
     }
@@ -92,6 +101,8 @@ $(document).ready(function(){
                 $(".page-template-homepage .header").css("background-color", "#222222");
                 // CONTACT PAGE
                 $(".page-template-contact .header").css("background-color", "#222222");
+                // ERROR PAGE
+                $(".error404 .header").css("background-color", "#222222");
             }
         });
 
@@ -128,6 +139,12 @@ $(document).ready(function(){
                         });
                         $(".page-template-contact .header").removeClass("shrink");
                         $(".page-template-contact .nav.navbar-inverse.header").css("background", "#222222");
+                        // ERROR PAGE
+                        $(".error404 .header button").on("click", function() {
+                            $(".error404 .nav.navbar-inverse.header").css("background", "#222222");
+                        });
+                        $(".error404 .header").removeClass("shrink");
+                        $(".error404 .nav.navbar-inverse.header").css("background", "#222222");
                     } 
                     else {
                         // HOME PAGE
@@ -136,6 +153,9 @@ $(document).ready(function(){
                         // CONTACT PAGE
                         $(".page-template-contact .header").removeClass("shrink");
                         $(".page-template-contact .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
+                        // ERROR PAGE
+                        $(".error404 .header").removeClass("shrink");
+                        $(".error404 .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
                     }
                 }
                 else if(st + $(window).height() < $(document).height()) {
@@ -147,6 +167,9 @@ $(document).ready(function(){
                     // CONTACT PAGE                    
                     $(".page-template-contact .header").css("background", "#222222", "!important");
                     $(".page-template-contact .nav.navbar-inverse.header").css("background", "#222222");
+                    // ERROR PAGE
+                    $(".error404 .header").css("background", "#222222", "!important");
+                    $(".error404 .nav.navbar-inverse.header").css("background", "#222222");
                 }
             }
             lastScrollTop = st;
