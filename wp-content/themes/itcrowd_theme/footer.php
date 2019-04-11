@@ -16,7 +16,7 @@
 <div class="row footer">
 				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
 					<div class="row border-bottom">
-						<div class="col-lg-4 col-md-4 col-sm-12 display-none-mobile">
+						<div class="col-lg-4 col-md-4 col-sm-12 display-none-tablet">
 							<a href="/">
 							<img class="img-responsive" src="<?php echo get_site_url(); ?>/wp-content/uploads/2019/04/logo.png"></a>
 							<p> <i class="fas fa-map-marker-alt"></i>
@@ -27,7 +27,7 @@
 							</p>
 						</div>
 
-						<div class="col-lg-4 col-md-4 col-sm-12 text-center display-none-mobile">
+						<div class="col-lg-4 col-md-4 col-sm-12 text-center display-none-tablet">
 							<!-- Rendering menu items -->
                             <?php if ( has_nav_menu( 'footer' ) ) : ?>
 							
