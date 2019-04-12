@@ -47,7 +47,8 @@
                                             
                                         
                                         <?php 
-                                            $firstWord = explode(' ', $term->post_title)[0];
+                                            $parts = explode(' ', $term->post_title);
+                                            $firstWord = $parts[0];
 
                                             $spanContainer = '';
                                             for($i = 0; $i < strlen($firstWord); $i++) {
@@ -92,7 +93,8 @@
                                         <div style="display: inline-block">
                                         
                                         <?php 
-                                            $firstWord = explode(' ', $term->post_title)[0];
+                                            $parts = explode(' ', $term->post_title);
+                                            $firstWord = $parts[0];
 
                                             $spanContainer = '';
                                             for($i = 0; $i < strlen($firstWord); $i++) {

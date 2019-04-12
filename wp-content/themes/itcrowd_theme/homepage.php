@@ -39,9 +39,9 @@
                                         <?php echo $term->post_title; ?>
                                     </h1>
                                     
-                                    <p class="iq-font-white iq-pt-15">
+                                    <div class="iq-font-white iq-pt-15">
                                         <?php echo $term->post_content; ?>
-                                    </p>
+                                    </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 z-index">
                                     <img class="banner-img img-fluid watch-img slideInUpMobile" src="<?php echo get_field('left_image_src', $term->ID); ?>" alt="" style="visibility: visible;">
@@ -71,7 +71,13 @@
     </div>
     <div class="waveWrapper waveAnimation">
     <div class="waveWrapperInner bgBottom">
-        <div class="wave waveBottom" style="background-image: url('<?php echo wp_upload_dir()['url']; ?>/water1.png');"></div>
+
+        <?php 
+            $uploaDirUrlObj = wp_upload_dir();
+            $uploaDirUrl = $uploaDirUrlObj["url"];
+        ?>
+
+        <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/water1.png');"></div>
     </div>
     </div>
 </div>
@@ -220,7 +226,7 @@
                         <span>Python</span>
                     </li>
                 </ul>
-                <div class="icon-progress first-title" style="background-image: url('<?php echo wp_upload_dir()['url']; ?>/planning.png');">
+                <div class="icon-progress first-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/planning.png');">
                 </div>
             </div>
             <!-- SECOND -->
@@ -240,7 +246,7 @@
                         <span>Python</span>
                     </li>
                 </ul>
-                <div class="icon-progress second-title" style="background-image: url('<?php echo wp_upload_dir()['url']; ?>/content.png');">
+                <div class="icon-progress second-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/content.png');">
                 </div>
                 </div>
                 <div class="progress-title second-title">
@@ -269,7 +275,7 @@
                         <span>Python</span>
                     </li>
                 </ul>
-                <div class="icon-progress third-title" style="background-image: url('<?php echo wp_upload_dir()['url']; ?>/design.png');">
+                <div class="icon-progress third-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/design.png');">
                 </div>
                 </div>
             </div>
@@ -282,7 +288,7 @@
                     <li></li>
                     <li></li>
                 </ul>
-                <div class="icon-progress fourth-title" style="background-image: url('<?php echo wp_upload_dir()['url']; ?>/development.png');">
+                <div class="icon-progress fourth-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/development.png');">
                 </div>
                 </div>
                 <div class="progress-title fourth-title">
@@ -311,7 +317,7 @@
                         <span>Python</span>
                     </li>
                 </ul>
-                <div class="icon-progress fifth-title" style="background-image: url('<?php echo wp_upload_dir()['url']; ?>/soft-testing.png');">
+                <div class="icon-progress fifth-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/soft-testing.png');">
                 </div>
                 </div>
             </div>
@@ -324,7 +330,7 @@
                     <li></li>
                     <li></li>
                 </ul>
-                <div class="icon-progress sixth-title" style="background-image: url('<?php echo wp_upload_dir()['url']; ?>/support.png');">
+                <div class="icon-progress sixth-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/support.png');">
                 </div>
                 </div>
                 <div class="progress-title sixth-title">
@@ -343,60 +349,5 @@
 
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/slick/slick.min.js"></script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/Home.js"></script>
-
-<script>
-    $(document).ready(function() {
-        if ($( window ).width() >= 992) {
-        // $(".z-index .slideInUpMobile").css("z-index", "2").animate({top: '40%'},1200);
-        $(".z-index .slideInUpWatch").animate({top: '45%'},2400);
-        $(".z-index .slideInUpMobile")
-            .animate({
-                    top: '30%'
-            },800)
-            .animate({
-                    top: "50%"
-            },700)
-            .animate({
-                    top: "40%"
-            },600)
-        }
-        
-        /* Every time the window is scrolled ... */
-        
-    
-    });
-
-    // MAIN SLIDER
-    $('.one-time').slick({
-        dots: true,
-        infinite: true,
-        speed: 700,
-        slidesToShow: 1,
-        adaptiveHeight: true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-    });
-    
-    $(window).scroll( function(){
-        
-        /* Check the location of each desired element */
-        $('.our-skills-process').each( function(i){
-            var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
-            var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
-            if( bottomOfWindow > startingPositionOurSkills ){
-                $(".wrapper-technologies").addClass("testimonies");
-                $(".company-icons").css("visibility" , "visible");
-            }
-        });
-        $('.work-process-row-container').each( function(i){
-        
-            var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
-            var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
-            if( bottomOfWindow > startingPositionOurSkills ){
-                $(".work-process").css("display" , "block").addClass("newClass");
-            }
-        });
-    });
-</script>
 
 <?php get_footer(); ?>

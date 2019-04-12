@@ -24,7 +24,7 @@ $(document).ready(function(){
       $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
       boxShadow.removeClass("clicked-cart");
       
-      $(this).parents(".career-left").append($(this));
+    
 
       $('html, body').animate({
         scrollTop: $(".row.pd-70px")
@@ -49,10 +49,11 @@ $(document).ready(function(){
         
         if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
           $($(".career-box")[i]).children("div").slideUp("shadow-paragraph");
-          let inputJobApply = $($(this).find("h3")[0]).text();
-          $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
         }
 
+        let inputJobApply = $(this).find(".career-box").attr('data-name');
+        $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
+        
       }
 
       if (boxShadow.hasClass("shadow-paragraph")) {

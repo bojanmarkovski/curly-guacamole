@@ -158,7 +158,6 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputFile">Attach your CV/Resume *</label>
-                                        <!-- <input type="file"  class="form-control-file custom-file-input" id="exampleInputFile" aria-describedby="fileHelp"> -->
                                         <div class="file-upload-wrapper" data-text="No file chosen" required>
                                             <input name="file-upload-field" type="file" class="file-upload-field" value="" accept=".docx,.ppt,.pptx,.txt,.pdf" required>
                                         </div>
