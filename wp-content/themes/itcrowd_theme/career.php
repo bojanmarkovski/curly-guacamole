@@ -46,7 +46,7 @@
 
                                 <!-- INNER BOX -->
                                 <div class="row pd-box">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 career-box">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 career-box" data-name="<?php echo $term->post_title; ?>">
                                         <p class="first-p">
                                         <?php echo $term->type; ?>
                                         </p>

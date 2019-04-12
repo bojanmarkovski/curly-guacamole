@@ -362,26 +362,7 @@
         }
         
         /* Every time the window is scrolled ... */
-        $(window).scroll( function(){
         
-            /* Check the location of each desired element */
-            $('.our-skills-process').each( function(i){
-                var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
-                var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
-                if( bottomOfWindow > startingPositionOurSkills ){
-                    $(".wrapper-technologies").addClass("testimonies");
-                    $(".company-icons").css("visibility" , "visible");
-                }
-            });
-            $('.work-process-row-container').each( function(i){
-            
-                var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
-                var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
-                if( bottomOfWindow > startingPositionOurSkills ){
-                    $(".work-process").css("display" , "block").addClass("newClass");
-                }
-            });
-        });
     
     });
 
@@ -395,7 +376,27 @@
         autoplay: true,
         autoplaySpeed: 5000,
     });
-
+    
+    $(window).scroll( function(){
+        
+        /* Check the location of each desired element */
+        $('.our-skills-process').each( function(i){
+            var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
+            var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
+            if( bottomOfWindow > startingPositionOurSkills ){
+                $(".wrapper-technologies").addClass("testimonies");
+                $(".company-icons").css("visibility" , "visible");
+            }
+        });
+        $('.work-process-row-container').each( function(i){
+        
+            var startingPositionOurSkills = $(this).position().top + ($(this).outerHeight() / 2) - 70;
+            var bottomOfWindow = $(window).scrollTop() + $(window).height() - 70;
+            if( bottomOfWindow > startingPositionOurSkills ){
+                $(".work-process").css("display" , "block").addClass("newClass");
+            }
+        });
+    });
 </script>
 
 <?php get_footer(); ?>

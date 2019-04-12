@@ -17,11 +17,11 @@ $(document).ready(function(){
       for (var i = 0; i < $(".career-box").length; i++) {
         if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
           $($(".career-box")[i]).children("div").slideUp();
-          let inputJobApply = $($(this).find("h3")[0]).text();
-          $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
         }
       }
 
+      let inputJobApply = $(this).find(".career-box").attr('data-name');
+      $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
       boxShadow.removeClass("clicked-cart");
       
       $(this).parents(".career-left").append($(this));
