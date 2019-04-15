@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	
 	// SLIDER TEAM
 	$('.slider-team').slick({
 		infinite: true,
@@ -29,5 +30,6 @@ $(document).ready(function(){
 			}
 		]
 	});
+	
 });
 

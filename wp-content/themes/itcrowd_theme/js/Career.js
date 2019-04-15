@@ -1,7 +1,8 @@
 $(document).ready(function(){
   
-  if ($(window).width() > 991) {
-    $(".career-left").on('click', '.row.pd-box', function() {
+  // IF WINDOW > 991 AND CLICK ON SOME CARD. SLIDE-DOWN / SLIDE-UP AND APPEND THAT CARD.
+  $(".career-left").on('click', '.row.pd-box', function() {
+    if ($(window).width() > 991) {
       
       let boxShadow = $(this).find(".career-box").children("div");
       if (boxShadow.hasClass("shadow-paragraph")) {
@@ -23,6 +24,7 @@ $(document).ready(function(){
       let inputJobApply = $(this).find(".career-box").attr('data-name');
       $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
       boxShadow.removeClass("clicked-cart");
+      $(this).parents(".career-left").append($(this));
       
     
 
@@ -37,12 +39,9 @@ $(document).ready(function(){
           .offset()
           .top
       }, 900);
-
-    })
-  }
-  else {
-
-    $(".career-left").on('click', '.row.pd-box', function() {
+    }
+    // IF WINDOW < 991 AND CLICK ON SOME CARD. ONLY SLIDE-DOWN / SLIDE-UP
+    else {
 
       let boxShadow = $(this).find(".career-box").children("div");
       for (var i = 0; i < $(".career-box").length; i++) {
@@ -57,7 +56,7 @@ $(document).ready(function(){
       }
 
       if (boxShadow.hasClass("shadow-paragraph")) {
-			  $(this).children("div").children("div").slideDown().css("max-height", "none");
+        $(this).children("div").children("div").slideDown().css("max-height", "none");
         $(this).children("div").children("div").removeClass("shadow-paragraph");
       }
       else {
@@ -73,8 +72,10 @@ $(document).ready(function(){
 
         $(this).children("div").children("div").addClass("shadow-paragraph")
       }
-    });
-  }
+    }
+  })
+  
+  
 
   // INPUT UPLOAD FILE
   $("form").on("change", ".file-upload-field", function() {
@@ -85,6 +86,7 @@ $(document).ready(function(){
     $(this).css("border", "1px solid red")
   });
 
+  // WHEN YOU CLICK ON SOME CARD IN SELECT MENU ADD THE TITLE
   $('.dropdown').change(function(e) {
 
     e.stopPropagation(); // when you click within the content area, it stops the page from seeing it as clicking the body too
@@ -122,6 +124,7 @@ $(document).ready(function(){
   })
 });
 
+// RECAPTCA - I'M NOT A ROBOT
 var onloadCallback = function() {
   grecaptcha.render('re-captcha', {
     'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'

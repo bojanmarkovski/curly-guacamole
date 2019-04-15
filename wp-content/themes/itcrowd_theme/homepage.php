@@ -60,7 +60,7 @@
                             </span>
                         </div>
                         <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;">
-                            <div style="background-image: url('<?php echo get_the_post_thumbnail_url($term); ?>'); position: absolute; top: 0px; left: 0px; width: 2500px; height: 1500px; overflow: hidden; pointer-events: none; margin-top: -245.561px; transform: translate3d(0px, 240.955px, 0px);"></div>
+                            <div style="background-repeat: no-repeat; background-size: cover; background-image: url('<?php echo get_the_post_thumbnail_url($term); ?>'); position: absolute; top: 0px; left: 0px; width: 2500px; height: 1500px; overflow: hidden; pointer-events: none; margin-top: -245.561px; transform: translate3d(0px, 240.955px, 0px);"></div>
                         </div>
                     </section>
                 </div>

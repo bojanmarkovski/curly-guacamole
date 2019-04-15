@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+  // ANIMATE TABLET AND MOBILE ON MAIN SLIDER
   if ($( window ).width() >= 992) {
     $(".z-index .slideInUpWatch").animate({top: '45%'},2400);
     $(".z-index .slideInUpMobile")
@@ -14,6 +15,7 @@ $(document).ready(function(){
       },600)
   }
   
+  // IF WINDOW > 1170 SNAKE IS IN THE MIDDLE
   if($( window ).width() > 1170){
     $(document).ready(function(){
 
@@ -32,6 +34,7 @@ $(document).ready(function(){
     });
   }
 
+  // IF WINDOW <= 1170 ANIMATE SNAKE
   if($( window ).width() <= 1170){
     var flag = true;
 
@@ -61,6 +64,7 @@ $(document).ready(function(){
     });
   }
 
+  // ON SAFARI CHANGE WAVE FROM THE MAIN SLIDER
   if(navigator.userAgent.indexOf('Safari') !=-1 && navigator.userAgent.indexOf('Chrome') == -1){
     $(".waveWrapperInner").css("bottom", "0px");
     $(".waveWrapper").removeClass("waveAnimation");
@@ -78,6 +82,7 @@ $('.one-time').slick({
   autoplaySpeed: 5000,
 });
 
+// ON SCROLL DOWN SHOW DIV
 $(window).scroll( function(){
         
   /* Check the location of each desired element */
