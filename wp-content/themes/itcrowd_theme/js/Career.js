@@ -2,6 +2,7 @@ $(document).ready(function(){
   
   // IF WINDOW > 991 AND CLICK ON SOME CARD. SLIDE-DOWN / SLIDE-UP AND APPEND THAT CARD.
   $(".career-left").on('click', '.row.pd-box', function() {
+
     if ($(window).width() > 991) {
       
       let boxShadow = $(this).find(".career-box").children("div");
@@ -25,8 +26,6 @@ $(document).ready(function(){
       $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
       boxShadow.removeClass("clicked-cart");
       $(this).parents(".career-left").append($(this));
-      
-    
 
       $('html, body').animate({
         scrollTop: $(".row.pd-70px")
@@ -39,7 +38,9 @@ $(document).ready(function(){
           .offset()
           .top
       }, 900);
+
     }
+    
     // IF WINDOW < 991 AND CLICK ON SOME CARD. ONLY SLIDE-DOWN / SLIDE-UP
     else {
 
@@ -73,6 +74,7 @@ $(document).ready(function(){
         $(this).children("div").children("div").addClass("shadow-paragraph")
       }
     }
+
   })
   
   

@@ -4248,9 +4248,8 @@ ul p {
 	font-size: 46px;
 }
 
-.iq-fancy-boxnew .fancy-content h5 {
-	z-index: 9;
-	position: relative;
+.fancy-content h4 {
+	padding-top: 15px;
 }
 
 .iq-works-imgs {
@@ -4418,4 +4417,14 @@ ul p {
 	height: 150px !important;
 	display: flex;
     align-items: center;
+}
+
+body .loginControl.login{
+	display: none;
+}
+body .login-control{
+	display: none !important;
+}
+body .profile-photo.profile-email.profile-photo-light img{
+	display: none !important;
 }
