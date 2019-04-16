@@ -4,7 +4,7 @@ $(document).ready(function(){
   $(".career-left").on('click', '.row.pd-box', function() {
 
     if ($(window).width() > 991) {
-      
+
       let boxShadow = $(this).find(".career-box").children("div");
       if (boxShadow.hasClass("shadow-paragraph")) {
         boxShadow.removeClass("shadow-paragraph");
@@ -40,7 +40,7 @@ $(document).ready(function(){
       }, 900);
 
     }
-    
+
     // IF WINDOW < 991 AND CLICK ON SOME CARD. ONLY SLIDE-DOWN / SLIDE-UP
     else {
 

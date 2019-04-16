@@ -7,8 +7,17 @@
 <!-- Content -->
 
 <div class="container-fluid">
-         <div class="row mapa-img" id="google-container">
-         </div>
+         <!-- <div class="row mapa-img" id="google-container">
+         </div> -->
+
+         <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d741.1834924105459!2d21.391825488128465!3d42.00598459523575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415ca41a4d55b%3A0x7008af860fc64af5!2sITCrowd!5e0!3m2!1sen!2smk!4v1555397487367!5m2!1sen!2smk" 
+            class="dada" 
+            frameborder="0" 
+            style="border:0; margin-top: -150px;" 
+            allowfullscreen>
+         </iframe>
+         
          <div class="row">
             <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 display-none-tablet">
                <div class="contact-us-container">
@@ -136,7 +145,7 @@
 <!-- Content END -->
 
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/Contact.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
     async defer></script>

@@ -4428,3 +4428,12 @@ body .login-control{
 body .profile-photo.profile-email.profile-photo-light img{
 	display: none !important;
 }
+.dada{
+	width: 100% !important;
+	height: 100vh !important;
+	-webkit-filter: grayscale(100%) !important;
+	-moz-filter: grayscale(100%) !important;
+	-ms-filter: grayscale(100%) !important;
+	-o-filter: grayscale(100%) !important;
+	 filter: grayscale(100%) !important;
+}
