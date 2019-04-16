@@ -24,7 +24,7 @@ $(document).ready(function(){
 
     // NAVBAR
     $(".page-template-homepage .header").css("background-color", "rgba(0,0,0,0.6)");
-    $(".page-template-contact .header").css("background-color", "rgba(0,0,0,0.6)");
+    $(".page-template-contact .header").css("background-color", "rgba(0,0,0,0.8)");
     $(".error404 .header").css("background-color", "rgba(0,0,0,0.6)");
 
     if($( window ).width() > 991){
@@ -70,7 +70,7 @@ $(document).ready(function(){
                 // CONTACT PAGE
                 $(".page-template-contact .logo").css({"padding-top" : "5px" ,"transition" : "0.4s"});
                 $(".page-template-contact .header ul li").css({"padding" : "5px 0px", "transition" : "0.4s"});
-                $(".page-template-contact .header").css({"background-color" : "rgba(0,0,0,0.6)", "transition" : "0.4s"});
+                $(".page-template-contact .header").css({"background-color" : "rgba(0,0,0,0.8)", "transition" : "0.4s"});
                 // ERROR PAGE
                 $(".error404 .logo").css({"padding-top" : "5px" ,"transition" : "0.4s"});
                 $(".error404 .header ul li").css({"padding" : "5px 0px", "transition" : "0.4s"});
@@ -153,7 +153,7 @@ $(document).ready(function(){
                         $(".page-template-homepage .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
                         // CONTACT PAGE
                         $(".page-template-contact .header").removeClass("shrink");
-                        $(".page-template-contact .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
+                        $(".page-template-contact .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.8)");
                         // ERROR PAGE
                         $(".error404 .header").removeClass("shrink");
                         $(".error404 .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
@@ -193,7 +193,8 @@ $(document).ready(function(){
                     // ALL PAGES
                     $(".header").removeClass("shrink");
                     $(".page-template-homepage .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
-                    $(".page-template-contact .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
+                    $(".page-template-contact .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.8)");
+                    $(".error404 .nav.navbar-inverse.header").css("background-color", "rgba(0,0,0,0.6)");
                 }
             }
         }
