@@ -71,7 +71,7 @@ $(document).ready(function(){
           }
         }
 
-        $(this).children("div").children("div").addClass("shadow-paragraph")
+        $(this).children("div").children("div").addClass("shadow-paragraph");
       }
     }
 
@@ -85,7 +85,7 @@ $(document).ready(function(){
   });
 
   $(".file-upload-field").on("click", function() {
-    $(this).css("border", "1px solid red")
+    $(this).css("border", "1px solid red");
   });
 
   // WHEN YOU CLICK ON SOME CARD IN SELECT MENU ADD THE TITLE
@@ -106,6 +106,7 @@ $(document).ready(function(){
   });
 
   $('body').click(function() {
+
     if (!$(".dropdown").hasClass("input-holder") && $(".first-option").css("display") == "none") {
       $(".dropdown").addClass("input-holder");
       $(".first-option").css({"display" : "block" , "transition": "0.7s"}).text("I am applying for *");
@@ -124,6 +125,7 @@ $(document).ready(function(){
   $(".modal-dialog button").on('click', function() {
     $(".form-check-input").prop('checked', true);
   })
+  
 });
 
 // RECAPTCA - I'M NOT A ROBOT
