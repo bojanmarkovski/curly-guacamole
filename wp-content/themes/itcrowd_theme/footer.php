@@ -12,8 +12,8 @@
 
 ?>
 
-    <div class="container-fluid">
-<div class="row footer">
+    <div class="container-fluid blur-modal">
+		<div class="row footer">
 				<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
 					<div class="row border-bottom">
 						<div class="col-lg-4 col-md-4 col-sm-12 display-none-tablet">

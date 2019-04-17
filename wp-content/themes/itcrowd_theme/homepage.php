@@ -70,15 +70,15 @@
 
     </div>
     <div class="waveWrapper waveAnimation">
-    <div class="waveWrapperInner bgBottom">
+        <div class="waveWrapperInner bgBottom">
 
-        <?php 
-            $uploaDirUrlObj = wp_upload_dir();
-            $uploaDirUrl = $uploaDirUrlObj["url"];
-        ?>
+            <?php 
+                $uploaDirUrlObj = wp_upload_dir();
+                $uploaDirUrl = $uploaDirUrlObj["url"];
+            ?>
 
-        <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/water1.png');"></div>
-    </div>
+            <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/water1.png');"></div>
+        </div>
     </div>
 </div>
 
@@ -129,73 +129,98 @@
 
             </div>
         </div>
+        
     </div>
 
     <!-- TECHNOLOGY, WHAT WE USE -->
     <h2 class="text-uppercase text-center">What we use?</h2>
     <hr>
     <div class="row our-skills-process">
-    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 bg-color">
-                        
-        <?php 
-            $args = array( 
-                'category'            => '3', 
-                'posts_per_page'      => 1 
-            );
-            $myposts = get_posts( $args );
-        ?>
 
-        <?php if ( $myposts ) {
+        <div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgBottom">
 
-            foreach ( $myposts as $term ) { ?>
+                <?php 
+                    $uploaDirUrlObj = wp_upload_dir();
+                    $uploaDirUrl = $uploaDirUrlObj["url"];
+                ?>
 
-                <div>
-                    <h3>
-                        <?php echo $term->post_title; ?>
-                    </h3>
-
-                    <p>
-                    <?php echo $term->post_content; ?>
-                    </p>
-                </div>
-
-            <?php } ?>
-        <?php } ?>
-
-    </div>
-
-    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 bg-color">
-        <div id="wrapper">
-            <div class="marketing-page page-content" data-page="index">
-                <section class="wrapper-technologies">
-                <div class="container-fluid container-technologies">
-                    <div class="company-icons">
-
-                        <?php 
-                            $args = array( 
-                                'category'            => '2', 
-                                'posts_per_page'      => 9 
-                            );
-                            $myposts = get_posts( $args );
-                        ?>
-
-                        <?php if ( $myposts ) {
-
-                            $counter = 1;
-                            foreach ( $myposts as $term ) { ?>
-
-                                <div class="company-icon-container ring-<?php echo $counter++; ?>">
-                                    <div class="image company-icon" style="background-image: url('<?php echo get_the_post_thumbnail_url($term); ?>'); width:130px;height:130px;"></div>
-                                </div>    
-
-                            <?php } ?>
-                        <?php } ?>
-
-                        
+            <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/water1.png');"></div>
+        </div>
                     </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 bg-color">
+                            
+            <?php 
+                $args = array( 
+                    'category'            => '3', 
+                    'posts_per_page'      => 1 
+                );
+                $myposts = get_posts( $args );
+            ?>
+
+            <?php if ( $myposts ) {
+
+                foreach ( $myposts as $term ) { ?>
+
+                    <div>
+                        <h3>
+                            <?php echo $term->post_title; ?>
+                        </h3>
+
+                        <p>
+                        <?php echo $term->post_content; ?>
+                        </p>
+                    </div>
+
+                <?php } ?>
+            <?php } ?>
+
+        </div>
+
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 bg-color">
+            <div id="wrapper">
+                <div class="marketing-page page-content" data-page="index">
+                    <section class="wrapper-technologies">
+                    <div class="container-fluid container-technologies">
+                        <div class="company-icons">
+
+                            <?php 
+                                $args = array( 
+                                    'category'            => '2', 
+                                    'posts_per_page'      => 9 
+                                );
+                                $myposts = get_posts( $args );
+                            ?>
+
+                            <?php if ( $myposts ) {
+
+                                $counter = 1;
+                                foreach ( $myposts as $term ) { ?>
+
+                                    <div class="company-icon-container ring-<?php echo $counter++; ?>">
+                                        <div class="image company-icon" style="background-image: url('<?php echo get_the_post_thumbnail_url($term); ?>'); width:130px;height:130px;"></div>
+                                    </div>    
+
+                                <?php } ?>
+                            <?php } ?>
+
+                            
+                        </div>
+                    </div>
+                    </section>
                 </div>
-                </section>
             </div>
+        </div>
+        <div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgBottom">
+
+                <?php 
+                    $uploaDirUrlObj = wp_upload_dir();
+                    $uploaDirUrl = $uploaDirUrlObj["url"];
+                ?>
+
+            <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/water1.png');"></div>
         </div>
     </div>
     </div>

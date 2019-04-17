@@ -76,7 +76,7 @@ $(document).ready(function(){
   }
 
   // ON SAFARI CHANGE WAVE FROM THE MAIN SLIDER
-  if(navigator.userAgent.indexOf('Safari') !=-1 && navigator.userAgent.indexOf('Chrome') == -1){
+  if(navigator.userAgent.indexOf('Safari') !=-1 && navigator.userAgent.indexOf('Chrome') == -1 && $( window ).width() >= 991){
     $(".waveWrapperInner").css("bottom", "0px");
     $(".waveWrapper").removeClass("waveAnimation");
   }

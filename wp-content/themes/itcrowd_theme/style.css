@@ -975,6 +975,12 @@ a.animated-button.thar-three:before {
 /*MODAL FORM*/
 /*INPUTS*/
 
+.page-template-services .modal-body {
+	height: 470px;
+	overflow-y: auto;
+	margin-bottom: 10px;
+}
+
 .modal.fade.in {
 	background-color: rgba(0, 0, 0, 0.7)
 }
@@ -1709,7 +1715,7 @@ ul li {
 	overflow-y: initial !important;
 }
 
-.modal-body {
+.page-template-career .modal-body {
 	height: 60vh;
 	overflow-y: auto;
 	margin-bottom: 10px;
@@ -4436,4 +4442,30 @@ body .profile-photo.profile-email.profile-photo-light img{
 	-ms-filter: grayscale(100%) !important;
 	-o-filter: grayscale(100%) !important;
 	 filter: grayscale(55%) !important;
+}
+
+
+.our-skills-process .waveWrapper.waveAnimation{
+	width: 100%;
+    height: 140px;
+    position: relative;
+}
+.our-skills-process .waveWrapperInner{
+	bottom: 0;
+}
+.our-skills-process .waveAnimation .waveBottom{
+	animation: unset;
+}
+
+.development .waveWrapper.waveAnimation{
+	width: 100%;
+    height: 140px;
+	position: relative;
+	margin-right: 0;
+}
+.development .waveWrapperInner{
+	bottom: 0;
+}
+.development .waveAnimation .waveBottom{
+	animation: unset;
 }
