@@ -1629,6 +1629,14 @@ button.close:focus {
 
 /*INPUTS*/
 
+.page-template-career .modal-body{
+	padding: 0 15px;
+}
+
+.page-template-career .modal-body h3{
+	font-weight: 700;
+}
+
 .page-template-career .holder .placeholder-textarea {
 	top: 5%;
 }
@@ -3318,11 +3326,6 @@ ul p {
 }
 
 /*OUR TECHNOLOGIES*/
-
-.our-skills-process {
-	/* background-color: #b5554d; */
-}
-
 .container-technologies {
 	width: 750px;
 }
@@ -3332,9 +3335,7 @@ ul p {
 }
 
 .our-skills-process .bg-color {
-	/* background-color: #b5554d; */
 	padding: 0;
-	/* color: white; */
 }
 
 .our-skills-process .bg-color p {
@@ -4452,10 +4453,23 @@ body .profile-photo.profile-email.profile-photo-light img{
     height: 100px;
     position: relative;
 }
+@media screen and (max-width: 992px) {
+	.our-skills-process .waveWrapper.waveAnimation{
+		height: 75px;
+	}
+}
+.our-skills-process .waveWrapper.waveAnimation:first-child { 
+	height: 50px;
+}
 .our-skills-process .waveWrapperInner{
 	bottom: 0;
 }
 .our-skills-process .waveAnimation .waveBottom{
 	animation: unset;
 	width: 250%;
+}
+
+.our-services .btn:active:focus, .our-services .btn:focus {
+	color: white;
+	outline: unset;
 }

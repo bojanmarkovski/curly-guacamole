@@ -168,7 +168,7 @@
                         </h3>
 
                         <p>
-                        <?php echo $term->post_content; ?>
+                            <?php echo $term->post_content; ?>
                         </p>
                     </div>
 

@@ -161,21 +161,13 @@
       </div>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <!-- <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            	<div class="modal-header">
-            		<button type="button" class="close bg-black" data-dismiss="modal" aria-label="Close">
-            		 <span aria-hidden="">&times;</span>
-            		</button>
-            		<h2 class="modal-title" id="exampleModalLabel">Pop me a message</h2>
-            	</div> -->
          <div class="modal-dialog" role="document">
             <div class="modal-content">
                <div class="modal-header">
                   <button type="button" class="close bg-black" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="">&times;</span>
                   </button>
-                  <h2>Privacy Policy</h2>
+                  <h2>Contact Us</h2>
                </div>
                <div class="modal-body">
                 <form action="/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
