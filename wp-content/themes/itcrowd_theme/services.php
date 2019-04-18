@@ -178,12 +178,12 @@
                   <h2>Privacy Policy</h2>
                </div>
                <div class="modal-body">
-                  <form>
+                <form action="/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
                      <div class="form-group">
                         <!-- NAME INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" type="text" placeholder=" " required>
+                              <input class="input" name="your-company" type="text" placeholder=" " required>
                               <div class="placeholder">Your company *</div>
                               <div class="error">Please enter a valid Company name</div>
                            </div>
@@ -191,7 +191,7 @@
                         <!-- E-MAIL INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" type="email" placeholder=" " required>
+                              <input class="input" name="your-email" type="email" placeholder=" " required>
                               <div class="placeholder">Your e-mail *</div>
                               <div class="error">Please enter a valid email</div>
                            </div>
@@ -199,7 +199,7 @@
                         <!-- NAME INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" type="text" placeholder=" " required>
+                              <input class="input" name="your-subject" type="text" placeholder=" " required>
                               <div class="placeholder">Subject *</div>
                               <div class="error">Please enter a subject</div>
                            </div>
@@ -207,7 +207,7 @@
                         <!-- TEXT AREA -->
                         <div class="holder">
                            <div class="input-holder">
-                              <textarea class="input" placeholder=" " rows="4" required></textarea>
+                              <textarea class="input" name="your-message" placeholder=" " rows="4" required></textarea>
                               <div class="placeholder placeholder-textarea">Your Message</div>
                               <div class="error">Please enter a valid message</div>
                            </div>
@@ -216,12 +216,13 @@
                         <div id="re-captcha"></div>
 
                      </div>
-                  </form>
-               </div>
-               <div class="modal-footer">
-                  <button id="btn-close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-secondary">Send e-mail</button>
-               </div>
+                  
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-secondary">Send e-mail</button>
+                    </div>
+                </form>
             </div>
          </div>
       </div>

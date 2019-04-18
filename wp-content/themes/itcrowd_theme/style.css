@@ -3320,7 +3320,7 @@ ul p {
 /*OUR TECHNOLOGIES*/
 
 .our-skills-process {
-	background-color: #b5554d;
+	/* background-color: #b5554d; */
 }
 
 .container-technologies {
@@ -3332,9 +3332,9 @@ ul p {
 }
 
 .our-skills-process .bg-color {
-	background-color: #b5554d;
+	/* background-color: #b5554d; */
 	padding: 0;
-	color: white;
+	/* color: white; */
 }
 
 .our-skills-process .bg-color p {
@@ -3509,6 +3509,7 @@ ul p {
 	-moz-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 	box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 	background-color: white;
+	border: 5px solid #c0392b;
 }
 
 [data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container .company-icon-ring-4-logo {
@@ -3652,6 +3653,7 @@ ul p {
 	-webkit-transition-delay: .3s;
 	transition-delay: .3s;
 	width: 136px;
+	padding: 12px;
 }
 
 [data-page=index] section.testimonies .container-technologies .company-icons .company-icon-container.ring-4 .company-icon {
@@ -4447,7 +4449,7 @@ body .profile-photo.profile-email.profile-photo-light img{
 
 .our-skills-process .waveWrapper.waveAnimation{
 	width: 100%;
-    height: 140px;
+    height: 100px;
     position: relative;
 }
 .our-skills-process .waveWrapperInner{
@@ -4455,17 +4457,5 @@ body .profile-photo.profile-email.profile-photo-light img{
 }
 .our-skills-process .waveAnimation .waveBottom{
 	animation: unset;
-}
-
-.development .waveWrapper.waveAnimation{
-	width: 100%;
-    height: 140px;
-	position: relative;
-	margin-right: 0;
-}
-.development .waveWrapperInner{
-	bottom: 0;
-}
-.development .waveAnimation .waveBottom{
-	animation: unset;
+	width: 250%;
 }

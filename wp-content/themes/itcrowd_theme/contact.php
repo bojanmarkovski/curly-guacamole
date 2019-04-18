@@ -27,12 +27,12 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                        <form action="?" method="POST">
+                     <form action="/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" type="text" placeholder=" " required>
+                                    <input class="input" name='your-name' type="text" placeholder=" " required>
                                     <div class="placeholder">Your name *</div>
                                     <div class="error">Please enter a valid Name</div>
                                  </div>
@@ -40,7 +40,7 @@
                               <!-- E-MAIL INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" type="email" placeholder=" " required>
+                                    <input class="input" name="your-email" type="email" placeholder=" " required>
                                     <div class="placeholder">Your e-mail *</div>
                                     <div class="error">Please enter a valid email</div>
                                  </div>
@@ -48,7 +48,7 @@
                               <!-- TEXT AREA -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <textarea class="input" placeholder=" " rows="3" required></textarea>
+                                    <textarea class="input" name="your-message" placeholder=" " rows="3" required></textarea>
                                     <div class="placeholder placeholder-textarea">Your Message</div>
                                  </div>
                               </div>
@@ -89,12 +89,12 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                        <form action="?" method="POST">
+                     <form action="/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" type="text" placeholder=" " required>
+                                    <input class="input" name="your-name-mobile" type="text" placeholder=" " required>
                                     <div class="placeholder">Your name *</div>
                                     <div class="error">Please enter a valid Name</div>
                                  </div>
@@ -102,7 +102,7 @@
                               <!-- E-MAIL INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" type="email" placeholder=" " required>
+                                    <input class="input" name="your-email-mobile" type="email" placeholder=" " required>
                                     <div class="placeholder">Your e-mail *</div>
                                     <div class="error">Please enter a valid email</div>
                                  </div>
@@ -110,7 +110,7 @@
                               <!-- TEXT AREA -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <textarea class="input" placeholder=" " rows="5" required></textarea>
+                                    <textarea class="input" name='your-message-mobile' placeholder=" " rows="5" required></textarea>
                                     <div class="placeholder placeholder-textarea">Your Message</div>
                                  </div>
                               </div>

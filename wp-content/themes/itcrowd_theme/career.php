@@ -97,12 +97,12 @@
                         <!-- FORM GROUP -->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group-20px">
-                                <form>
+                                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <!-- NAME INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" type="text" placeholder=" " required>
+                                                <input class="input" name="your-name" type="text" placeholder=" " required>
                                                 <div class="placeholder">Your name *</div>
                                                 <div class="error">Please enter a valid Name</div>
                                             </div>
@@ -110,7 +110,7 @@
                                         <!-- E-MAIL INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" type="email" placeholder=" " required>
+                                                <input class="input" name="your-email" type="email" placeholder=" " required>
                                                 <div class="placeholder">Your e-mail *</div>
                                                 <div class="error">Please enter a valid email</div>
                                             </div>
@@ -118,7 +118,7 @@
                                         <!-- NUMBER INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" type="number" placeholder=" ">
+                                                <input class="input" name="phone-number" type="number" placeholder=" ">
                                                 <div class="placeholder">Your phone number</div>
                                                 <div class="error">Please enter a valid number</div>
                                             </div>
@@ -126,7 +126,7 @@
                                         <!-- TEXT AREA -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <textarea class="input" placeholder=" " rows="7"></textarea>
+                                                <textarea class="input" name="your-message" placeholder=" " rows="7"></textarea>
                                                 <div class="placeholder placeholder-textarea">Your Message</div>
                                                 <div class="error">Please enter a valid message</div>
                                             </div>
@@ -134,7 +134,7 @@
                                         <!-- SELECT OPTION -->
                                         <div class="holder">
                                             <div class="input-holder dropdown">
-                                                <select placeholder=" " class="input select">
+                                                <select placeholder=" " name="job-position" class="input select">
                                                     <option class="first-option">
                                                         I am applying for *
                                                     </option>
@@ -159,7 +159,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputFile">Attach your CV/Resume *</label>
                                         <div class="file-upload-wrapper" data-text="No file chosen" required>
-                                            <input name="file-upload-field" type="file" class="file-upload-field" value="" accept=".docx,.ppt,.pptx,.txt,.pdf" required>
+                                            <input name="cv-file" type="file" class="file-upload-field" value="" accept=".docx,.ppt,.pptx,.txt,.pdf" required>
                                         </div>
                                     </div>
                                     <div class="form-check">

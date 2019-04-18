@@ -67,7 +67,6 @@ $(document).ready(function(){
           if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
             $(this).children("div").children("div").addClass("shadow-paragraph")
             let inputJobApply = $($(this).find("h3")[0]).text();
-            $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
           }
         }
 

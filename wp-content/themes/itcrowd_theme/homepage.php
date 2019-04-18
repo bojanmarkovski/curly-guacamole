@@ -77,7 +77,7 @@
                 $uploaDirUrl = $uploaDirUrlObj["url"];
             ?>
 
-            <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/water1.png');"></div>
+            <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/slider_wave.png');"></div>
         </div>
     </div>
 </div>
@@ -129,14 +129,12 @@
 
             </div>
         </div>
-        
     </div>
 
     <!-- TECHNOLOGY, WHAT WE USE -->
     <h2 class="text-uppercase text-center">What we use?</h2>
     <hr>
     <div class="row our-skills-process">
-
         <div class="waveWrapper waveAnimation">
             <div class="waveWrapperInner bgBottom">
 
@@ -145,9 +143,10 @@
                     $uploaDirUrl = $uploaDirUrlObj["url"];
                 ?>
 
-            <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/water1.png');"></div>
+                <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/down_img.png');">
+                </div>
+            </div>
         </div>
-                    </div>
 
         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 bg-color">
                             
@@ -220,9 +219,10 @@
                     $uploaDirUrl = $uploaDirUrlObj["url"];
                 ?>
 
-            <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/water1.png');"></div>
+                <div class="wave waveBottom" style="background-image: url('<?php echo $uploaDirUrl; ?>/up_img.png');">
+                </div>
+            </div>
         </div>
-    </div>
     </div>
     <div class="clear">
     </div>
