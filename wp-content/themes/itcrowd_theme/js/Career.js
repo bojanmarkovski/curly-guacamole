@@ -2,6 +2,11 @@ $(document).ready(function(){
   
   // IF WINDOW > 991 AND CLICK ON SOME CARD. SLIDE-DOWN / SLIDE-UP AND APPEND THAT CARD.
   $(".career-left").on('click', '.row.pd-box', function() {
+    
+    
+      if(!$(this).find(".career-box").children("div").hasClass("shadow-paragraph")){
+        $(this).find(".career-box").children("div").addClass("shadow-paragraph");
+      }
 
     if ($(window).width() > 991) {
 
@@ -15,7 +20,7 @@ $(document).ready(function(){
         boxShadow.addClass("shadow-paragraph");
         $($(".career-box")[i]).children("div").slideUp();
       }
-
+      
       for (var i = 0; i < $(".career-box").length; i++) {
         if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
           $($(".career-box")[i]).children("div").slideUp();
