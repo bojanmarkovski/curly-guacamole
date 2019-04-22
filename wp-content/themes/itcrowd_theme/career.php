@@ -230,7 +230,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-            <h4 class="modal-title">ERROR</h4>
+            <h2 class="modal-title">Error</h2>
             </div>
             <div class="modal-body">
             <p>The file is too big. Maximum size is 5MB.</p>

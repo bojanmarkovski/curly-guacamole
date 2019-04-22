@@ -1592,6 +1592,14 @@ button.close:focus {
 	height: auto;
 }
 
+#myModal-error h2{
+	margin-bottom: 10px;
+}
+
+#myModal-error .modal-body{
+	padding: 15px;
+}
+
 @media screen and (max-width: 991px) {
 	.career-box {
 		position: relative;
