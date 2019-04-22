@@ -39,19 +39,20 @@ $(document).ready(function(){
     else {
       let boxShadow = $(this).find(".career-box").children("div");
       if (boxShadow.hasClass("shadow-paragraph")) {
-        $(this).children("div").children("div").slideDown().css("max-height", "none");
+        $(this).children("div").children("div").slideDown(700).css("max-height", "none");
         $(this).children("div").children("div").removeClass("shadow-paragraph");
-        boxShadow.slideDown();
+        boxShadow.slideDown(700);
         boxShadow.addClass('clicked-cart');
       }
       else {
         boxShadow.addClass("shadow-paragraph");
-        $($(".career-box")[i]).children("div").slideUp();
+        $($(".career-box")[i]).children("div").slideUp(700);
       }
 
       for (var i = 0; i < $(".career-box").length; i++) {
         if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
-          $($(".career-box")[i]).children("div").slideUp().addClass("shadow-paragraph");
+         
+          $($(".career-box")[i]).children("div").slideUp(700).addClass("shadow-paragraph");
         }
       }
       boxShadow.removeClass("clicked-cart");
@@ -70,9 +71,25 @@ $(document).ready(function(){
     $(this).parent(".file-upload-wrapper").attr("data-text",$(this).val().replace(/.*(\/|\\)/, ''));
   });
 
-  $(".file-upload-field").on("click", function() {
-    $(this).css("border", "1px solid red");
-  });
+  // SIZE ATTACH FILE
+  $(".file-upload-field").on('change', function(){
+    if(this.files[0].size > 5242880){
+      $("#myModal-error").css("display", "block");
+      $("body").addClass("modal-open");
+      $(".modal.fade").addClass("in");
+      $(".modal-backdrop.fade").addClass("in");
+
+      $("#myModal-error .btn.btn-default").on('click', function(){
+        $("body").removeClass("modal-open");
+        $(".modal.fade").removeClass("in").css("display", "none");
+        $(".modal-backdrop.fade").removeClass("in");
+        var $el = $('.file-upload-wrapper');
+        $el.wrap('<form>').closest('form').get(0).reset();
+        $el.unwrap();
+        $(".file-upload-wrapper").attr("data-text", "No file choosen");
+      });
+    }
+  })
 
   // WHEN YOU CLICK ON SOME CARD IN SELECT MENU ADD THE TITLE
   $('.dropdown').change(function(e) {
@@ -108,10 +125,10 @@ $(document).ready(function(){
   });
 
   // CHECKBOX PRIVACY POLICY
-  $(".modal-dialog button").on('click', function() {
+  $("#exampleModal .modal-dialog button").on('click', function() {
     $(".form-check-input").prop('checked', true);
   })
-  
+
 });
 
 // RECAPTCA - I'M NOT A ROBOT

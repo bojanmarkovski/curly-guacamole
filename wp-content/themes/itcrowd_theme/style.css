@@ -1588,6 +1588,9 @@ button.close:focus {
 	border-radius: 8px;
 }
 
+.page-template-career #myModal-error .modal-body{
+	height: auto;
+}
 
 @media screen and (max-width: 991px) {
 	.career-box {

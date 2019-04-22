@@ -159,7 +159,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputFile">Attach your CV/Resume *</label>
                                         <div class="file-upload-wrapper" data-text="No file chosen" required>
-                                            <input name="cv-file" type="file" class="file-upload-field" value="" accept=".docx,.ppt,.pptx,.txt,.pdf" required>
+                                            <input name="cv-file" type="file" class="file-upload-field" value="" accept="doc,.docx,.pdf" required>
                                         </div>
                                     </div>
                                     <div class="form-check">
@@ -221,6 +221,25 @@
                         <button type="submit" class="btn btn-secondary" data-dismiss="modal">I accept</button>
                     </div>
             </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal-error" role="dialog" style="display: none;">
+        <div class="modal-dialog">
+        
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title">ERROR</h4>
+            </div>
+            <div class="modal-body">
+            <p>The file is too big. Maximum size is 5MB.</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        
         </div>
     </div>
     <!-- Content END -->
