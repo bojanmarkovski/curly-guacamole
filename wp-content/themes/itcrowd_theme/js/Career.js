@@ -2,11 +2,6 @@ $(document).ready(function(){
   
   // IF WINDOW > 991 AND CLICK ON SOME CARD. SLIDE-DOWN / SLIDE-UP AND APPEND THAT CARD.
   $(".career-left").on('click', '.row.pd-box', function() {
-    
-    
-      if(!$(this).find(".career-box").children("div").hasClass("shadow-paragraph")){
-        $(this).find(".career-box").children("div").addClass("shadow-paragraph");
-      }
 
     if ($(window).width() > 991) {
 
@@ -16,19 +11,13 @@ $(document).ready(function(){
         boxShadow.slideDown();
         boxShadow.addClass('clicked-cart');
       }
-      else {
-        boxShadow.addClass("shadow-paragraph");
-        $($(".career-box")[i]).children("div").slideUp();
-      }
-      
+
       for (var i = 0; i < $(".career-box").length; i++) {
         if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
-          $($(".career-box")[i]).children("div").slideUp();
+          $($(".career-box")[i]).children("div").addClass("shadow-paragraph");
         }
       }
 
-      let inputJobApply = $(this).find(".career-box").attr('data-name');
-      $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
       boxShadow.removeClass("clicked-cart");
       $(this).parents(".career-left").append($(this));
 
@@ -48,37 +37,30 @@ $(document).ready(function(){
 
     // IF WINDOW < 991 AND CLICK ON SOME CARD. ONLY SLIDE-DOWN / SLIDE-UP
     else {
-
       let boxShadow = $(this).find(".career-box").children("div");
-      for (var i = 0; i < $(".career-box").length; i++) {
-        
-        if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
-          $($(".career-box")[i]).children("div").slideUp("shadow-paragraph");
-        }
-
-        let inputJobApply = $(this).find(".career-box").attr('data-name');
-        $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
-        
-      }
-
       if (boxShadow.hasClass("shadow-paragraph")) {
         $(this).children("div").children("div").slideDown().css("max-height", "none");
         $(this).children("div").children("div").removeClass("shadow-paragraph");
+        boxShadow.slideDown();
+        boxShadow.addClass('clicked-cart');
       }
       else {
-
-        boxShadow.slideUp("shadow-paragraph");
-        for (var i = 0; i < $(".career-box").length; i++) {
-          if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
-            $(this).children("div").children("div").addClass("shadow-paragraph")
-            let inputJobApply = $($(this).find("h3")[0]).text();
-          }
-        }
-
-        $(this).children("div").children("div").addClass("shadow-paragraph");
+        boxShadow.addClass("shadow-paragraph");
+        $($(".career-box")[i]).children("div").slideUp();
       }
+
+      for (var i = 0; i < $(".career-box").length; i++) {
+        if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
+          $($(".career-box")[i]).children("div").slideUp().addClass("shadow-paragraph");
+        }
+      }
+      boxShadow.removeClass("clicked-cart");
+      
     }
 
+    // INPUT DROPDOWN VALUE
+    let inputJobApply = $(this).find(".career-box").attr('data-name');
+    $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
   })
   
   

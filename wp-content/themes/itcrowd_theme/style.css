@@ -1489,8 +1489,9 @@ button.close:focus {
 }
 
 .shadow-paragraph {
+	display: none;
 	overflow: hidden;
-	max-height: 80px;
+	max-height: none;
 	top: 1s ease-in-out;
 }
 
@@ -1517,7 +1518,7 @@ button.close:focus {
 
 .career-box {
 	width: 90%;
-	min-height: 200px;
+	min-height: 160px;
 	padding: 1.5rem;
 	border-radius: 9px;
 	background: white;
@@ -1560,8 +1561,8 @@ button.close:focus {
 
 .career-box:focus-within~.career-box,
 .row.pd-box:hover~.row.pd-box .career-box {
-	-webkit-transform: translateY(95px);
-	transform: translateY(95px);
+	-webkit-transform: translateY(35px);
+	transform: translateY(35px);
 }
 
 /*SCROLL CARDS*/
@@ -1615,9 +1616,6 @@ button.close:focus {
 	.row.pd-box:hover~.row.pd-box .career-box {
 		-webkit-transform: unset;
 		transform: unset;
-	}
-	.shadow-paragraph {
-		display: none;
 	}
 }
 
