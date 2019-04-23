@@ -1294,6 +1294,14 @@ button.close:focus {
 	transform: translate(50%, -50%);
 }
 
+@media screen and (max-height: 991px) {
+	.page-template-aboutUs .slick-prev.slick-arrow,
+	.page-template-aboutUs .slick-next.slick-arrow{
+		color: white;
+		background:#C0392B;
+	}	
+}
+
 /*CARS HOVER EFFECT*/
 
 .page-template-aboutUs a,
@@ -1598,6 +1606,23 @@ button.close:focus {
 
 #myModal-error .modal-body{
 	padding: 15px;
+	margin-bottom: 0;
+}
+
+#myModal-error .modal-body p{
+	margin: 0;
+}
+
+#myModal-error .modal-footer{
+	padding: 10px 15px;
+}
+
+#myModal-error .btn-default:focus,
+#myModal-error .btn-default:active,
+#myModal-error .btn-default:active:hover{
+	background-color:#222222;
+	border-color:#222222;
+	color: white;
 }
 
 @media screen and (max-width: 991px) {
@@ -4456,7 +4481,7 @@ body .profile-photo.profile-email.profile-photo-light img{
 	 filter: grayscale(55%) !important;
 }
 
-@media (min-width: 991px) and (max-height: 671px) {
+@media (min-width: 991px) and (max-height: 900px) {
 	.mapa{
 		height: 130vh !important;
 	}

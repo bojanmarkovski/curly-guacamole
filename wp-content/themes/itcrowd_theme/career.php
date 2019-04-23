@@ -233,10 +233,10 @@
             <h2 class="modal-title">Error</h2>
             </div>
             <div class="modal-body">
-            <p>The file is too big. Maximum size is 5MB.</p>
+            <p>Sorry, the file you are trying to upload is too big (maximum size is <b>5MB</b>).</p>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
         

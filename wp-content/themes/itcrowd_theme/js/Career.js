@@ -9,16 +9,16 @@ $(document).ready(function(){
       if (boxShadow.hasClass("shadow-paragraph")) {
         boxShadow.removeClass("shadow-paragraph");
         boxShadow.slideDown();
-        boxShadow.addClass('clicked-cart');
+        boxShadow.addClass('clicked-card');
       }
 
       for (var i = 0; i < $(".career-box").length; i++) {
-        if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
+        if (!$($(".career-box")[i]).children("div").hasClass("clicked-card")) {
           $($(".career-box")[i]).children("div").addClass("shadow-paragraph");
         }
       }
 
-      boxShadow.removeClass("clicked-cart");
+      boxShadow.removeClass("clicked-card");
       $(this).parents(".career-left").append($(this));
 
       $('html, body').animate({
@@ -42,7 +42,7 @@ $(document).ready(function(){
         $(this).children("div").children("div").slideDown(700).css("max-height", "none");
         $(this).children("div").children("div").removeClass("shadow-paragraph");
         boxShadow.slideDown(700);
-        boxShadow.addClass('clicked-cart');
+        boxShadow.addClass('clicked-card');
       }
       else {
         boxShadow.addClass("shadow-paragraph");
@@ -50,21 +50,31 @@ $(document).ready(function(){
       }
 
       for (var i = 0; i < $(".career-box").length; i++) {
-        if (!$($(".career-box")[i]).children("div").hasClass("clicked-cart")) {
-         
+        if (!$($(".career-box")[i]).children("div").hasClass("clicked-card")) {
           $($(".career-box")[i]).children("div").slideUp(700).addClass("shadow-paragraph");
         }
       }
-      boxShadow.removeClass("clicked-cart");
-      
+      boxShadow.removeClass("clicked-card");
+
+      // if ($(this).prev().find(".career-box").children("div").hasClass("shadow-paragraph")){
+      //   $('html, body').animate({
+      //     scrollTop: $(this).prev()
+      //     .offset()
+      //     .top + 180
+      //   }, 700)
+      // } else {
+      //   $('html, body').animate({
+      //     scrollTop: $(this).prev()
+      //     .offset()
+      //     .top + 30
+      //   }, 700)
+      // }
     }
 
     // INPUT DROPDOWN VALUE
     let inputJobApply = $(this).find(".career-box").attr('data-name');
     $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
   })
-  
-  
 
   // INPUT UPLOAD FILE
   $("form").on("change", ".file-upload-field", function() {
