@@ -170,7 +170,7 @@
                   <h2>Contact Us</h2>
                </div>
                <div class="modal-body">
-                <form action="/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
+                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
                      <div class="form-group">
                         <!-- NAME INPUT -->
                         <div class="holder">
@@ -212,14 +212,13 @@
                     </div>
                     <div class="modal-footer">
                         <button id="btn-close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-secondary">Send e-mail</button>
+                        <button type="submit" class="btn btn-secondary btn-submit">Send e-mail</button>
                     </div>
                 </form>
             </div>
          </div>
       </div>
       
-    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d741.1834924104721!2d21.391826829250995!3d42.00598459524209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135415ca41a4d55b%3A0x7008af860fc64af5!2sITCrowd!5e0!3m2!1sen!2smk!4v1555326107615!5m2!1sen!2smk" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
 <!-- Content END -->
 
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/OurServices.js"></script>
