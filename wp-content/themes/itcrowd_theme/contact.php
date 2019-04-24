@@ -27,7 +27,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                     <form action="/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
+                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
@@ -48,8 +48,9 @@
                               <!-- TEXT AREA -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <textarea class="input" name="your-message" placeholder=" " rows="3" required></textarea>
+                                    <textarea class="input" name="your-message" placeholder=" " required rows="3"></textarea>
                                     <div class="placeholder placeholder-textarea">Your Message</div>
+                                    <div class="error">Please enter a valid message</div>
                                  </div>
                               </div>
                               <div id="re-captcha"></div>
@@ -76,6 +77,7 @@
          </div>
       </div>
    </div>
+
    <!-- ONLY ON TABLET AND MOBILE-->
    <div class="row display-none-pc">
       <div class="col-sm-12 col-xs-12">
@@ -89,7 +91,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                     <form action="/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
+                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
@@ -110,8 +112,9 @@
                               <!-- TEXT AREA -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <textarea class="input" name='your-message-mobile' placeholder=" " rows="5" required></textarea>
+                                    <textarea class="input" name='your-message-mobile' placeholder=" " required rows="5"></textarea>
                                     <div class="placeholder placeholder-textarea">Your Message</div>
+                                    <div class="error">Please enter a valid message</div>
                                  </div>
                               </div>
                               <div id="re-captcha"></div>
@@ -135,6 +138,22 @@
                   </div>
                </div>
             </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal fade" id="myModal-error" role="dialog" style="display: none;">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+         <h2 class="modal-title">Successfull</h2>
+         </div>
+         <div class="modal-body">
+            <p>Your message was Successfully sent. Thank you!</p>
+         </div>
+         <div class="modal-footer">
+         <button type="button" class="btn btn-default btn-secondary" data-dismiss="modal">OK</button>
          </div>
       </div>
    </div>

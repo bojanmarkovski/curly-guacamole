@@ -7563,3 +7563,1850 @@ CLIENT -> SERVER: --b1_4a89590a8529a60a973caabfe6e8faee--
 CLIENT -> SERVER: 
 CLIENT -> SERVER: .
 CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:32:00 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@sad.d
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <d0e46b6d1eeeabdff55037cc37fc29da@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_d0e46b6d1eeeabdff55037cc37fc29da"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d0e46b6d1eeeabdff55037cc37fc29da
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: asds, asd@sad.d
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: sdadas
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d0e46b6d1eeeabdff55037cc37fc29da
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: asds, asd@sad.d</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: sdadas</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d0e46b6d1eeeabdff55037cc37fc29da--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:37:46 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@asd.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <82ceb80a7fb2c9ad90e1592171d36512@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_82ceb80a7fb2c9ad90e1592171d36512"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_82ceb80a7fb2c9ad90e1592171d36512
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, ads@asd.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: ads
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_82ceb80a7fb2c9ad90e1592171d36512
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, ads@asd.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: ads</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_82ceb80a7fb2c9ad90e1592171d36512--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:40:24 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@a.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <7c20a88803dbc85e583b7d301d442b15@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_7c20a88803dbc85e583b7d301d442b15"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_7c20a88803dbc85e583b7d301d442b15
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, asd@a.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_7c20a88803dbc85e583b7d301d442b15
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, asd@a.com</p>
+CLIENT -> SERVER: <p>Message Body:</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_7c20a88803dbc85e583b7d301d442b15--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:43:43 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@a.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <fd8b1065e60648c4f2cc2bdf1d93000b@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_fd8b1065e60648c4f2cc2bdf1d93000b"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_fd8b1065e60648c4f2cc2bdf1d93000b
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: das, asd@a.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: das
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_fd8b1065e60648c4f2cc2bdf1d93000b
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: das, asd@a.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: das</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_fd8b1065e60648c4f2cc2bdf1d93000b--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:54:54 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@dsa.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <c65f046ece7c90d41299adc08e8eadbf@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_c65f046ece7c90d41299adc08e8eadbf"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_c65f046ece7c90d41299adc08e8eadbf
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: MOBILE CONTACT, asd@dsa.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: MOBILE CONTACT
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:54:54 +0000
+CLIENT -> SERVER: --b1_c65f046ece7c90d41299adc08e8eadbf
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Reply-To: asd@dsa.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: Message-ID: <a5b40232eba0a1e2ef8a30c90daf9e71@localhost>
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: </head>
+ion: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: <p>From: MOBILE CONTACT, asd@dsa.com</p>
+9e71"
+CLIENT -> SERVER: <p>Message Body:<br />
+g: 8bit
+CLIENT -> SERVER: 
+BILE CONTACT</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_a5b40232eba0a1e2ef8a30c90daf9e71
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_c65f046ece7c90d41299adc08e8eadbf--
+CLIENT -> SERVER: From: MOBILE CONTACT, asd@dsa.com
+CLIENT -> SERVER: 
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: .
+CLIENT -> SERVER: MOBILE CONTACT
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_a5b40232eba0a1e2ef8a30c90daf9e71
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: MOBILE CONTACT, asd@dsa.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: MOBILE CONTACT</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_a5b40232eba0a1e2ef8a30c90daf9e71--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:56:45 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: mobile.contact@hotmail.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <1756a4cd8727a09124764087055c3d85@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_1756a4cd8727a09124764087055c3d85"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1756a4cd8727a09124764087055c3d85
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: Mobile Contact, mobile.contact@hotmail.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: mobile contact is ready to conect :D
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1756a4cd8727a09124764087055c3d85
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: Mobile Contact, mobile.contact@hotmail.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: mobile contact is ready to conect :D</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1756a4cd8727a09124764087055c3d85--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:57:42 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: desktop.contact@hotmail.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <e24296a94b65b99b8b3ceada8ce2a58e@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_e24296a94b65b99b8b3ceada8ce2a58e"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e24296a94b65b99b8b3ceada8ce2a58e
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: Desktop Contact, desktop.contact@hotmail.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: Desktop contact
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e24296a94b65b99b8b3ceada8ce2a58e
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: Desktop Contact, desktop.contact@hotmail.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: Desktop contact</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e24296a94b65b99b8b3ceada8ce2a58e--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:58:47 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: desktop.contact@hotmail.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <e48c4d0fe8abe1d8638ab2fdf22471bf@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_e48c4d0fe8abe1d8638ab2fdf22471bf"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e48c4d0fe8abe1d8638ab2fdf22471bf
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: Desktop Contact, desktop.contact@hotmail.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: Desktop contact
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e48c4d0fe8abe1d8638ab2fdf22471bf
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: Desktop Contact, desktop.contact@hotmail.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: Desktop contact</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e48c4d0fe8abe1d8638ab2fdf22471bf--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:58:53 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: mobile.contact@hotmail.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <2cf3c45822056c5a81e46a08855a8136@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_2cf3c45822056c5a81e46a08855a8136"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_2cf3c45822056c5a81e46a08855a8136
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: Mobile Contact, mobile.contact@hotmail.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: mobile contact is ready to conect :D
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_2cf3c45822056c5a81e46a08855a8136
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: Mobile Contact, mobile.contact@hotmail.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: mobile contact is ready to conect :D</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_2cf3c45822056c5a81e46a08855a8136--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 12:58:55 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: mobile.contact@hotmail.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <742a87565a799418b63d2d5720bf380e@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_742a87565a799418b63d2d5720bf380e"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_742a87565a799418b63d2d5720bf380e
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: Mobile Contact, mobile.contact@hotmail.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: mobile contact is ready to conect :D
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_742a87565a799418b63d2d5720bf380e
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: Mobile Contact, mobile.contact@hotmail.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: mobile contact is ready to conect :D</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_742a87565a799418b63d2d5720bf380e--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:14:32 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: sd@dsa.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <320bd1ee09afa77354becc8dca95c120@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_320bd1ee09afa77354becc8dca95c120"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_320bd1ee09afa77354becc8dca95c120
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: sadads, sd@dsa.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_320bd1ee09afa77354becc8dca95c120
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: sadads, sd@dsa.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_320bd1ee09afa77354becc8dca95c120--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:14:41 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: sd@dsa.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <de655279f7ded61e6387a1e7664b21f0@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_de655279f7ded61e6387a1e7664b21f0"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_de655279f7ded61e6387a1e7664b21f0
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: sadads, sd@dsa.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_de655279f7ded61e6387a1e7664b21f0
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: sadads, sd@dsa.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_de655279f7ded61e6387a1e7664b21f0--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:17:58 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: das@ads.con
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <d41794da0f623ab29b5be59df6fc629d@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_d41794da0f623ab29b5be59df6fc629d"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d41794da0f623ab29b5be59df6fc629d
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: asd, das@ads.con
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: sad
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d41794da0f623ab29b5be59df6fc629d
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: asd, das@ads.con</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: sad</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d41794da0f623ab29b5be59df6fc629d--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:19:36 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <b55ca6b51afbacce94d45984b226bed0@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_b55ca6b51afbacce94d45984b226bed0"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_b55ca6b51afbacce94d45984b226bed0
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: asdsds, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_b55ca6b51afbacce94d45984b226bed0
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: asdsds, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_b55ca6b51afbacce94d45984b226bed0--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:19:43 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <1941e1a84450ff5ba9c3961d4569970f@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_1941e1a84450ff5ba9c3961d4569970f"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1941e1a84450ff5ba9c3961d4569970f
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: asdsds, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1941e1a84450ff5ba9c3961d4569970f
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: asdsds, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1941e1a84450ff5ba9c3961d4569970f--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:20:45 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <2ba600440965d60ebd65922411959fe6@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_2ba600440965d60ebd65922411959fe6"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_2ba600440965d60ebd65922411959fe6
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: asdsds, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_2ba600440965d60ebd65922411959fe6
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: asdsds, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_2ba600440965d60ebd65922411959fe6--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:22:48 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@a.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <591549bce1ee83668f24095848dd3c97@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_591549bce1ee83668f24095848dd3c97"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_591549bce1ee83668f24095848dd3c97
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, asd@a.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: dsa
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_591549bce1ee83668f24095848dd3c97
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, asd@a.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: dsa</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_591549bce1ee83668f24095848dd3c97--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:23:46 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: das@ads.con
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <07978978a17d8254d8bb09f5b837eee5@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_07978978a17d8254d8bb09f5b837eee5"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_07978978a17d8254d8bb09f5b837eee5
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: asdsds, das@ads.con
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: ads
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_07978978a17d8254d8bb09f5b837eee5
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: asdsds, das@ads.con</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: ads</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_07978978a17d8254d8bb09f5b837eee5--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:25:41 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: das@ads.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <e43f97932b435fb61803fdc027162bdc@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_e43f97932b435fb61803fdc027162bdc"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e43f97932b435fb61803fdc027162bdc
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: asdd, das@ads.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: sad
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e43f97932b435fb61803fdc027162bdc
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: asdd, das@ads.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: sad</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_e43f97932b435fb61803fdc027162bdc--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:30:15 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <c59b44f06daae8b09286e2bc2976323d@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_c59b44f06daae8b09286e2bc2976323d"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_c59b44f06daae8b09286e2bc2976323d
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: asd, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: das
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_c59b44f06daae8b09286e2bc2976323d
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: asd, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: das</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_c59b44f06daae8b09286e2bc2976323d--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:33:53 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <8c9245e1c6a5fd4099c4968138194e7f@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_8c9245e1c6a5fd4099c4968138194e7f"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_8c9245e1c6a5fd4099c4968138194e7f
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_8c9245e1c6a5fd4099c4968138194e7f
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_8c9245e1c6a5fd4099c4968138194e7f--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:34:29 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <20838eb8f8764221cac8d9cfc65be184@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_20838eb8f8764221cac8d9cfc65be184"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_20838eb8f8764221cac8d9cfc65be184
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_20838eb8f8764221cac8d9cfc65be184
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_20838eb8f8764221cac8d9cfc65be184--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:37:46 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <ed9eaadbda2f2fda4c17c39c71aaa82a@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_ed9eaadbda2f2fda4c17c39c71aaa82a"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_ed9eaadbda2f2fda4c17c39c71aaa82a
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: ads
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_ed9eaadbda2f2fda4c17c39c71aaa82a
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: ads</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_ed9eaadbda2f2fda4c17c39c71aaa82a--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:38:59 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: sad@ad.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <614fb7d2978a83bb8c4670544ca8b1db@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_614fb7d2978a83bb8c4670544ca8b1db"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_614fb7d2978a83bb8c4670544ca8b1db
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: sad, sad@ad.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_614fb7d2978a83bb8c4670544ca8b1db
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: sad, sad@ad.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_614fb7d2978a83bb8c4670544ca8b1db--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:39:15 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: sad@ad.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <8cd776884dccbcaf92f5b4756572f212@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_8cd776884dccbcaf92f5b4756572f212"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_8cd776884dccbcaf92f5b4756572f212
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: sad, sad@ad.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_8cd776884dccbcaf92f5b4756572f212
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: sad, sad@ad.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_8cd776884dccbcaf92f5b4756572f212--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:39:19 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: sad@ad.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <c6c903c1c8d68927e561d3e87c4b0c23@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_c6c903c1c8d68927e561d3e87c4b0c23"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_c6c903c1c8d68927e561d3e87c4b0c23
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: sad, sad@ad.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_c6c903c1c8d68927e561d3e87c4b0c23
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: sad, sad@ad.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_c6c903c1c8d68927e561d3e87c4b0c23--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:45:40 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@a.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <75de5fa8aea06e293d6a18478822d60b@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_75de5fa8aea06e293d6a18478822d60b"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_75de5fa8aea06e293d6a18478822d60b
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, asd@a.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_75de5fa8aea06e293d6a18478822d60b
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, asd@a.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_75de5fa8aea06e293d6a18478822d60b--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:47:52 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <d78712560008788d137dfc2d86051ae2@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_d78712560008788d137dfc2d86051ae2"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d78712560008788d137dfc2d86051ae2
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: sad, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d78712560008788d137dfc2d86051ae2
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: sad, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_d78712560008788d137dfc2d86051ae2--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:52:37 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <5035f7f7983dcce5d2e6f84f7bedcd64@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_5035f7f7983dcce5d2e6f84f7bedcd64"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_5035f7f7983dcce5d2e6f84f7bedcd64
+CLIENT -> SERVER: Content-Type: text/plain; charset=UTF-8
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: асд, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_5035f7f7983dcce5d2e6f84f7bedcd64
+CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: асд, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_5035f7f7983dcce5d2e6f84f7bedcd64--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:55:56 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@a.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <22f2f10ebd9233874869dcf40147e174@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_22f2f10ebd9233874869dcf40147e174"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_22f2f10ebd9233874869dcf40147e174
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: das, asd@a.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: sda
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_22f2f10ebd9233874869dcf40147e174
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: das, asd@a.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: sda</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_22f2f10ebd9233874869dcf40147e174--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:57:12 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <59b815d989c21c4013d089c0cdb2568b@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_59b815d989c21c4013d089c0cdb2568b"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_59b815d989c21c4013d089c0cdb2568b
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_59b815d989c21c4013d089c0cdb2568b
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_59b815d989c21c4013d089c0cdb2568b--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 13:59:34 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: ads@sda.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <5ba2e4683dacce9e713dae498b517c58@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_5ba2e4683dacce9e713dae498b517c58"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_5ba2e4683dacce9e713dae498b517c58
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, ads@sda.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_5ba2e4683dacce9e713dae498b517c58
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, ads@sda.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_5ba2e4683dacce9e713dae498b517c58--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 14:06:21 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@sad.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <1a5f2d30d65696a83840e62b9e3876b5@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_1a5f2d30d65696a83840e62b9e3876b5"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1a5f2d30d65696a83840e62b9e3876b5
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, asd@sad.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: sad
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1a5f2d30d65696a83840e62b9e3876b5
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, asd@sad.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: sad</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_1a5f2d30d65696a83840e62b9e3876b5--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 14:06:52 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: das@ads.con
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <ed7721a159493a5742a18984cf7523ae@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_ed7721a159493a5742a18984cf7523ae"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_ed7721a159493a5742a18984cf7523ae
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: Slavko, das@ads.con
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: dsa
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_ed7721a159493a5742a18984cf7523ae
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: Slavko, das@ads.con</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: dsa</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_ed7721a159493a5742a18984cf7523ae--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 14:10:49 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@addas.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <075c74ab5acdeb586e6e45f81206d5f8@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_075c74ab5acdeb586e6e45f81206d5f8"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_075c74ab5acdeb586e6e45f81206d5f8
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, asd@addas.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_075c74ab5acdeb586e6e45f81206d5f8
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, asd@addas.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_075c74ab5acdeb586e6e45f81206d5f8--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Wed, 24 Apr 2019 14:11:03 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: asd@addas.com
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <9cf018fd15fe2a3d0683f0cb9dbc6ed2@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_9cf018fd15fe2a3d0683f0cb9dbc6ed2"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_9cf018fd15fe2a3d0683f0cb9dbc6ed2
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: ads, asd@addas.com
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: asd
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_9cf018fd15fe2a3d0683f0cb9dbc6ed2
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: ads, asd@addas.com</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: asd</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_9cf018fd15fe2a3d0683f0cb9dbc6ed2--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT

@@ -170,12 +170,12 @@
                   <h2>Contact Us</h2>
                </div>
                <div class="modal-body">
-                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
+                <form action="/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
                      <div class="form-group">
                         <!-- NAME INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" name="your-company" type="text" placeholder=" " >
+                              <input class="input" name="your-company" type="text" placeholder=" " required>
                               <div class="placeholder">Your company *</div>
                               <div class="error" data-element="company">Please enter a valid Company name</div>
                            </div>
@@ -183,7 +183,7 @@
                         <!-- E-MAIL INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" name="your-email" type="email" placeholder=" " >
+                              <input class="input" name="your-email" type="email" placeholder=" " required>
                               <div class="placeholder">Your e-mail *</div>
                               <div class="error" data-element="email">Please enter a valid email</div>
                            </div>
@@ -191,7 +191,7 @@
                         <!-- NAME INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" name="your-subject" type="text" placeholder=" " >
+                              <input class="input" name="your-subject" type="text" placeholder=" " required>
                               <div class="placeholder">Subject *</div>
                               <div class="error" data-element="subject">Please enter a subject</div>
                            </div>
@@ -199,7 +199,7 @@
                         <!-- TEXT AREA -->
                         <div class="holder">
                            <div class="input-holder">
-                              <textarea class="input" name="your-message" placeholder=" "  rows="4" ></textarea>
+                              <textarea class="input" name="your-message" placeholder=" " required rows="4" ></textarea>
                               <div class="placeholder placeholder-textarea">Your Message *</div>
                               <div class="error" data-element="message">Please enter a valid message</div>
                            </div>
