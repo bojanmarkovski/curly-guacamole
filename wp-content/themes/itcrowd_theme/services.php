@@ -170,7 +170,7 @@
                   <h2>Contact Us</h2>
                </div>
                <div class="modal-body">
-                <form action="/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
+                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
                      <div class="form-group">
                         <!-- NAME INPUT -->
                         <div class="holder">
@@ -218,6 +218,25 @@
             </div>
          </div>
       </div>
+
+      <div class="modal fade" id="myModal-error" role="dialog" style="display: none;">
+        <div class="modal-dialog">
+        
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+            <h2 class="modal-title">Error</h2>
+            </div>
+            <div class="modal-body">
+            <p>Sorry, the file you are trying to upload is too big (maximum size is <b>5MB</b>).</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        
+        </div>
+    </div>
       
 <!-- Content END -->
 

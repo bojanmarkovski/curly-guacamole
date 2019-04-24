@@ -65,14 +65,25 @@ $(document).ready(function(){
                 $(".form-group .holder:nth-child(4) .error").css({"visibility" : "visible"});
               }
             }
+
+            $(".loader").addClass("hidden");
+
+            $("#myModal-error").css("display", "block");
+            $("body").addClass("modal-open");
+            $(".modal.fade").addClass("in");
+            $(".modal-backdrop.fade").addClass("in");
+            $(".modal-title").text("Error");
+            $(".modal-body p").text("Please enter a valid information.");
           } else {
 
-            $("body").removeClass("modal-open");
-            $(".modal").removeClass("in").removeClass("fade").css("display" , "none");;
-            $("#exampleModal").css("display" , "none");
-            $("body .modal-backdrop").removeClass("in").removeClass("fade").remove();
-            $("#page").next("div").remove();
-            $(".page-template-services").removeClass("modal-open").css("padding-right", "0px");
+            $(".loader").addClass("hidden");
+
+            $("#myModal-error").css("display", "block");
+            $("body").addClass("modal-open");
+            $(".modal.fade").addClass("in");
+            $(".modal-backdrop.fade").addClass("in");
+            $(".modal-title").text("Successfull");
+            $(".modal-body p").text("Your message was successfully sent. Thank you!");
 
           }
         }
@@ -82,6 +93,18 @@ $(document).ready(function(){
     return; // No go on form...
   }); // end of submit function
  
+  $("#myModal-error .btn.btn-default").on('click', function(){
+    $("body").removeClass("modal-open");
+    $(".modal.fade").removeClass("in").css("display", "none");
+    $(".modal-backdrop.fade").removeClass("in");
+
+    $(".modal").removeClass("in").removeClass("fade").css("display" , "none");
+    $("#exampleModal").css("display" , "none");
+    $("body .modal-backdrop").removeClass("in").removeClass("fade").remove();
+    $("#page").next("div").remove();
+    $(".page-template-services").removeClass("modal-open").css("padding-right", "0px");
+  });
+
 });
 
 var onloadCallback = function() {
