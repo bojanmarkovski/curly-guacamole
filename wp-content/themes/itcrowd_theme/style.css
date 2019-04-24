@@ -1294,7 +1294,7 @@ button.close:focus {
 	transform: translate(50%, -50%);
 }
 
-@media screen and (max-height: 991px) {
+@media screen and (max-width: 991px) {
 	.page-template-aboutUs .slick-prev.slick-arrow,
 	.page-template-aboutUs .slick-next.slick-arrow{
 		color: white;

@@ -10,18 +10,12 @@ $(document).ready(function(){
   $(".footer").fadeIn(1300);
   $(".col-md-4.col-md-offset-4").fadeIn(1300);
   $(".our-services-box").css("height", "auto");
-});
 
-var onloadCallback = function() {
-  grecaptcha.render('re-captcha', {
-    'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'
-  });
-};
-
-// AJAX
-
-$(document).ready(function() {
+  // AJAX
   $("form").submit(function(e) {
+    for (let i = 1; i < 5; i++) {
+      $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
+    }
     e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
     var validForm = true; // Set initial state of valid form to true
@@ -53,16 +47,32 @@ $(document).ready(function() {
         },
         success: function(data) {
           if(data.status == "validation_failed"){
-            alert("validation_failed");
-          } else {
-            console.log("Success! Here is the data:", data); // Yay!
+            
+            for (let dataInto = 0; dataInto < data.invalidFields.length; dataInto++) {
+              const intoMessage = data.invalidFields[dataInto].into;
+              // const lastElement = intoMessage.split("-").pop();
 
-            // $(formContainer).hide(); // Hide the initial form
+              if(intoMessage == "span.wpcf7-form-control-wrap.your-company") {
+                $(".form-group .holder:nth-child(1) .error").css({"visibility" : "visible"});
+              }
+              if(intoMessage == "span.wpcf7-form-control-wrap.your-email" ){
+                $(".form-group .holder:nth-child(2) .error").css({"visibility" : "visible"});
+              }
+              if(intoMessage == "span.wpcf7-form-control-wrap.your-subject") {
+                $(".form-group .holder:nth-child(3) .error").css({"visibility" : "visible"});
+              }
+              if(intoMessage == "span.wpcf7-form-control-wrap.your-message") {
+                $(".form-group .holder:nth-child(4) .error").css({"visibility" : "visible"});
+              }
+            }
+          } else {
+
             $("body").removeClass("modal-open");
-            $(".modal.fade").removeClass("in").css("display", "none");
-            $(".modal").removeClass("in");
-            $(".modal").removeClass("fade");
-            // $(".modal").removeClass("in");
+            $(".modal").removeClass("in").removeClass("fade").css("display" , "none");;
+            $("#exampleModal").css("display" , "none");
+            $("body .modal-backdrop").removeClass("in").removeClass("fade").remove();
+            $("#page").next("div").remove();
+            $(".page-template-services").removeClass("modal-open").css("padding-right", "0px");
 
           }
         }
@@ -71,4 +81,11 @@ $(document).ready(function() {
 
     return; // No go on form...
   }); // end of submit function
+
 });
+
+var onloadCallback = function() {
+  grecaptcha.render('re-captcha', {
+    'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'
+  });
+};
