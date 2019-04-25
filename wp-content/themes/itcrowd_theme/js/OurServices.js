@@ -19,6 +19,7 @@ $(document).ready(function(){
     for (let i = 1; i < 5; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
     }
+    
     e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
     var validForm = true; // Set initial state of valid form to true
