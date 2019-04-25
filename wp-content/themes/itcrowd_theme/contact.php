@@ -32,7 +32,7 @@
                               <!-- NAME INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" name='your-name' type="text" placeholder=" " required>
+                                    <input class="input" name='your-name' type="text" placeholder=" " required autocomplete="off">
                                     <div class="placeholder">Your name *</div>
                                     <div class="error">Please enter a valid Name</div>
                                  </div>
@@ -40,7 +40,7 @@
                               <!-- E-MAIL INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" name="your-email" type="email" placeholder=" " required>
+                                    <input class="input" name="your-email" type="email" placeholder=" " required autocomplete="off">
                                     <div class="placeholder">Your e-mail *</div>
                                     <div class="error">Please enter a valid email</div>
                                  </div>
@@ -48,7 +48,7 @@
                               <!-- TEXT AREA -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <textarea class="input" name="your-message" placeholder=" " required rows="3"></textarea>
+                                    <textarea class="input" name="your-message" placeholder=" " required autocomplete="off" rows="3"></textarea>
                                     <div class="placeholder placeholder-textarea">Your Message</div>
                                     <div class="error">Please enter a valid message</div>
                                  </div>
@@ -96,7 +96,7 @@
                               <!-- NAME INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" name="your-name-mobile" type="text" placeholder=" " required>
+                                    <input class="input" name="your-name-mobile" type="text" placeholder=" " required autocomplete="off">
                                     <div class="placeholder">Your name *</div>
                                     <div class="error">Please enter a valid Name</div>
                                  </div>
@@ -104,7 +104,7 @@
                               <!-- E-MAIL INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" name="your-email-mobile" type="email" placeholder=" " required>
+                                    <input class="input" name="your-email-mobile" type="email" placeholder=" " required autocomplete="off">
                                     <div class="placeholder">Your e-mail *</div>
                                     <div class="error">Please enter a valid email</div>
                                  </div>
@@ -112,7 +112,7 @@
                               <!-- TEXT AREA -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <textarea class="input" name='your-message-mobile' placeholder=" " required rows="5"></textarea>
+                                    <textarea class="input" name='your-message-mobile' placeholder=" " required rows="5" autocomplete="off"></textarea>
                                     <div class="placeholder placeholder-textarea">Your Message</div>
                                     <div class="error">Please enter a valid message</div>
                                  </div>

@@ -175,7 +175,7 @@
                         <!-- NAME INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" name="your-company" type="text" placeholder=" " required>
+                              <input class="input" name="your-company" type="text" placeholder=" " required autocomplete="off">
                               <div class="placeholder">Your company *</div>
                               <div class="error" data-element="company">Please enter a valid Company name</div>
                            </div>
@@ -183,7 +183,7 @@
                         <!-- E-MAIL INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" name="your-email" type="email" placeholder=" " required>
+                              <input class="input" name="your-email" type="email" placeholder=" " required autocomplete="off">
                               <div class="placeholder">Your e-mail *</div>
                               <div class="error" data-element="email">Please enter a valid email</div>
                            </div>
@@ -191,7 +191,7 @@
                         <!-- NAME INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" name="your-subject" type="text" placeholder=" " required>
+                              <input class="input" name="your-subject" type="text" placeholder=" " required autocomplete="off">
                               <div class="placeholder">Subject *</div>
                               <div class="error" data-element="subject">Please enter a subject</div>
                            </div>
@@ -199,7 +199,7 @@
                         <!-- TEXT AREA -->
                         <div class="holder">
                            <div class="input-holder">
-                              <textarea class="input" name="your-message" placeholder=" " required rows="4" ></textarea>
+                              <textarea class="input" name="your-message" placeholder=" " required rows="4" autocomplete="off" ></textarea>
                               <div class="placeholder placeholder-textarea">Your Message *</div>
                               <div class="error" data-element="message">Please enter a valid message</div>
                            </div>
@@ -219,21 +219,21 @@
          </div>
       </div>
 
-      <div class="modal fade" id="myModal-error" role="dialog" style="display: none;">
+    <div class="modal fade form-message" id="myModal-error" role="dialog" style="display: none;">
         <div class="modal-dialog">
         
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-            <h2 class="modal-title">Error</h2>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <h2 class="modal-title">Error</h2>
+                </div>
+                <div class="modal-body">
+                <p>Sorry, the file you are trying to upload is too big (maximum size is <b>5MB</b>).</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-secondary" data-dismiss="myModal-error">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-            <p>Sorry, the file you are trying to upload is too big (maximum size is <b>5MB</b>).</p>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-default btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
         
         </div>
     </div>

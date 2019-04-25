@@ -13,6 +13,9 @@ $(document).ready(function(){
 
   // AJAX
   $("form").submit(function(e) {
+    
+    $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.9)", "z-index" : "9999999999999"});
+
     for (let i = 1; i < 5; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
     }
@@ -50,7 +53,6 @@ $(document).ready(function(){
             
             for (let dataInto = 0; dataInto < data.invalidFields.length; dataInto++) {
               const intoMessage = data.invalidFields[dataInto].into;
-              // const lastElement = intoMessage.split("-").pop();
 
               if(intoMessage == "span.wpcf7-form-control-wrap.your-company") {
                 $(".form-group .holder:nth-child(1) .error").css({"visibility" : "visible"});
@@ -67,24 +69,52 @@ $(document).ready(function(){
             }
 
             $(".loader").addClass("hidden");
-
-            $("#myModal-error").css("display", "block");
-            $("body").addClass("modal-open");
-            $(".modal.fade").addClass("in");
-            $(".modal-backdrop.fade").addClass("in");
             $(".modal-title").text("Error");
             $(".modal-body p").text("Please enter a valid information.");
+
+            // OPEN ERROR POP-UP MODAL
+            $("#myModal-error").css("display", "block");
+            $("body").addClass("modal-open");
+            $("#exampleModal .modal-dialog").addClass("blur-modal");
+            $(".modal-backdrop.fade").addClass("in");
+            $(".form-message .modal-body").css("height", "auto");
+            $(".modal.fade").addClass("in");
+            
+
+            // CLOSE BUTTON IN ERROR POP-UP MODAL
+            $("#myModal-error .btn.btn-default").on('click', function(){
+              $("#myModal-error").removeClass("fade").removeClass("in").css("display", "none");
+              $("#exampleModal .modal-dialog").removeClass("blur-modal");
+            });
+
           } else {
 
             $(".loader").addClass("hidden");
+            $(".modal-title").text("Successfull");
+            $(".modal-body p").text("Your message was successfully sent. Thank you!");
 
+            // CLOSE BUTTON IN SUCCESS POP-UP MODAL
+            $("#myModal-error .btn.btn-default").on('click', function(){
+              $(".modal").removeClass("fade").removeClass("in").css("display", "none");
+              $(".modal-backdrop").remove();
+              $("body").removeClass("modal-open");
+              $(".page-template-services").removeClass("modal-open").css("padding-right", "0px");
+            });
+            
             $("#myModal-error").css("display", "block");
             $("body").addClass("modal-open");
             $(".modal.fade").addClass("in");
             $(".modal-backdrop.fade").addClass("in");
-            $(".modal-title").text("Successfull");
-            $(".modal-body p").text("Your message was successfully sent. Thank you!");
+            $(".form-message .modal-body").css("height", "auto");
+            $("#exampleModal .modal-dialog").addClass("blur-modal");
 
+            setTimeout( function(){
+              $(".modal").removeClass("fade").removeClass("in").css("display", "none");
+              $(".modal-backdrop").remove();
+              $("body").removeClass("modal-open");
+              $(".page-template-services").removeClass("modal-open").css("padding-right", "0px");
+              $("#exampleModal .modal-dialog").removeClass("blur-modal");
+            },5000);
           }
         }
       });
@@ -92,18 +122,6 @@ $(document).ready(function(){
 
     return; // No go on form...
   }); // end of submit function
- 
-  $("#myModal-error .btn.btn-default").on('click', function(){
-    $("body").removeClass("modal-open");
-    $(".modal.fade").removeClass("in").css("display", "none");
-    $(".modal-backdrop.fade").removeClass("in");
-
-    $(".modal").removeClass("in").removeClass("fade").css("display" , "none");
-    $("#exampleModal").css("display" , "none");
-    $("body .modal-backdrop").removeClass("in").removeClass("fade").remove();
-    $("#page").next("div").remove();
-    $(".page-template-services").removeClass("modal-open").css("padding-right", "0px");
-  });
 
 });
 

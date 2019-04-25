@@ -316,6 +316,8 @@ jQuery(document).ready(function($){
             $(".modal-backdrop.fade").addClass("in");
             $(".modal-title").text("Error");
             $(".modal-body p").text("Please enter a valid information.");
+            $(".page-template-contact").css("overflow-y", "scroll");
+
           } else {
             $(".loader").addClass("hidden");
 

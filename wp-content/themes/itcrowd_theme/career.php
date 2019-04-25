@@ -102,7 +102,7 @@
                                         <!-- NAME INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" name="your-name" type="text" placeholder=" " required>
+                                                <input class="input" name="your-name" type="text" placeholder=" " required autocomplete="off">
                                                 <div class="placeholder">Your name *</div>
                                                 <div class="error">Please enter a valid Name</div>
                                             </div>
@@ -110,7 +110,7 @@
                                         <!-- E-MAIL INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" name="your-email" type="email" placeholder=" " required>
+                                                <input class="input" name="your-email" type="email" placeholder=" " required autocomplete="off">
                                                 <div class="placeholder">Your e-mail *</div>
                                                 <div class="error">Please enter a valid email</div>
                                             </div>
@@ -118,7 +118,7 @@
                                         <!-- NUMBER INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" name="phone-number" type="number" placeholder=" ">
+                                                <input class="input" name="phone-number" type="number" placeholder=" " autocomplete="off">
                                                 <div class="placeholder">Your phone number</div>
                                                 <div class="error">Please enter a valid number</div>
                                             </div>
