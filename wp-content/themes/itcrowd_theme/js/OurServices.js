@@ -11,11 +11,15 @@ $(document).ready(function(){
   $(".col-md-4.col-md-offset-4").fadeIn(1300);
   $(".our-services-box").css("height", "auto");
 
+  $(".btn.btn-block").on('click',function(){
+    $(".page-template.page-template-services.page-template-services-php").css({"overflow-y" : "scroll"});
+  })
+
   // AJAX
   $("form").submit(function(e) {
     
     $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.9)", "z-index" : "9999999999999"});
-
+    $("#myModal-error").css("background-color", "rgba(0,0,0,0.7)");
     for (let i = 1; i < 5; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
     }

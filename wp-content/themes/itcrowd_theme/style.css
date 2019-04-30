@@ -700,6 +700,10 @@ textarea::-webkit-scrollbar-track {
 	}
 }
 
+.page-template-contact .modal-body{
+	height: auto;
+}
+
 /* END Contact */
 
 /* Our Services */
@@ -4527,4 +4531,7 @@ body .profile-photo.profile-email.profile-photo-light img{
 .our-services .btn:active:focus, .our-services .btn:focus {
 	color: white;
 	outline: unset;
+}
+.modal-open{
+	padding-right: 0 !important;
 }

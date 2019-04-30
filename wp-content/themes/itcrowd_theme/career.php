@@ -134,7 +134,7 @@
                                         <!-- SELECT OPTION -->
                                         <div class="holder">
                                             <div class="input-holder dropdown">
-                                                <select placeholder=" " name="job-position" class="input select">
+                                                <select placeholder=" " name="job-position" class="input select" required>
                                                     <option class="first-option">
                                                         I am applying for *
                                                     </option>

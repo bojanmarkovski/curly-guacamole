@@ -73,13 +73,14 @@ $(document).ready(function(){
 
     // INPUT DROPDOWN VALUE
     let inputJobApply = $(this).find(".career-box").attr('data-name');
-    $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
-  })
+      $(this).parents(".career-left").parent(".row.pd-70px").find(".career-right .select").val(inputJobApply);
+    })
 
   // INPUT UPLOAD FILE
   $("form").on("change", ".file-upload-field", function() {
     $(this).parent(".file-upload-wrapper").attr("data-text",$(this).val().replace(/.*(\/|\\)/, ''));
   });
+  $("body").css("overflow-y", "scroll")
 
   // SIZE ATTACH FILE
   $(".file-upload-field").on('change', function(){
@@ -134,14 +135,23 @@ $(document).ready(function(){
       }
   });
 
-  // CHECKBOX PRIVACY POLICY
+ // CHECKBOX PRIVACY POLICY
+  $(".page-template-career .text-danger").on('click', function(){
+    $(".page-template.page-template-career.page-template-career-php").css({"overflow-y" : "scroll"});
+    $("#exampleModal").css("background","rgba(0,0,0,0.8)")
+  });
 
+  $(".modal-dialog button").on('click', function() {
+    $(".form-check-input").prop('checked', true);
+  });
+
+// AJAX
   $("form").submit(function(e) {
-    
+    $("#myModal-error").css("background", "rgba(0,0,0,0.8)")
     $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.9)", "z-index" : "9999999999999"});
 
     $(".nav").addClass("blur-modal");
-    $(".container-fluid").addClass("blur-modal");
+    $(".container-fluid.blur-modal").addClass("blur-modal");
 
     for (let i = 1; i < 9; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
@@ -159,6 +169,9 @@ $(document).ready(function(){
       }
     });
 
+    $(".btn.btn-block").on('click', function(){
+      $(".modal").css("background-color", "0, 0, 0, 0.7")
+    });
     // Everything checks out! Continue...
     if (validForm == true) {
       // var formContainer = $("#exampleModal");
@@ -188,32 +201,31 @@ $(document).ready(function(){
                 $(".form-group .holder:nth-child(2) .error").css({"visibility" : "visible"});
               }
               if(intoMessage == "span.wpcf7-form-control-wrap.your-message") {
-                $(".form-group .holder:nth-child(3) .error").css({"visibility" : "visible"});
+                $(".form-group .holder:nth-child(4) .error").css({"visibility" : "visible"});
               }
               if(intoMessage == "span.wpcf7-form-control-wrap.your-cv-file") {
-                $(".form-group .holder:nth-child(4) .error").css({"visibility" : "visible"});
+                $(".form-group .holder:nth-child(5) .error").css({"visibility" : "visible"});
               }
             }
 
             $(".loader").addClass("hidden");
             $(".modal-title").text("Error");
             $(".modal-body p").text("Please enter a valid information.");
+            $(".modal.fade.in").css("background-color", "0, 0, 0, 0.7")
 
             // OPEN ERROR POP-UP MODAL
             $("#myModal-error").css("display", "block");
             $("body").addClass("modal-open");
-            $("#exampleModal .modal-dialog").addClass("blur-modal");
             $(".modal-backdrop.fade").addClass("in");
             $(".form-message .modal-body").css("height", "auto");
             $(".modal.fade").addClass("in");
-            
+
 
             // CLOSE BUTTON IN ERROR POP-UP MODAL
             $("#myModal-error .btn.btn-default").on('click', function(){
               $(".modal").removeClass("fade").removeClass("in").css("display", "none");
               $(".modal-backdrop").remove();
               $("body").removeClass("modal-open");
-              $(".page-template-career").removeClass("modal-open").css("padding-right", "0px");
             });
 
           } else {
@@ -221,13 +233,13 @@ $(document).ready(function(){
             $(".loader").addClass("hidden");
             $(".modal-title").text("Successfull");
             $(".modal-body p").text("Your message was successfully sent. Thank you!");
+            $(".modal.fade.in").css("background-color", "0, 0, 0, 0.7");
 
             // CLOSE BUTTON IN SUCCESS POP-UP MODAL
             $("#myModal-error .btn.btn-default").on('click', function(){
               $(".modal").removeClass("fade").removeClass("in").css("display", "none");
               $(".modal-backdrop").remove();
               $("body").removeClass("modal-open");
-              $(".page-template-career").removeClass("modal-open").css("padding-right", "0px");
             });
             
             $("#myModal-error").css("display", "block");
@@ -235,14 +247,12 @@ $(document).ready(function(){
             $(".modal.fade").addClass("in");
             $(".modal-backdrop.fade").addClass("in");
             $(".form-message .modal-body").css("height", "auto");
-            $("#exampleModal .modal-dialog").addClass("blur-modal");
 
             setTimeout( function(){
               $(".modal").removeClass("fade").removeClass("in").css("display", "none");
               $(".modal-backdrop").remove();
               $("body").removeClass("modal-open");
               $(".page-template-career").removeClass("modal-open").css("padding-right", "0px");
-              $("#exampleModal .modal-dialog").removeClass("blur-modal");
             },5000);
           }
         }
@@ -251,6 +261,7 @@ $(document).ready(function(){
 
     return; // No go on form...
   }); // end of submit function
+
 });
 
 // RECAPTCA - I'M NOT A ROBOT

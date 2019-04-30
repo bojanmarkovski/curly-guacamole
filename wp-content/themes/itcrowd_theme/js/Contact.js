@@ -327,6 +327,12 @@ jQuery(document).ready(function($){
             $(".modal-backdrop.fade").addClass("in");
             $(".modal-title").text("Successfull");
             $(".modal-body p").text("Your message was successfully sent. Thank you!");
+
+            setTimeout( function(){
+              $("body").removeClass("modal-open");
+              $(".modal.fade").removeClass("in").css("display", "none");
+              $(".modal-backdrop.fade").removeClass("in");
+            },5000);
           }
         }
       });
@@ -342,13 +348,9 @@ jQuery(document).ready(function($){
   });
 });
 
-
-
 // RECAPTCA - I'M NOT A ROBOT
 var onloadCallback = function() {
   grecaptcha.render('re-captcha', {
     'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'
   });
 };
-
-// $(".place-card.place-card-large").css("display", "none !important" )
