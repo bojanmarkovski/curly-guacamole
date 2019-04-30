@@ -125,14 +125,13 @@ $(document).ready(function(){
       $(".dropdown").addClass("input-holder");
       $(".first-option").css({"display" : "block" , "transition": "0.7s"}).text("I am applying for *");
     }
-
-      if ($(".input.select").val() !== "I am applying for *") {
-        $(".dropdown").removeClass("input-holder");
-        $(".first-option").css({"display" : "none", "transition": "0.4s"}).text("");
-      }
-      else if ($(".input.select").val() == "I am applying for *") {
-        $(".dropdown").addClass("input-holder");
-      }
+    if ($(".input.select").val() !== "I am applying for *") {
+      $(".dropdown").removeClass("input-holder");
+      $(".first-option").css({"display" : "none", "transition": "0.4s"}).text("");
+    }
+    else if ($(".input.select").val() == "I am applying for *") {
+      $(".dropdown").addClass("input-holder");
+    }
   });
 
  // CHECKBOX PRIVACY POLICY
@@ -142,12 +141,12 @@ $(document).ready(function(){
   });
 
   $(".modal-dialog button").on('click', function() {
-    $(".form-check-input").prop('checked', true);
+    $("#exampleModal .form-check-input").prop('checked', true);
   });
 
 // AJAX
   $("form").submit(function(e) {
-    $("#myModal-error").css("background", "rgba(0,0,0,0.8)")
+    $("#myModal-error").css("background", "rgba(0,0,0,0.8)");
     $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.9)", "z-index" : "9999999999999"});
 
     $(".nav").addClass("blur-modal");
@@ -156,6 +155,7 @@ $(document).ready(function(){
     for (let i = 1; i < 9; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
     }
+    $(".error.dada").css({"visibility" : "hidden"});
     e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
     var validForm = true; // Set initial state of valid form to true
@@ -170,12 +170,28 @@ $(document).ready(function(){
     });
 
     $(".btn.btn-block").on('click', function(){
-      $(".modal").css("background-color", "0, 0, 0, 0.7")
+      $(".modal").css("background-color", "0, 0, 0, 0.7");
     });
     // Everything checks out! Continue...
     if (validForm == true) {
-      // var formContainer = $("#exampleModal");
-      var formData = $(this).serializeArray(); // Format all info and get it ready for sendoff
+      var form = $(this);
+      var formData = new FormData();
+      var formParams = form.serializeArray();
+
+      $.each(form.find('input[type="file"]'), function(i, tag) {
+        $.each($(tag)[0].files, function(i, file) {
+          formData.append(tag.name, file);
+        });
+      });
+
+      $.each(formParams, function(i, val) {
+        if (val.name == 'job-position' && val.value == 'I am applying for *') {
+          formData.append(val.name, '');
+        }
+        else {
+          formData.append(val.name, val.value);
+        }
+      });
 
       // AJAX magic coming up...
       $.ajax({
@@ -183,7 +199,8 @@ $(document).ready(function(){
         url: $(this).attr("action"),
         data: formData,
         cache: false,
-        contentType: "application/x-www-form-urlencoded",
+        contentType: false,
+        processData: false,
         encode: true,
         error: function(err) {
           console.log("Uh, oh. There was an error:", err); // You broke something...
@@ -203,11 +220,14 @@ $(document).ready(function(){
               if(intoMessage == "span.wpcf7-form-control-wrap.your-message") {
                 $(".form-group .holder:nth-child(4) .error").css({"visibility" : "visible"});
               }
-              if(intoMessage == "span.wpcf7-form-control-wrap.your-cv-file") {
+              if(intoMessage == "span.wpcf7-form-control-wrap.job-position") {
                 $(".form-group .holder:nth-child(5) .error").css({"visibility" : "visible"});
               }
+              if(intoMessage == "span.wpcf7-form-control-wrap.cv-file") {
+                $(".error.dada").css({"visibility" : "visible"});
+              }
             }
-
+            
             $(".loader").addClass("hidden");
             $(".modal-title").text("Error");
             $(".modal-body p").text("Please enter a valid information.");

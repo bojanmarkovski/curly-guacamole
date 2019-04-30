@@ -97,12 +97,12 @@
                         <!-- FORM GROUP -->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group-20px">
-                                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
+                                <form action="/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <!-- NAME INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" name="your-name" type="text" placeholder=" "  autocomplete="off">
+                                                <input class="input" name="your-name" type="text" placeholder=" " required  autocomplete="off">
                                                 <div class="placeholder">Your name *</div>
                                                 <div class="error">Please enter a valid Name</div>
                                             </div>
@@ -110,7 +110,7 @@
                                         <!-- E-MAIL INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" name="your-email" type="email" placeholder=" "  autocomplete="off">
+                                                <input class="input" name="your-email" type="email" placeholder=" " required  autocomplete="off">
                                                 <div class="placeholder">Your e-mail *</div>
                                                 <div class="error">Please enter a valid email</div>
                                             </div>
@@ -156,15 +156,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="form-group">
+                                    <div class="form-group">
                                         <label for="exampleInputFile">Attach your CV/Resume *</label>
                                         <div class="file-upload-wrapper" data-text="No file chosen" >
                                             <input name="cv-file" type="file" class="file-upload-field" value="" accept="doc,.docx,.pdf" >
                                         </div>
-                                    </div> -->
+                                        <div class="error dada">Please enter a valid file</div>
+                                    </div>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input type="checkbox" class="form-check-input" >
+                                            <input type="checkbox" class="form-check-input" required>
                                             I have read and accept ITCrowd'
                                             <a class="text-danger" data-toggle="modal" data-target="#exampleModal">
                                                 Privacy Policy - Terms & Conditions

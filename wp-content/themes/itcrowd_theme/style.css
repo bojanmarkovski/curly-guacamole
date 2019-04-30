@@ -432,6 +432,10 @@ textarea::-webkit-scrollbar-track {
 	display: block !important;
 }
 
+.modal-open{
+	padding-right: 0 !important;
+}
+
 /* END FORM STYLE */
 
 /* MEDIA QUERY FOR ALL PAGES */
@@ -4531,7 +4535,4 @@ body .profile-photo.profile-email.profile-photo-light img{
 .our-services .btn:active:focus, .our-services .btn:focus {
 	color: white;
 	outline: unset;
-}
-.modal-open{
-	padding-right: 0 !important;
 }
