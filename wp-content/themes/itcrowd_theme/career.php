@@ -97,7 +97,7 @@
                         <!-- FORM GROUP -->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group-20px">
-                                <form action="/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
+                                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <!-- NAME INPUT -->
                                         <div class="holder">
@@ -161,7 +161,7 @@
                                         <div class="file-upload-wrapper" data-text="No file chosen" >
                                             <input name="cv-file" type="file" class="file-upload-field" value="" accept="doc,.docx,.pdf" >
                                         </div>
-                                        <div class="error dada">Please enter a valid file</div>
+                                        <div class="error file-error">Please enter a valid file</div>
                                     </div>
                                     <div class="form-check">
                                         <label class="form-check-label">

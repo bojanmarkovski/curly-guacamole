@@ -89,6 +89,7 @@ $(document).ready(function(){
       $("body").addClass("modal-open");
       $(".modal.fade").addClass("in");
       $(".modal-backdrop.fade").addClass("in");
+      $(".modal-body p").text("Sorry, the file you are trying to upload is too big (maximum size is 5MB)");
 
       $("#myModal-error .btn.btn-default").on('click', function(){
         $("body").removeClass("modal-open");
@@ -141,8 +142,9 @@ $(document).ready(function(){
   });
 
   $(".modal-dialog button").on('click', function() {
-    $("#exampleModal .form-check-input").prop('checked', true);
+    $(".form-check .form-check-input").prop('checked', true);
   });
+  
 
 // AJAX
   $("form").submit(function(e) {
@@ -155,7 +157,7 @@ $(document).ready(function(){
     for (let i = 1; i < 9; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
     }
-    $(".error.dada").css({"visibility" : "hidden"});
+    $(".error.file-error").css({"visibility" : "hidden"});
     e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
     var validForm = true; // Set initial state of valid form to true
@@ -224,7 +226,7 @@ $(document).ready(function(){
                 $(".form-group .holder:nth-child(5) .error").css({"visibility" : "visible"});
               }
               if(intoMessage == "span.wpcf7-form-control-wrap.cv-file") {
-                $(".error.dada").css({"visibility" : "visible"});
+                $(".error.file-error").css({"visibility" : "visible"});
               }
             }
             
