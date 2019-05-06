@@ -47824,3 +47824,53 @@ CLIENT -> SERVER: --b1_24b7b9a49b9f34355026a1dacd5dbd51--
 CLIENT -> SERVER: 
 CLIENT -> SERVER: .
 CLIENT -> SERVER: QUIT
+CLIENT -> SERVER: EHLO localhost
+CLIENT -> SERVER: AUTH LOGIN
+CLIENT -> SERVER: Ym9qYW4ubWFya292c2tpQGl0Y3Jvd2QubWU=
+CLIENT -> SERVER: aGI2SCUzRkJvamFu
+CLIENT -> SERVER: MAIL FROM:<bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: RCPT TO:<slavko.kazakov@itcrowd.me>
+CLIENT -> SERVER: DATA
+CLIENT -> SERVER: Date: Mon, 6 May 2019 13:32:09 +0000
+CLIENT -> SERVER: To: slavko.kazakov@itcrowd.me
+CLIENT -> SERVER: From: ITCrowd <bojan.markovski@itcrowd.me>
+CLIENT -> SERVER: Reply-To: testtest@test.test
+CLIENT -> SERVER: Subject: ITCrowd - Contact Form
+CLIENT -> SERVER: Message-ID: <6fdd2b4ddb1da5841a7c0aef190c4398@localhost>
+CLIENT -> SERVER: X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+CLIENT -> SERVER: MIME-Version: 1.0
+CLIENT -> SERVER: Content-Type: multipart/alternative;
+CLIENT -> SERVER: 	boundary="b1_6fdd2b4ddb1da5841a7c0aef190c4398"
+CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+CLIENT -> SERVER: 
+CLIENT -> SERVER: This is a multi-part message in MIME format.
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_6fdd2b4ddb1da5841a7c0aef190c4398
+CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: From: test, testtest@test.test
+CLIENT -> SERVER: Message Body:
+CLIENT -> SERVER: test
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_6fdd2b4ddb1da5841a7c0aef190c4398
+CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+CLIENT -> SERVER: 
+CLIENT -> SERVER: <!doctype html>
+CLIENT -> SERVER: <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+CLIENT -> SERVER: <head>
+CLIENT -> SERVER: <title>ITCrowd - Contact Form</title>
+CLIENT -> SERVER: </head>
+CLIENT -> SERVER: <body>
+CLIENT -> SERVER: <p>From: test, testtest@test.test</p>
+CLIENT -> SERVER: <p>Message Body:<br />
+CLIENT -> SERVER: test</p>
+CLIENT -> SERVER: </body>
+CLIENT -> SERVER: </html>
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: 
+CLIENT -> SERVER: --b1_6fdd2b4ddb1da5841a7c0aef190c4398--
+CLIENT -> SERVER: 
+CLIENT -> SERVER: .
+CLIENT -> SERVER: QUIT
