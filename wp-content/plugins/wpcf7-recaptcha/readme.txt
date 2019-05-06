@@ -3,7 +3,7 @@ Contributors: iqcomputing
 Tags: contact-form-7, contact-form-7-recaptcha, recaptcha, spam
 Requires at least: 4.9
 Tested up to: 5.1
-Stable tag: 1.1.6
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,9 @@ Should the above be correct, at this point it's time to open a support thread fo
 
 == Changelog ==
 
+= 1.1.8 (2019-04-26) =
+* Fixed WPCF7+Flamingo bug which saved un-verified submissions to spam in Flamingo. Thanks @scits!
+
 = 1.1.6 (2019-04-02) =
 * Added localization to reCaptcha API box which translates related text. Thanks @aldebaran57!
 
@@ -67,12 +70,3 @@ Should the above be correct, at this point it's time to open a support thread fo
 
 * Added link to github in description
 * Updated version number to fix json checksum (Thanks @willpresleyev)!
-
-= 1.1.4 (2019-02-21) =
-* We need your help translating this plugin! Interested parties may contribute at: https://translate.wordpress.org/projects/wp-plugins/wpcf7-recaptcha
-*
-* Ensured WordPress 5.1 compatibility
-* Removed languages folder to avoid confusion with glotpress.
-* Multisite - Network Admins will notice a new menu item under plugins labelled "WPCF7 reCaptcha Settings"
-* Multisite - Network Admins now have the ability to add default keys and settings for sites. Individual sites can overwrite these defaults should they choose to.
-* Multisite - Default Network settings do not override keys or settings if they are already set/saved on the individual site. These only apply if none are found on the individual site.

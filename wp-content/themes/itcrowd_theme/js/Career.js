@@ -141,7 +141,7 @@ $(document).ready(function(){
     $("#exampleModal").css("background","rgba(0,0,0,0.8)")
   });
 
-  $(".modal-dialog button").on('click', function() {
+  $("#exampleModal .modal-dialog button").on('click', function() {
     $(".form-check .form-check-input").prop('checked', true);
   });
   
@@ -232,7 +232,7 @@ $(document).ready(function(){
             
             $(".loader").addClass("hidden");
             $(".modal-title").text("Error");
-            $(".modal-body p").text("Please enter a valid information.");
+            $(".modal-body p").text("One or more fields have an error. Please check and try again.");
             $(".modal.fade.in").css("background-color", "0, 0, 0, 0.7")
 
             // OPEN ERROR POP-UP MODAL
@@ -254,7 +254,7 @@ $(document).ready(function(){
 
             $(".loader").addClass("hidden");
             $(".modal-title").text("Successfull");
-            $(".modal-body p").text("Your message was successfully sent. Thank you!");
+            $(".modal-body p").text("Thank you for your message. It has been sent.");
             $(".modal.fade.in").css("background-color", "0, 0, 0, 0.7");
 
             // CLOSE BUTTON IN SUCCESS POP-UP MODAL

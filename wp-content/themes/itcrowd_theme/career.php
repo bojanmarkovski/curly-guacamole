@@ -97,7 +97,7 @@
                         <!-- FORM GROUP -->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group-20px">
-                                <form action="/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
+                                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <!-- NAME INPUT -->
                                         <div class="holder">
@@ -120,7 +120,7 @@
                                             <div class="input-holder">
                                                 <input class="input" name="phone-number" type="number" placeholder=" " autocomplete="off">
                                                 <div class="placeholder">Your phone number</div>
-                                                <div class="error">Please enter a valid number</div>
+                                                <div class="error">The telephone number is invalid.</div>
                                             </div>
                                         </div>
                                         <!-- TEXT AREA -->
@@ -173,7 +173,7 @@
                                             
                                         </label>
                                     </div>
-                                    <div id="re-captcha"></div>
+                                    <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
                                     <button type="submit" class="btn btn-block">
                                     <small>SEND E-MAIL</small>
                                     </button>

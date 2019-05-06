@@ -205,7 +205,7 @@
                            </div>
                         </div>
                         
-                        <div id="re-captcha"></div>
+                        <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
 
                      </div>
                   

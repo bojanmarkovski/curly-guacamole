@@ -75,7 +75,7 @@ $(document).ready(function(){
 
             $(".loader").addClass("hidden");
             $(".modal-title").text("Error");
-            $(".modal-body p").text("Please enter a valid information.");
+            $(".modal-body p").text("One or more fields have an error. Please check and try again.");
 
             // OPEN ERROR POP-UP MODAL
             $("#myModal-error").css("display", "block");
@@ -96,7 +96,7 @@ $(document).ready(function(){
 
             $(".loader").addClass("hidden");
             $(".modal-title").text("Successfull");
-            $(".modal-body p").text("Your message was successfully sent. Thank you!");
+            $(".modal-body p").text("Thank you for your message. It has been sent.");
 
             // CLOSE BUTTON IN SUCCESS POP-UP MODAL
             $("#myModal-error .btn.btn-default").on('click', function(){

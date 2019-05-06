@@ -252,6 +252,7 @@ jQuery(document).ready(function($){
     for (let i = 1; i < 5; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
     }
+    $(".error.re-captcha").css({"visibility" : "hidden"});
     e.preventDefault(); // Prevent a new window from opening upon clicking 'Subscribe now' button
 
     var validForm = true; // Set initial state of valid form to true
@@ -282,7 +283,9 @@ jQuery(document).ready(function($){
           console.log("Uh, oh. There was an error:", err); // You broke something...
         },
         success: function(data) {
-          if(data.status == "validation_failed"){
+
+          if(data.status == "validation_failed" || data.message == "There was an error trying to send your message. Please try again later."){
+            $(".error.re-captcha").css({"visibility" : "visible"});
             
             for (let dataInto = 0; dataInto < data.invalidFields.length; dataInto++) {
               const intoMessage = data.invalidFields[dataInto].into;
@@ -315,7 +318,7 @@ jQuery(document).ready(function($){
             $(".modal.fade").addClass("in");
             $(".modal-backdrop.fade").addClass("in");
             $(".modal-title").text("Error");
-            $(".modal-body p").text("Please enter a valid information.");
+            $(".modal-body p").text("One or more fields have an error. Please check and try again.");
             $(".page-template-contact").css("overflow-y", "scroll");
 
           } else {
@@ -326,7 +329,7 @@ jQuery(document).ready(function($){
             $(".modal.fade").addClass("in");
             $(".modal-backdrop.fade").addClass("in");
             $(".modal-title").text("Successfull");
-            $(".modal-body p").text("Your message was successfully sent. Thank you!");
+            $(".modal-body p").text("Thank you for your message. It has been sent.");
 
             setTimeout( function(){
               $("body").removeClass("modal-open");
@@ -347,10 +350,3 @@ jQuery(document).ready(function($){
     $(".modal-backdrop.fade").removeClass("in");
   });
 });
-
-// RECAPTCA - I'M NOT A ROBOT
-var onloadCallback = function() {
-  grecaptcha.render('re-captcha', {
-    'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'
-  });
-};
