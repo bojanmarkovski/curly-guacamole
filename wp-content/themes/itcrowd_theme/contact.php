@@ -64,7 +64,7 @@
                </div>
                <div class="col-lg-0 col-md-0 col-sm-6 col-xs-12 contact-information">
                   <div>
-                     <img class="img-responsive" src="images/logo.png">
+                     <img class="img-responsive" src="<?php echo get_site_url(); ?>/wp-content/uploads/2019/04/logo.png">
                      <p> <i class="fas fa-map-marker-alt fa-2x"></i>
                         <span>Ljubljanska 6, City Tower floor 1, 1000 Skopje</span>
                      </p>
@@ -91,7 +91,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
+                     <form action="/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">

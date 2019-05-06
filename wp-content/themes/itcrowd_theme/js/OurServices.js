@@ -20,7 +20,7 @@ $(document).ready(function(){
     
     $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.9)", "z-index" : "9999999999999"});
     $("#myModal-error").css("background-color", "rgba(0,0,0,0.7)");
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 8; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
     }
     
@@ -128,6 +128,12 @@ $(document).ready(function(){
     return; // No go on form...
   }); // end of submit function
 
+  // $("#exampleModal .btn.btn-default").on('click', function(){
+  //   $("body").removeClass("modal-open");
+  //   $(".modal.fade").removeClass("in").css("display", "none");
+  //   $(".modal-backdrop.fade").removeClass("in").remove();
+  //   $("#myModal-error").remove();
+  // });
 });
 
 var onloadCallback = function() {
