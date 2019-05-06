@@ -56,7 +56,7 @@
                               <!-- RE-CAPTCHA -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6" data-callback="recaptcha_callback"></div>
+                                    <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
                                     <div class="error re-captcha">Please verify that you are not a robot.</div>
                                  </div>
                               </div>
@@ -124,7 +124,7 @@
                                     <div class="error">Please enter a valid message</div>
                                  </div>
                               </div>
-                              <div class="g-recaptcha" id="re-captcha-mobile" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6" data-callback="recaptcha_callback"></div>
+                              <div class="g-recaptcha" id="re-captcha-mobile" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
                               <button type="submit" class="btn btn-block">
                               <small>SEND E-MAIL</small>
                               </button>

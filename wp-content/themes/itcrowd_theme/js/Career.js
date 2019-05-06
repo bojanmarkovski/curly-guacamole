@@ -208,7 +208,34 @@ $(document).ready(function(){
           console.log("Uh, oh. There was an error:", err); // You broke something...
         },
         success: function(data) {
-          if(data.status == "validation_failed"){
+
+          if(data.status == "spam"){
+            
+            if(data.message == "There was an error trying to send your message. Please try again later.") {
+              $(".error.re-captcha").css({"visibility" : "visible"});
+
+              $(".loader").addClass("hidden");
+              $(".modal-title").text("Error");
+              $(".modal-body p").text("Please verify that you are not a robot.");
+              $(".modal.fade.in").css("background-color", "0, 0, 0, 0.7")
+
+              // OPEN ERROR POP-UP MODAL
+              $("#myModal-error").css("display", "block");
+              $("body").addClass("modal-open");
+              $(".modal-backdrop.fade").addClass("in");
+              $(".form-message .modal-body").css("height", "auto");
+              $(".modal.fade").addClass("in");
+
+
+              // CLOSE BUTTON IN ERROR POP-UP MODAL
+              $("#myModal-error .btn.btn-default").on('click', function(){
+                $(".modal").removeClass("fade").removeClass("in").css("display", "none");
+                $(".modal-backdrop").remove();
+                $("body").removeClass("modal-open");
+              });
+            }
+          }
+          else if(data.status == "validation_failed"){
             
             for (let dataInto = 0; dataInto < data.invalidFields.length; dataInto++) {
               const intoMessage = data.invalidFields[dataInto].into;
@@ -262,6 +289,7 @@ $(document).ready(function(){
               $(".modal").removeClass("fade").removeClass("in").css("display", "none");
               $(".modal-backdrop").remove();
               $("body").removeClass("modal-open");
+              $(".error.re-captcha").css({"visibility" : "hidden"});
             });
             
             $("#myModal-error").css("display", "block");
@@ -275,6 +303,7 @@ $(document).ready(function(){
               $(".modal-backdrop").remove();
               $("body").removeClass("modal-open");
               $(".page-template-career").removeClass("modal-open").css("padding-right", "0px");
+              $(".error.re-captcha").css({"visibility" : "hidden"});
             },5000);
           }
         }
@@ -285,10 +314,3 @@ $(document).ready(function(){
   }); // end of submit function
 
 });
-
-// RECAPTCA - I'M NOT A ROBOT
-var onloadCallback = function() {
-  grecaptcha.render('re-captcha', {
-    'sitekey': '6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6'
-  });
-};
