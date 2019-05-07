@@ -151,7 +151,7 @@
 
                <div class="row blur-modal">
                   <div class="col-lg-6 col-lg-offset-3 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
-                     <button type="button" class="btn btn-block" data-toggle="modal" data-target="#exampleModal" style="">
+                     <button type="button" class="btn btn-block" data-toggle="modal" data-target="#exampleModal">
                      HIRE US
                      </button>
                   </div>
@@ -170,7 +170,7 @@
                   <h2>Contact Us</h2>
                </div>
                <div class="modal-body">
-                <form action="/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
+                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/227/feedback" method="POST" id="hire-us-form">
                      <div class="form-group">
                         <!-- NAME INPUT -->
                         <div class="holder">

@@ -126,13 +126,10 @@ $(document).ready(function(){
 
             // CLOSE BUTTON IN SUCCESS POP-UP MODAL
             $("#myModal-error .btn.btn-default").on('click', function(){
-              $(".modal").removeClass("fade").removeClass("in").css("display", "none");
-              $(".modal-backdrop").remove();
-              $("body").removeClass("modal-open");
-              $(".page-template-services").removeClass("modal-open").css("padding-right", "0px");
-              $(".error.re-captcha").css({"visibility" : "hidden"});
+              $("#myModal-error").removeClass("fade").removeClass("in").css("display", "none");
+              $("#exampleModal .modal-dialog").removeClass("blur-modal");
             });
-            
+
             $("#myModal-error").css("display", "block");
             $("body").addClass("modal-open");
             $(".modal.fade").addClass("in");
@@ -141,12 +138,8 @@ $(document).ready(function(){
             $("#exampleModal .modal-dialog").addClass("blur-modal");
 
             setTimeout( function(){
-              $(".modal").removeClass("fade").removeClass("in").css("display", "none");
-              $(".modal-backdrop").remove();
-              $("body").removeClass("modal-open");
-              $(".page-template-services").removeClass("modal-open").css("padding-right", "0px");
+              $("#myModal-error").removeClass("fade").removeClass("in").css("display", "none");
               $("#exampleModal .modal-dialog").removeClass("blur-modal");
-              $(".error.re-captcha").css({"visibility" : "hidden"});
             },5000);
           }
         }
