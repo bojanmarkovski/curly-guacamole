@@ -443,6 +443,73 @@ textarea::-webkit-scrollbar-track {
 	padding-right: 0 !important;
 }
 
+/* RE-CAPTCHA CONTACT */
+div#re-captcha {
+	padding-left: 5px;
+}
+div#re-captcha::after {
+    content: "";
+    right: 0;
+    top: 0;
+    bottom: 0px;
+    position: absolute;
+    width: calc(100% - 300px);
+    background: #f7f7f7;
+    height: 76px;
+    border-top: 1px solid #d6d4d4;
+	border-right: 1px solid #d6d4d4;
+    border-bottom: 1px solid #d6d4d4;
+	border-radius: 0px 9px 9px 0;
+}
+.page-template-contact div#re-captcha::after {
+	background: #222222;
+	border-top: 1px solid #585858;
+    border-right: 1px solid #585858;
+    border-bottom: 1px solid #585858;
+}
+div#re-captcha::before{
+	content: "";
+	left: 0;
+	top: 0;
+	bottom: 0px;
+	position: absolute;
+	width: 9px;
+	height: 76px;
+	background: #f7f7f7;
+	border-top: 1px solid #d6d4d4;
+	border-left: 1px solid #d6d4d4;
+    border-bottom: 1px solid #d6d4d4;
+	border-radius: 9px 0px 0px 9px;
+}
+.page-template-contact div#re-captcha::before{
+	background: #222222;
+	border-top: 1px solid #585858;
+	border-left: 1px solid #585858;
+	border-bottom: 1px solid #585858;
+}
+@media screen and (max-width: 405px){
+	div#re-captcha {
+		overflow: hidden;
+		border-radius: 9px;
+	}
+	div#re-captcha::after {
+		width: calc(100% - 200px)
+	}
+	div#re-captcha::before{
+		content: "";
+		left: 0;
+		top: 0;
+		bottom: 0px;
+		position: absolute;
+		width: 9px;
+		background: #f7f7f7;
+		height: 76px;
+		border-top: 1px solid #d6d4d4;
+		border-left: 1px solid #d6d4d4;
+		border-bottom: 1px solid #d6d4d4;
+		border-radius: 9px 0px 0px 9px;
+	}
+}
 /* END FORM STYLE */
 
 /* MEDIA QUERY FOR ALL PAGES */
@@ -713,62 +780,6 @@ textarea::-webkit-scrollbar-track {
 
 .page-template-contact .modal-body{
 	height: auto;
-}
-
-/* RE-CAPTCHA CONTACT */
-div#re-captcha {
-	padding-left: 5px;
-}
-div#re-captcha::after {
-    content: "";
-    right: 0;
-    top: 0;
-    bottom: 0px;
-    position: absolute;
-    width: calc(100% - 300px);
-    background: #222222;
-    height: 76px;
-    border-top: 1px solid #585858;
-    border-right: 1px solid #585858;
-    border-bottom: 1px solid #585858;
-	border-radius: 0px 9px 9px 0;
-}
-div#re-captcha::before{
-	content: "";
-	left: 0;
-	top: 0;
-	bottom: 0px;
-	position: absolute;
-	width: 9px;
-	background: #222222;
-	height: 76px;
-	border-top: 1px solid #585858;
-	border-left: 1px solid #585858;
-	border-bottom: 1px solid #585858;
-	border-radius: 9px 0px 0px 9px;
-}
-@media screen and (max-width: 405px){
-	div#re-captcha {
-		overflow: hidden;
-		border-radius: 9px;
-	}
-	div#re-captcha::after {
-		width: calc(100% - 200px)
-	}
-	div#re-captcha::before{
-		content: "";
-		left: 0;
-		top: 0;
-		bottom: 0px;
-		position: absolute;
-		width: 9px;
-		background: #222222;
-		height: 76px;
-		border-top: 1px solid #585858;
-		border-left: 1px solid #585858;
-		border-bottom: 1px solid #585858;
-		border-radius: 9px 0px 0px 9px;
-	}
 }
 
 /* END Contact */

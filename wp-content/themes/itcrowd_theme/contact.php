@@ -27,7 +27,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
+                     <form action="/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
@@ -98,7 +98,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
+                     <form action="/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
