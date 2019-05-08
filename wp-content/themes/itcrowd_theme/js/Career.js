@@ -83,8 +83,10 @@ $(document).ready(function(){
   $("body").css("overflow-y", "scroll")
 
   // SIZE ATTACH FILE
+  var fileSizeBigger = false;
   $(".file-upload-field").on('change', function(){
     if(this.files[0].size > 5242880){
+      fileSizeBigger = true;
       $("#myModal-error").css("display", "block");
       $("body").addClass("modal-open");
       $(".modal.fade").addClass("in");
@@ -95,10 +97,13 @@ $(document).ready(function(){
         $("body").removeClass("modal-open");
         $(".modal.fade").removeClass("in").css("display", "none");
         $(".modal-backdrop.fade").removeClass("in");
-        var $el = $('.file-upload-wrapper');
-        $el.wrap('<form>').closest('form').get(0).reset();
-        $el.unwrap();
-        $(".file-upload-wrapper").attr("data-text", "No file choosen");
+        
+        if (fileSizeBigger) {
+          var $el = $('.file-upload-wrapper');
+          $el.wrap('<form>').closest('form').get(0).reset();
+          $el.unwrap();
+          $(".file-upload-wrapper").attr("data-text", "No file choosen");
+        }
       });
     }
   })
@@ -149,7 +154,7 @@ $(document).ready(function(){
 // AJAX
   $("form").submit(function(e) {
     $("#myModal-error").css("background", "rgba(0,0,0,0.8)");
-    $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.9)", "z-index" : "9999999999999"});
+    $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.8)", "z-index" : "9999999999999"});
 
     $(".nav").addClass("blur-modal");
     $(".container-fluid.blur-modal").addClass("blur-modal");
@@ -172,7 +177,7 @@ $(document).ready(function(){
     });
 
     $(".btn.btn-block").on('click', function(){
-      $(".modal").css("background-color", "0, 0, 0, 0.7");
+      $(".modal").css("background-color", "0, 0, 0, 0.8");
     });
     // Everything checks out! Continue...
     if (validForm == true) {
@@ -211,6 +216,7 @@ $(document).ready(function(){
 
           if(data.status == "spam"){
             
+            fileSizeBigger = false;
             if(data.message == "There was an error trying to send your message. Please try again later.") {
               $(".error.re-captcha").css({"visibility" : "visible"});
 
@@ -237,6 +243,7 @@ $(document).ready(function(){
           }
           else if(data.status == "validation_failed"){
             
+            fileSizeBigger = false;
             for (let dataInto = 0; dataInto < data.invalidFields.length; dataInto++) {
               const intoMessage = data.invalidFields[dataInto].into;
 
@@ -277,7 +284,8 @@ $(document).ready(function(){
               $("body").removeClass("modal-open");
             });
 
-          } else {
+          } 
+          else {
 
             $(".loader").addClass("hidden");
             $(".modal-title").text("Successfull");

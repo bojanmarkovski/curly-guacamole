@@ -27,7 +27,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                     <form action="/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
+                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
@@ -55,8 +55,8 @@
                               </div>
                               <!-- RE-CAPTCHA -->
                               <div class="holder">
-                                 <div class="input-holder">
-                                    <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
+                                 <div class="input-holder" id="re-captcha-1">
+                                    <div class="g-recaptcha" id="re-captcha" data-theme="dark" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
                                     <div class="error re-captcha">Please verify that you are not a robot.</div>
                                  </div>
                               </div>
@@ -98,7 +98,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-                     <form action="/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
+                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/226/feedback" method="POST" id="contact-form-mobile">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
@@ -126,8 +126,8 @@
                               </div>
                               <!-- RE-CAPTCHA -->
                               <div class="holder">
-                                 <div class="input-holder">
-                                    <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
+                                 <div class="input-holder" id="re-captcha-1">
+                                    <div class="g-recaptcha" id="re-captcha" data-theme="dark" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
                                     <div class="error re-captcha">Please verify that you are not a robot.</div>
                                  </div>
                               </div>
@@ -166,7 +166,7 @@
             <p>Your message was Successfully sent. Thank you!</p>
          </div>
          <div class="modal-footer">
-         <button type="button" class="btn btn-default btn-secondary" data-dismiss="modal">OK</button>
+         <button type="button" class="btn btn-default btn-secondary" data-dismiss="modal">Close</button>
          </div>
       </div>
    </div>
