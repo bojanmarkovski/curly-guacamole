@@ -510,6 +510,15 @@ div#re-captcha::before{
 		border-radius: 9px 0px 0px 9px;
 	}
 }
+@media screen and (min-width: 992px) and (max-width: 1020px){
+	.page-template-contact div#re-captcha{
+		overflow: hidden;
+		border-radius: 12px;
+	}
+	.page-template-contact div#re-captcha::after{
+		width: 9px;
+	}
+}
 /* END FORM STYLE */
 
 /* MEDIA QUERY FOR ALL PAGES */
@@ -2134,6 +2143,7 @@ address {
 .iq-banner .banner-text h1 {
 	font-size: 55px;
 	line-height: normal;
+	margin: 0px;
 }
 
 .iq-banner .banner-img {
@@ -2154,7 +2164,7 @@ address {
 	position: absolute;
 	bottom: 50%;
 	margin-bottom: -125px;
-	left: -13%;
+	left: -7%;
 	border: 15px solid rgba(255, 255, 255, 0.1);
 	border-radius: 900px;
 	height: 250px;
@@ -2191,63 +2201,55 @@ address {
 	right: 82%
 }
 
+/* MAIN WAVE */
+
 @keyframes move_wave {
-	0% {
-		transform: translateX(0) translateZ(0) scaleY(1);
-		-webkit-transform: translateX(0) translateZ(0) scaleY(1);
-		-ms-transform: translateX(0) translateZ(0) scaleY(1);
-		-o-transform: translateX(0) translateZ(0) scaleY(1);
-		-moz-transform: translateX(0) translateZ(0) scaleY(1);
-	}
-	50% {
-		transform: translateX(-25%) translateZ(0) scaleY(0.55);
-		-webkit-transform: translateX(-25%) translateZ(0) scaleY(0.55);
-		-ms-transform: translateX(-25%) translateZ(0) scaleY(0.55);
-		-o-transform: translateX(-25%) translateZ(0) scaleY(0.55);
-		-moz-transform: translateX(-25%) translateZ(0) scaleY(0.55);
-	}
-	100% {
-		transform: translateX(-50%) translateZ(0) scaleY(1);
-		-webkit-transform: translateX(-50%) translateZ(0) scaleY(1);
-		-ms-transform: translateX(-50%) translateZ(0) scaleY(1);
-		-o-transform: translateX(-50%) translateZ(0) scaleY(1);
-		-moz-transform: translateX(-50%) translateZ(0) scaleY(1);
-	}
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
 }
 
 .waveWrapper {
 	overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -12px;
+    top: 80%;
+    margin: auto;
 }
 
 .waveWrapperInner {
 	position: absolute;
 	width: 100%;
 	overflow: hidden;
-	height: 94px;
-	bottom: 28px;
+    height: 100%;
+    bottom: -5px;
 }
 
 .wave {
 	position: absolute;
-	left: 0;
-	width: 300%;
-	height: 100%;
-	background-repeat: repeat no-repeat;
-	background-position: 0 bottom;
-	transform-origin: center bottom;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
 }
 
 .waveBottom {
-	background-image: url('images/water1.png');
 	background-size: 50% 100px;
 }
 
 .waveAnimation .waveBottom {
-	-webkit-animation-name: move_wave 23s linear infinite;
-	-moz-animation-name: move_wave 23s linear infinite;
-	-ms-animation-name: move_wave 23s linear infinite;
-	-o-animation-name: move_wave 23s linear infinite;
 	animation: move_wave 23s linear infinite;
+	overflow: hidden;
 }
 
 #iq-home {
@@ -4440,7 +4442,7 @@ ul p {
 
 @media screen and (max-width: 991px) {
 	.iq-banner .banner-img {
-		width: 100%;
+		width: 90%;
 		margin: 0 auto;
 	}
 	.iq-banner .container-fluid {
@@ -4485,7 +4487,7 @@ ul p {
 	}
 	.waveWrapperInner {
 		height: 60px;
-		bottom: 20px;
+		bottom: 0px;
 	}
 }
 
@@ -4551,6 +4553,12 @@ ul p {
 	.error404 .error-wrapper{
 		height: auto;
 		padding-bottom: 10vh;
+	}
+	.iq-banner .banner-text h1{
+		margin-top: 15px;
+	}
+	.page-template-career .container-fluid h2 {
+		padding-top: 25px;
 	}
 }
 /* END ERROR PAGE ====================================================== */

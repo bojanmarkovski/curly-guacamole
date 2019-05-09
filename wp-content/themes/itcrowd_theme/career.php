@@ -8,21 +8,21 @@
     <div class="container-fluid career blur-modal">
         <!-- CARE TO JOIN US TITLE -->
         <div class="row pd-top-70px">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 text-center">
                 <h2>Care to join Us?</h2>
                 <hr>
             </div>
         </div>
         <!-- PARAGRAPH -->
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 text-center">
                 <p class="paragraph-career">
                     It takes two to tango, but it takes a bunch of highly enthusiastic and technology-driven individuals to make the impossible possible. Hand-to-hand we laugh, live, brainstorm, work hard and achieve outstanding results.
                 </p>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
                 <div class="row pd-70px">
                     <!-- LEFT SIDE ALL OPEN POSITIONS -->
                     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 career-left">
