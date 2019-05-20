@@ -233,8 +233,8 @@
         <div class="work-process">
             <div class="progress-container">
                 <div class="progress-title first-title">
-                <h3>Planning</h3>
-                <small>Lorem ipsum epsum lorem</small>
+                <h3>Requirement Analisys</h3>
+                <small>We pay attention to our clients wishes, what is important to them and what is the way should be done</small>
                 </div>
                 <!-- FIRST -->
                 <ul class="chart-skills first">
@@ -275,15 +275,15 @@
                 </div>
                 </div>
                 <div class="progress-title second-title">
-                <h3>Content</h3>
-                <small>Lorem ipsum epsum lorem</small>
+                <h3>Design and planing</h3>
+                <small>We suggest a solution, design and a plan for implementation and make sure that we are in the same line with the client</small>
                 </div>
             </div>
             <!-- THIRD -->
             <div class="progress-container">
                 <div class="progress-title third-title">
-                <h3>Design</h3>
-                <small>Lorem ipsum epsum lorem</small>
+                <h3>Development</h3>
+                <small>We create a team from relevant resources for the solution development, according the planned technology and use the most appropriate methodology and tools for project menagement</small>
                 </div>
                 <div class="container">
                 <ul class="chart-skills third">
@@ -317,15 +317,15 @@
                 </div>
                 </div>
                 <div class="progress-title fourth-title">
-                <h3>Develop</h3>
-                <small>Lorem ipsum epsum lorem</small>
+                <h3>QA</h3>
+                <small>Since the quality is our main priority, before we deliver, we use the most proven practices for manual and automatic testing of the solution and fix the problems</small>
                 </div>
             </div>
             <!-- FIFTH -->
             <div class="progress-container">
                 <div class="progress-title fifth-title">
-                <h3>Software Testing</h3>
-                <small>Lorem ipsum epsum lorem</small>
+                <h3>Deployment and evaulation</h3>
+                <small>The solution is now ready to use and available to our clients and their users. This is also the phase when we expect evaluation for our work and confirmation that the idea is now a reality</small>
                 </div>
                 <div class="container">
                 <ul class="chart-skills fifth">
@@ -359,8 +359,8 @@
                 </div>
                 </div>
                 <div class="progress-title sixth-title">
-                <h3>Support</h3>
-                <small>Lorem ipsum epsum lorem</small>
+                <h3>Maintaince</h3>
+                <small>When everything is done, the solution is functional and on the market, we are here as a full-time support and ready for upgrate and write a succesful story together</small>
                 </div>
             </div>
         </div>

@@ -2340,7 +2340,7 @@ address {
 	width: 220px;
 	height: 110px;
 	overflow: hidden;
-	top: 85px;
+	top: 190px;
 }
 
 .chart-skills.first::before,
@@ -2523,7 +2523,7 @@ address {
 	position: absolute;
 	width: 220px;
 	height: 110px;
-	top: 195px;
+	top: 300px;
 	overflow: hidden;
 }
 
@@ -2696,7 +2696,7 @@ address {
 	position: absolute;
 	width: 220px;
 	height: 110px;
-	top: 85px;
+	top: 190px;
 	overflow: hidden;
 	margin: 0 auto;
 	padding: 0;
@@ -2880,7 +2880,7 @@ address {
 	position: absolute;
 	width: 220px;
 	height: 110px;
-	top: 195px;
+	top: 300px;
 	overflow: hidden;
 }
 
@@ -3053,7 +3053,7 @@ address {
 	position: absolute;
 	width: 220px;
 	height: 110px;
-	top: 85px;
+	top: 190px;
 	overflow: hidden;
 	margin: 0 auto;
 	padding: 0;
@@ -3237,7 +3237,7 @@ address {
 	position: absolute;
 	width: 220px;
 	height: 110px;
-	top: 195px;
+	top: 300px;
 	overflow: hidden;
 }
 
@@ -3436,7 +3436,7 @@ ul p {
 	background-size: cover;
 	background-repeat: no-repeat;
 	left: 50%;
-	top: 50%;
+	top: 75%;
 	transform: translate(-50%, -50%);
 	font-size: 20px;
 	font-weight: bold;
@@ -3467,11 +3467,11 @@ ul p {
 
 .progress-title {
 	text-align: center;
-	height: 110px;
+	height: 0;
 }
 
 .work-process-row-container {
-	height: 405px;
+	height: 570px;
 	position: relative;
 	margin-bottom: 25px;
 }
