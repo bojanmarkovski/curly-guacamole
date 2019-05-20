@@ -54,6 +54,7 @@
                                  </div>
                               </div>
                               <!-- RE-CAPTCHA -->
+
                               <div class="holder">
                                  <div class="input-holder" id="re-captcha-1">
                                     <div class="g-recaptcha" id="re-captcha" data-theme="dark" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
