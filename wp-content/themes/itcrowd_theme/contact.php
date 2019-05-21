@@ -56,7 +56,7 @@
                               <!-- RE-CAPTCHA -->
 
                               <div class="holder">
-                                 <div class="input-holder" id="re-captcha-1">
+                                 <div class="input-holder">
                                     <div class="g-recaptcha" id="re-captcha" data-theme="dark" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
                                     <div class="error re-captcha">Please verify that you are not a robot.</div>
                                  </div>

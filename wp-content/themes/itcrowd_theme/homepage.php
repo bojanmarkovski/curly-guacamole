@@ -271,7 +271,7 @@
                         <span>Python</span>
                     </li>
                 </ul>
-                <div class="icon-progress second-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/content.png');">
+                <div class="icon-progress second-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/design.png');">
                 </div>
                 </div>
                 <div class="progress-title second-title">
@@ -300,7 +300,7 @@
                         <span>Python</span>
                     </li>
                 </ul>
-                <div class="icon-progress third-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/design.png');">
+                <div class="icon-progress third-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/development.png');">
                 </div>
                 </div>
             </div>
@@ -313,7 +313,7 @@
                     <li></li>
                     <li></li>
                 </ul>
-                <div class="icon-progress fourth-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/development.png');">
+                <div class="icon-progress fourth-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/content.png');">
                 </div>
                 </div>
                 <div class="progress-title fourth-title">

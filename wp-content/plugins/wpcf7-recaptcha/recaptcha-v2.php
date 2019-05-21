@@ -59,15 +59,18 @@ add_action( 'wpcf7_init', 'iqfix_wpcf7_add_recaptcha_tag', 20 );
  * @return void
  */
 function iqfix_wpcf7_recaptcha_enqueue_scripts() {
-
-	$url = 'https://www.google.com/recaptcha/api.js';
+	
+	$source = WPCF7::get_option( 'iqfix_recaptcha_source' );
+	$source = IQFix_WPCF7_Deity::verify_recaptcha_source( $source );
+	
+	$url = sprintf( 'https://www.%s/recaptcha/api.js', $source );
 	$url = add_query_arg( array(
 		'hl'		=> esc_attr( get_locale() ),	// Lowercase L
 		'onload'	=> 'recaptchaCallback',
 		'render' 	=> 'explicit',
 	), $url );
 
-	wp_register_script( 'google-recaptcha', $url, array(), '2.0', true );
+	wp_register_script( 'google-recaptcha', $url, array( 'jquery' ), '2.0', true );
 	wp_localize_script( 'google-recaptcha', 'wpcf7iqfix', array(
         'recaptcha_empty' => esc_html__( 'Please verify that you are not a robot.', 'wpcf7-recaptcha' ),
     ) );
@@ -231,25 +234,20 @@ function iqfix_wpcf7_recaptcha_noscript( $args = '' ) {
 	if ( empty( $args['sitekey'] ) ) {
 		return;
 	}
-
-	$url = add_query_arg( 'k', $args['sitekey'],
-		'https://www.google.com/recaptcha/api/fallback' );
+	
+	$source = WPCF7::get_option( 'iqfix_recaptcha_source' );
+	$source = IQFix_WPCF7_Deity::verify_recaptcha_source( $source );
+	$url 	= add_query_arg( 'k', $args['sitekey'],
+		sprintf( 'https://www.%s/recaptcha/api/fallback', $source )
+	);
 
 	ob_start();
 ?>
 
 <noscript>
-	<div style="width: 302px; height: 422px;">
-		<div style="width: 302px; height: 422px; position: relative;">
-			<div style="width: 302px; height: 422px; position: absolute;">
-				<iframe src="<?php echo esc_url( $url ); ?>" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;">
-				</iframe>
-			</div>
-			<div style="width: 300px; height: 60px; border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
-				<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;">
-				</textarea>
-			</div>
-		</div>
+	<div class="grecaptcha-noscript">
+		<iframe src="<?php echo esc_url( $url ); ?>" frameborder="0" scrolling="no" width="310" height="430"></iframe>
+		<textarea name="g-recaptcha-response" rows="3" cols="40" placeholder="<?php esc_attr_e( 'reCaptcha Response Here' ); ?>"></textarea>
 	</div>
 </noscript>
 <?php
@@ -476,8 +474,6 @@ function iqfix_recaptcha_class_init() {
 		
 	Class IQFix_ReCaptcha extends WPCF7_RECAPTCHA {
 
-		const VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
-
 		private static $instance;
 		private $sitekeys;
 
@@ -589,11 +585,13 @@ function iqfix_recaptcha_class_init() {
 			if ( empty( $response_token ) ) {
 				return $is_human;
 			}
-	
-			$url = self::VERIFY_URL;
+			
+			$source  = WPCF7::get_option( 'iqfix_recaptcha_source' );
+			$source  = IQFix_WPCF7_Deity::verify_recaptcha_source( $source );
+			$url 	 = sprintf( 'https://www.%s/recaptcha/api/siteverify', $source );
 			$sitekey = $this->get_sitekey();
-			$secret = $this->get_secret( $sitekey );
-	
+			$secret  = $this->get_secret( $sitekey );
+			
 			$response = wp_safe_remote_post( $url, array(
 				'body' => array(
 					'secret' => $secret,
@@ -603,14 +601,20 @@ function iqfix_recaptcha_class_init() {
 			) );
 	
 			if ( 200 != wp_remote_retrieve_response_code( $response ) ) {
+				
+				if ( WP_DEBUG ) {
+					$this->log( $endpoint, $request, $response );
+				}
+	
 				return $is_human;
+				
 			}
 	
 			$response = wp_remote_retrieve_body( $response );
 			$response = json_decode( $response, true );
-
 			$is_human = isset( $response['success'] ) && true == $response['success'];
-			return $is_human;
+			
+			return apply_filters( 'wpcf7_recaptcha_verify_response', $is_human, $response );
 
 		}
 

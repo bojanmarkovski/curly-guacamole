@@ -488,33 +488,6 @@ div#re-captcha::before{
 	border-bottom: 1px solid #585858;
 }
 
-.page-template-contact #re-captcha-1::after{
-	top: 38px;
-	color: white;
-}
-#re-captcha-1::after{
-	content: "I'am not a robot";
-    left: 65px;
-    top: 28px;
-    position: absolute;
-    background: transparent;
-    color: #585858;
-}
-.page-template-contact #re-captcha-1::before{
-	background: #222222;
-	color: white;
-}
-#re-captcha-1::before{
-	content: '';
-	left: 57px;
-    top: 25px;
-    position: absolute;
-    background: #f7f7f7;
-    width: 152px;
-    height: 30px;
-	color: white;
-	z-index: 0;
-}
 @media screen and (max-width: 405px){
 	div#re-captcha {
 		overflow: hidden;
