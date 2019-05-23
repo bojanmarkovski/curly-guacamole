@@ -1,4 +1,9 @@
 $(document).ready(function(){
+ 
+  // IF BROWSER IS AN EDGE INPUTS ARE DIFFERENT 
+  if (/Edge/.test(navigator.userAgent)) {
+    $(".placeholder").css({ "transform" : "scale(0.75) translateY(-26px) translateX(-5px)"})
+  }
   
   // IF WINDOW > 991 AND CLICK ON SOME CARD. SLIDE-DOWN / SLIDE-UP AND APPEND THAT CARD.
   $(".career-left").on('click', '.row.pd-box', function() {

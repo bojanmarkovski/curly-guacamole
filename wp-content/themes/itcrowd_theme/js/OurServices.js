@@ -1,5 +1,10 @@
 
 $(document).ready(function(){
+  // IF BROWSER IS AN EDGE INPUTS ARE DIFFERENT 
+  if (/Edge/.test(navigator.userAgent)) {
+    $(".placeholder").css({ "transform" : "scale(0.75) translateY(-26px) translateX(-5px)"})
+  }
+
   if ($(window).width() < 991) {
     $("hr").css("display", "inline-block", "!important");
   } else {

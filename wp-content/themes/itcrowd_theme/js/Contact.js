@@ -1,6 +1,11 @@
 jQuery(document).ready(function($){
 
-// AJAX
+  // IF BROWSER IS AN EDGE INPUTS ARE DIFFERENT 
+  if (/Edge/.test(navigator.userAgent)) {
+    $(".placeholder").css({ "transform" : "scale(0.75) translateY(-26px) translateX(-5px)"})
+  }
+
+  // AJAX
   $("form").submit(function(e) {
     $(".loader").removeClass("hidden").css("background-color" , "rgba(0, 0, 0, 0.9)");
 
