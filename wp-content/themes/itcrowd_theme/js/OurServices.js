@@ -66,23 +66,23 @@ $(document).ready(function(){
               $(".error.re-captcha").css({"visibility" : "visible"});
 
               $(".loader").addClass("hidden");
-              $(".modal-title").text("Error");
-              $(".modal-body p").text("Please verify that you are not a robot.");
+              // $(".modal-title").text("Error");
+              // $(".modal-body p").text("Please verify that you are not a robot.");
 
-              // OPEN ERROR POP-UP MODAL
-              $("#myModal-error").css("display", "block");
-              $("body").addClass("modal-open");
-              $("#exampleModal .modal-dialog").addClass("blur-modal");
-              $(".modal-backdrop.fade").addClass("in");
-              $(".form-message .modal-body").css("height", "auto");
-              $(".modal.fade").addClass("in");
+              // // OPEN ERROR POP-UP MODAL
+              // $("#myModal-error").css("display", "block");
+              // $("body").addClass("modal-open");
+              // $("#exampleModal .modal-dialog").addClass("blur-modal");
+              // $(".modal-backdrop.fade").addClass("in");
+              // $(".form-message .modal-body").css("height", "auto");
+              // $(".modal.fade").addClass("in");
               
 
-              // CLOSE BUTTON IN ERROR POP-UP MODAL
-              $("#myModal-error .btn.btn-default").on('click', function(){
-                $("#myModal-error").removeClass("fade").removeClass("in").css("display", "none");
-                $("#exampleModal .modal-dialog").removeClass("blur-modal");
-              });
+              // // CLOSE BUTTON IN ERROR POP-UP MODAL
+              // $("#myModal-error .btn.btn-default").on('click', function(){
+              //   $("#myModal-error").removeClass("fade").removeClass("in").css("display", "none");
+              //   $("#exampleModal .modal-dialog").removeClass("blur-modal");
+              // });
             }
           }
           else if(data.status == "validation_failed"){
@@ -105,29 +105,29 @@ $(document).ready(function(){
             }
 
             $(".loader").addClass("hidden");
-            $(".modal-title").text("Error");
-            $(".modal-body p").text("One or more fields have an error. Please check and try again.");
+            // $(".modal-title").text("Error");
+            // $(".modal-body p").text("One or more fields have an error. Please check and try again.");
 
-            // OPEN ERROR POP-UP MODAL
-            $("#myModal-error").css("display", "block");
-            $("body").addClass("modal-open");
-            $("#exampleModal .modal-dialog").addClass("blur-modal");
-            $(".modal-backdrop.fade").addClass("in");
-            $(".form-message .modal-body").css("height", "auto");
-            $(".modal.fade").addClass("in");
+            // // OPEN ERROR POP-UP MODAL
+            // $("#myModal-error").css("display", "block");
+            // $("body").addClass("modal-open");
+            // $("#exampleModal .modal-dialog").addClass("blur-modal");
+            // $(".modal-backdrop.fade").addClass("in");
+            // $(".form-message .modal-body").css("height", "auto");
+            // $(".modal.fade").addClass("in");
             
 
-            // CLOSE BUTTON IN ERROR POP-UP MODAL
-            $("#myModal-error .btn.btn-default").on('click', function(){
-              $("#myModal-error").removeClass("fade").removeClass("in").css("display", "none");
-              $("#exampleModal .modal-dialog").removeClass("blur-modal");
-            });
+            // // CLOSE BUTTON IN ERROR POP-UP MODAL
+            // $("#myModal-error .btn.btn-default").on('click', function(){
+            //   $("#myModal-error").removeClass("fade").removeClass("in").css("display", "none");
+            //   $("#exampleModal .modal-dialog").removeClass("blur-modal");
+            // });
 
           } else {
 
             $(".loader").addClass("hidden");
             $(".modal-title").text("Successfull");
-            $(".modal-body p").text("Thank you for your message. It has been sent.");
+            $(".modal-body p").text("Message sent.");
 
             // CLOSE BUTTON IN SUCCESS POP-UP MODAL
             $("#myModal-error .btn.btn-default").on('click', function(){

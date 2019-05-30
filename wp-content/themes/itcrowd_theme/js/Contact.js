@@ -51,13 +51,13 @@ jQuery(document).ready(function($){
 
               $(".loader").addClass("hidden");
 
-              $("#myModal-error").css("display", "block");
-              $("body").addClass("modal-open");
-              $(".modal.fade").addClass("in");
-              $(".modal-backdrop.fade").addClass("in");
-              $(".modal-title").text("Error");
-              $(".modal-body p").text("Please verify that you are not a robot.");
-              $(".page-template-contact").css("overflow-y", "scroll");
+              // $("#myModal-error").css("display", "block");
+              // $("body").addClass("modal-open");
+              // $(".modal.fade").addClass("in");
+              // $(".modal-backdrop.fade").addClass("in");
+              // $(".modal-title").text("Error");
+              // $(".modal-body p").text("Please verify that you are not a robot.");
+              // $(".page-template-contact").css("overflow-y", "scroll");
             }
           }
           else if(data.status == "validation_failed"){
@@ -88,13 +88,13 @@ jQuery(document).ready(function($){
 
             $(".loader").addClass("hidden");
 
-            $("#myModal-error").css("display", "block");
-            $("body").addClass("modal-open");
-            $(".modal.fade").addClass("in");
-            $(".modal-backdrop.fade").addClass("in");
-            $(".modal-title").text("Error");
-            $(".modal-body p").text("One or more fields have an error. Please check and try again.");
-            $(".page-template-contact").css("overflow-y", "scroll");
+            // $("#myModal-error").css("display", "block");
+            // $("body").addClass("modal-open");
+            // $(".modal.fade").addClass("in");
+            // $(".modal-backdrop.fade").addClass("in");
+            // $(".modal-title").text("Error");
+            // $(".modal-body p").text("One or more fields have an error. Please check and try again.");
+            // $(".page-template-contact").css("overflow-y", "scroll");
 
           } 
           else {
@@ -105,7 +105,7 @@ jQuery(document).ready(function($){
             $(".modal.fade").addClass("in");
             $(".modal-backdrop.fade").addClass("in");
             $(".modal-title").text("Successfull");
-            $(".modal-body p").text("Thank you for your message. It has been sent.");
+            $(".modal-body p").text("Message sent.");
 
             $("#myModal-error .btn.btn-default").on('click', function(){
               $(".error.re-captcha").css({"visibility" : "hidden"});
