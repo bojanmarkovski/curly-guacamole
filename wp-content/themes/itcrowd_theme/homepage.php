@@ -1,6 +1,5 @@
 <?php 
 //  Template Name: Home Page
-
 ?>
 
 <?php get_header(); ?>
@@ -25,7 +24,6 @@
         ?>
 
         <?php if ( $myposts ) {
-
             $counter = 0;
             foreach ( $myposts as $term ) { ?>
 
@@ -102,7 +100,6 @@
                 ?>
 
                 <?php if ( $myposts ) {
-
                     $counter = 0;
                     foreach ( $myposts as $term ) { ?>
             
@@ -159,7 +156,6 @@
             ?>
 
             <?php if ( $myposts ) {
-
                 foreach ( $myposts as $term ) { ?>
 
                     <div>
@@ -193,7 +189,6 @@
                             ?>
 
                             <?php if ( $myposts ) {
-
                                 $counter = 1;
                                 foreach ( $myposts as $term ) { ?>
 
@@ -271,7 +266,7 @@
                         <span>Python</span>
                     </li>
                 </ul>
-                <div class="icon-progress second-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/design.png');">
+                <div class="icon-progress second-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/content.png');">
                 </div>
                 </div>
                 <div class="progress-title second-title">
@@ -300,7 +295,7 @@
                         <span>Python</span>
                     </li>
                 </ul>
-                <div class="icon-progress third-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/development.png');">
+                <div class="icon-progress third-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/design.png');">
                 </div>
                 </div>
             </div>
@@ -313,7 +308,7 @@
                     <li></li>
                     <li></li>
                 </ul>
-                <div class="icon-progress fourth-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/content.png');">
+                <div class="icon-progress fourth-title" style="background-image: url('<?php echo $uploaDirUrl; ?>/development.png');">
                 </div>
                 </div>
                 <div class="progress-title fourth-title">

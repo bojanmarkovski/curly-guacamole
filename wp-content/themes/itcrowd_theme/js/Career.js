@@ -226,24 +226,7 @@ $(document).ready(function(){
               $(".error.re-captcha").css({"visibility" : "visible"});
 
               $(".loader").addClass("hidden");
-              // $(".modal-title").text("Error");
-              // $(".modal-body p").text("Please verify that you are not a robot.");
-              // $(".modal.fade.in").css("background-color", "0, 0, 0, 0.7")
 
-              // // OPEN ERROR POP-UP MODAL
-              // $("#myModal-error").css("display", "block");
-              // $("body").addClass("modal-open");
-              // $(".modal-backdrop.fade").addClass("in");
-              // $(".form-message .modal-body").css("height", "auto");
-              // $(".modal.fade").addClass("in");
-
-
-              // // CLOSE BUTTON IN ERROR POP-UP MODAL
-              // $("#myModal-error .btn.btn-default").on('click', function(){
-              //   $(".modal").removeClass("fade").removeClass("in").css("display", "none");
-              //   $(".modal-backdrop").remove();
-              //   $("body").removeClass("modal-open");
-              // });
             }
           }
           else if(data.status == "validation_failed"){
@@ -270,24 +253,6 @@ $(document).ready(function(){
             }
             
             $(".loader").addClass("hidden");
-            // $(".modal-title").text("Error");
-            // $(".modal-body p").text("One or more fields have an error. Please check and try again.");
-            // $(".modal.fade.in").css("background-color", "0, 0, 0, 0.7")
-
-            // OPEN ERROR POP-UP MODAL
-            // $("#myModal-error").css("display", "block");
-            // $("body").addClass("modal-open");
-            // $(".modal-backdrop.fade").addClass("in");
-            // $(".form-message .modal-body").css("height", "auto");
-            // $(".modal.fade").addClass("in");
-
-
-            // CLOSE BUTTON IN ERROR POP-UP MODAL
-            // $("#myModal-error .btn.btn-default").on('click', function(){
-            //   $(".modal").removeClass("fade").removeClass("in").css("display", "none");
-            //   $(".modal-backdrop").remove();
-            //   $("body").removeClass("modal-open");
-            // });
 
           } 
           else {

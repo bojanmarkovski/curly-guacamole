@@ -27,7 +27,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                     <form action="/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
+                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
@@ -40,7 +40,7 @@
                               <!-- E-MAIL INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" name="your-email" type="email" placeholder=" " required autocomplete="off">
+                                    <input class="input" name="your-email" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" placeholder=" " required autocomplete="off">
                                     <div class="placeholder">Your e-mail *</div>
                                     <div class="error">Please enter a valid email</div>
                                  </div>
@@ -49,7 +49,7 @@
                               <div class="holder">
                                  <div class="input-holder">
                                     <textarea class="input" name="your-message" placeholder=" " required autocomplete="off" rows="3"></textarea>
-                                    <div class="placeholder placeholder-textarea">Your Message</div>
+                                    <div class="placeholder placeholder-textarea">Your Message *</div>
                                     <div class="error">Please enter a valid message</div>
                                  </div>
                               </div>
@@ -57,12 +57,12 @@
 
                               <div class="holder">
                                  <div class="input-holder">
-                                    <div class="g-recaptcha" id="re-captcha" data-theme="dark" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
+                                    <div class="g-recaptcha" id="re-captcha" data-theme="dark" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6" data-callback='onSubmit'></div>
                                     <div class="error re-captcha">Please verify that you are not a robot.</div>
                                  </div>
                               </div>
 
-                              <button type="submit" class="btn btn-block" id="send-contact-form">
+                              <button type="submit" class="btn btn-block" id="send-contact-form" disabled>
                               <small>SEND E-MAIL</small>
                               </button>
                            </div>
@@ -128,11 +128,11 @@
                               <!-- RE-CAPTCHA -->
                               <div class="holder">
                                  <div class="input-holder" id="re-captcha-1">
-                                    <div class="g-recaptcha" id="re-captcha" data-theme="dark" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
+                                    <div class="g-recaptcha" id="re-captcha" data-theme="dark" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6" data-callback='onSubmit'></div>
                                     <div class="error re-captcha">Please verify that you are not a robot.</div>
                                  </div>
                               </div>
-                              <button type="submit" class="btn btn-block">
+                              <button type="submit" class="btn btn-block" disabled>
                               <small>SEND E-MAIL</small>
                               </button>
                            </div>
