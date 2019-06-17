@@ -183,7 +183,7 @@
                         <!-- E-MAIL INPUT -->
                         <div class="holder">
                            <div class="input-holder">
-                              <input class="input" name="your-email" type="email" placeholder=" " required autocomplete="off">
+                              <input class="input" name="your-email" type="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required autocomplete="off">
                               <div class="placeholder">Your e-mail *</div>
                               <div class="error" data-element="email">Please enter a valid email</div>
                            </div>
@@ -208,7 +208,7 @@
                         <!-- RE-CAPTCHA -->
                         <div class="holder">
                             <div class="input-holder">
-                            <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
+                            <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6" data-callback='onSubmit'></div>
                             <div class="error re-captcha">Please verify that you are not a robot.</div>
                             </div>
                         </div>
@@ -218,7 +218,7 @@
                     </div>
                     <div class="modal-footer">
                         <button id="btn-close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-secondary btn-submit">Send e-mail</button>
+                        <button type="submit" class="btn btn-secondary btn-submit" disabled>Send e-mail</button>
                     </div>
                 </form>
             </div>

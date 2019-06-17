@@ -110,7 +110,7 @@
                                         <!-- E-MAIL INPUT -->
                                         <div class="holder">
                                             <div class="input-holder">
-                                                <input class="input" name="your-email" type="email" placeholder=" " required  autocomplete="off">
+                                                <input class="input" name="your-email" type="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required  autocomplete="off">
                                                 <div class="placeholder">Your e-mail *</div>
                                                 <div class="error">Please enter a valid email</div>
                                             </div>
@@ -176,12 +176,12 @@
                                     <!-- RE-CAPTCHA -->
                                     <div class="holder">
                                         <div class="input-holder">
-                                            <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6"></div>
+                                            <div class="g-recaptcha" id="re-captcha" data-sitekey="6LdZIpcUAAAAAI2bvnnVOLYrvDDS6Wu1pHefdfv6" data-callback='onSubmit'></div>
                                             <div class="error re-captcha">Please verify that you are not a robot.</div>
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-block">
+                                    <button type="submit" class="btn btn-block send-email" disabled>
                                     <small>SEND E-MAIL</small>
                                     </button>
                                 </form>

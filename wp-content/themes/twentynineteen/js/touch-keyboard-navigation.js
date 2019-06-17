@@ -306,16 +306,6 @@
 
 		}, true);
 
-		document.addEventListener('click', function(event) {
-
-			// Remove all focused menu states when clicking outside site branding
-			if ( event.target !== document.getElementsByClassName( 'site-branding' )[0] ) {
-				removeAllFocusStates();
-			} else {
-				// nothing
-			}
-
-		}, false);
 	}
 
 	/**

@@ -42,7 +42,7 @@ jQuery(document).ready(function($){
           console.log("Uh, oh. There was an error:", err); // You broke something...
         },
         success: function(data) {
-          
+
           if(data.status == "spam"){
             
             if(data.message == "There was an error trying to send your message. Please try again later.") {
@@ -52,6 +52,7 @@ jQuery(document).ready(function($){
           }
           else if(data.status == "validation_failed"){
             
+            $(".loader").addClass("hidden");
             for (let dataInto = 0; dataInto < data.invalidFields.length; dataInto++) {
               const intoMessage = data.invalidFields[dataInto].into;
               // FOR PC
@@ -75,17 +76,6 @@ jQuery(document).ready(function($){
                 $(".display-none-pc .form-group .holder:nth-child(3) .error").css({"visibility" : "visible"});
               }
             }
-
-            $(".loader").addClass("hidden");
-
-            $("#myModal-error").css("display", "block");
-            $("body").addClass("modal-open");
-            $(".modal.fade").addClass("in");
-            $(".modal-backdrop.fade").addClass("in");
-            $(".modal-title").text("Error");
-            $(".modal-body p").text("One or more fields have an error. Please check and try again.");
-            $(".page-template-contact").css("overflow-y", "scroll");
-            
           } 
           else {
 
@@ -128,7 +118,7 @@ $( 'form' ).click(function(){
     $(".error.re-captcha").css("visibility", "hidden");
     var $captcha = $( '#recaptcha' ),
       response = grecaptcha.getResponse();
-  
+
   if (response.length === 0) {
     // $( '.msg-error').text( "reCAPTCHA is mandatory" );
     if( !$captcha.hasClass( "error" ) ){
@@ -152,4 +142,3 @@ $( 'form' ).click(function(){
 function onSubmit(token) {
   $(".btn.btn-block").removeAttr("disabled");
 };
-

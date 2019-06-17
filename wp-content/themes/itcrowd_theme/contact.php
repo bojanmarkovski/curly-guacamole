@@ -27,7 +27,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
+                     <form action="/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
@@ -112,7 +112,7 @@
                               <!-- E-MAIL INPUT -->
                               <div class="holder">
                                  <div class="input-holder">
-                                    <input class="input" name="your-email-mobile" type="email" placeholder=" " required autocomplete="off">
+                                    <input class="input" name="your-email-mobile" type="email" placeholder=" " pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required autocomplete="off">
                                     <div class="placeholder">Your e-mail *</div>
                                     <div class="error">Please enter a valid email</div>
                                  </div>

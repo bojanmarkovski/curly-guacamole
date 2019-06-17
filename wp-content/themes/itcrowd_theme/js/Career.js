@@ -292,3 +292,8 @@ $(document).ready(function(){
   }); // end of submit function
 
 });
+
+
+function onSubmit(token) {
+  $(".btn.btn-block.send-email").removeAttr("disabled");
+};

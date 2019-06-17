@@ -122,3 +122,6 @@ $(document).ready(function(){
 
 });
 
+function onSubmit(token) {
+  $(".btn.btn-secondary.btn-submit").removeAttr("disabled");
+};
