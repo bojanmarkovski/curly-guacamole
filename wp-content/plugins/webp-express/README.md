@@ -593,9 +593,36 @@ If you got any further questions, look at, or comment on [this topic](https://wo
 ### When is feature X coming? / Roadmap
 No schedule. I move forward as time allows. I currently spend a lot of time answering questions in the support forum. If someone would be nice and help out answering questions here, it would allow me to spend that time developing. Also, donations would allow me to turn down some of the more boring requests from my customers, and speed things up here.
 
-Here are my current plans ahead: 0.13 might be bulk conversion and addition of a diagnose tool – this should release some time spend in the forum. 0.14 could be focused on PNG. 0.15 might be displaying rules for NGINX. 0.16 might be supporting Save-Data header (send extra compressed images to clients who wants to use as little bandwidth as possible). 0.17 might be a file manager-like interface for inspecting generated webp files. 0.18 might be an effort to allow webp for all browsers using [this javascript library](http://libwebpjs.hohenlimburg.org/v0.6.0/). Unfortunately, the javascript librare does not (currently) support srcset attributes, which is why I moved this item down the priority list. We need srcset to be supported for the feature to be useful. 0.19 might be WAMP support. The current milestones, their subtasks and their progress can be viewed here: https://github.com/rosell-dk/webp-express/milestones
+Here are my current plans ahead: 0.15 will probably be a file manager-like interface for converting / bulk converting / viewing conversion logs / comparing original vs webp visually - kind of a merge of current "test converter" and "bulk conversion" interfaces, and with an addition of a file explorer. 0.16 might be various improvements such as option to choose which folders webp express should process (Just uploads / Just uploads and templates / Whole wp-content / Whole system) and options to exclude certain files and folders. 0.17 could be supporting Save-Data header in Varied Image Responses mode (send extra compressed images to clients who wants to use as little bandwidth as possible). 0.18 might be a diagnose tool – this should release some time spend in the forum. 0.18 might be displaying rules for NGINX. 0.19 might be an effort to allow webp for all browsers using [this javascript library](http://libwebpjs.hohenlimburg.org/v0.6.0/). Unfortunately, the javascript librare does not (currently) support srcset attributes, which is why I moved this item down the priority list. We need srcset to be supported for the feature to be useful. 0.20 might be WAMP support. The current milestones, their subtasks and their progress can be viewed here: https://github.com/rosell-dk/webp-express/milestones
 
 If you wish to affect priorities, it is certainly possible. You can try to argue your case in the forum or you can simply let the money do the talking. By donating as little as a cup of coffee on [ko-fi.com/rosell](https://ko-fi.com/rosell), you can leave a wish. I shall take these wishes into account when prioritizing between new features.
+
+## Changes in 0.14.4
+- Now bundles with multiple cwebp binaries for linux for systems where 1.0.2 fails.
+
+## Changes in 0.14.3
+- Fixed filename of supplied cwebp for linux (bug was introduced in 0.14.2)
+
+## Changes in 0.14.2
+- Fixed problem with older versions of cwebp
+- Fixed that images was not deleted
+- Fixed cache problem on options page on systems that disables cache busting (it resulted in "SyntaxError: JSON.parse")
+
+## Changes in 0.14.1
+- A little something
+
+## Changes in 0.14.0
+- Added new "encoding" option, which can be set to auto. This can in some cases dramatically reduce the size of the webp. It is supported by all converters except ewww and gd.
+- Added new "near-lossless" option (only for cwebp and vips). Using this is a good idea for reducing size of lossless webps with an acceptable loss of quality
+- Added new "alpha-quality" option (all converters, except ewww and gd). Using this is a good idea when images with transparency are converted to lossy webp - it has the potential to reduce the size up to 50% (depending on the source material) while keeping an acceptable level of quality
+- Added new conversion methods: Vips and GraphicsMagick
+- Imagick conversion method now supports webp options (finally cracked it!)
+- Using MimeType detection instead of relying on file extensions
+- In "test" converter you now change options and also test PNG files
+- Added conversion logs
+- PNGs are now enabled by default (with the new conversion features especially PNGs are compressed much better)
+
+For more info, see the closed issues on the 0.14.0 milestone on the github repository: https://github.com/rosell-dk/webp-express/milestone/9?closed=1
 
 ## Changes in 0.13.2
 - Fixed Fatal error on image upload in combination with the [Enable Media Replace](https://de.wordpress.org/plugins/enable-media-replace/) plugin. Thanks to Alexander Graef from Germany for reporting.

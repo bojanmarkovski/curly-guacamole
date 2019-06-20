@@ -4,8 +4,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-//echo 'display errors:' . ini_get('display_errors');
-//exit;
+//echo 'display errors:' . ini_get('display_errors'); exit;
 
 //require 'webp-on-demand-1.inc';
 //require '../vendor/autoload.php';
@@ -13,7 +12,7 @@ error_reporting(E_ALL);
 //print_r($_GET); exit;
 
 use \WebPConvert\WebPConvert;
-use \WebPConvert\ServeExistingOrHandOver;
+use \WebPConvert\Serve\ServeConvertedWebP;
 
 include_once "../lib/classes/ConvertHelperIndependent.php";
 use \WebPExpress\ConvertHelperIndependent;
@@ -72,7 +71,7 @@ function loadConfig($configFilename) {
 }
 
 function getSource() {
-    global $options;
+    global $wodOptions;
     global $docRoot;
 
     // First check if it is in an environment variable - thats the safest way
@@ -82,8 +81,8 @@ function getSource() {
     }
 
     // Then header
-    if (isset($options['base-htaccess-on-these-capability-tests'])) {
-        $capTests = $options['base-htaccess-on-these-capability-tests'];
+    if (isset($wodOptions['base-htaccess-on-these-capability-tests'])) {
+        $capTests = $wodOptions['base-htaccess-on-these-capability-tests'];
         $passThroughHeaderDefinitelyUnavailable = ($capTests['passThroughHeaderWorking'] === false);
         $passThrougEnvVarDefinitelyAvailable =($capTests['passThroughEnvWorking'] === true);
     } else {
@@ -163,6 +162,10 @@ function getWpContentRel() {
 $docRoot = rtrim(realpath($_SERVER["DOCUMENT_ROOT"]), '/');
 $webExpressContentDirAbs = $docRoot . '/' . getWpContentRel() . '/webp-express';
 $options = loadConfig($webExpressContentDirAbs . '/config/wod-options.json');
+$wodOptions = $options['wod'];
+$serveOptions = $options['webp-convert'];
+$convertOptions = &$serveOptions['convert'];
+
 
 $source = getSource();
 //$source = getSource(false, false);
@@ -177,19 +180,16 @@ if (!file_exists($source)) {
 
 $destination = ConvertHelperIndependent::getDestination(
     $source,
-    $options['destination-folder'],
-    $options['destination-extension'],
+    $wodOptions['destination-folder'],
+    $wodOptions['destination-extension'],
     $webExpressContentDirAbs,
-    $docRoot . '/' . $options['paths']['uploadDirRel']
+    $docRoot . '/' . $wodOptions['paths']['uploadDirRel']
 );
 
 //echo $destination; exit;
+//echo '<pre>' . print_r($wodOptions, true) . '</pre>'; exit;
 
-
-//echo '<pre>' . print_r($options, true) . '</pre>';
-//exit;
-
-foreach ($options['converters'] as &$converter) {
+foreach ($convertOptions['converters'] as &$converter) {
     if (isset($converter['converter'])) {
         $converterId = $converter['converter'];
     } else {
@@ -200,57 +200,28 @@ foreach ($options['converters'] as &$converter) {
     }
 }
 
-if ($options['forward-query-string']) {
+if ($wodOptions['forward-query-string']) {
     if (isset($_GET['debug'])) {
-        $options['show-report'] = true;
+        $serveOptions['show-report'] = true;
     }
     if (isset($_GET['reconvert'])) {
-        $options['reconvert'] = true;
+        $serveOptions['reconvert'] = true;
     }
 }
 
-function aboutToServeImageCallBack($servingWhat, $whyServingThis, $obj) {
-    return false;   // do not serve!
-}
 
-$options['require-for-conversion'] = 'webp-on-demand-2.inc';
-//$options['require-for-conversion'] = '../../../autoload.php';
-
-include_once '../vendor/rosell-dk/webp-convert/build/webp-on-demand-1.inc';
-
-if (isset($options['success-response']) && ($options['success-response'] == 'original')) {
-
-    /*
-    We want to convert, but serve the original. This is a bit unusual and requires a little tweaking
-
-    First, we use the "decideWhatToServe" method of WebPConvert to find out if we should convert or not
-
-    If result is "destination", it means there is a useful webp image at the destination (no reason to convert)
-    If result is "source", it means that source is lighter than existing webp image (no reason to convert)
-    If result is "fresh-conversion", it means we should convert
-    */
-    $server = new \WebPConvert\Serve\ServeExistingOrHandOver($source, $destination, $options);
-    $server->decideWhatToServe();
-
-    if ($server->whatToServe == 'fresh-conversion') {
-        // Conversion time.
-        // To prevent the serving, we use the callback
-        $options['aboutToServeImageCallBack'] = 'aboutToServeImageCallBack';
-        WebPConvert::convertAndServe($source, $destination, $options);
-
-        // remove the callback, we are going for another round
-        unset($options['aboutToServeImageCallBack']);
-        unset($options['require-for-conversion']);
-    }
-
-    // Serve time
-    $options['serve-original'] = true;      // Serve original
-    $options['add-vary-header'] = false;
-
-    WebPConvert::convertAndServe($source, $destination, $options);
-
+if (isset($wodOptions['success-response']) && ($wodOptions['success-response'] == 'original')) {
+    $serveOptions['serve-original'] = true;
+    $serveOptions['serve-image']['headers']['vary-accept'] = false;
 } else {
-    WebPConvert::convertAndServe($source, $destination, $options);
+    $serveOptions['serve-image']['headers']['vary-accept'] = true;
 }
 
-//echo "<pre>source: $source \ndestination: $destination \n\noptions:" . print_r($options, true) . '</pre>'; exit;
+
+ConvertHelperIndependent::serveConverted(
+    $source,
+    $destination,
+    $serveOptions,
+    $webExpressContentDirAbs . '/log',
+    'Conversion triggered with the conversion script (wod/webp-on-demand.php)'
+);

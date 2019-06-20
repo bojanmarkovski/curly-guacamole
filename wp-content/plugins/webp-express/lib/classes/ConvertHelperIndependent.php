@@ -7,8 +7,10 @@ It is used by webp-on-demand.php, which does not register an auto loader. It is 
 namespace WebPExpress;
 
 use \WebPConvert\WebPConvert;
+use \WebPConvert\Convert\ConverterFactory;
 use \WebPConvert\Loggers\BufferLogger;
 use \WebPExpress\FileHelper;
+use WebPConvert\Exceptions\WebPConvertException;
 
 
 class ConvertHelperIndependent
@@ -178,17 +180,105 @@ class ConvertHelperIndependent
         }
     }
 
-    public static function convert($source, $destination, $options) {
+    public static function getLogFilename($source, $logDir)
+    {
+        // Calculate path for log file
+        // ---------------------------
+        $logDir .= '/conversions';
+        $docRoot = rtrim(realpath($_SERVER["DOCUMENT_ROOT"]), '/');
+
+        // Check if source is residing inside document root.
+        // (it is, if path starts with document root + '/')
+        if (self::sourceIsInsideDocRoot($source, $docRoot) ) {
+
+            // We store relative to document root.
+            // "Eat" the left part off the source parameter which contains the document root.
+            // and also eat the slash (+1)
+            $sourceRel = substr($source, strlen($docRoot) + 1);
+            return $logDir . '/doc-root/' . $sourceRel . '.md';
+        } else {
+            // Source file is residing outside document root.
+            // we must add complete path to structure
+            return $logDir . '/abs' . $source . '.md';
+        }
+
+    }
+
+    public static function createLogDir($logDir)
+    {
+        $logDir = Paths::getLogDirAbs();
+
+        if (!is_dir($logDir)) {
+            @mkdir($logDir, 0775, true);
+            @chmod($logDir, 0775);
+            @file_put_contents(rtrim($logDir . '/') . '/.htaccess', <<<APACHE
+<IfModule mod_authz_core.c>
+Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+Order deny,allow
+Deny from all
+</IfModule>
+APACHE
+            );
+            @chmod($logDir . '/.htaccess', 0664);
+        }
+        return is_dir($logDir);
+    }
+
+    public static function saveLog($source, $logDir, $text, $msgTop)
+    {
+        if (!file_exists($logDir)) {
+            self::createLogDir($logDir);
+        }
+
+        $text = preg_replace('#' . preg_quote($_SERVER["DOCUMENT_ROOT"]) . '#', '[doc-root]', $text);
+
+        $text = 'WebP Express 0.14.4. ' . $msgTop . ', ' . date("Y-m-d H:i:s") . "\n\r\n\r" . $text;
+
+        $logFile = self::getLogFilename($source, $logDir);
+
+        $logFolder = @dirname($logFile);
+        if (!@file_exists($logFolder)) {
+            mkdir($logFolder, 0777, true);
+        }
+        if (@file_exists($logFolder)) {
+            file_put_contents($logFile, $text);
+        }
+    }
+
+    /**
+     *  To convert with a specific converter, set it in the $converter param.
+     */
+    public static function convert($source, $destination, $convertOptions, $logDir, $converter = null) {
         include_once __DIR__ . '/../../vendor/autoload.php';
 
         $success = false;
         $msg = '';
         $logger = new BufferLogger();
         try {
-            $success = WebPConvert::convert($source, $destination, $options, $logger);
-        } catch (\Exception $e) {
+            if (!is_null($converter)) {
+            //if (isset($convertOptions['converter'])) {
+                //print_r($convertOptions);exit;
+                $logger->logLn('Converter set to: ' . $converter);
+                $logger->logLn('');
+                $converter = ConverterFactory::makeConverter($converter, $source, $destination, $convertOptions, $logger);
+                $converter->doConvert();
+            } else {
+                WebPConvert::convert($source, $destination, $convertOptions, $logger);
+            }
+            $success = true;
+        } catch (\WebpConvert\Exceptions\WebPConvertException $e) {
             $msg = $e->getMessage();
+        } catch (\Exception $e) {
+            $msg = 'An exception was thrown!';
+        } catch (Throwable $e) {
+            //Executed only in PHP 7, will not match in PHP 5
+            //$msg = $e->getMessage();
+            //$msg = 'oh no';
         }
+
+        self::saveLog($source, $logDir, $logger->getMarkDown("\n\r"), 'Conversion triggered using bulk conversion');
 
         return [
             'success' => $success,
@@ -198,4 +288,22 @@ class ConvertHelperIndependent
 
     }
 
+    public static function serveConverted($source, $destination, $serveOptions, $logDir, $logMsgTop = '')
+    {
+        include_once __DIR__ . '/../../vendor/autoload.php';
+
+        // TODO: error_log()
+        //ini_set('display_errors', 0);
+        //error_reporting(0);
+
+        //echo '<pre>' . print_r($serveOptions, true) . '</pre>'; exit;
+
+        $convertLogger = new BufferLogger();
+        WebPConvert::serveConverted($source, $destination, $serveOptions, null, $convertLogger);
+        $convertLog = $convertLogger->getMarkDown("\n\r");
+        if ($convertLog != '') {
+            self::saveLog($source, $logDir, $convertLog, $logMsgTop);
+        }
+
+    }
 }

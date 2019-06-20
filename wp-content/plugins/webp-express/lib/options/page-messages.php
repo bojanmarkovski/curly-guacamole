@@ -1,13 +1,17 @@
 <?php
 
-use \WebPExpress\Paths;
-use \WebPExpress\HTAccess;
-use \WebPExpress\Config;
-use \WebPExpress\State;
-use \WebPExpress\Messenger;
-use \WebPExpress\PlatformInfo;
-use \WebPExpress\FileHelper;
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 use \WebPExpress\CapabilityTest;
+use \WebPExpress\Config;
+use \WebPExpress\ConvertersHelper;
+use \WebPExpress\DismissableMessages;
+use \WebPExpress\FileHelper;
+use \WebPExpress\HTAccess;
+use \WebPExpress\Messenger;
+use \WebPExpress\Paths;
+use \WebPExpress\PlatformInfo;
+use \WebPExpress\State;
 
 //use \WebPExpress\BulkConvert;
 //echo '<pre>' . print_r(BulkConvert::getList($config), true) . "</pre>";
@@ -34,7 +38,122 @@ if (CapabilityTest::copyCapabilityTestsToWpContent()) {
     echo 'copy failed!';
 }*/
 
+// Dissmiss page messages for which the condition no longer applies
+if ($config['image-types'] != 1) {
+    DismissableMessages::dismissMessage('0.14.0/suggest-enable-pngs');
+}
 
+//DismissableMessages::dismissAll();
+//DismissableMessages::addDismissableMessage('0.14.0/suggest-enable-pngs');
+//DismissableMessages::addDismissableMessage('0.14.0/suggest-wipe-because-lossless');
+//DismissableMessages::addDismissableMessage('0.14.0/say-hello-to-vips');
+
+
+DismissableMessages::printMessages();
+
+//$dismissableMessageIds = ['suggest-enable-pngs'];
+
+$firstActiveAndWorkingConverterId = ConvertersHelper::getFirstWorkingAndActiveConverterId($config);
+$workingIds = ConvertersHelper::getWorkingConverterIds($config);
+
+/*print_r($dismissableMessageIds);
+
+foreach ($dismissableMessageIds as $pageMessageId) {
+    switch ($pageMessageId) {
+        case 'suggest-enable-pngs':
+            break;
+        case 'suggest-wipe-because-lossless':
+            // introduced in 0.14.0 (migrate 9)
+
+            $convertersSupportingEncodingAuto = ['cwebp', 'vips', 'imagick', 'imagemagick', 'gmagick', 'graphicsmagick'];
+
+            if (in_array($firstActiveAndWorkingConverterId, $convertersSupportingEncodingAuto)) {
+                DismissableMessages::printDismissableMessage(
+                    'info',
+                    '<p>WebP Express 0.14 has new options for the conversions. Especially, it can now produce lossless webps, and ' .
+                        'it can automatically try both lossy and lossless and select the smallest. You can play around with the ' .
+                        'new options when your click "test" next to a converter.</p>' .
+                        '<p>Once satisfied, dont forget to ' .
+                        'wipe your existing converted files (there is a "Delete converted files" button for that here on this page).</p>',
+                    $pageMessageId,
+                    'Got it!'
+                );
+            } else {
+
+                if ($firstActiveAndWorkingConverterId == 'gd') {
+                    foreach ($workingIds as $workingId) {
+                        if (in_array($workingId, $convertersSupportingEncodingAuto)) {
+                            DismissableMessages::printDismissableMessage(
+                                'info',
+                                '<p>WebP Express 0.14 has new options for the conversions. Especially, it can now produce lossless webps, and ' .
+                                    'it can automatically try both lossy and lossless and select the smallest. You can play around with the ' .
+                                    'new options when your click "test" next to a converter.</p>' .
+                                    '<p>Once satisfied, dont forget to wipe your existing converted files (there is a "Delete converted files" ' .
+                                    'button for that here on this page)</p>' .
+                                    '<p>Btw: The "gd" conversion method that you are using does not support lossless encoding ' .
+                                    '(in fact Gd only supports very few conversion options), but fortunately, you have the ' .
+                                    '"' . $workingId . '" conversion method working, so you can simply start using that instead.</p>',
+                                $pageMessageId,
+                                'Got it!'
+                            );
+                            break;
+                        }
+                    }
+                }
+            }
+            break;
+        case 'say-hello-to-vips':
+            if (in_array('vips', $workingIds)) {
+                if ($firstActiveAndWorkingConverterId == 'cwebp') {
+                    DismissableMessages::printDismissableMessage(
+                        'info',
+                        '<p>I have good news and good news. WebP Express now supports Vips and Vips is working on your server. ' .
+                            'Vips is one of the best method for converting WebPs, on par with cwebp, which you are currently using. ' .
+                            'You may want to use Vips instead of cwebp. Your choice.</p>',
+                        $pageMessageId,
+                        'Got it!'
+                    );
+                } else {
+                    DismissableMessages::printDismissableMessage(
+                        'info',
+                        '<p>I have good news and good news. WebP Express now supports Vips and Vips is working on your server. ' .
+                            'Vips is one of the best method for converting WebPs and has therefore been inserted at the top of the list.' .
+                            '</p>',
+                        $pageMessageId,
+                        'Got it!'
+                    );
+                }
+            } else {
+                // show message?
+            }
+            break;
+    }
+}
+*/
+/*
+if ($config['image-types'] == 1) {
+    if (!in_array('suggest-enable-pngs', $dismissedPageMessageIds)) {
+        Messenger::printMessage(
+            'info',
+            'WebP Express 0.14 handles PNG to WebP conversions quite well. Perhaps it is time to enable PNGs? ' .
+                'Go to the <a href="' . Paths::getSettingsUrl() . '">options</a> page to change the "Image types to work on" option.',
+            2,
+            'Got it!'
+        );
+    }
+}
+*/
+
+if ($config['redirect-to-existing-in-htaccess']) {
+    if (PlatformInfo::isApacheOrLiteSpeed() && isset($config['base-htaccess-on-these-capability-tests']['modHeaderWorking']) && ($config['base-htaccess-on-these-capability-tests']['modHeaderWorking'] == false)) {
+        Messenger::printMessage(
+            'warning',
+                'It seems your server setup does not support headers in <i>.htaccess</i>. You should either fix this (install <i>mod_headers</i>) <i>or</i> ' .
+                    'deactivate the "Enable direct redirection to existing converted images?" option. Otherwise the <i>Vary:Accept</i> header ' .
+                    'will not be added and this can result in problems for users behind proxy servers (ie used in larger companies)'
+        );
+    }
+}
 
 $anyRedirectionToConverterEnabled = (($config['enable-redirection-to-converter']) || ($config['enable-redirection-to-webp-realizer']));
 $anyRedirectionEnabled = ($anyRedirectionToConverterEnabled || $config['redirect-to-existing-in-htaccess']);
@@ -67,7 +186,6 @@ if ($cacheEnablerActivated && !$webpEnabled) {
 
 if (($config['operation-mode'] == 'cdn-friendly') && !$config['alter-html']['enabled']) {
     //echo print_r(get_option('cache-enabler'), true);
-
 
     if ($cacheEnablerActivated) {
         if ($webpEnabled) {
@@ -113,6 +231,21 @@ if ($config['enable-redirection-to-webp-realizer'] && $config['alter-html']['ena
                 '<i>but you have not enabled the option to point to these in Alter HTML</i>. Please do that!'
     );
 }
+
+if ($config['image-types'] == 3) {
+    $workingConverters = ConvertersHelper::getWorkingAndActiveConverters($config);
+    if (count($workingConverters) == 1) {
+        if (ConvertersHelper::getConverterId($workingConverters[0]) == 'gd') {
+            Messenger::printMessage(
+                'warning',
+                    'You have enabled PNGs, but configured Gd to skip PNGs, and Gd is your only active working converter. ' .
+                    'This is a bad combination!'
+            );
+        }
+    }
+}
+
+
 
 
 /*

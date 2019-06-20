@@ -1,11 +1,20 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
 use \WebPExpress\CacheMover;
+use \WebPExpress\CapabilityTest;
 use \WebPExpress\Config;
+use \WebPExpress\DismissableMessages;
 use \WebPExpress\HTAccess;
 use \WebPExpress\Messenger;
 use \WebPExpress\Paths;
-use \WebPExpress\CapabilityTest;
+
+
+check_admin_referer('webpexpress-save-settings-nonce');
+
+DismissableMessages::dismissMessage('0.14.0/say-hello-to-vips');
+
 
 // https://premium.wpmudev.org/blog/handling-form-submissions/
 // checkout https://codex.wordpress.org/Function_Reference/sanitize_meta
@@ -21,6 +30,8 @@ function webp_express_sanitize_quality_field($text) {
 $config = Config::loadConfigAndFix(false);  // false, because we do not need to test if quality detection is working
 $oldConfig = $config;
 
+// Note that "operation-mode" is actually the old mode. The new mode is posted in "change-operation-mode"
+
 // Set options that are available in all operation modes
 $config = array_merge($config, [
     'operation-mode' => $_POST['operation-mode'],
@@ -30,6 +41,9 @@ $config = array_merge($config, [
     'forward-query-string' => true,
 
 ]);
+
+
+
 
 // Set options that are available in all operation modes, except the "CDN friendly" mode
 if ($_POST['operation-mode'] != 'cdn-friendly') {
@@ -83,18 +97,36 @@ if ($_POST['operation-mode'] != 'no-conversion') {
     // --------
     $config['metadata'] = sanitize_text_field($_POST['metadata']);
 
-    // Quality
+    // Jpeg
     // --------
-    $auto = (isset($_POST['quality-auto']) && $_POST['quality-auto'] == 'auto_on');
-    $config['quality-auto'] = $auto;
+    $config['jpeg-encoding'] = sanitize_text_field($_POST['jpeg-encoding']);
 
+    $auto = (isset($_POST['quality-auto']) && ($_POST['quality-auto'] == 'auto_on'));
+    $config['quality-auto'] = $auto;
     if ($auto) {
         $config['max-quality'] = webp_express_sanitize_quality_field($_POST['max-quality']);
-        $config['quality-specific'] = 70;
+        $config['quality-specific'] = webp_express_sanitize_quality_field($_POST['quality-fallback']);
     } else {
         $config['max-quality'] = 80;
         $config['quality-specific'] = webp_express_sanitize_quality_field($_POST['quality-specific']);
     }
+
+    $jpegEnableNearLossless = (isset($_POST['jpeg-enable-near-lossless']) && ($_POST['jpeg-enable-near-lossless'] == 'on'));
+    $config['jpeg-enable-near-lossless'] = $jpegEnableNearLossless;
+    $config['jpeg-near-lossless'] = webp_express_sanitize_quality_field($_POST['jpeg-near-lossless']);
+
+
+    // Png
+    // --------
+    $config['png-encoding'] = sanitize_text_field($_POST['png-encoding']);
+
+    // TODO: ERRORS!
+    $config['png-quality'] = webp_express_sanitize_quality_field($_POST['png-quality']);
+    $pngEnableNearLossless = (isset($_POST['png-enable-near-lossless']) && ($_POST['png-enable-near-lossless'] == 'on'));
+    $config['png-enable-near-lossless'] = $pngEnableNearLossless;
+    $config['png-near-lossless'] = webp_express_sanitize_quality_field($_POST['png-near-lossless']);
+    $config['alpha-quality'] = webp_express_sanitize_quality_field($_POST['alpha-quality']);
+
 
     $config['convert-on-upload'] = isset($_POST['convert-on-upload']);
 
@@ -199,8 +231,16 @@ switch ($_POST['operation-mode']) {
 
 //echo '<pre>' . print_r($_POST, true) . '</pre>'; exit;
 if ($_POST['operation-mode'] != $_POST['change-operation-mode']) {
+
+    // Operation mode changed!
     $config['operation-mode'] = $_POST['change-operation-mode'];
     $config = Config::applyOperationMode($config);
+
+    if ($config['operation-mode'] == 'varied-image-responses') {
+        // changing to "varied image responses" mode should enable
+        // the redirect-to-existing-in-htaccess option
+        $config['redirect-to-existing-in-htaccess'] = true;
+    }
 }
 
 // If we are going to save .htaccess, run and store capability tests first (we should only store results when .htaccess is updated as well)
@@ -212,7 +252,6 @@ if (isset($_POST['force']) || HTAccess::doesRewriteRulesNeedUpdate($config)) {
 // SAVE!
 // -----
 $result = Config::saveConfigurationAndHTAccess($config, isset($_POST['force']));
-
 
 // Handle results
 // ---------------

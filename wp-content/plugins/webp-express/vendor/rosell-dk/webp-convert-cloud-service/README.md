@@ -18,6 +18,7 @@ composer require rosell-dk/webp-convert-cloud-service
 Here is an example to get started with:
 
 ```php
+<?php
 require 'vendor/autoload.php';
 
 use \WebPConvertCloudService\WebPConvertCloudService;
@@ -53,6 +54,7 @@ $options = [
 
 $wpc = new WebPConvertCloudService();
 $wpc->handleRequest($options);
+?>
 
 ```
 
@@ -81,3 +83,6 @@ curl --form action="convert" --form api-key="my dog is white" --form file=@test.
 If you get a corrupt file, then it is probably because the output contains an error message. To see it, run the above command again, but remove the piping of the output to a file.
 
 You will probably not need to know more of the API. But in case you do, check out [docs/api.md](https://github.com/rosell-dk/webp-convert-cloud-service/blob/master/docs/api.md)
+
+## Mad Scientist-ware
+If you enjoy this software, feel free to conduct some secret experiments and go mad. If you like.
