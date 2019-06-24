@@ -1,5 +1,19 @@
 $(document).ready(function(){
- 
+  // WHEN OPEN MODAL NO SCROLL AND PADDING-RIGHT 17px
+  $('body').on('show.bs.modal', function () {
+    if ($("body").innerHeight() > $(window).height()) {
+        $("body").css("margin-right", "17px");
+        $(".navbar-inverse").css("right", "17px");
+        $(".navbar-right").css("right", "-17px");
+        $(".navbar-brand.logo img").css("margin-left", "17px");
+    }
+  });
+  $('body').on('hidden.bs.modal', function (e) {
+      $("body").css("margin-right", "0px");
+      $(".navbar-inverse").css("right", "0px");
+      $(".navbar-right").css("right", "-17px");
+      $(".navbar-brand.logo img").css("margin-left", "0px");
+  });
   // IF BROWSER IS AN EDGE INPUTS ARE DIFFERENT 
   if (/Edge/.test(navigator.userAgent)) {
     $(".placeholder").css({ "transform" : "scale(0.75) translateY(-26px) translateX(-5px)"})
@@ -161,7 +175,7 @@ $(document).ready(function(){
   $("form").submit(function(e) {
     $("#myModal-error").css("background", "rgba(0,0,0,0.8)");
     $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.8)", "z-index" : "9999999999999"});
-    $(".page-template").css({"overflow-y" : "hidden"});
+    // $(".page-template").css({"overflow-y" : "hidden"});
 
     $(".nav").addClass("blur-modal");
     $(".container-fluid.blur-modal").addClass("blur-modal");
@@ -256,7 +270,7 @@ $(document).ready(function(){
             }
             
             $(".loader").addClass("hidden");
-            $(".page-template").css({"overflow-y" : "scroll"});
+            // $(".page-template").css({"overflow-y" : "scroll"});
           } 
           else {
 
@@ -271,7 +285,7 @@ $(document).ready(function(){
               $(".modal-backdrop").remove();
               $("body").removeClass("modal-open");
               $(".error.re-captcha").css({"visibility" : "hidden"});
-              $(".page-template").css({"overflow-y" : "scroll"});
+              // $(".page-template").css({"overflow-y" : "scroll"});
             });
             
             $("#myModal-error").css("display", "block");
@@ -286,7 +300,7 @@ $(document).ready(function(){
               $("body").removeClass("modal-open");
               $(".page-template-career").removeClass("modal-open").css("padding-right", "0px");
               $(".error.re-captcha").css({"visibility" : "hidden"});
-              $(".page-template").css({"overflow-y" : "scroll"});
+              // $(".page-template").css({"overflow-y" : "scroll"});
             },5000);
           }
         }

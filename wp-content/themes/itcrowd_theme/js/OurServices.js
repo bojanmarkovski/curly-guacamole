@@ -1,5 +1,22 @@
 
 $(document).ready(function(){
+
+  // WHEN OPEN MODAL NO SCROLL AND PADDING-RIGHT 17px
+  $('body').on('show.bs.modal', function () {
+    if ($("body").innerHeight() > $(window).height()) {
+        $("body").css("margin-right", "17px");
+        $(".navbar-inverse").css("right", "17px");
+        $(".navbar-right").css("right", "-17px");
+        $(".navbar-brand.logo img").css("margin-left", "17px");
+    }
+  });
+  $('body').on('hidden.bs.modal', function (e) {
+      $("body").css("margin-right", "0px");
+      $(".navbar-inverse").css("right", "0px");
+      $(".navbar-right").css("right", "-17px");
+      $(".navbar-brand.logo img").css("margin-left", "0px");
+  });
+
   // IF BROWSER IS AN EDGE INPUTS ARE DIFFERENT 
   if (/Edge/.test(navigator.userAgent)) {
     $(".placeholder").css({ "transform" : "scale(0.75) translateY(-26px) translateX(-5px)"})
@@ -86,6 +103,16 @@ $(document).ready(function(){
             $(".loader").addClass("hidden");
 
           } else {
+            
+            // // WHEN OPEN MODAL NO SCROLL AND PADDING-RIGHT 17px
+            // $('body').on('show.bs.modal', function () {
+            //   if ($("body").innerHeight() > $(window).height()) {
+            //       $("body").css("margin-right", "17px");
+            //   }
+            // });
+            // $('body').on('hidden.bs.modal', function (e) {
+            //     $("body").css("margin-right", "0px");
+            // });
 
             $(".loader").addClass("hidden");
             $(".modal-title").text("Successfull");

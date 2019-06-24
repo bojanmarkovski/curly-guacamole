@@ -7,6 +7,20 @@ jQuery(document).ready(function($){
 
   // AJAX
   $("form").submit(function(e) {
+    $('body').on('show.bs.modal', function () {
+      if ($("body").innerHeight() > $(window).height()) {
+          $("body").css("margin-right", "17px");
+          $(".navbar-inverse").css("right", "17px");
+          $(".navbar-right").css("right", "-17px");
+          $(".navbar-brand.logo img").css("margin-left", "17px");
+      }
+    });
+    $('body').on('hidden.bs.modal', function (e) {
+        $("body").css("margin-right", "0px");
+        $(".navbar-inverse").css("right", "0px");
+        $(".navbar-right").css("right", "-17px");
+        $(".navbar-brand.logo img").css("margin-left", "0px");
+    });
     $(".loader").removeClass("hidden").css("background-color" , "rgba(0, 0, 0, 0.9)");
     $(".page-template").css({"overflow-y" : "hidden"});
 
