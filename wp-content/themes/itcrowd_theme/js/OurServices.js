@@ -16,10 +16,6 @@ $(document).ready(function(){
   $(".col-md-4.col-md-offset-4").fadeIn(1300);
   $(".our-services-box").css("height", "auto");
 
-  $(".btn.btn-block").on('click',function(){
-    $(".page-template.page-template-services.page-template-services-php").css({"overflow-y" : "scroll"});
-  })
-
   // AJAX
   $("form").submit(function(e) {
     
@@ -119,7 +115,6 @@ $(document).ready(function(){
 
     return; // No go on form...
   }); // end of submit function
-
 });
 
 function onSubmit(token) {

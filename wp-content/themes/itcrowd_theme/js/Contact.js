@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
   // AJAX
   $("form").submit(function(e) {
     $(".loader").removeClass("hidden").css("background-color" , "rgba(0, 0, 0, 0.9)");
+    $(".page-template").css({"overflow-y" : "hidden"});
 
     for (let i = 1; i < 5; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
@@ -53,6 +54,7 @@ jQuery(document).ready(function($){
           else if(data.status == "validation_failed"){
             
             $(".loader").addClass("hidden");
+            $(".page-template").css({"overflow-y" : "scroll"});
             for (let dataInto = 0; dataInto < data.invalidFields.length; dataInto++) {
               const intoMessage = data.invalidFields[dataInto].into;
               // FOR PC
@@ -90,6 +92,7 @@ jQuery(document).ready(function($){
 
             $("#myModal-error .btn.btn-default").on('click', function(){
               $(".error.re-captcha").css({"visibility" : "hidden"});
+              $(".page-template").css({"overflow-y" : "scroll"});
             });
 
             setTimeout( function(){
@@ -97,6 +100,7 @@ jQuery(document).ready(function($){
               $(".modal.fade").removeClass("in").css("display", "none");
               $(".modal-backdrop.fade").removeClass("in");
               $(".error.re-captcha").css({"visibility" : "hidden"});
+              $(".page-template").css({"overflow-y" : "scroll"});
             },5000);
 
           }

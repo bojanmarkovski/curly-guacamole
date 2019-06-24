@@ -1080,7 +1080,7 @@ a.animated-button.thar-three:before {
 
 .page-template-services .modal-body {
 	height: 470px;
-	overflow-y: auto;
+	/* overflow-y: auto; */
 	margin-bottom: 10px;
 }
 

@@ -85,13 +85,14 @@ $(document).ready(function(){
   $("form").on("change", ".file-upload-field", function() {
     $(this).parent(".file-upload-wrapper").attr("data-text",$(this).val().replace(/.*(\/|\\)/, ''));
   });
-  $("body").css("overflow-y", "scroll")
+  // $("body").css("overflow-y", "scroll")
 
   // SIZE ATTACH FILE
   var fileSizeBigger = false;
   $(".file-upload-field").on('change', function(){
     if(this.files[0].size > 5242880){
       fileSizeBigger = true;
+      $(".page-template").css({"overflow-y" : "hidden"});
       $("#myModal-error").css("display", "block");
       $("body").addClass("modal-open");
       $(".modal.fade").addClass("in");
@@ -102,6 +103,7 @@ $(document).ready(function(){
         $("body").removeClass("modal-open");
         $(".modal.fade").removeClass("in").css("display", "none");
         $(".modal-backdrop.fade").removeClass("in");
+        $(".page-template").css({"overflow-y" : "scroll"});
         
         if (fileSizeBigger) {
           var $el = $('.file-upload-wrapper');
@@ -147,7 +149,6 @@ $(document).ready(function(){
 
  // CHECKBOX PRIVACY POLICY
   $(".page-template-career .text-danger").on('click', function(){
-    $(".page-template.page-template-career.page-template-career-php").css({"overflow-y" : "scroll"});
     $("#exampleModal").css("background","rgba(0,0,0,0.8)")
   });
 
@@ -160,6 +161,7 @@ $(document).ready(function(){
   $("form").submit(function(e) {
     $("#myModal-error").css("background", "rgba(0,0,0,0.8)");
     $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.8)", "z-index" : "9999999999999"});
+    $(".page-template").css({"overflow-y" : "hidden"});
 
     $(".nav").addClass("blur-modal");
     $(".container-fluid.blur-modal").addClass("blur-modal");
@@ -226,6 +228,7 @@ $(document).ready(function(){
               $(".error.re-captcha").css({"visibility" : "visible"});
 
               $(".loader").addClass("hidden");
+              $(".page-template").css({"overflow-y" : "scroll"});
 
             }
           }
@@ -253,7 +256,7 @@ $(document).ready(function(){
             }
             
             $(".loader").addClass("hidden");
-
+            $(".page-template").css({"overflow-y" : "scroll"});
           } 
           else {
 
@@ -268,6 +271,7 @@ $(document).ready(function(){
               $(".modal-backdrop").remove();
               $("body").removeClass("modal-open");
               $(".error.re-captcha").css({"visibility" : "hidden"});
+              $(".page-template").css({"overflow-y" : "scroll"});
             });
             
             $("#myModal-error").css("display", "block");
@@ -282,6 +286,7 @@ $(document).ready(function(){
               $("body").removeClass("modal-open");
               $(".page-template-career").removeClass("modal-open").css("padding-right", "0px");
               $(".error.re-captcha").css({"visibility" : "hidden"});
+              $(".page-template").css({"overflow-y" : "scroll"});
             },5000);
           }
         }
