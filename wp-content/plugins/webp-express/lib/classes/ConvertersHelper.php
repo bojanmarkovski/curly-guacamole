@@ -10,7 +10,6 @@ class ConvertersHelper
             'try-common-system-paths' => true,
             'try-supplied-binary-for-os' => true,
             'method' => 6,
-            'size-in-percentage' => null,
             'low-memory' => true,
             'command-line-options' => '',
         ]],
@@ -35,7 +34,14 @@ class ConvertersHelper
 
     public static function getDefaultConverterNames()
     {
-        return array_column(self::$defaultConverters, 'converter');
+        $availableConverterIDs = [];
+        foreach (self::$defaultConverters as $converter) {
+            $availableConverterIDs[] = $converter['converter'];
+        }
+        return $availableConverterIDs;
+
+        // PS: In a couple of years:
+        //return array_column(self::$defaultConverters, 'converter');
     }
 
     public static function getConverterNames($converters)
@@ -156,7 +162,7 @@ class ConvertersHelper
      * Get working and active converters.
      *
      * @param  object  $config
-     * @return  array
+     * @return  array  Array of converter objects
      */
     public static function getWorkingAndActiveConverters($config)
     {

@@ -1,19 +1,5 @@
 $(document).ready(function(){
-  // WHEN OPEN MODAL NO SCROLL AND PADDING-RIGHT 17px
-  $('body').on('show.bs.modal', function () {
-    if ($("body").innerHeight() > $(window).height()) {
-        $("body").css("margin-right", "17px");
-        $(".navbar-inverse").css("right", "17px");
-        $(".navbar-right").css("right", "-17px");
-        $(".navbar-brand.logo img").css("margin-left", "17px");
-    }
-  });
-  $('body').on('hidden.bs.modal', function (e) {
-      $("body").css("margin-right", "0px");
-      $(".navbar-inverse").css("right", "0px");
-      $(".navbar-right").css("right", "-17px");
-      $(".navbar-brand.logo img").css("margin-left", "0px");
-  });
+  
   // IF BROWSER IS AN EDGE INPUTS ARE DIFFERENT 
   if (/Edge/.test(navigator.userAgent)) {
     $(".placeholder").css({ "transform" : "scale(0.75) translateY(-26px) translateX(-5px)"})
@@ -99,25 +85,29 @@ $(document).ready(function(){
   $("form").on("change", ".file-upload-field", function() {
     $(this).parent(".file-upload-wrapper").attr("data-text",$(this).val().replace(/.*(\/|\\)/, ''));
   });
-  // $("body").css("overflow-y", "scroll")
 
   // SIZE ATTACH FILE
   var fileSizeBigger = false;
+  
   $(".file-upload-field").on('change', function(){
     if(this.files[0].size > 5242880){
       fileSizeBigger = true;
-      $(".page-template").css({"overflow-y" : "hidden"});
       $("#myModal-error").css("display", "block");
+      $("#myModal-error.modal.fade").addClass("in");
+      $("#modal-backdrop.fade").addClass("in");
+      $("#myModal-error.modal-body p").text("Sorry, the file you are trying to upload is too big (maximum size is 5MB)");
       $("body").addClass("modal-open");
-      $(".modal.fade").addClass("in");
-      $(".modal-backdrop.fade").addClass("in");
-      $(".modal-body p").text("Sorry, the file you are trying to upload is too big (maximum size is 5MB)");
-
+      
+      if ($(window).width() > 991) {
+        $("#menu-main-menu").css("margin-right", "0px");
+        $("#page").css("margin-right", "17px")
+      }
       $("#myModal-error .btn.btn-default").on('click', function(){
         $("body").removeClass("modal-open");
-        $(".modal.fade").removeClass("in").css("display", "none");
-        $(".modal-backdrop.fade").removeClass("in");
-        $(".page-template").css({"overflow-y" : "scroll"});
+        $("#myModal-error.modal.fade").removeClass("in").css("display", "none");
+        $("#modal-backdrop.fade").removeClass("in");
+        $("#menu-main-menu").css("margin-right", "-15px");
+        $("#page").css("margin-right", "0px")
         
         if (fileSizeBigger) {
           var $el = $('.file-upload-wrapper');
@@ -163,8 +153,13 @@ $(document).ready(function(){
 
  // CHECKBOX PRIVACY POLICY
   $(".page-template-career .text-danger").on('click', function(){
-    $("#exampleModal").css("background","rgba(0,0,0,0.8)")
+    $("#exampleModal").css("background","rgba(0,0,0,0.8)");
+    $("#menu-main-menu").css("margin-right", "0px");
   });
+
+  $('#exampleModal').on('hidden.bs.modal', function () {
+    $("#menu-main-menu").css("margin-right", "-15px");
+  })
 
   $("#exampleModal .modal-dialog button").on('click', function() {
     $(".form-check .form-check-input").prop('checked', true);
@@ -175,7 +170,6 @@ $(document).ready(function(){
   $("form").submit(function(e) {
     $("#myModal-error").css("background", "rgba(0,0,0,0.8)");
     $(".loader").removeClass("hidden").css({"background-color" : "rgba(0, 0, 0, 0.8)", "z-index" : "9999999999999"});
-    // $(".page-template").css({"overflow-y" : "hidden"});
 
     $(".nav").addClass("blur-modal");
     $(".container-fluid.blur-modal").addClass("blur-modal");
@@ -242,7 +236,6 @@ $(document).ready(function(){
               $(".error.re-captcha").css({"visibility" : "visible"});
 
               $(".loader").addClass("hidden");
-              $(".page-template").css({"overflow-y" : "scroll"});
 
             }
           }
@@ -270,14 +263,15 @@ $(document).ready(function(){
             }
             
             $(".loader").addClass("hidden");
-            // $(".page-template").css({"overflow-y" : "scroll"});
           } 
           else {
-
+            $("#menu-main-menu").css("margin-right", "0px");
+            $("#page").css("margin-right", "17px");
             $(".loader").addClass("hidden");
             $(".modal-title").text("Successfull");
-            $(".modal-body p").text("Message sent.");
+            $("#menu-main-menu .modal-body p").text("Message sent.");
             $(".modal.fade.in").css("background-color", "0, 0, 0, 0.7");
+            $("body").removeClass("modal-open");
 
             // CLOSE BUTTON IN SUCCESS POP-UP MODAL
             $("#myModal-error .btn.btn-default").on('click', function(){
@@ -285,7 +279,8 @@ $(document).ready(function(){
               $(".modal-backdrop").remove();
               $("body").removeClass("modal-open");
               $(".error.re-captcha").css({"visibility" : "hidden"});
-              // $(".page-template").css({"overflow-y" : "scroll"});
+              $("#menu-main-menu").css("margin-right", "-15px");
+              $("#page").css("margin-right", "0px");
             });
             
             $("#myModal-error").css("display", "block");
@@ -300,7 +295,8 @@ $(document).ready(function(){
               $("body").removeClass("modal-open");
               $(".page-template-career").removeClass("modal-open").css("padding-right", "0px");
               $(".error.re-captcha").css({"visibility" : "hidden"});
-              // $(".page-template").css({"overflow-y" : "scroll"});
+              $("#menu-main-menu").css("margin-right", "-15px");
+              $("#page").css("margin-right", "0px");
             },5000);
           }
         }
@@ -311,8 +307,3 @@ $(document).ready(function(){
   }); // end of submit function
 
 });
-
-
-function onSubmit(token) {
-  $(".btn.btn-block.send-email").removeAttr("disabled");
-};

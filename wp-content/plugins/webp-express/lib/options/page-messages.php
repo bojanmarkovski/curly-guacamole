@@ -13,15 +13,9 @@ use \WebPExpress\Paths;
 use \WebPExpress\PlatformInfo;
 use \WebPExpress\State;
 
-//use \WebPExpress\BulkConvert;
-//echo '<pre>' . print_r(BulkConvert::getList($config), true) . "</pre>";
-//echo '<pre>' . print_r(BulkConvert::convertFile('/var/www/webp-express-tests/we0/wordpress/uploads-moved/space in name.jpg'), true) . "</pre>";
-
-
 if ((!State::getState('configured', false))) {
     include __DIR__ . "/page-welcome.php";
 }
-
 
 /*
 if (CapabilityTest::modRewriteWorking()) {
@@ -55,94 +49,6 @@ DismissableMessages::printMessages();
 
 $firstActiveAndWorkingConverterId = ConvertersHelper::getFirstWorkingAndActiveConverterId($config);
 $workingIds = ConvertersHelper::getWorkingConverterIds($config);
-
-/*print_r($dismissableMessageIds);
-
-foreach ($dismissableMessageIds as $pageMessageId) {
-    switch ($pageMessageId) {
-        case 'suggest-enable-pngs':
-            break;
-        case 'suggest-wipe-because-lossless':
-            // introduced in 0.14.0 (migrate 9)
-
-            $convertersSupportingEncodingAuto = ['cwebp', 'vips', 'imagick', 'imagemagick', 'gmagick', 'graphicsmagick'];
-
-            if (in_array($firstActiveAndWorkingConverterId, $convertersSupportingEncodingAuto)) {
-                DismissableMessages::printDismissableMessage(
-                    'info',
-                    '<p>WebP Express 0.14 has new options for the conversions. Especially, it can now produce lossless webps, and ' .
-                        'it can automatically try both lossy and lossless and select the smallest. You can play around with the ' .
-                        'new options when your click "test" next to a converter.</p>' .
-                        '<p>Once satisfied, dont forget to ' .
-                        'wipe your existing converted files (there is a "Delete converted files" button for that here on this page).</p>',
-                    $pageMessageId,
-                    'Got it!'
-                );
-            } else {
-
-                if ($firstActiveAndWorkingConverterId == 'gd') {
-                    foreach ($workingIds as $workingId) {
-                        if (in_array($workingId, $convertersSupportingEncodingAuto)) {
-                            DismissableMessages::printDismissableMessage(
-                                'info',
-                                '<p>WebP Express 0.14 has new options for the conversions. Especially, it can now produce lossless webps, and ' .
-                                    'it can automatically try both lossy and lossless and select the smallest. You can play around with the ' .
-                                    'new options when your click "test" next to a converter.</p>' .
-                                    '<p>Once satisfied, dont forget to wipe your existing converted files (there is a "Delete converted files" ' .
-                                    'button for that here on this page)</p>' .
-                                    '<p>Btw: The "gd" conversion method that you are using does not support lossless encoding ' .
-                                    '(in fact Gd only supports very few conversion options), but fortunately, you have the ' .
-                                    '"' . $workingId . '" conversion method working, so you can simply start using that instead.</p>',
-                                $pageMessageId,
-                                'Got it!'
-                            );
-                            break;
-                        }
-                    }
-                }
-            }
-            break;
-        case 'say-hello-to-vips':
-            if (in_array('vips', $workingIds)) {
-                if ($firstActiveAndWorkingConverterId == 'cwebp') {
-                    DismissableMessages::printDismissableMessage(
-                        'info',
-                        '<p>I have good news and good news. WebP Express now supports Vips and Vips is working on your server. ' .
-                            'Vips is one of the best method for converting WebPs, on par with cwebp, which you are currently using. ' .
-                            'You may want to use Vips instead of cwebp. Your choice.</p>',
-                        $pageMessageId,
-                        'Got it!'
-                    );
-                } else {
-                    DismissableMessages::printDismissableMessage(
-                        'info',
-                        '<p>I have good news and good news. WebP Express now supports Vips and Vips is working on your server. ' .
-                            'Vips is one of the best method for converting WebPs and has therefore been inserted at the top of the list.' .
-                            '</p>',
-                        $pageMessageId,
-                        'Got it!'
-                    );
-                }
-            } else {
-                // show message?
-            }
-            break;
-    }
-}
-*/
-/*
-if ($config['image-types'] == 1) {
-    if (!in_array('suggest-enable-pngs', $dismissedPageMessageIds)) {
-        Messenger::printMessage(
-            'info',
-            'WebP Express 0.14 handles PNG to WebP conversions quite well. Perhaps it is time to enable PNGs? ' .
-                'Go to the <a href="' . Paths::getSettingsUrl() . '">options</a> page to change the "Image types to work on" option.',
-            2,
-            'Got it!'
-        );
-    }
-}
-*/
 
 if ($config['redirect-to-existing-in-htaccess']) {
     if (PlatformInfo::isApacheOrLiteSpeed() && isset($config['base-htaccess-on-these-capability-tests']['modHeaderWorking']) && ($config['base-htaccess-on-these-capability-tests']['modHeaderWorking'] == false)) {
@@ -180,7 +86,8 @@ if ($cacheEnablerActivated) {
 if ($cacheEnablerActivated && !$webpEnabled) {
     Messenger::printMessage(
         'warning',
-            'You are using Cache Enabler, but have not enabled the webp option, so Cache Enabler is not operating with a separate cache for webp-enabled browsers.'
+            'You are using Cache Enabler, but have not enabled the webp option, so Cache Enabler is not operating with a separate cache ' .
+            'for webp-enabled browsers.'
     );
 }
 
@@ -192,7 +99,8 @@ if (($config['operation-mode'] == 'cdn-friendly') && !$config['alter-html']['ena
             Messenger::printMessage(
                 'info',
                     'You should consider enabling Alter HTML. This is not neccessary, as you have <i>Cache Enabler</i> enabled, which alters HTML. ' .
-                    'However, it is a good idea because currently <i>Cache Enabler</i> does not replace as many URLs as WebP Express (ie background images in inline styles)'
+                    'However, it is a good idea because currently <i>Cache Enabler</i> does not replace as many URLs as WebP Express (ie ' .
+                    'background images in inline styles)'
             );
         }
 
@@ -200,7 +108,8 @@ if (($config['operation-mode'] == 'cdn-friendly') && !$config['alter-html']['ena
         Messenger::printMessage(
             'warning',
                 'You are in CDN friendly mode but have not enabled Alter HTML (and you are not using Cache Enabler either). ' .
-                    'This is usually a misconfiguration because in this mode, the only way to get webp files delivered is by referencing them in the HTML.'
+                    'This is usually a misconfiguration because in this mode, the only way to get webp files delivered ' .
+                    'is by referencing them in the HTML.'
         );
 
     }
@@ -236,11 +145,13 @@ if ($config['image-types'] == 3) {
     $workingConverters = ConvertersHelper::getWorkingAndActiveConverters($config);
     if (count($workingConverters) == 1) {
         if (ConvertersHelper::getConverterId($workingConverters[0]) == 'gd') {
-            Messenger::printMessage(
-                'warning',
-                    'You have enabled PNGs, but configured Gd to skip PNGs, and Gd is your only active working converter. ' .
-                    'This is a bad combination!'
-            );
+            if (isset($workingConverters[0]['options']['skip-pngs']) && $workingConverters[0]['options']['skip-pngs']) {
+                Messenger::printMessage(
+                    'warning',
+                        'You have enabled PNGs, but configured Gd to skip PNGs, and Gd is your only active working converter. ' .
+                        'This is a bad combination!'
+                );
+            }
         }
     }
 }
@@ -266,7 +177,8 @@ if (!Paths::createContentDirIfMissing()) {
     Messenger::printMessage(
         'error',
         'WebP Express needs to create a directory "webp-express" under your wp-content folder, but does not have permission to do so.<br>' .
-            'Please create the folder manually, or change the file permissions of your wp-content folder (failed to create this folder: ' . Paths::getWebPExpressContentDirAbs() . ')'
+            'Please create the folder manually, or change the file permissions of your wp-content folder (failed to create this folder: ' .
+            esc_html(Paths::getWebPExpressContentDirAbs()) . ')'
     );
 } else {
     if (!Paths::createConfigDirIfMissing()) {
@@ -288,16 +200,27 @@ if (!Paths::createContentDirIfMissing()) {
 
 if (Config::isConfigFileThere()) {
     if (!Config::isConfigFileThereAndOk()) {
-        Messenger::printMessage(
-            'warning',
-            'Warning: The configuration file is not ok! (cant be read, or not valid json).<br>' .
-                'file: "' . Paths::getConfigFileName() . '"'
-        );
+        $json = FileHelper::loadFile(Paths::getConfigFileName());
+        if ($json === false) {
+            Messenger::printMessage(
+                'warning',
+                'Warning: The configuration file is not ok! (cant be read).<br>' .
+                    'file: "' . esc_html(Paths::getConfigFileName()) . '"'
+            );
+        } else {
+            Messenger::printMessage(
+                'warning',
+                'Warning: The configuration file is not ok! (not valid json).<br>' .
+                    'file: "' . esc_html(Paths::getConfigFileName()) . '"'
+            );
+        }
+
     } else {
         if (HTAccess::arePathsUsedInHTAccessOutdated()) {
             Messenger::printMessage(
                 'warning',
-                'Warning: Wordpress paths have changed since the last time the Rewrite Rules was generated. The rules needs updating! (click <i>Save settings</i> to do so)<br>'
+                'Warning: Wordpress paths have changed since the last time the Rewrite Rules was generated. The rules ' .
+                'needs updating! (click <i>Save settings</i> to do so)<br>'
             );
         }
     }

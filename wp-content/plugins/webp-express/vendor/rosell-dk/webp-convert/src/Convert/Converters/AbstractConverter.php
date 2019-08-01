@@ -5,17 +5,16 @@
 
 namespace WebPConvert\Convert\Converters;
 
+use WebPConvert\Helpers\InputValidator;
+use WebPConvert\Helpers\MimeType;
 use WebPConvert\Convert\Exceptions\ConversionFailedException;
-use WebPConvert\Exceptions\WebPConvertException;
 use WebPConvert\Convert\Converters\BaseTraits\AutoQualityTrait;
 use WebPConvert\Convert\Converters\BaseTraits\DestinationPreparationTrait;
 use WebPConvert\Convert\Converters\BaseTraits\LoggerTrait;
 use WebPConvert\Convert\Converters\BaseTraits\OptionsTrait;
-use WebPConvert\Convert\Converters\BaseTraits\SourceValidationTrait;
 use WebPConvert\Convert\Converters\BaseTraits\WarningLoggerTrait;
+use WebPConvert\Exceptions\WebPConvertException;
 use WebPConvert\Loggers\BaseLogger;
-
-use ImageMimeTypeGuesser\ImageMimeTypeGuesser;
 
 /**
  * Base for all converter classes.
@@ -30,7 +29,6 @@ abstract class AbstractConverter
     use OptionsTrait;
     use WarningLoggerTrait;
     use DestinationPreparationTrait;
-    use SourceValidationTrait;
     use LoggerTrait;
 
     /**
@@ -67,9 +65,6 @@ abstract class AbstractConverter
 
     /** @var string  Where to save the webp (complete path) */
     protected $destination;
-
-    /** @var string|false|null  Where to save the webp (complete path) */
-    private $sourceMimeType;
 
     /**
      * Check basis operationality
@@ -113,6 +108,8 @@ abstract class AbstractConverter
      */
     public function __construct($source, $destination, $options = [], $logger = null)
     {
+        InputValidator::checkSourceAndDestination($source, $destination);
+
         $this->source = $source;
         $this->destination = $destination;
 
@@ -120,7 +117,7 @@ abstract class AbstractConverter
         $this->setProvidedOptions($options);
 
         if (!isset($this->options['_skip_input_check'])) {
-            $this->log('WebP Convert 2.0.0', 'italic');
+            $this->log('WebP Convert 2.1.4', 'italic');
             $this->logLn(' ignited.');
             $this->logLn('- PHP version: ' . phpversion());
             if (isset($_SERVER['SERVER_SOFTWARE'])) {
@@ -129,9 +126,6 @@ abstract class AbstractConverter
             $this->logLn('');
             $this->logLn(self::getConverterDisplayName() . ' converter ignited');
         }
-
-        $this->checkSourceExists();
-        $this->checkSourceMimeType();
     }
 
     /**
@@ -239,10 +233,6 @@ abstract class AbstractConverter
         $this->removeExistingDestinationIfExists();
 
         if (!isset($this->options['_skip_input_check'])) {
-            // Run basic input validations (if source exists and if file extension is valid)
-            $this->checkSourceExists();
-            $this->checkSourceMimeType();
-
             // Check that a file can be written to destination
             $this->checkDestinationWritable();
         }
@@ -380,11 +370,6 @@ abstract class AbstractConverter
      */
     public function getMimeTypeOfSource()
     {
-        if (!isset($this->sourceMimeType)) {
-            // PS: Scrutinizer complains that ImageMimeTypeGuesser::lenientGuess could also return a boolean
-            // but this is not true! - it returns string|false|null, just as this method does.
-            $this->sourceMimeType = ImageMimeTypeGuesser::lenientGuess($this->source);
-        }
-        return $this->sourceMimeType;
+        return MimeType::getMimeTypeDetectionResult($this->source);
     }
 }

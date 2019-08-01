@@ -7,22 +7,8 @@ jQuery(document).ready(function($){
 
   // AJAX
   $("form").submit(function(e) {
-    $('body').on('show.bs.modal', function () {
-      if ($("body").innerHeight() > $(window).height()) {
-          $("body").css("margin-right", "17px");
-          $(".navbar-inverse").css("right", "17px");
-          $(".navbar-right").css("right", "-17px");
-          $(".navbar-brand.logo img").css("margin-left", "17px");
-      }
-    });
-    $('body').on('hidden.bs.modal', function (e) {
-        $("body").css("margin-right", "0px");
-        $(".navbar-inverse").css("right", "0px");
-        $(".navbar-right").css("right", "-17px");
-        $(".navbar-brand.logo img").css("margin-left", "0px");
-    });
+    
     $(".loader").removeClass("hidden").css("background-color" , "rgba(0, 0, 0, 0.9)");
-    $(".page-template").css({"overflow-y" : "hidden"});
 
     for (let i = 1; i < 5; i++) {
       $(".form-group .holder:nth-child("+ i +") .error").css({"visibility" : "hidden"});
@@ -68,7 +54,6 @@ jQuery(document).ready(function($){
           else if(data.status == "validation_failed"){
             
             $(".loader").addClass("hidden");
-            $(".page-template").css({"overflow-y" : "scroll"});
             for (let dataInto = 0; dataInto < data.invalidFields.length; dataInto++) {
               const intoMessage = data.invalidFields[dataInto].into;
               // FOR PC
@@ -92,13 +77,18 @@ jQuery(document).ready(function($){
                 $(".display-none-pc .form-group .holder:nth-child(3) .error").css({"visibility" : "visible"});
               }
             }
-          } 
-          else {
 
-            $(".loader").addClass("hidden");
-
+            $(".container-fluid").addClass("blur-modal");
+            $('body').on('show.bs.modal', function () {
+              if ($("body").innerHeight() > $(window).height()) {
+                $("body").css("margin-right", "17px");
+                $(".navbar-inverse").css("right", "17px");
+                $(".navbar-right").css("right", "-17px");
+                $(".navbar-brand.logo img").css("margin-left", "17px");
+              }
+            });
             $("#myModal-error").css("display", "block");
-            $("body").addClass("modal-open");
+            $("body").css({"width" : "100%", "position" : "fixed", "overflow-y" : "scroll" }).addClass("modal-open");
             $(".modal.fade").addClass("in");
             $(".modal-backdrop.fade").addClass("in");
             $(".modal-title").text("Successfull");
@@ -106,7 +96,31 @@ jQuery(document).ready(function($){
 
             $("#myModal-error .btn.btn-default").on('click', function(){
               $(".error.re-captcha").css({"visibility" : "hidden"});
-              $(".page-template").css({"overflow-y" : "scroll"});
+              $("body").css({"position" : "relative", "width" : "auto"});
+            });
+          } 
+          else {
+
+            $(".loader").addClass("hidden");
+            $(".container-fluid").addClass("blur-modal");
+            $('body').on('show.bs.modal', function () {
+              if ($("body").innerHeight() > $(window).height()) {
+                $("body").css("margin-right", "17px");
+                $(".navbar-inverse").css("right", "17px");
+                $(".navbar-right").css("right", "-17px");
+                $(".navbar-brand.logo img").css("margin-left", "17px");
+              }
+            });
+            $("#myModal-error").css("display", "block");
+            $("body").css({"width" : "100%", "position" : "fixed", "overflow-y" : "scroll" }).addClass("modal-open");
+            $(".modal.fade").addClass("in");
+            $(".modal-backdrop.fade").addClass("in");
+            $(".modal-title").text("Successfull");
+            $(".modal-body p").text("Thank you for your message. It has been sent.");
+
+            $("#myModal-error .btn.btn-default").on('click', function(){
+              $(".error.re-captcha").css({"visibility" : "hidden"});
+              $("body").css({"position" : "relative", "width" : "auto"});
             });
 
             setTimeout( function(){
@@ -114,7 +128,7 @@ jQuery(document).ready(function($){
               $(".modal.fade").removeClass("in").css("display", "none");
               $(".modal-backdrop.fade").removeClass("in");
               $(".error.re-captcha").css({"visibility" : "hidden"});
-              $(".page-template").css({"overflow-y" : "scroll"});
+              $("body").css({"position" : "relative", "width" : "auto"});
             },5000);
 
           }
@@ -156,7 +170,3 @@ $( 'form' ).click(function(){
     })
   }
 });
-
-function onSubmit(token) {
-  $(".btn.btn-block").removeAttr("disabled");
-};

@@ -124,6 +124,16 @@ class Cwebp extends AbstractConverter
      */
     private static function escapeShellArgOnCommandLineOptions($commandLineOptions)
     {
+        if (!ctype_print($commandLineOptions)) {
+            throw new ConversionFailedException(
+                'Non-printable characters are not allowed in the extra command line options'
+            );
+        }
+
+        if (preg_match('#[^a-zA-Z0-9_\s\-]#', $commandLineOptions)) {
+            throw new ConversionFailedException('The extra command line options contains inacceptable characters');
+        }
+
         $cmdOptions = [];
         $arr = explode(' -', ' ' . $commandLineOptions);
         foreach ($arr as $cmdOption) {
@@ -473,8 +483,14 @@ class Cwebp extends AbstractConverter
 
         $returnCode = $this->executeBinary($binary, $commandOptions, $useNice);
         if ($returnCode == 0) {
-            $this->logLn('Success');
-            return true;
+            // It has happened that even with return code 0, there was no file at destination.
+            if (!file_exists($this->destination)) {
+                $this->logLn('executing cweb returned success code - but no file was found at destination!');
+                return false;
+            } else {
+                $this->logLn('Success');
+                return true;
+            }
         } else {
             $this->logLn(
                 'Exec failed (return code: ' . $returnCode . ')'

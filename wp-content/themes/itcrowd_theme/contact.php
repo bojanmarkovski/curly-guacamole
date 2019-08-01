@@ -62,7 +62,7 @@
                                  </div>
                               </div>
 
-                              <button type="submit" class="btn btn-block" id="send-contact-form" disabled>
+                              <button type="submit" class="btn btn-block" id="send-contact-form">
                               <small>SEND E-MAIL</small>
                               </button>
                            </div>
@@ -132,7 +132,7 @@
                                     <div class="error re-captcha">Please verify that you are not a robot.</div>
                                  </div>
                               </div>
-                              <button type="submit" class="btn btn-block" disabled>
+                              <button type="submit" class="btn btn-block">
                               <small>SEND E-MAIL</small>
                               </button>
                            </div>
@@ -167,7 +167,7 @@
             <p>Your message was Successfully sent. Thank you!</p>
          </div>
          <div class="modal-footer">
-         <button type="button" class="btn btn-default btn-secondary" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-default btn-secondary modal-button-close" data-dismiss="modal">Close</button>
          </div>
       </div>
    </div>

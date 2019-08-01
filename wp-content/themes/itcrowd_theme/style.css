@@ -399,7 +399,6 @@ input[type=number]::-webkit-outer-spin-button {
 	-moz-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 	box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 }
-
 /*TEXT AREA SCROLL*/
 
 textarea::-webkit-scrollbar {
@@ -439,9 +438,9 @@ textarea::-webkit-scrollbar-track {
 	padding-bottom: 5px;
 }
 
-.modal-open{
+/* .modal-open{
 	padding-right: 0 !important;
-}
+} */
 
 /* RE-CAPTCHA CONTACT */
 div#re-captcha {
@@ -1080,7 +1079,6 @@ a.animated-button.thar-three:before {
 
 .page-template-services .modal-body {
 	height: 470px;
-	/* overflow-y: auto; */
 	margin-bottom: 10px;
 }
 
@@ -1186,7 +1184,21 @@ button.close:focus {
 	letter-spacing: 1px;
 	border: 1px solid #222222;
 }
-
+.modal-button-close{
+	background-color: #222222;
+	color: white;
+	transition: 0.2s;
+	letter-spacing: 1px;
+	border: 1px solid #222222;
+}
+.modal-button-close:hover {
+	-webkit-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
+	-moz-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
+	box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
+	background-color: #C0392B;
+	color: white;
+	border: 1px solid #C0392B;
+}
 .modal-open button:hover {
 	-webkit-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 	-moz-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);

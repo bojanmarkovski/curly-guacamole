@@ -139,7 +139,7 @@ class Config
         if ($config['operation-mode'] == 'varied-image-responses') {
             $config = array_merge($config, [
                 //'redirect-to-existing-in-htaccess' => true,   // this can now be configured, so do not apply
-                'enable-redirection-to-converter' => true,
+                //'enable-redirection-to-converter' => true,  // this can now be configured, so do not apply
                 'only-redirect-to-converter-for-webp-enabled-browsers' => true,
                 'only-redirect-to-converter-on-cache-miss' => false,
                 'do-not-pass-source-in-query-string' => true,       // Will be removed in 0.13
@@ -602,6 +602,8 @@ class Config
         // WOD options
         // -------------
         $wod = [
+            'enable-redirection-to-converter' => $config['enable-redirection-to-converter'],
+            'enable-redirection-to-webp-realizer' => $config['enable-redirection-to-webp-realizer'],
             'base-htaccess-on-these-capability-tests' => $config['base-htaccess-on-these-capability-tests'],
             'destination-extension' => $config['destination-extension'],
             'destination-folder' => $config['destination-folder'],

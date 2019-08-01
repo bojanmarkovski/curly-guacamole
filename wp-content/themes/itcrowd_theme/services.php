@@ -151,7 +151,7 @@
 
                <div class="row blur-modal">
                   <div class="col-lg-6 col-lg-offset-3 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
-                     <button type="button" class="btn btn-block" data-toggle="modal" data-target="#exampleModal">
+                     <button type="button" id="button-hire-us" class="btn btn-block" data-toggle="modal" data-target="#exampleModal">
                      HIRE US
                      </button>
                   </div>
@@ -218,7 +218,7 @@
                     </div>
                     <div class="modal-footer">
                         <button id="btn-close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-secondary btn-submit" disabled>Send e-mail</button>
+                        <button type="submit" class="btn btn-secondary btn-submit">Send e-mail</button>
                     </div>
                 </form>
             </div>

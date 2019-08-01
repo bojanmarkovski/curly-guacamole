@@ -38,17 +38,18 @@
                 Quality for lossy:
             </label>
 
-            <input type="text" size=3 name="png-quality" value="<?php echo $config['png-quality'] ?>" style="text-align:right; padding-left:0px; padding-right:4px; width:34px">
+            <input type="text" size=3 name="png-quality" value="<?php echo esc_attr($config['png-quality']) ?>" style="text-align:right; padding-left:0px; padding-right:4px; width:34px">
             <?php
                 echo helpIcon(
-                    'You probably want to set this value a bit higher than the quality for JPEGs. PNGs are often used for icons and graphics, ' .
-                    'which perhaps demands a bit more quality than photos, which jpegs often are used for.'
+                    '<p>You probably want to set this value a bit higher than the quality for JPEGs. PNGs are often used for icons and graphics, ' .
+                    'which perhaps demands a bit more quality than photos, which jpegs often are used for.</p>' .
+                    '<p>Note that there is no "Same as PNG" option available here as PNGs are lossless</p>'
                 );
             ?>
             <label style="margin-left:10px">
                 Alpha quality:
             </label>
-            <input type="text" size=3 name="alpha-quality" value="<?php echo $config['alpha-quality'] ?>" style="text-align:right; padding-left:0px; padding-right:4px; width:34px">
+            <input type="text" size=3 name="alpha-quality" value="<?php echo esc_attr($config['alpha-quality']) ?>" style="text-align:right; padding-left:0px; padding-right:4px; width:34px">
             <?php
                 echo helpIcon(
                     'The alpha quality is the quality of the alpha channel (the tranparency layer). ' .
@@ -84,7 +85,7 @@
                 <label>
                     "Near lossless" quality:
                 </label>
-                <input type="text" size=3 name="png-near-lossless" value="<?php echo $config['png-near-lossless'] ?>" style="text-align:right; padding-left:0px; padding-right:4px; width:34px">
+                <input type="text" size=3 name="png-near-lossless" value="<?php echo esc_attr($config['png-near-lossless']) ?>" style="text-align:right; padding-left:0px; padding-right:4px; width:34px">
                 <?php
                     echo helpIcon(
                         'The level of near-lossless image preprocessing (when trying lossless). ' .

@@ -97,7 +97,7 @@
                         <!-- FORM GROUP -->
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group-20px">
-                                <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
+                                <form action="/wp-json/contact-form-7/v1/contact-forms/228/feedback" method="POST" id="career-form" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <!-- NAME INPUT -->
                                         <div class="holder">
@@ -181,7 +181,7 @@
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-block send-email" disabled>
+                                    <button type="submit" class="btn btn-block send-email">
                                     <small>SEND E-MAIL</small>
                                     </button>
                                 </form>
@@ -226,7 +226,7 @@
                     <?php } ?>
                 <?php } ?>
 
-                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">I accept</button>
+                        <button type="submit" class="btn btn-secondary modal-button-close" data-dismiss="modal">I accept</button>
                     </div>
             </div>
         </div>
@@ -235,19 +235,34 @@
     <div class="modal fade form-message" id="myModal-error" role="dialog" style="display: none;">
         <div class="modal-dialog">
         
-            <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                <h2 class="modal-title">Error</h2>
+                    <h2 class="modal-title">Error</h2>
                 </div>
                 <div class="modal-body">
-                <p>Sorry, the file you are trying to upload is too big (maximum size is <b>5MB</b>).</p>
+                    <p>Sorry, the file you are trying to upload is too big (maximum size is <b>5MB</b>).</p>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-secondary" data-dismiss="myModal-error">Close</button>
+                    <button type="button" class="btn btn-default btn-secondary modal-button-close" data-dismiss="myModal-error">Close</button>
                 </div>
             </div>
         
+        </div>
+    </div>
+
+    <div class="modal form-message" id="myModal-error" role="dialog" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Successfull</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Thank you for your message. It has been sent.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-secondary modal-button-close" data-dismiss="myModal-error">Close</button>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Content END -->
