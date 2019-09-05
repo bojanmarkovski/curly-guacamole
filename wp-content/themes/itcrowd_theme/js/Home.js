@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   // MAIN SLIDER
   $('.one-time').slick({
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 700,
     slidesToShow: 1,
