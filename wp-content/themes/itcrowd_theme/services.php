@@ -29,6 +29,13 @@
                             $classHelper = 'left-side-services';
                         }
 
+                        $icons = "fa-clipboard-list";
+                        if($counter == 1){
+                            $icons = "fa-laptop-code";
+                        } else if ($counter == 2) {
+                            $icons = "fa-bullhorn";                       
+                        }
+
                         ?>
 
                         <!-- OUR-SERVICES BOX 1-->
@@ -37,7 +44,7 @@
                             <?php if ($counter % 2 == 0) { ?>
 
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
-                                    <div class="image-box"> <i class="fas fa-desktop"></i>
+                                    <div class="image-box"> <i class="fas <?php echo ($icons); ?>"></i>
                                         <?php echo get_the_post_thumbnail($term); ?>
                                     </div>
                                 </div>
@@ -132,7 +139,7 @@
                                 </div>
 
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
-                                    <div class="image-box"> <i class="fas fa-desktop"></i>
+                                    <div class="image-box"> <i class="fas <?php echo ($icons); ?>"></i>
                                         <?php echo get_the_post_thumbnail($term); ?>
                                     </div>
                                 </div>

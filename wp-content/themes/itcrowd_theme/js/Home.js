@@ -2,13 +2,13 @@ $(document).ready(function(){
 
   // MAIN SLIDER
   $('.one-time').slick({
-    // dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 1,
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
+//     dots: true,
+//     infinite: true,
+//     speed: 700,
+//     slidesToShow: 1,
+//     adaptiveHeight: true,
+//     autoplay: true,
+//     autoplaySpeed: 5000,
   });
 
   // ANIMATE TABLET AND MOBILE ON MAIN SLIDER
@@ -99,3 +99,29 @@ $(window).scroll( function(){
       }
   });
 });
+
+if($( window ).width() >= 1680){
+  $(".iq-font-white.iq-pt-15 li:first-child").animate({left: '200px'},1200);
+  $(".iq-font-white.iq-pt-15 li:nth-child(2)").animate({left: '250'},1600);
+  $(".iq-font-white.iq-pt-15 li:nth-child(3)").animate({left: '310px'},2000);
+
+  $(".iq-font-white.iq-pt-15 li:first-child").animate({left: '150px'},800);
+  $(".iq-font-white.iq-pt-15 li:nth-child(2)").animate({left: '200px'},800);
+  $(".iq-font-white.iq-pt-15 li:nth-child(3)").animate({left: '250px'},800);
+} else if($( window ).width() <= 1680 && $( window ).width() >= 1380) {
+  $(".iq-font-white.iq-pt-15 li:first-child").animate({left: '90px'},1200);
+  $(".iq-font-white.iq-pt-15 li:nth-child(2)").animate({left: '190'},1600);
+  $(".iq-font-white.iq-pt-15 li:nth-child(3)").animate({left: '300px'},2000);
+
+  $(".iq-font-white.iq-pt-15 li:first-child").animate({left: '50px'},800);
+  $(".iq-font-white.iq-pt-15 li:nth-child(2)").animate({left: '150px'},800);
+  $(".iq-font-white.iq-pt-15 li:nth-child(3)").animate({left: '240px'},800);
+} else if($( window ).width() <= 1380 && $( window ).width() >= 992){
+  $(".iq-font-white.iq-pt-15 li:first-child").animate({left: '60px'},1200);
+  $(".iq-font-white.iq-pt-15 li:nth-child(2)").animate({left: '140'},1600);
+  $(".iq-font-white.iq-pt-15 li:nth-child(3)").animate({left: '180px'},2000);
+
+  $(".iq-font-white.iq-pt-15 li:first-child").animate({left: '10px'},800);
+  $(".iq-font-white.iq-pt-15 li:nth-child(2)").animate({left: '60px'},800);
+  $(".iq-font-white.iq-pt-15 li:nth-child(3)").animate({left: '100px'},800);
+}

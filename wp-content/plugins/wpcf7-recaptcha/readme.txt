@@ -1,9 +1,9 @@
-=== Contact Form 7 - reCaptcha v2 ===
+=== ReCaptcha v2 for Contact Form 7 ===
 Contributors: iqcomputing
 Tags: contact-form-7, contact-form-7-recaptcha, recaptcha, spam
 Requires at least: 4.9
 Tested up to: 5.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,11 +27,11 @@ Once installed and configured it should be the same reCaptcha functionality you 
 
 [Contact Form 7](https://wordpress.org/plugins/contact-form-7/ "Contact Form 7 plugin page") is required to work with this plugin.
 
-1. Install this (Contact Form 7 - reCaptcha v2) plugin
+1. Install this (ReCaptcha v2 for Contact Form 7) plugin
 1. Update Contact Form 7 to the latest version
 1. Re-add the reCaptcha version 2 API keys (if no keys are currently set). For more information you may read [How to Generate Google reCAPTCHA v2 Keys](https://www.iqcomputing.com/support/articles/generate-google-recaptcha-v2-keys/) by IQComputing and [Contact Form 7 documentation](https://contactform7.com/recaptcha-v2/ "Contact Form 7 reCaptcha(v2)")
 1. Using the left-hand admin navigation in the Contact Form 7 subpages click "reCaptcha Version" (Contact -> reCaptcha Version)
-1. Once on the "Contact Form 7 - reCaptcha v2" settings page, select from the select list "reCaptcha Version 2" and click "save"
+1. Once on the "ReCaptcha v2 for Contact Form 7" settings page, select from the select list "reCaptcha Version 2" and click "save"
 
 Once the version 2 API keys are set, the version 2 has been selected in the plugin settings, all [recaptcha] tags will be replaced with the expected Google reCaptcha on all forms.
 
@@ -60,6 +60,9 @@ Should the above be correct, at this point it's time to open a support thread fo
 
 == Changelog ==
 
+= 1.2.1 (2019-09-09) =
+* Updated the plugin name to fix Trademark infringement.
+
 = 1.2.0 (2019-06-13) =
 * Removed jQuery dependecy.
 * Converted jQuery reCaptcha submission check to vanilla JavaScript.
@@ -69,6 +72,3 @@ Should the above be correct, at this point it's time to open a support thread fo
 * Added selectable option to choose which website to pull reCaptcha resources from (google.com | recaptcha.net) Thanks @scits!
 * Added and modified some class methods. See extended changelog for further details.
 * Modified noscript reCaptcha to look and function better "default". Styling left to theme authors and developers.
-
-= 1.1.8 (2019-04-26) =
-* Fixed WPCF7+Flamingo bug which saved un-verified submissions to spam in Flamingo. Thanks @scits!
