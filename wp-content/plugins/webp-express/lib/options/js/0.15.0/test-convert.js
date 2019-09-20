@@ -1,4 +1,3 @@
-
 function openTestConvertPopup(converterId) {
     var html = '<div id="tc_conversion_options">options</div><div><div id="tc_conversion_result"><h2>Result</h2>wait...</div></div>'
     document.getElementById('tc_content').innerHTML = html;
@@ -130,7 +129,7 @@ function runTestConversion() {
 
     var data = {
         'action': 'convert_file',
-        'nonce': window.webpExpressAjaxConvertNonce,
+        'nonce': window.webpExpress['ajax-nonces']['convert'],
         'filename': window.webpExpressPaths['filePaths']['webpExpressRoot'] + '/test/' + elTxt('image'),
         "converter": elTxt("converter"),
         'config-overrides': JSON.stringify(configOverrides)
@@ -239,13 +238,20 @@ function convertResponseCallback(response){
             var srcUrl = '/' + window.webpExpressPaths['urls']['webpExpressRoot']  + '/test/' + filename;
             //html += '<img src="/' + srcUrl + '" style="width:100%">';
 
+
+
+            // TODO: THIS DOES NOT WORK. NEEDS ATTENTION!
+            /*
             var webpUrl = '/' + window.webpExpressPaths['urls']['content'] +
                               '/webp-express/webp-images/doc-root/' +
                               window.webpExpressPaths['filePaths']['pluginRelToDocRoot'] + '/' +
                               'webp-express/' +
                               'test/' +
                               filename + '.webp';
+                          */
             //html += '<img src="' + webpUrl + '" style="width:100%">';
+
+            var webpUrl = result['destination-url'];
 
             html += '<div class="cd-image-container">';
             html += '  <div class="cd-image-label webp">WebP: ' + webpSizeStr + '</div>';

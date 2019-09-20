@@ -51,7 +51,7 @@
 							<a href="https://www.facebook.com/itcrowd.me" target="_blank">
 								<i class="fab fa-facebook-f"></i>
 							</a>
-							<a href="https://www.xing.com/" target="_blank">
+							<a href="https://www.xing.com/companies/itcrowd" target="_blank">
 								<i class="fab fa-xing"></i>
 							</a>
 						</div>

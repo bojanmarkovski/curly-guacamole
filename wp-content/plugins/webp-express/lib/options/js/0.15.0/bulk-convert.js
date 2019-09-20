@@ -5,7 +5,7 @@ function openBulkConvertPopup() {
 
     var data = {
 		'action': 'list_unconverted_files',
-        'nonce' : window.webpExpressAjaxListUnconvertedFilesNonce,
+        'nonce' : window.webpExpress['ajax-nonces']['list-unconverted-files'],
 	};
     jQuery.post(ajaxurl, data, function(response) {
         if ((typeof response == 'object') && (response['success'] == false)) {
@@ -39,11 +39,11 @@ function openBulkConvertPopup() {
         } else {
             html += '<div>'
             html += '<p>There are ' + numFiles + ' unconverted files.</p>';
-            html += '<p><i>Note that in a typical setup, you will have redirect rules which triggers conversion when needed, ' +
+            html += '<p><i>Note that in a typical setup, you will have redirect rules which trigger conversion when needed, ' +
                     'and thus you have no need for bulk conversion. In fact, in that case, you should probably not bulk convert ' +
                     'because bulk conversion will also convert images and thumbnails which are not in use, and thus take up ' +
-                    'more disk space than neccessary. The bulk conversion feature was only added in order to make the plugin usable even when ' +
-                    'there is problems with redirects (ie on Nginx in case you do not have access to the config or on Microsoft IIS). ' +
+                    'more disk space than necessary. The bulk conversion feature was only added in order to make the plugin usable even when ' +
+                    'there are problems with redirects (ie on Nginx in case you do not have access to the config or on Microsoft IIS). ' +
                     '</i></p><br>';
             html += '<button onclick="startBulkConversion()" class="button button-primary" type="button">Start conversion</button>';
             html += '</div>';
@@ -71,10 +71,10 @@ function pauseOrResumeBulkConversion() {
 function startBulkConversion() {
     var html = '<br>';
     html += '<style>' +
-        '.has-tip {cursor:pointer; position:relative;}\n' +
+        '.has-tip {cursor:pointer; position:static;}\n' +
         '.has-tip .tip {display: none}\n' +
         '.has-tip:hover .tip {display: block}\n' +
-        '.tip{padding: 5px 10px; background-color:#ff9;position:absolute; right: 0; min-width:110px; font-size:10px; color: black; border:1px solid black; max-width:90%;z-index:10}\n' +
+        '.tip{padding: 5px 10px; background-color:#ff9;min-width:310px; font-size:10px; color: black; border:1px solid black; max-width:90%;z-index:10}\n' +
         '.reduction {float:right;}\n' +
         '</style>';
     html += '<button id="bulkPauseResumeBtn" onclick="pauseOrResumeBulkConversion()" class="button button-primary" type="button">Pause</button>';
@@ -151,7 +151,7 @@ function webpexpress_viewLog(groupPointer, filePointer) {
         url: ajaxurl,
         data: {
             'action': 'webpexpress_view_log',
-            'nonce' : window.webpExpressAjaxViewLogNonce,
+            'nonce' : window.webpExpress['ajax-nonces']['view-log'],
             'source': source
         },
         success: (response) => {
@@ -218,7 +218,7 @@ function convertNextInBulkQueue() {
 
     var data = {
 		'action': 'convert_file',
-        'nonce' : window.webpExpressAjaxConvertNonce,
+        'nonce' : window.webpExpress['ajax-nonces']['convert'],
         'filename': group.root + '/' + filename
 
 		//'whatever': ajax_object.we_value      // We pass php values differently!
@@ -262,14 +262,19 @@ function convertNextInBulkQueue() {
 
             bulkInfo['orgTotalFilesize'] += orgSize;
             bulkInfo['webpTotalFilesize'] += webpSize;
-
+            //'- Saved at: ' + result['destination-path'] +
+/*
             html += ' <span style="color:green">ok</span></span>' +
                 htmlViewLog +
+                getReductionHtml(orgSize, webpSize, 'Size of original', 'Size of webp')*/
 
+            html += ' <span style="color:green" class="has-tip">ok' +
+                    '<span class="tip">' +
+                        '<b>Destination:</b><br>' + result['destination-path'] + '<br><br>' +
+                        '<b>Url:</b><br><a href="' + result['destination-url'] + '">' + result['destination-url'] + '<br>' +
+                    '</span>' +
+                '</span>' +
                 getReductionHtml(orgSize, webpSize, 'Size of original', 'Size of webp')
-
-            //html += ' <span style="color:green" class="has-tip">ok<span class="tip">' + result['log'] + '</span></span>' +
-            //    getReductionHtml(orgSize, webpSize, 'Size of original', 'Size of webp')
         } else {
             html += ' <span style="color:red">failed</span>' + htmlViewLog;
             /*

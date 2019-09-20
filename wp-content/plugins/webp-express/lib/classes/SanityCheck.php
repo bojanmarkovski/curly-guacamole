@@ -2,11 +2,21 @@
 
 namespace WebPExpress;
 
+use \WebPExpress\PathHelper;
 use \WebPExpress\Sanitize;
 use \WebPExpress\SanityException;
 
 class SanityCheck
 {
+
+    private static function fail($errorMsg, $input)
+    {
+        // sanitize input before calling error_log(), it might be sent to file, mail, syslog etc.
+        error_log($errorMsg . '. input:' . Sanitize::removeNUL($input));
+        //error_log(get_magic_quotes_gpc() ? 'on' :'off');
+        throw new SanityException($errorMsg);   //  . '. Check debug.log for details (and make sure debugging is enabled)'
+    }
+
 
     /**
      *
@@ -15,7 +25,7 @@ class SanityCheck
     public static function mustBeString($input, $errorMsg = 'String expected')
     {
         if (gettype($input) !== 'string') {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -30,7 +40,7 @@ class SanityCheck
     {
         self::mustBeString($input);
         if (strpos($input, chr(0)) !== false) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -43,12 +53,12 @@ class SanityCheck
      *
      *  @param  string  $input  string to test for control characters
      */
-    public static function noControlChars($input)
+    public static function noControlChars($input, $errorMsg = 'Control characters are not allowed')
     {
         self::mustBeString($input);
         self::noNUL($input);
         if (preg_match('#[\x{0}-\x{1f}]#', $input)) {
-            throw new SanityException('Control characters are not allowed');
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -61,7 +71,7 @@ class SanityCheck
     public static function notEmpty($input, $errorMsg = 'Must be non-empty')
     {
         if (empty($input)) {
-            throw new SanityException($input);
+            self::fail($errorMsg, '');
         }
         return $input;
     }
@@ -73,7 +83,7 @@ class SanityCheck
         self::mustBeString($input);
         self::noControlChars($input);
         if (preg_match('#\.\.\/#', $input)) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -86,17 +96,16 @@ class SanityCheck
         // Prevent stream wrappers ("phar://", "php://" and the like)
         // https://www.php.net/manual/en/wrappers.phar.php
         if (preg_match('#^\\w+://#', Sanitize::removeNUL($input))) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
 
-    public static function path($input)
+    public static function pathDirectoryTraversalAllowed($input)
     {
         self::notEmpty($input);
         self::mustBeString($input);
         self::noControlChars($input);
-        self::noDirectoryTraversal($input);
         self::noStreamWrappers($input);
 
         // PS: The following sanitize has no effect, as we have just tested that there are no NUL and
@@ -108,32 +117,42 @@ class SanityCheck
 
     public static function pathWithoutDirectoryTraversal($input)
     {
-        return self::path($input);
+        self::pathDirectoryTraversalAllowed($input);
+        self::noDirectoryTraversal($input);
+        $input = Sanitize::path($input);
+
+        return $input;
     }
+
+    public static function path($input)
+    {
+        return self::pathWithoutDirectoryTraversal($input);
+    }
+
 
     /**
      *  Beware: This does not take symlinks into account.
      *  I should make one that does. Until then, you should probably not call this method from outside this class
      */
-    public static function pathBeginsWith($input, $beginsWith, $errorMsg = 'Path is outside allowed path')
+    private static function pathBeginsWith($input, $beginsWith, $errorMsg = 'Path is outside allowed path')
     {
         self::path($input);
         if (!(strpos($input, $beginsWith) === 0)) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
 
-    public static function pathBeginsWithSymLinksExpanded($input, $beginsWith, $errorMsg = 'Path is outside allowed path') {
-        $closestExistingFolder = self::findClosestExistingFolderSymLinksExpanded($input);
+    private static function pathBeginsWithSymLinksExpanded($input, $beginsWith, $errorMsg = 'Path is outside allowed path') {
+        $closestExistingFolder = PathHelper::findClosestExistingFolderSymLinksExpanded($input);
         self::pathBeginsWith($closestExistingFolder, $beginsWith, $errorMsg);
     }
 
-    public static function absPathMicrosoftStyle($input, $errorMsg = 'Not an fully qualified Windows path')
+    private static function absPathMicrosoftStyle($input, $errorMsg = 'Not an fully qualified Windows path')
     {
         // On microsoft we allow [drive letter]:\
         if (!preg_match("#^[A-Z]:\\\\|/#", $input)) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -169,33 +188,90 @@ class SanityCheck
             if (self::isOnMicrosoft()) {
                 self::absPathMicrosoftStyle($input);
             } else {
-                throw new SanityException($errorMsg);
+                self::fail($errorMsg, $input);
             }
         }
         return $input;
     }
 
-    private static function findClosestExistingFolderSymLinksExpanded($input) {
-        // Get closest existing folder with symlinks expanded.
-        // this is a bit complicated, as the input path may not yet exist.
-        // in case of realpath failure, we must try with one folder pealed off at the time
 
-        $levelsUp = 1;
-        while (true) {
-            $dir = dirname($input, $levelsUp);
-            $realPathResult = realpath($dir);
-            if ($realPathResult !== false) {
-                return $realPathResult;
-            }
-            if (($dir == '/') || (strlen($dir) < 4)) {
-                return $dir;
-            }
-            $levelsUp++;
-        }
+
+    public static function absPathInOneOfTheseRoots()
+    {
+
+    }
+
+
+    /**
+     * Look if filepath is within a dir path.
+     * Also tries expanding symlinks
+     *
+     * @param  string  $filePath   Path to file. It may be non-existing.
+     * @param  string  $dirPath    Path to dir. It must exist in order for symlinks to be expanded.
+     */
+    private static function isFilePathWithinExistingDirPath($filePath, $dirPath)
+    {
+        // sanity-check input. It must be a valid absolute filepath. It is allowed to be non-existing
+        self::absPath($filePath);
+
+        // sanity-check dir and that it exists.
+        self::absPathExistsAndIsDir($dirPath);
+
+        return PathHelper::isFilePathWithinDirPath($filePath, $dirPath);
     }
 
     /**
+     * Look if filepath is within multiple dir paths.
+     * Also tries expanding symlinks
+     *
+     * @param  string  $input    Path to file. It may be non-existing.
+     * @param  array   $roots    Allowed root dirs. Note that they must exist in order for symlinks to be expanded.
+     */
+    public static function filePathWithinOneOfTheseRoots($input, $roots, $errorMsg = 'The path is outside allowed roots.')
+    {
+        self::absPath($input);
+
+        foreach ($roots as $root) {
+            if (self::isFilePathWithinExistingDirPath($input, $root)) {
+                return $input;
+            }
+        }
+        self::fail($errorMsg, $input);
+    }
+
+    /*
+    public static function sourcePath($input, $errorMsg = 'The source path is outside allowed roots. It is only allowed to convert images that resides in: home dir, content path, upload dir and plugin dir.')
+    {
+        $validPaths = [
+            Paths::getHomeDirAbs(),
+            Paths::getIndexDirAbs(),
+            Paths::getContentDirAbs(),
+            Paths::getUploadDirAbs(),
+            Paths::getPluginDirAbs()
+        ];
+        return self::filePathWithinOneOfTheseRoots($input, $validPaths, $errorMsg);
+    }
+
+    public static function destinationPath($input, $errorMsg = 'The destination path is outside allowed roots. The webps may only be stored in the upload folder and in the folder that WebP Express stores converted images in')
+    {
+        self::absPath($input);
+
+        // Webp Express only store converted images in upload folder and in its "webp-images" folder
+        // Check that destination path is within one of these.
+        $validPaths = [
+            '/var/www/webp-express-tests/we1'
+            //Paths::getUploadDirAbs(),
+            //Paths::getWebPExpressContentDirRel() . '/webp-images'
+        ];
+        return self::filePathWithinOneOfTheseRoots($input, $validPaths, $errorMsg);
+    }*/
+
+
+    /**
      * Test that absolute path is in document root.
+     *
+     * TODO: Instead of this method, we shoud check
+     *
      *
      * It is acceptable if the absolute path does not exist
      */
@@ -208,9 +284,10 @@ class SanityCheck
         $docRoot = self::absPathExistsAndIsDir($docRoot);
 
         // Use realpath to expand symbolic links and check if it exists
-        $docRootSymLinksExpanded = realpath($docRoot);
+        $docRootSymLinksExpanded = @realpath($docRoot);
         if ($docRootSymLinksExpanded === false) {
-            throw new SanityException('Cannot find document root');
+            $errorMsg = 'Cannot find document root';
+            self::fail($errorMsg, $input);
         }
         $docRootSymLinksExpanded = rtrim($docRootSymLinksExpanded, '/');
         $docRootSymLinksExpanded = self::absPathExists($docRootSymLinksExpanded, 'Document root does not exist!');
@@ -226,11 +303,14 @@ class SanityCheck
         return $input;
     }
 
-    public static function absPathExists($input, $errorMsg = 'Path does not exist')
+    public static function absPathExists($input, $errorMsg = 'Path does not exist or it is outside restricted basedir')
     {
         self::absPath($input);
         if (@!file_exists($input)) {
-            throw new SanityException($errorMsg);
+            // TODO: We might be able to detect if the problem is that the path does not exist or if the problem
+            // is that it is outside restricted basedir.
+            // ie by creating an error handler or inspecting the php ini "open_basedir" setting
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -239,9 +319,9 @@ class SanityCheck
         $input,
         $errorMsg = 'Path points to a file (it should point to a directory)'
     ) {
-        self::absPathExists($input);
+        self::absPathExists($input, 'Directory does not exist or is outside restricted basedir');
         if (!is_dir($input)) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -250,9 +330,9 @@ class SanityCheck
         $input,
         $errorMsg = 'Path points to a directory (it should not do that)'
     ) {
-        self::absPathExists($input, 'File does not exist');
+        self::absPathExists($input, 'File does not exist or is outside restricted basedir');
         if (@is_dir($input)) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -278,7 +358,7 @@ class SanityCheck
         self::noNUL($input);
         self::mustBeString($input);
         if (!preg_match($pattern, $input)) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -289,7 +369,7 @@ class SanityCheck
         self::mustBeString($input);
         self::notEmpty($input);
         if ((strpos($input, '[') !== 0) || (!is_array(json_decode($input)))) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }
@@ -300,7 +380,7 @@ class SanityCheck
         self::mustBeString($input);
         self::notEmpty($input);
         if ((strpos($input, '{') !== 0) || (!is_object(json_decode($input)))) {
-            throw new SanityException($errorMsg);
+            self::fail($errorMsg, $input);
         }
         return $input;
     }

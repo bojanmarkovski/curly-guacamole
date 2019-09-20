@@ -8,6 +8,225 @@ use \WebPExpress\PathHelper;
 
 class Paths
 {
+    public static function areAllImageRootsWithinDocRoot() {
+        if (!PathHelper::isDocRootAvailable()) {
+            return false;
+        }
+
+        $roots = self::getImageRootIds();
+        foreach ($roots as $dirId) {
+            $dir = self::getAbsDirById($dirId);
+            if (!PathHelper::canCalculateRelPathFromDocRootToDir($dir)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Check if we can use document root for calculating relative paths (which may not contain "/.." directory traversal)
+     *
+     * Note that this method allows document root to be outside open_basedir as long as document root is
+     * non-empty AND it is possible to calculate relative paths to all image roots (including "index").
+     * Here is a case when a relative CAN be calculated:
+     * - Document root is configured to "/var/www/website" - which is also the absolute file path.
+     * - open_basedir is set to "/var/www/website/wordpress"
+     * - uploads is in "/var/www/website/wordpress/wp-content/uploads" (within open_basedir, as it should)
+     * - "/wp-uploads" symlinks to "/var/www/website/wordpress")
+     * - Wordpress has been configured to use "/wp-uploads" path for uploads.
+     *
+     * What happens?
+     * First, it is tested if the configured upload path ("/wp-uploads") begins with the configured document root ("/var/www/website").
+     * This fails.
+     * Next, it is tested if the uploads path can be resolved. It can, as it is within the open_basedir.
+     * Next, it is tested if the *resolved* the uploads path begins with the configured document root.
+     * As "/var/www/website/wordpress/wp-content/uploads" begins with "/var/www/website", we have a match.
+     * The relative path can be calculated to be "wordpress/wp-content/uploads".
+     * Later, when the relative path is used, it will be used as $docRoot + "/" + $relPath, which
+     * will be "/var/www/website/wordpress/wp-content/uploads". All is well.
+     *
+     * Here is a case where it CAN NOT be calculated:
+     * - Document root is configured to "/the-website", which symlinks to "/var/www/website"
+     * - open_basedir is set to "/var/www/website/wordpress"
+     * - uploads is in "/var/www/website/wordpress/wp-content/uploads" and wordpress is configured to use that upload path.
+     *
+     * What happens?
+     * First, it is tested if the configured upload path begins with the configured document root
+     * "/var/www/website/wordpress/wp-content/uploads" does not begin with "/the-website", so it fails.
+     * Next, it is tested if the *resolved* the uploads path begins with the configured document root.
+     * The resolved uploads path is the same as the configured so it also fails.
+     * Next, it is tested if Document root can be resolved. It can not, as the resolved path is not within open_basedir.
+     * If it could, it would have been tested if the resolved path begins with the resolved document root and we would have
+     * gotten a yes, and the relative path would have been "wordpress/wp-content/uploads" and it would work.
+     * However: Document root could not be resolved and we could not get a result.
+     * To sum the scenario up:
+     * If document root is configured to a symlink which cannot be resolved then it will only be possible to get relative paths
+     * when all other configured paths begins are relative to that symlink.
+     */
+    public static function canUseDocRootForRelPaths() {
+        if (!PathHelper::isDocRootAvailable()) {
+            return false;
+        }
+        return self::areAllImageRootsWithinDocRoot();
+    }
+
+    public static function canCalculateRelPathFromDocRootToDir($absPath) {
+    }
+
+    /**
+     * Check if we can use document root for structuring the cache dir.
+     *
+     * In order to structure the images by doc-root, WebP Express needs all images to be within document root.
+     * Does WebP Express in addition to this need to be able to resolve document root?
+     * Short answer is yes.
+     * The long answer is available as a comment inside ConvertHelperIndependent::getDestination()
+     *
+     */
+    public static function canUseDocRootForStructuringCacheDir() {
+        return (PathHelper::isDocRootAvailableAndResolvable() && self::canUseDocRootForRelPaths());
+    }
+
+    public static function docRootStatusText()
+    {
+        if (!PathHelper::isDocRootAvailable()) {
+            if (!isset($_SERVER['DOCUMENT_ROOT'])) {
+                return 'Unavailable (DOCUMENT_ROOT is not set in the global $_SERVER var)';
+            }
+            if ($_SERVER['DOCUMENT_ROOT'] == '') {
+                return 'Unavailable (empty string)';
+            }
+            return 'Unavailable';
+        }
+
+        $imageRootsWithin = self::canUseDocRootForRelPaths();
+        if (!PathHelper::isDocRootAvailableAndResolvable()) {
+            $status = 'Available, but either non-existing or not within open_basedir.' .
+                ($imageRootsWithin ? '' : ' And not all image roots are within that document root.');
+        } elseif (!$imageRootsWithin) {
+            $status = 'Available, but not all image roots are within that document root.';
+        } else {
+            $status = 'Available and its "realpath" is available too.';
+        }
+        if (self::canUseDocRootForStructuringCacheDir()) {
+            $status .= ' Can be used for structuring cache dir.';
+        } else {
+            $status .= ' Cannot be used for structuring cache dir.';
+        }
+        return $status;
+    }
+
+    public static function getAbsDirId($absDir) {
+        switch ($absDir) {
+            case self::getContentDirAbs():
+                return 'wp-content';
+            case self::getIndexDirAbs():
+                return 'index';
+            case self::getHomeDirAbs():
+                return 'home';
+            case self::getPluginDirAbs():
+                return 'plugins';
+            case self::getUploadDirAbs():
+                return 'uploads';
+            case self::getThemesDirAbs():
+                return 'themes';
+            case self::getCacheDirAbs():
+                return 'cache';
+        }
+        return false;
+    }
+
+    public static function getAbsDirById($dirId) {
+        switch ($dirId) {
+            case 'wp-content':
+                return self::getContentDirAbs();
+            case 'index':
+                return self::getIndexDirAbs();
+            case 'home':
+                // "home" is still needed (used in PluginDeactivate.php)
+                return self::getHomeDirAbs();
+            case 'plugins':
+                return self::getPluginDirAbs();
+            case 'uploads':
+                return self::getUploadDirAbs();
+            case 'themes':
+                return self::getThemesDirAbs();
+            case 'cache':
+                return self::getCacheDirAbs();
+        }
+        return false;
+    }
+
+    /**
+     * Get ids for folders where SOURCE images may reside
+     */
+    public static function getImageRootIds() {
+        return ['uploads', 'themes', 'plugins', 'wp-content', 'index'];
+    }
+
+    public static function findImageRootOfPath($path, $rootIdsToSearch) {
+        foreach ($rootIdsToSearch as $rootId) {
+            if (PathHelper::isPathWithinExistingDirPath($path, self::getAbsDirById($rootId))) {
+                return $rootId;
+            }
+        }
+        return false;
+    }
+
+    public static function getImageRootsDefForSelectedIds($ids) {
+        $canUseDocRootForRelPaths = self::canUseDocRootForRelPaths();
+
+        $mapping = [];
+        foreach ($ids as $rootId) {
+            $obj = [
+                'id' => $rootId,
+            ];
+            $absPath = self::getAbsDirById($rootId);
+            if ($canUseDocRootForRelPaths) {
+                $obj['rel-path'] = PathHelper::getRelPathFromDocRootToDirNoDirectoryTraversalAllowed($absPath);
+            } else {
+                $obj['abs-path'] = $absPath;
+            }
+            $obj['url'] = self::getUrlById($rootId);
+            $mapping[] = $obj;
+        }
+        return $mapping;
+    }
+
+    public static function getImageRootsDef()
+    {
+        return self::getImageRootsDefForSelectedIds(self::getImageRootIds());
+    }
+
+    public static function filterOutSubRoots($rootIds)
+    {
+        // Get dirs of enabled roots
+        $dirs = [];
+        foreach ($rootIds as $rootId) {
+            $dirs[] = self::getAbsDirById($rootId);
+        }
+
+        // Filter out dirs which are below other dirs
+        $dirsToSkip = [];
+        foreach ($dirs as $dirToExamine) {
+            foreach ($dirs as $dirToCompareAgainst) {
+                if ($dirToExamine == $dirToCompareAgainst) {
+                    continue;
+                }
+                if (self::isDirInsideDir($dirToExamine, $dirToCompareAgainst)) {
+                    $dirsToSkip[] = $dirToExamine;
+                    break;
+                }
+            }
+        }
+        $dirs = array_diff($dirs, $dirsToSkip);
+
+        // back to ids
+        $result = [];
+        foreach ($dirs as $dir) {
+            $result[] = self::getAbsDirId($dir);
+        }
+        return $result;
+    }
 
     public static function createDirIfMissing($dir)
     {
@@ -29,43 +248,32 @@ class Paths
     }
 
     /**
-     *  Return relative dir - relative to realpath(document root)
-     */
-    public static function getRelDir($dir)
-    {
-        return PathHelper::getRelDir(realpath($_SERVER['DOCUMENT_ROOT']), $dir);
-    }
-
-
-    /**
      *  Return absolute dir.
-     *  - realpath() is used to resolve soft links and resolve '../' and './'
+     *
+     *  - Path is canonicalized (without resolving symlinks)
      *  - trailing dash is removed - we don't use that around here.
      *
-     *  realpath() only works on existing dirs.
-     *  If realpath fails, PathHelper::canonicalize() will be used insead.
-     *  (this takes care of resolving '../' and './', but does NOT resolve soft links)
+     *  We do not resolve symlinks anymore. Information was lost that way.
+     *  And in some cases we needed the unresolved path - for example in the .htaccess.
      */
     public static function getAbsDir($dir)
     {
+        $dir = PathHelper::canonicalize($dir);
+        return rtrim($dir, '/');
+        /*
         $result = realpath($dir);
         if ($result === false) {
             $dir = PathHelper::canonicalize($dir);
         } else {
             $dir = $result;
-        }
-        return rtrim($dir, '/');
-    }
+        }*/
 
-    // ------------ Document Root -------------
-
-    public static function getDocumentRootAbs()
-    {
-        return self::getAbsDir($_SERVER["DOCUMENT_ROOT"]);
     }
 
     // ------------ Home Dir -------------
 
+    // PS: Home dir is not the same as index dir.
+    // For example, if Wordpress folder has been moved (method 2), the home dir could be below.
     public static function getHomeDirAbs()
     {
         if (!function_exists('get_home_path')) {
@@ -74,24 +282,24 @@ class Paths
         return self::getAbsDir(get_home_path());
     }
 
-    public static function getHomeDirRel()
-    {
-        return self::getRelDir(self::getHomeDirAbs());
-    }
-
-    // ------------ Index Dir  -------------
-    // (The Wordpress installation dir)
+    // ------------ Index Dir  (WP root dir) -------------
+    // (The Wordpress installation dir- where index.php and wp-load.php resides)
 
     public static function getIndexDirAbs()
     {
-        return self::getAbsDir(ABSPATH);
-    }
+        // We used to return self::getAbsDir(ABSPATH), which used realpath.
+        // It has been changed now, as it seems we do not need realpath for ABSPATH, as it is defined
+        // (in wp-load.php) as dirname(__FILE__) . "/" and according to this link, __FILE__ returns resolved paths:
+        // https://stackoverflow.com/questions/3221771/how-do-you-get-php-symlinks-and-file-to-work-together-nicely
+        // AND a user reported an open_basedir restriction problem thrown by realpath($_SERVER['DOCUMENT_ROOT']),
+        // due to symlinking and opendir restriction (see #322)
 
-    public static function getIndexDirRel()
-    {
-        return self::getRelDir(self::getIndexDirAbs());
-    }
+        return rtrim(ABSPATH, '/');
 
+        // TODO: read up on this, regarding realpath:
+        // https://github.com/twigphp/Twig/issues/2707
+
+    }
 
     // ------------ .htaccess dir -------------
     // (directory containing the relevant .htaccess)
@@ -101,6 +309,10 @@ class Paths
 
     public static function canWriteHTAccessRulesHere($dirName) {
         return FileHelper::canEditOrCreateFileHere($dirName . '/.htaccess');
+    }
+
+    public static function canWriteHTAccessRulesInDir($dirId) {
+        return self::canWriteHTAccessRulesHere(self::getAbsDirById($dirId));
     }
 
     public static function returnFirstWritableHTAccessDir($dirs)
@@ -121,8 +333,13 @@ class Paths
     }
     public static function getContentDirRel()
     {
-        return self::getRelDir(self::getContentDirAbs());
+        return PathHelper::getRelPathFromDocRootToDirNoDirectoryTraversalAllowed(self::getContentDirAbs());
     }
+    public static function getContentDirRelToPluginDir()
+    {
+        return PathHelper::getRelDir(self::getPluginDirAbs(), self::getContentDirAbs());
+    }
+
 
     public static function isWPContentDirMoved()
     {
@@ -134,6 +351,12 @@ class Paths
         return !(self::isDirInsideDir(self::getContentDirAbs(), ABSPATH));
     }
 
+    // ------------ Themes Dir -------------
+
+    public static function getThemesDirAbs()
+    {
+        return self::getContentDirAbs() . '/themes';
+    }
 
     // ------------ WebPExpress Content Dir -------------
     // (the "webp-express" directory inside wp-content)
@@ -145,7 +368,7 @@ class Paths
 
     public static function getWebPExpressContentDirRel()
     {
-        return self::getRelDir(self::getWebPExpressContentDirAbs());
+        return PathHelper::getRelPathFromDocRootToDirNoDirectoryTraversalAllowed(self::getWebPExpressContentDirAbs());
     }
 
     public static function createContentDirIfMissing()
@@ -161,7 +384,7 @@ class Paths
     }
     public static function getUploadDirRel()
     {
-        return self::getRelDir(self::getUploadDirAbs());
+        return PathHelper::getRelPathFromDocRootToDirNoDirectoryTraversalAllowed(self::getUploadDirAbs());
     }
 
     /*
@@ -193,7 +416,7 @@ class Paths
 
     public static function getConfigDirRel()
     {
-        return self::getRelDir(self::getConfigDirAbs());
+        return PathHelper::getRelPathFromDocRootToDirNoDirectoryTraversalAllowed(self::getConfigDirAbs());
     }
 
     public static function createConfigDirIfMissing()
@@ -237,9 +460,25 @@ APACHE
         return self::getWebPExpressContentDirAbs() . '/webp-images';
     }
 
-    public static function getCacheDirRel()
+    public static function getCacheDirRelToDocRoot()
     {
-        return self::getRelDir(self::getCacheDirAbs());
+        return PathHelper::getRelPathFromDocRootToDirNoDirectoryTraversalAllowed(self::getCacheDirAbs());
+    }
+
+    public static function getCacheDirForImageRoot($destinationFolder, $destinationStructure, $imageRootId)
+    {
+        if (($destinationFolder == 'mingled') && ($imageRootId == 'uploads')) {
+            return self::getUploadDirAbs();
+        }
+
+        if ($destinationStructure == 'doc-root') {
+            $relPath = PathHelper::getRelPathFromDocRootToDirNoDirectoryTraversalAllowed(
+                self::getAbsDirById($imageRootId)
+            );
+            return self::getCacheDirAbs() . '/doc-root/' . $relPath;
+        } else {
+            return self::getCacheDirAbs() . '/' . $imageRootId;
+        }
     }
 
     public static function createCacheDirIfMissing()
@@ -247,7 +486,7 @@ APACHE
         return self::createDirIfMissing(self::getCacheDirAbs());
     }
 
-    // ------------ Cache Dir -------------
+    // ------------ Log Dir -------------
 
     public static function getLogDirAbs()
     {
@@ -261,10 +500,6 @@ APACHE
         return self::getAbsDir(WP_PLUGIN_DIR);
     }
 
-    public static function getPluginDirRel()
-    {
-        return self::getRelDir(self::getPluginDirAbs());
-    }
 
     public static function isPluginDirMovedOutOfAbsPath()
     {
@@ -282,39 +517,6 @@ APACHE
     {
         return self::getAbsDir(WEBPEXPRESS_PLUGIN_DIR);
     }
-
-    public static function getAbsDirId($absDir) {
-        switch ($absDir) {
-            case self::getContentDirAbs():
-                return 'wp-content';
-            case self::getIndexDirAbs():
-                return 'index';
-            case self::getHomeDirAbs():
-                return 'home';
-            case self::getPluginDirAbs():
-                return 'plugins';
-            case self::getUploadDirAbs():
-                return 'uploads';
-        }
-        return false;
-    }
-
-    public static function getAbsDirById($dirId) {
-        switch ($dirId) {
-            case 'wp-content':
-                return self::getContentDirAbs();
-            case 'index':
-                return self::getIndexDirAbs();
-            case 'home':
-                return self::getHomeDirAbs();
-            case 'plugins':
-                return self::getPluginDirAbs();
-            case 'uploads':
-                return self::getUploadDirAbs();
-        }
-        return false;
-    }
-
 
     // ------------------------------------
     // ---------    Url paths    ----------
@@ -342,11 +544,77 @@ APACHE
         return ltrim($path, '/\\');
     }
 
+    public static function getUrlById($dirId) {
+        switch ($dirId) {
+            case 'wp-content':
+                return self::getContentUrl();
+            case 'index':
+                return self::getHomeUrl();
+            case 'home':
+                return self::getHomeUrl();
+            case 'plugins':
+                return self::getPluginsUrl();
+            case 'uploads':
+                return self::getUploadUrl();
+            case 'themes':
+                return self::getThemesUrl();
+        }
+        return false;
+    }
+
+    /**
+     * Get destination root url and path, provided rootId and some configuration options
+     *
+     * This method kind of establishes the overall structure of the cache dir.
+     * (but not quite, as the logic is also in ConverterHelper::getDestination).
+     *
+     * @param  string  $rootId
+     * @param  string  $destinationFolder  ("mingled" or "separate")
+     * @param  string  $destinationStructure  ("doc-root" or "image-roots")
+     *
+     * @return array   url and abs-path of destination root
+     */
+    public static function destinationRoot($rootId, $destinationFolder, $destinationStructure)
+    {
+        if (($destinationFolder == 'mingled') && ($rootId == 'uploads')) {
+            return [
+                'url' => self::getUrlById('uploads'),
+                'abs-path' => self::getUploadDirAbs()
+            ];
+        } else {
+
+            // Its within these bases:
+            $destUrl = self::getUrlById('wp-content') . '/webp-express/webp-images';
+            $destPath = self::getAbsDirById('wp-content') . '/webp-express/webp-images';
+
+            if (($destinationStructure == 'doc-root') && self::canUseDocRootForStructuringCacheDir()) {
+                $relPathFromDocRootToSourceImageRoot = PathHelper::getRelPathFromDocRootToDirNoDirectoryTraversalAllowed(
+                    self::getAbsDirById($rootId)
+                );
+                return [
+                    'url' => $destUrl . '/doc-root/' . $relPathFromDocRootToSourceImageRoot,
+                    'abs-path' => $destPath  . '/doc-root/' . $relPathFromDocRootToSourceImageRoot
+                ];
+            } else {
+                return [
+                    'url' => $destUrl . '/' . $rootId,
+                    'abs-path' => $destPath  . '/' . $rootId
+                ];
+            }
+        }
+    }
+
+    public static function getUrlPathById($dirId) {
+        return self::getUrlPathFromUrl(self::getUrlById($dirId));
+    }
+
+
     // Get complete home url (no trailing slash). Ie: "http://example.com/blog"
     public static function getHomeUrl()
     {
-        if (!function_exists('get_home_url')) {
+        if (!function_exists('home_url')) {
             // silence is golden?
+            // bad joke. Need to handle this...
         }
         return untrailingslashit(home_url());
     }
@@ -381,64 +649,60 @@ APACHE
         return self::getUrlPathFromUrl(self::getContentUrl());
     }
 
+    public static function getThemesUrl()
+    {
+        return self::getContentUrl() . '/themes';
+    }
 
-
+    /**
+     *  Get Url to plugins (base)
+     */
+    public static function getPluginsUrl()
+    {
+        return untrailingslashit(plugins_url());
+    }
 
     /**
      *  Get Url to WebP Express plugin (this is in fact an incomplete URL, you need to append ie '/webp-on-demand.php' to get a full URL)
      */
-    public static function getPluginUrl()
+    public static function getWebPExpressPluginUrl()
     {
         return untrailingslashit(plugins_url(null, WEBPEXPRESS_PLUGIN));
     }
 
-    public static function getPluginUrlPath()
+    public static function getWebPExpressPluginUrlPath()
     {
-        return self::getUrlPathFromUrl(self::getPluginUrl());
+        return self::getUrlPathFromUrl(self::getWebPExpressPluginUrl());
     }
 
     public static function getWodUrlPath()
     {
-        return self::getPluginUrlPath() . '/wod/webp-on-demand.php';
+        return self::getWebPExpressPluginUrlPath() . '/wod/webp-on-demand.php';
         //return self::getHomeUrlPath() . '/webp-on-demand';
     }
 
     public static function getWebPRealizerUrlPath()
     {
-        return self::getPluginUrlPath() . '/wod/webp-realizer.php';
+        return self::getWebPExpressPluginUrlPath() . '/wod/webp-realizer.php';
     }
 
     public static function getWebServiceUrl()
     {
-        //return self::getPluginUrl() . '/wpc.php';
+        //return self::getWebPExpressPluginUrl() . '/wpc.php';
         //return self::getHomeUrl() . '/webp-express-server';
         return self::getHomeUrl() . '/webp-express-web-service';
-    }
-
-    /**
-     *  Calculate path to existing image, excluding
-     *  (relative to document root)
-     *  Ie: "/webp-express-test/wordpress/wp-content/webp-express/webp-images/webp-express-test/wordpress/"
-     *  This is needed for the .htaccess
-     */
-    public static function getPathToExisting()
-    {
-        return self::getCacheDirRel() . '/doc-root/' . self::getHomeDirRel();
     }
 
     public static function getUrlsAndPathsForTheJavascript()
     {
         return [
             'urls' => [
-                'webpExpressRoot' => self::getPluginUrlPath(),
+                'webpExpressRoot' => self::getWebPExpressPluginUrlPath(),
                 'content' => self::getContentUrlPath(),
             ],
             'filePaths' => [
                 'webpExpressRoot' => self::getWebPExpressPluginDirAbs(),
                 'destinationRoot' => self::getCacheDirAbs(),
-                'configRelToDocRoot' => self::getConfigDirRel(),
-                'pluginRelToDocRoot' => self::getPluginDirRel(),
-
             ]
         ];
     }

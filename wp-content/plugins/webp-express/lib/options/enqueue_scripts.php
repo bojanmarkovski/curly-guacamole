@@ -2,14 +2,11 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-include_once __DIR__ . '/../classes/Paths.php';
 use \WebPExpress\Paths;
-
-include_once __DIR__ . '/../classes/Config.php';
 use \WebPExpress\Config;
 
-$ver = '3';             // note: Minimum 1
-$jsDir = 'js/0.14.9';   // We change dir when it is critical that no-one gets the cached version (there is a plugin that strips version strings out there...)
+$ver = '1';             // note: Minimum 1
+$jsDir = 'js/0.15.0';   // We change dir when it is critical that no-one gets the cached version (there is a plugin that strips version strings out there...)
 
 if (!function_exists('webp_express_add_inline_script')) {
     function webp_express_add_inline_script($id, $script, $position) {
@@ -33,6 +30,9 @@ wp_enqueue_script('escapehtml');
 
 $config = Config::getConfigForOptionsPage();
 
+// selftest
+wp_register_script('webpexpress_selftest', plugins_url($jsDir . '/self-test.js', __FILE__), ['escapehtml'], $ver);
+wp_enqueue_script('webpexpress_selftest');
 
 // Add converter, bulk convert and whitelist script, EXCEPT for "no conversion" mode
 if (!(isset($config['operation-mode']) && ($config['operation-mode'] == 'no-conversion'))) {
@@ -51,10 +51,18 @@ if (!(isset($config['operation-mode']) && ($config['operation-mode'] == 'no-conv
     wp_register_script('converters', plugins_url($jsDir . '/converters.js', __FILE__), ['sortable', 'daspopup', 'escapehtml'], $ver);
 
     // PS: no escaping/sanitizing needed as json_encode always produces something safe
-    webp_express_add_inline_script('converters', 'window.webpExpressPaths = ' . json_encode(Paths::getUrlsAndPathsForTheJavascript()) . ';', 'before');
+    webp_express_add_inline_script(
+        'converters',
+        'window.webpExpressPaths = ' . json_encode(Paths::getUrlsAndPathsForTheJavascript()) . ';',
+        'before'
+    );
 
     // PS: no escaping/sanitizing needed as json_encode always produces something safe
-    webp_express_add_inline_script('converters', 'window.converters = ' . json_encode($config['converters']) . ';', 'before');
+    webp_express_add_inline_script(
+        'converters',
+        'window.converters = ' . json_encode($config['converters']) . ';',
+        'before'
+    );
     wp_enqueue_script('converters');
 
     // Whitelist
@@ -76,6 +84,7 @@ if (!(isset($config['operation-mode']) && ($config['operation-mode'] == 'no-conv
     /*
     AlterHTMLHelper::getWebPUrlInBase(
         Paths::getPluginUrl() . '/webp-express',    // source url
+        $baseId,
         Paths::getPluginUrl(),                    // base url
         Paths::getPluginDirAbs()                    // base dir
     );
@@ -99,12 +108,21 @@ if (!(isset($config['operation-mode']) && ($config['operation-mode'] == 'no-conv
 //wp_enqueue_script('api_keys');
 
 wp_register_script( 'page', plugins_url($jsDir . '/page.js', __FILE__), [], $ver);
+
+// TODO: Add all vars needed to this array (whitelist, converters, etc)
+$javascriptVars = [
+    'ajax-nonces' => [
+        'convert' => wp_create_nonce('webpexpress-ajax-convert-nonce'),
+        'list-unconverted-files' => wp_create_nonce('webpexpress-ajax-list-unconverted-files-nonce'),
+        'purge-cache' => wp_create_nonce('webpexpress-ajax-purge-cache-nonce'),
+        'view-log' => wp_create_nonce('webpexpress-ajax-view-log-nonce'),
+        'self-test' => wp_create_nonce('webpexpress-ajax-self-test-nonce'),
+    ],
+    'can-use-doc-root-for-structuring' => Paths::canUseDocRootForRelPaths()
+];
 webp_express_add_inline_script(
     'page',
-    'window.webpExpressAjaxConvertNonce = "' . wp_create_nonce('webpexpress-ajax-convert-nonce') . '";' .
-        'window.webpExpressAjaxListUnconvertedFilesNonce = "' . wp_create_nonce('webpexpress-ajax-list-unconverted-files-nonce') . '";' .
-        'window.webpExpressAjaxPurgeCacheNonce = "' . wp_create_nonce('webpexpress-ajax-purge-cache-nonce') . '";' .
-        'window.webpExpressAjaxViewLogNonce = "' . wp_create_nonce('webpexpress-ajax-view-log-nonce') . '";',
+    'window.webpExpress = ' . json_encode($javascriptVars, JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK),
     'before'
 );
 wp_enqueue_script('page');

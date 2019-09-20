@@ -9,13 +9,19 @@ use \WebPExpress\ConvertersHelper;
 use \WebPExpress\DismissableMessages;
 use \WebPExpress\HTAccess;
 use \WebPExpress\Messenger;
+use \WebPExpress\PathHelper;
 use \WebPExpress\Paths;
 
+// TODO: Move this code to a class
 
 check_admin_referer('webpexpress-save-settings-nonce');
 
 DismissableMessages::dismissMessage('0.14.0/say-hello-to-vips');
 
+DismissableMessages::dismissMessage('0.15.0/new-scope-setting-no-uploads');
+DismissableMessages::dismissMessage('0.15.0/new-scope-setting-index');
+DismissableMessages::dismissMessage('0.15.0/new-scope-setting-content');
+DismissableMessages::dismissMessage('0.15.1/problems-with-mingled-set');
 
 /*
 --------------------------------
@@ -116,6 +122,21 @@ function webpexpress_getSanitizedQuality($keyInPOST, $fallback = 75) {
     return max(0, min($q, 100));
 }
 
+function webpexpress_getSanitizedScope() {
+    $scopeText = webpexpress_getSanitizedText('scope');
+    if ($scopeText == '') {
+        $scopeText = 'uploads';
+    }
+    $scope = explode(',', $scopeText);
+    $allowed = Paths::getImageRootIds();
+    $result = [];
+    foreach ($scope as $imageRootId) {
+        if (in_array($imageRootId, $allowed)) {
+            $result[] = $imageRootId;
+        }
+    }
+    return $result;
+}
 
 /**
  * Get sanitized whitelist
@@ -164,7 +185,7 @@ function webpexpress_getSanitizedWhitelist() {
  */
 function webpexpress_getSanitizedConverters() {
     $convertersPosted = (isset($_POST['converters']) ? $_POST['converters'] : '[]');
-    $convertersPosted = json_decode(wp_unslash($convertersPosted), true); // holy moly! - https://stackoverflow.com/questions/2496455/why-are-post-variables-getting-escaped-in-php
+    $convertersPosted = json_decode(wp_unslash($convertersPosted), true); // holy moly! Wordpress automatically adds slashes to the global POST vars- https://stackoverflow.com/questions/2496455/why-are-post-variables-getting-escaped-in-php
 
     $convertersSanitized = [];
 
@@ -305,8 +326,10 @@ $sanitized = [
     'image-types' => intval(webpexpress_getSanitizedChooseFromSet('image-types', '3', [
         '0',
         '1',
+        '2',
         '3'
     ])),
+    'scope' => webpexpress_getSanitizedScope(),
     'destination-folder' => webpexpress_getSanitizedChooseFromSet('destination-folder', 'separate', [
         'separate',
         'mingled',
@@ -314,6 +337,10 @@ $sanitized = [
     'destination-extension' => webpexpress_getSanitizedChooseFromSet('destination-extension', 'append', [
         'append',
         'set',
+    ]),
+    'destination-structure' => webpexpress_getSanitizedChooseFromSet('destination-structure', 'doc-root', [
+        'doc-root',
+        'image-roots',
     ]),
     'cache-control' => webpexpress_getSanitizedChooseFromSet('cache-control', 'no-header', [
         'no-header',
@@ -418,6 +445,9 @@ $sanitized = [
 
 ];
 
+if (!Paths::canUseDocRootForRelPaths()) {
+    $sanitized['destination-structure'] = 'image-roots';
+}
 
 /*
 ------------------------------------------------------
@@ -435,7 +465,7 @@ $oldConfig = $config;
 $config = array_merge($config, [
     'operation-mode' => $sanitized['operation-mode'],
 
-    // redirection rules
+    'scope' => $sanitized['scope'],
     'image-types' => $sanitized['image-types'],
     'forward-query-string' => true,
 ]);
@@ -580,6 +610,7 @@ if ($sanitized['operation-mode'] != 'no-conversion') {
     }
 }
 
+$config['destination-structure'] = $sanitized['destination-structure'];
 
 switch ($sanitized['operation-mode']) {
     case 'varied-image-responses':
@@ -637,6 +668,18 @@ if ($sanitized['force'] || HTAccess::doesRewriteRulesNeedUpdate($config)) {
 }
 
 
+$config['environment-when-config-was-saved'] = [
+    'doc-root-available' => PathHelper::isDocRootAvailable(),
+    'doc-root-resolvable' => PathHelper::isDocRootAvailableAndResolvable(),
+    'doc-root-usable-for-structuring' => Paths::canUseDocRootForRelPaths(),
+    'image-roots' => Paths::getImageRootsDef(),
+    'document-root' => null,
+];
+
+if (PathHelper::isDocRootAvailable()) {
+    $config['document-root'] = $_SERVER['DOCUMENT_ROOT'];
+}
+
 // SAVE!
 // -----
 $result = Config::saveConfigurationAndHTAccess($config, $sanitized['force']);
@@ -660,18 +703,26 @@ if (!$result['saved-both-config']) {
 
     }
 } else {
-    if (($config['destination-folder'] != $oldConfig['destination-folder']) || ($config['destination-extension'] != $oldConfig['destination-extension'])) {
-        $whatShouldIt = '';
-        if ($config['destination-folder'] == $oldConfig['destination-folder']) {
-            $whatShouldIt = 'renamed';
-            $whatShouldIt2 = 'rename';
+    $changeFolder = ($config['destination-folder'] != $oldConfig['destination-folder']);
+    $changeExtension = ($config['destination-extension'] != $oldConfig['destination-extension']);
+    $changeStructure = ($config['destination-structure'] != $oldConfig['destination-structure']);
+
+    if ($changeFolder || $changeExtension || $changeStructure) {
+
+        $relocate = $changeFolder || $changeStructure;
+        $rename = $changeExtension;
+
+        $actionPastTense = '';
+        if ($rename && $relocate) {
+            $actionPastTense = 'relocated and renamed';
+            $actionPresentTense = 'relocate and rename';
         } else {
-            if ($config['destination-extension'] == $oldConfig['destination-extension']) {
-                $whatShouldIt = 'relocated';
-                $whatShouldIt2 = 'relocate';
+            if ($rename) {
+                $actionPastTense = 'renamed';
+                $actionPresentTense = 'rename';
             } else {
-                $whatShouldIt = 'relocated and renamed';
-                $whatShouldIt2 = 'relocate and rename';
+                $actionPastTense = 'relocated';
+                $actionPresentTense = 'relocate';
             }
         }
 
@@ -680,31 +731,30 @@ if (!$result['saved-both-config']) {
             if ($numFilesMoved == 0) {
                 Messenger::addMessage(
                     'notice',
-                    'No cached webp files needed to be ' . $whatShouldIt
+                    'No cached webp files needed to be ' . $actionPastTense
                 );
 
             } else {
                 Messenger::addMessage(
                     'success',
-                    'The webp files was ' . $whatShouldIt . ' (' . $whatShouldIt . ' ' . $numFilesMoved . ' images)'
+                    'The webp files was ' . $actionPastTense . ' (' . $actionPastTense . ' ' . $numFilesMoved . ' images)'
                 );
             }
         } else {
             if ($numFilesMoved == 0) {
                 Messenger::addMessage(
                     'warning',
-                    'No webp files could not be ' . $whatShouldIt . ' (failed to ' . $whatShouldIt2 . ' ' . $numFilesFailedMoving . ' images)'
+                    'No webp files could not be ' . $actionPastTense . ' (failed to ' . $actionPresentTense . ' ' . $numFilesFailedMoving . ' images)'
                 );
             } else {
                 Messenger::addMessage(
                     'warning',
-                    'Some webp files could not be ' . $whatShouldIt . ' (failed to ' . $whatShouldIt2 . ' ' . $numFilesFailedMoving . ' images, but successfully ' . $whatShouldIt . ' ' . $numFilesMoved . ' images)'
+                    'Some webp files could not be ' . $actionPastTense . ' (failed to ' . $actionPresentTense . ' ' . $numFilesFailedMoving . ' images, but successfully ' . $actionPastTense . ' ' . $numFilesMoved . ' images)'
                 );
 
             }
         }
     }
-
 
     if (!$result['rules-needed-update']) {
         Messenger::addMessage(
@@ -713,6 +763,49 @@ if (!$result['saved-both-config']) {
         );
     } else {
         $rulesResult = $result['htaccess-result'];
+        list($success, $successfullWrites, $successfulDeactivations, $failedWrites, $failedDeactivations) = $rulesResult;
+
+        $msg = '<p>Configuration was saved</p>';
+
+        if (count($successfullWrites) > 0) {
+            $msg .= '<p>Rewrite rules were saved to the following files:</p>';
+            foreach ($successfullWrites as $rootId) {
+                $msg .= '<i>' . Paths::getAbsDirById($rootId) . '/.htaccess</i> (' . $rootId . ')<br>';
+            }
+        }
+
+        if (count($successfulDeactivations) > 0) {
+            $msg .= '<p>Rewrite rules were removed from the following files:</p>';
+            foreach ($successfulDeactivations as $rootId) {
+                $msg .= '<i>' . Paths::getAbsDirById($rootId) . '/.htaccess</i> (' . $rootId . ')<br>';
+            }
+        }
+
+        Messenger::addMessage(
+            ($success ? 'success' : 'info'),
+            $msg
+        );
+
+
+        if (count($failedWrites) > 0) {
+            $msg = '<p>Failed writing rewrite rules to the following files:</p>';
+            foreach ($failedWrites as $rootId) {
+                $msg .= '<i>' . Paths::getAbsDirById($rootId) . '/.htaccess</i> (' . $rootId . ')<br>';
+            }
+            $msg .= 'You need to change the file permissions to allow WebP Express to save the rules.';
+            Messenger::addMessage('error', $msg);
+        } else {
+            if (count($failedDeactivations) > 0) {
+                $msg = '<p>Failed deleting unused rewrite rules in the following files:</p>';
+                foreach ($failedDeactivations as $rootId) {
+                    $msg .= '<i>' . Paths::getAbsDirById($rootId) . '/.htaccess</i> (' . $rootId . ')<br>';
+                }
+                $msg .= 'You need to change the file permissions to allow WebP Express to remove the rules or ' .
+                    'remove them manually';
+                Messenger::addMessage('error', $msg);
+            }
+        }
+
         /*
         'mainResult'        // 'index', 'wp-content' or 'failed'
         'minRequired'       // 'index' or 'wp-content'
@@ -725,6 +818,7 @@ if (!$result['saved-both-config']) {
         'uploadFailed'      // true if failed to write to plugin folder (it only tries that, if pluginToo == 'yes')
         'uploadFailedBadly' // true if plugin failed AND it seems we have rewrite rules there
         */
+        /*
         $mainResult = $rulesResult['mainResult'];
         $rules = $rulesResult['rules'];
 
@@ -813,7 +907,7 @@ if (!$result['saved-both-config']) {
                         'Please grant write permmissions to you uploads folder. Otherwise uploaded mages will not be converted to webp'
                 );
             }
-        }
+        }*/
     }
 }
 

@@ -9,6 +9,42 @@
     word-wrap: break-word;
 }
 
+/* Classes used in our pseudo markdown. */
+.webpexpress.md h1 {
+    margin: 1em 0 1em;
+    font-size: 2em;
+    font-weight: normal;
+}
+.webpexpress.md h2 {
+    margin: 1em 0 0.5em;
+    font-size: 1.6em;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ccc;
+}
+.webpexpress.md h3 {
+    margin: 1em 0 0.5em;
+    font-size: 1.4em;
+    font-weight: normal;
+}
+.webpexpress.md h4 {
+    font-size: 1.0em;
+    margin: 1em 0 0.5em;
+    /*font-weight: 500;*/
+    font-weight: normal;
+    font-style: italic;
+}
+.webpexpress.md .warn {
+    background-color: yellow;
+}
+.webpexpress.md .ok {
+    color: green;
+}
+.webpexpress.md .error {
+    color: red;
+}
 
 
 
@@ -178,8 +214,26 @@
 .help .popup.wider {
     width: 450px;
 }
-.help .popup.widest {
+.help .popup.even-wider {
     width: 600px;
+}
+.help .popup.widest {
+    width: 750px;
+}
+@media (max-width: 1150px) {
+    .help .popup {
+        max-width: 620px;
+    }
+}
+@media (max-width: 900px) {
+    .help .popup {
+        max-width: 560px;
+    }
+}
+@media (max-width: 830px) {
+    .help .popup {
+        max-width: 530px;
+    }
 }
 @media (max-width: 500px) {
     .help .popup {
@@ -586,5 +640,5 @@ ul.with-bullets {
     bottom: 72px;
     position: absolute;
     right: 0;
-    left: 3%;    
+    left: 3%;
 }

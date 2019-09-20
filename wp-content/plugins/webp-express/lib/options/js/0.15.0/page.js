@@ -147,12 +147,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // PNG encoding changing
     if (el('image_types') && el('png_row')) {
-        function updatePngRow() {
-            toggleVisibility('png_row', el('image_types').value != '1');
+        function updatePngAndJpgRowVisibilities() {
+            var imageTypes = parseInt(el('image_types').value, 10);
+            var pngEnabled = (imageTypes & 2);
+            var jpegEnabled = (imageTypes & 1);
+            toggleVisibility('png_row', pngEnabled);
+            toggleVisibility('jpeg_row', jpegEnabled);
         }
-        updatePngRow();
+        updatePngAndJpgRowVisibilities();
         el('image_types').addEventListener('change', function() {
-            updatePngRow();
+            updatePngAndJpgRowVisibilities();
         });
     }
 
@@ -180,13 +184,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // If "doc-root" cannot be used for structuring, disable the option and set to "image-roots"
+    if (!window.webpExpress['can-use-doc-root-for-structuring']) {
+        el('destination_structure').classList.add('effect-opacity');
+        toggleVisibility('destination_structure', false);
 
+        if (el('destination_structure').value == 'doc-root') {
+            el('destination_structure').value = 'image-roots';
+        }
+
+    }
 
     // Toggle File Extension (only show when "mingled" is selected)
-    if (el('destination_folder') && el('destination_extension_row') && el('destination_extension')) {
-        el('destination_extension_row').classList.add('effect-opacity');
+    if (el('destination_folder') && el('destination_extension')) {
+        el('destination_extension').classList.add('effect-opacity');
         function updateDestinationExtensionVisibility() {
-            toggleVisibility('destination_extension_row', el('destination_folder').value == 'mingled');
+            toggleVisibility('destination_extension', el('destination_folder').value == 'mingled');
 
             if (el('destination_folder').value == 'separate') {
                 el('destination_extension').value = 'append';

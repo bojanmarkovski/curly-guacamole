@@ -7,17 +7,12 @@
 <!-- Content -->
 
 <div class="container-fluid">
-
-   <div class="row mapouter">
-      <div class="mapa gmap_canvas">
-         <iframe class="mapa" id="gmap_canvas" src="https://maps.google.com/maps?q=Itcrowd&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-         </iframe>
-      </div>
-      <style>.mapouter{position:relative;text-align:right;}.gmap_canvas {overflow:hidden;background:none!important;margin-top:-150px}</style>
-   </div>
-
-   <div class="row">
-      <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 display-none-tablet">
+   <?php 
+      $uploaDirUrlObj = wp_upload_dir();
+      $uploaDirUrl = $uploaDirUrlObj["url"];
+   ?>
+   <div class="row mapa" style="background-image: url('<?php echo $uploaDirUrl; ?>/mapa.png');">
+      <div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 display-none-tablet form-container">
          <div class="contact-us-container">
             <div class="row contact-card">
                <h2 class="text-center">Contact us</h2>
@@ -27,7 +22,7 @@
                   <!-- FORM GROUP -->
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                     <form action="/wordpress/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
+                     <form action="/wp-json/contact-form-7/v1/contact-forms/222/feedback" method="POST" id="contact-form">
                            <div class="form-group">
                               <!-- NAME INPUT -->
                               <div class="holder">
@@ -62,8 +57,8 @@
                                  </div>
                               </div>
 
-                              <button type="submit" class="btn btn-block" id="send-contact-form">
-                              <small>SEND E-MAIL</small>
+                              <button type="submit" class="btn" id="send-contact-form">
+                              <small>SEND</small>
                               </button>
                            </div>
                         </form>
@@ -132,8 +127,9 @@
                                     <div class="error re-captcha">Please verify that you are not a robot.</div>
                                  </div>
                               </div>
+                              
                               <button type="submit" class="btn btn-block">
-                              <small>SEND E-MAIL</small>
+                              <small>Submit</small>
                               </button>
                            </div>
                         </form>

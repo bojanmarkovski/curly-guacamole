@@ -244,6 +244,9 @@ body {
 	height: 51px;
 	margin-bottom: 20px;
 }
+.footer .display-none-tablet p{
+	white-space: nowrap;
+}
 .footer i {
 	color: #C0392B;
 	margin-right: 10px;
@@ -440,7 +443,7 @@ textarea::-webkit-scrollbar-track {
 }
 
 /* RE-CAPTCHA CONTACT */
-div#re-captcha {
+/* div#re-captcha {
 	padding-left: 5px;
 }
 div#re-captcha::after {
@@ -515,7 +518,7 @@ div#re-captcha::before{
 	.page-template-contact div#re-captcha::after{
 		width: 9px;
 	}
-}
+} */
 /* END FORM STYLE */
 
 /* MEDIA QUERY FOR ALL PAGES */
@@ -582,8 +585,9 @@ div#re-captcha::before{
 
 /* Contact ===============================================================*/
 
-.col-lg-4.col-lg-offset-1.col-md-4.col-md-offset-1.display-none-tablet {
-	margin-top: -70vh;
+.display-none-tablet.form-container {
+	position: absolute;
+	top: 20%;
 }
 
 .page-template-contact .input-holder {
@@ -682,11 +686,6 @@ div#re-captcha::before{
 	color: white;
 }
 
-.mapa-img {
-	height: 90vh;
-	padding-top: 70px;
-}
-
 .contact-card {
 	background-color: rgba(0, 0, 0, 0.8);
 	padding-bottom: 10px;
@@ -734,6 +733,11 @@ div#re-captcha::before{
 	margin-top: 80px !important;
 }
 
+#send-contact-form{
+	width: 170px;
+	border-radius: 20px;
+}
+
 @media screen and (max-width: 991px) {	
 	.display-none-tablet {
 		display: none;
@@ -747,9 +751,6 @@ div#re-captcha::before{
 	.contact-information img {
 		width: 140px;
 		margin: 0 auto;
-	}
-	.mapa-img {
-		height: 50vh;
 	}
 	.contact-card {
 		background-color: rgba(0, 0, 0, 0.9);
@@ -778,11 +779,11 @@ div#re-captcha::before{
 	display: block;
 }
 
-@media screen and (max-height: 1254px) {
+/* @media screen and (max-height: 1254px) {
 	.col-lg-4.col-lg-offset-1.col-md-4.col-md-offset-1.display-none-tablet {
 		margin-top: -70vh;
 	}
-}
+} */
 
 .page-template-contact .modal-body{
 	height: auto;
@@ -792,8 +793,8 @@ div#re-captcha::before{
 
 /* Our Services */
 
-.pd-20px {
-	padding-top: 20px;
+.pd-text-services {
+	padding-top: 40px;
 	padding-bottom: 20px;
 }
 
@@ -826,13 +827,31 @@ div#re-captcha::before{
 	padding: 15px 20px;
 }
 
-.our-services .our-services-box .image-box img {
+.our-services .our-services-box .image-box img{
 	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 	-webkit-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 	-moz-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 	box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
-	width: 100%;
-	height: auto;
+	height: 240px;
+	width: 350px;
+	float: left;
+	margin-right: 40px;
+}
+
+.title-text.left-text{
+	float: left;
+	width: calc(100% - 390px);
+}
+
+.our-services .our-services-box .image-box.right img{
+	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+	-webkit-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
+	-moz-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
+	box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
+	height: 240px;
+	width: 350px;
+	float: right;
+	margin-right: 0;
 }
 
 .our-services .our-services-box p {
@@ -927,6 +946,10 @@ a.animated-button.thar-three:before {
 	outline: none;
 }
 
+#button-hire-us{
+	width: 170px;
+    border-radius: 20px;
+}
 /*TITLE IN BOX*/
 
 .title-text div {
@@ -1016,6 +1039,10 @@ a.animated-button.thar-three:before {
 	display: none;
 }
 
+.btn.center-block{
+	margin-top: 30px;
+}
+
 @media screen and (min-width: 768px) {
 	.our-services-box {
 		height: 40vh;
@@ -1023,6 +1050,10 @@ a.animated-button.thar-three:before {
 }
 
 @media screen and (max-width: 991px) {
+	.pd-text-services {
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
 	.right-side-services {
 		display: flex;
 		display: -webkit-box;
@@ -1035,9 +1066,6 @@ a.animated-button.thar-three:before {
 	}
 	.title-text {
 		text-align: center;
-	}
-	.our-services .our-services-box .image-box img {
-		width: 100%;
 	}
 	.our-services .our-services-box {
 		padding: 10px 0px;
@@ -1061,11 +1089,26 @@ a.animated-button.thar-three:before {
 	.our-services {
 		padding: 60px 0px 30px 0px;
 	}
-	.right-side-services .image-box i {
-		top: -3%;
+	.our-services .our-services-box .image-box img{
+		margin: 0 auto;
+    	float: inherit;
 	}
-	.left-side-services .image-box i {
-		top: 0%;
+	.image-box{
+		margin: 0 auto;
+    	text-align: center;
+	}
+	.title-text.left-text{
+		width: 100%;
+	}
+	.our-services .our-services-box .image-box.right img{
+		float: inherit;
+	}
+	.reverse-mobile{
+		display: flex;
+  		flex-direction: column-reverse;
+	}
+	.our-services-box{
+		padding-top: 30px !important;
 	}
 }
 
@@ -1144,7 +1187,9 @@ button.close:focus {
 }
 
 .btn.btn-secondary {
-	border-radius: 4px;
+	border-radius: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
 }
 
 .btn.btn-secondary:hover {
@@ -1296,8 +1341,8 @@ button.close:focus {
     top: 40%;
     right: 50%;
 	transform: translate(50%, -50%);
-	background: white;
-	padding-top: 35px;
+	background: rgba(255,255,255,0.6);
+	padding-top: 30px;
 	padding-bottom: 65px;
 	padding-right: 40px;
 	padding-left: 40px;
@@ -1507,7 +1552,7 @@ button.close:focus {
 }
 
 .career .career-left::-webkit-scrollbar:vertical {
-	width: 11px;
+	width: 0px;
 }
 
 .career .career-left::-webkit-scrollbar-thumb {
@@ -1961,8 +2006,9 @@ address {
 .iq-banner .banner-text {
 	z-index: 9;
 	position: relative;
-	margin-top: 13%;
+	margin-top: 11%;
 	color: white !important;
+	margin-bottom: 90px;
 }
 
 .iq-banner .banner-text h1 {
@@ -2019,14 +2065,14 @@ address {
 
 .iq-banner .banner-text .banner-phone {
 	position: absolute;
-	right: -25px;
+	right: -40px;
 	top: 100%;
-	width: 26%;
+	width: 32%;
 }
 
 .iq-banner .banner-text .watch-img {
 	position: absolute;
-	width: 20%;
+	width: 13%;
 	top: 100%;
 	right: 82%
 }
@@ -3340,7 +3386,7 @@ ul p {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	height: 440px;
-	padding-left: 50px;
+	padding-left: 4%;
 }
 
 .company-icons {
@@ -3987,6 +4033,10 @@ ul p {
 }
 
 @media (max-width:767px) {
+	.slideInUpMobile,
+	.slideInUpWatch {
+		display: none !important;
+	}
 	.page-content[data-page=index] section.testimonies .container-technologies {
 		margin-left: 0;
 		margin-right: 0;
@@ -4178,7 +4228,7 @@ ul p {
 
 @media (min-width: 1800px) {
 	.our-skills-process .col-lg-5.col-md-5.col-sm-12.col-xs-12 {
-		padding-left: 120px;
+		padding-left: 10%;
 	}
 }
 
@@ -4329,10 +4379,10 @@ ul p {
 	}
 	.iq-banner .banner-text .watch-img {
 		right: 80%;
-		top: 39%;
 	}
 	.iq-banner .banner-text .banner-phone {
-		right: -3%;
+		right: 3%;
+		width: 31%;
 	}
 	.our-skills-process .col-lg-5.col-md-5.col-sm-12.col-xs-12 {
 		display: inline-block;
@@ -4355,10 +4405,6 @@ ul p {
 	}
 	hr {
 		margin-bottom: 15px;
-	}
-	.slideInUpMobile,
-	.slideInUpWatch {
-		display: none !important;
 	}
 	.waveAnimation .waveBottom {
 		animation: unset;
@@ -4443,7 +4489,6 @@ ul p {
 /* END ERROR PAGE ====================================================== */
 
 .banner-text .col-lg-6.col-md-6.col-sm-12.col-xs-12 .iq-font-white.iq-pt-15{
-/* 	height: 150px !important; */
 	display: flex;
     align-items: center;
 }
@@ -4458,21 +4503,37 @@ body .profile-photo.profile-email.profile-photo-light img{
 	display: none !important;
 }
 .mapa{
-	width: 100% !important;
-	height: 100vh !important;
-	-webkit-filter: grayscale(100%) !important;
-	-moz-filter: grayscale(100%) !important;
-	-ms-filter: grayscale(100%) !important;
-	-o-filter: grayscale(100%) !important;
-	 filter: grayscale(55%) !important;
+	background: url("https://embedgooglemaps.com/wp-content/uploads/2016/12/What-Google-Maps-can-do-for-you.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: calc(100vh - 212px);
 }
 
-@media (min-width: 992px) and (max-height: 900px) {
-	.mapa{
-		height: 130vh !important;
+@media (max-height: 1050px) {
+	.display-none-tablet.form-container {
+		top: 16%;
 	}
-	.col-lg-4.col-lg-offset-1.col-md-4.col-md-offset-1.display-none-tablet{
-		margin-top: -90vh;
+}
+
+@media (max-height: 950px) {
+	.display-none-tablet.form-container {
+		top: 13%;
+	}
+}
+
+@media (max-height: 850px) {
+	.display-none-tablet.form-container {
+		top: 11%;
+	}
+}
+
+@media screen and (max-height: 800px) and (min-width: 991px) {
+	.mapa{
+		height: 700px;
+	}
+	.display-none-tablet.form-container {
+		top: 155px;
 	}
 }
 
@@ -4491,6 +4552,9 @@ body .profile-photo.profile-email.profile-photo-light img{
 @media screen and (max-width: 992px) {
 	.our-skills-process .waveWrapper.waveAnimation{
 		height: 75px;
+	}
+	.mapa{
+		height: 70vh;
 	}
 }
 
@@ -4571,4 +4635,56 @@ body .profile-photo.profile-email.profile-photo-light img{
 .career-box p:last-child(){
 	font-size: 12px;
 	color: gray;
+}
+
+.right-side-services .image-box i.fa-laptop-code{
+	padding: 15px 15px;
+}
+
+.left-side-services .image-box i.fa-bullhorn{
+	padding: 15px 15px;
+}
+
+@media screen and (max-height:1000px){
+	.background-img-about-us{
+		height: 810px;
+	}
+	.background-overlay-about-us{
+		height: 810px;
+	}
+	.background-img-about-us .text-about-us{
+		top: 110px;
+		transform: translate(50%, 0);
+	}
+}
+
+@media screen and (max-height:780px) and (max-width: 991px){
+	.background-img-about-us{
+		height: 620px;
+	}
+	.background-overlay-about-us{
+		height: 620px;
+	}
+	.background-img-about-us .text-about-us-mobile{
+		padding-top: 80px;
+	}
+}
+
+.text-about-us.text-center p{
+	text-align: justify;
+	font-size: 16px;
+}
+
+/* COOKIE */
+.cli_settings_button{
+	color: #C0392B !important;
+}
+
+#cookie_action_close_header{
+	border-radius: 20px !important;
+	background-color: #222222 !important;
+}
+
+#cookie-law-info-again{
+	display: none !important;
 }

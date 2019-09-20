@@ -4,7 +4,7 @@ Donate link: https://ko-fi.com/rosell
 Tags: webp, images, performance
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 0.14.22
+Stable tag: 0.15.3
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -152,6 +152,26 @@ I shall write more on this FAQ item... Stay tuned.
 Easy enough. Browsers looks at the *content type* header rather than the URL to determine what it is that it gets. So, although it can be confusing that the resource at *example.com/image.jpg* is a webp image, rest assured that the browsers are not confused. To determine if the plugin is working, you must therefore examine the *content type* response header rather than the URL. See the "How do I verify that the plugin is working?" Faq item.
 
 I am btw considering making an option to have the plugin redirect to the webp instead of serving immediately. That would remove the apparent mismatch between file extension and content type header. However, the cost of doing that will be an extra request for each image, which means extra time and worse performance. I believe you'd be ill advised to use that option, so I guess I will not implement it. But perhaps you have good reasons to use it? If you do, please let me know!
+
+= Blank images in Safari? =
+WebP Express has three ways of distributing webp to webp-enabled browsers while still sending the originals to webp-disabled browsers.
+
+Method 1: Varied image responses
+This method adds rewrites to the .htaccess which redirects jpegs and pngs to the corresponding webps (if they exist). - but only when the browser supports webp images (this is established by examining the "accept" header).
+
+Method 2: Altering HTML to use picture tags
+IMG tags are replaced with PICTURE tags which has two sources. One of them points to the webp and has the "content-type" set to "image/webp". The other points to the original. The browser will select the webp source if it supports webp and the other source if it doesn't.
+
+Method 3: Altering HTML to point directly to webps in webp enabled browsers, but not altering for browsers not supporting webp. Again, the "accept" header is examined to determine if the browser supports webp.
+
+Can some of these go wrong?
+Yes. All!
+
+Method 1 can go wrong if you are using a CDN and it hasn't been set up to handle varied image responses. Check out the CDN section in this FAQ (PS: If your CDN has conflated the caches, it is critical that you purge the CDN cache!). I do not believe it can go wrong in other ways. To be certain, please check out [this test page](http://toste.dk/rh.php). When visiting the test-page with Safari, you should see two images with the “JPG” label over them. When visiting the test-page with a browser that supports webp, you should see two images with the “WEBP” label over them. If you do not see one of these things, please report! (no-one has yet experienced that)
+
+Method 2 can go wrong on old browser that doesn't support the picture tag syntax. However, simply enable the "Dynamically load picturefill.js on older browsers" option, and it will take care of that issue.
+
+Method 3 can go wrong if you are using a page caching plugin if that plugin does not create a separate webp cache for webp-enabled browsers. The *Cache Enabler* plugin handles this. I don't believe there are other page caching plugins that does. There is a FAQ section in this FAQ describing how to set *Cache Enabler* up to work in tandem with WebP Express.
 
 = I am on NGINX or OpenResty =
 
@@ -600,6 +620,39 @@ Easy enough! - [Go here!](https://ko-fi.com/rosell). Or [here](https://buymeacof
 
 == Changelog ==
 
+= 0.15.3 =
+*(released: 19 sep 2019)*
+
+* Fixed fatal error upon activation for systems which cannot use document root for structuring (rare)
+
+= 0.15.2 =
+*(released: 17 sep 2019)*
+
+* Fixed the bug when File extension was set to "Set to .webp". It was buggy when file extension contained uppercase letters.
+
+= 0.15.1 =
+*(released: 17 sep 2019)*
+
+* Bug alert: Added alert about a bug when destination folder is set to "mingled" and File extension is set to "Set to .webp"
+* Bugfix: Plugin URL pointed to webpexpress - it should point to parent. This gave trouble with images located in plugins. Thanks to Guillaume Meyer from Switzerland for discovering and reporting.
+* Bugfix: Images with uppercase chars in extension did not get Vary:Accept
+* Bugfix: There were issues with "All content" and destination:document-root when webp-realizer is activated
+
+For more info, see the closed issues on the 0.15.0 milestone on the github repository: https://github.com/rosell-dk/webp-express/milestone/23?closed=1
+
+= 0.15.0 =
+*(released: 17 sep 2019)*
+
+* Provided test-buttons for checking if the redirects works.
+* You can now choose which folders WebP Express is active in. Ie "Uploads and Themes".
+* You can now choose an alternative file structure for the webps which does not rely on DOCUMENT_ROOT being available.
+* WebP Express can now handle when wp-content is symlinked.
+* The .htaccess rules are now divided across folders. Some rules are needed where the source files are located, some where the webp files are located.
+* Added option to convert only PNG files
+* And a couple of bugfixes.
+
+For more info, see the closed issues on the 0.15.0 milestone on the github repository: https://github.com/rosell-dk/webp-express/milestone/22?closed=1
+
 = 0.14.22 =
 *(released: 4 aug 2019)*
 
@@ -624,7 +677,14 @@ Easy enough! - [Go here!](https://ko-fi.com/rosell). Or [here](https://buymeacof
 * Fixed bug: Ewww api-key was forgot upon saving options
 
 = 0.14.19 =
-*(released: 28 jun 2019)*
+*(released: 28 jun 2019)** Provided test-buttons for checking if the redirects works.
+* You can now choose which folders WebP Express is active in. Ie "Uploads and Themes".
+* You can now choose an alternative file structure for the webps which does not rely on DOCUMENT_ROOT being available.
+* WebP Express can now handle when wp-content is symlinked.
+* The .htaccess rules are now divided across folders. Some rules are needed where the source files are located, some where the webp files are located.
+* And a couple of bugfixes.
+
+For more info, see the closed issues on the 0.15.0 milestone on the github repository: https://github.com/rosell-dk/webp-express/milestone/22?closed=1
 
 * Removed a line that might course Sanity Check to fail ("path not within document root")
 
@@ -924,6 +984,18 @@ For more info, see the closed issues on the 0.5.0 milestone on our github reposi
 For older releases, check out changelog.txt
 
 == Upgrade Notice ==
+
+= 0.15.3 =
+* Fixed fatal error upon activation for systems which cannot use document root for structuring (rare)
+
+= 0.15.2 =
+* Fixed the bug when File extension was set to "Set to .webp". It was buggy when file extension contained uppercase letters.
+
+= 0.15.1 =
+* Multiple bug fixes
+
+= 0.15.0 =
+* New "Scope" and "destination structure" options, nice test buttons and a lot of work behind the surface
 
 = 0.14.22 =
 * A bundle of bug fixes and a security fix for Windows

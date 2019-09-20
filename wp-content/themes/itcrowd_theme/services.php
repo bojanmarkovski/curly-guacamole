@@ -29,12 +29,12 @@
                             $classHelper = 'left-side-services';
                         }
 
-                        $icons = "fa-clipboard-list";
-                        if($counter == 1){
-                            $icons = "fa-laptop-code";
-                        } else if ($counter == 2) {
-                            $icons = "fa-bullhorn";                       
-                        }
+                        // $icons = "fa-clipboard-list";
+                        // if($counter == 1){
+                        //     $icons = "fa-laptop-code";
+                        // } else if ($counter == 2) {
+                        //     $icons = "fa-bullhorn";                       
+                        // }
 
                         ?>
 
@@ -43,13 +43,13 @@
                             
                             <?php if ($counter % 2 == 0) { ?>
 
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
-                                    <div class="image-box"> <i class="fas <?php echo ($icons); ?>"></i>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-sm-12 col-xs-12 reverse-mobile">
+                                    <div class="image-box">
                                         <?php echo get_the_post_thumbnail($term); ?>
                                     </div>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pd-20px">
-                                    <div class="title-text">
+
+
+                                    <div class="title-text pd-text-services">
                                         <div style="display: inline-block">
                                             
                                         
@@ -86,17 +86,17 @@
                                         <hr align="left" class="custom">
                                         </div>
                                         
-                                        
+                                        <p>
+                                            <?php echo $term->post_content; ?>
+                                        </p>
                                     </div>
-                                    <p>
-                                        <?php echo $term->post_content; ?>
-                                    </p>
                                 </div>
 
                             <?php } else { ?>
 
-                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pd-20px">
-                                    <div class="title-text">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
+
+                                <div class="title-text pd-text-services left-text">
                                         <div style="display: inline-block">
                                         
                                         <?php 
@@ -132,14 +132,13 @@
                                         <hr align="left" class="custom">
 
                                         </div>
-                                    </div>
-                                    <p>
+                                        <p>
                                         <?php echo $term->post_content; ?>
                                     </p>
-                                </div>
+                                    </div>
 
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
-                                    <div class="image-box"> <i class="fas <?php echo ($icons); ?>"></i>
+
+                                    <div class="image-box right">
                                         <?php echo get_the_post_thumbnail($term); ?>
                                     </div>
                                 </div>
@@ -158,7 +157,7 @@
 
                <div class="row blur-modal">
                   <div class="col-lg-6 col-lg-offset-3 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
-                     <button type="button" id="button-hire-us" class="btn btn-block" data-toggle="modal" data-target="#exampleModal">
+                     <button type="button" id="button-hire-us" class="btn center-block" data-toggle="modal" data-target="#exampleModal">
                      HIRE US
                      </button>
                   </div>

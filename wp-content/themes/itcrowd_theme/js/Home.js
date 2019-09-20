@@ -12,17 +12,17 @@ $(document).ready(function(){
   });
 
   // ANIMATE TABLET AND MOBILE ON MAIN SLIDER
-  if ($( window ).width() >= 992) {
-    $(".z-index .slideInUpWatch").animate({top: '45%'},2400);
+  if ($( window ).width() >= 768) {
+    $(".z-index .slideInUpWatch").animate({top: '33%'},2400);
     $(".z-index .slideInUpMobile")
       .animate({
-              top: '30%'
+              top: '43%'
       },800)
       .animate({
-              top: "50%"
+              top: "58%"
       },700)
       .animate({
-              top: "40%"
+              top: "52%"
       },600)
   }
   

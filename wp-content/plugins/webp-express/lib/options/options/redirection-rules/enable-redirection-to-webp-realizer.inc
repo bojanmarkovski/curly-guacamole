@@ -1,6 +1,6 @@
 <tr>
     <th scope="row">
-        Create webp files upon request?</span>
+        Create webp files upon request?
         <?php echo helpIcon(
             '<p>Enabling this option will add lines in the .htaccess which redirects requests for non-existing webp-files to ' .
             'the converter script (webp-realizer.php). ' .
@@ -25,5 +25,8 @@
             value="true"
             type="checkbox"
         >
+        <button style="margin-left: 30px;" onclick="WebPExpress.SelfTest.openPopup('redirectToWebPRealizer')" class="button button-secondary" type="button">
+            Live test
+        </button>
     </td>
 </tr>

@@ -32,11 +32,11 @@ $(document).ready(function(){
         .top + -30
       }, 1000);
 
-      $('.career-left').animate({
-        scrollTop: $(this)
-          .offset()
-          .top
-      }, 900);
+      // $('.career-left').animate({
+      //   scrollTop: $(this)
+      //     .offset()
+      //     .top
+      // }, 900);
 
     }
 

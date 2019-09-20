@@ -77,27 +77,6 @@ jQuery(document).ready(function($){
                 $(".display-none-pc .form-group .holder:nth-child(3) .error").css({"visibility" : "visible"});
               }
             }
-
-            $(".container-fluid").addClass("blur-modal");
-            $('body').on('show.bs.modal', function () {
-              if ($("body").innerHeight() > $(window).height()) {
-                $("body").css("margin-right", "17px");
-                $(".navbar-inverse").css("right", "17px");
-                $(".navbar-right").css("right", "-17px");
-                $(".navbar-brand.logo img").css("margin-left", "17px");
-              }
-            });
-            $("#myModal-error").css("display", "block");
-            $("body").css({"width" : "100%", "position" : "fixed", "overflow-y" : "scroll" }).addClass("modal-open");
-            $(".modal.fade").addClass("in");
-            $(".modal-backdrop.fade").addClass("in");
-            $(".modal-title").text("Successfull");
-            $(".modal-body p").text("Thank you for your message. It has been sent.");
-
-            $("#myModal-error .btn.btn-default").on('click', function(){
-              $(".error.re-captcha").css({"visibility" : "hidden"});
-              $("body").css({"position" : "relative", "width" : "auto"});
-            });
           } 
           else {
 

@@ -30,7 +30,7 @@ class AdminInit
     public static function runMigrationIfNeeded()
     {
         // When an update requires a migration, the number should be increased
-        define('WEBPEXPRESS_MIGRATION_VERSION', '10');
+        define('WEBPEXPRESS_MIGRATION_VERSION', '12');
 
         if (WEBPEXPRESS_MIGRATION_VERSION != Option::getOption('webp-express-migration-version', 0)) {
             // run migration logic
@@ -38,7 +38,7 @@ class AdminInit
         }
 
         // uncomment next line to test-run a migration
-        //include WEBPEXPRESS_PLUGIN_DIR . '/lib/migrate/migrate10.php';
+        //include WEBPEXPRESS_PLUGIN_DIR . '/lib/migrate/migrate11.php';
     }
 
     public static function adminInitHandler()
@@ -62,6 +62,7 @@ class AdminInit
             add_action('wp_ajax_webpexpress_view_log', array('\WebPExpress\ConvertLog', 'processAjaxViewLog'));
             add_action('wp_ajax_webpexpress_purge_cache', array('\WebPExpress\CachePurge', 'processAjaxPurgeCache'));
             add_action('wp_ajax_webpexpress_dismiss_message', array('\WebPExpress\DismissableMessages', 'processAjaxDismissMessage'));
+            add_action('wp_ajax_webpexpress_self_test', array('\WebPExpress\SelfTest', 'processAjax'));
 
 
             // Add settings link on the plugins page

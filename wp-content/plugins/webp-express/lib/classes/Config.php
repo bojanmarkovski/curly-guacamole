@@ -15,7 +15,7 @@ class Config
 {
 
     /**
-     *  Return object or false, if config file does not exist, or read error
+     *  @return  object|false   Returns parsed file the file exists and can be read. Otherwise it returns false
      */
     public static function loadJSONOptions($filename)
     {
@@ -33,7 +33,10 @@ class Config
 
     public static function saveJSONOptions($filename, $obj)
     {
-        $result = @file_put_contents($filename, json_encode($obj, JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT));
+        $result = @file_put_contents(
+            $filename,
+            json_encode($obj, JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT)
+        );
         /*if ($result === false) {
             echo 'COULD NOT' . $filename;
         }*/
@@ -41,6 +44,9 @@ class Config
     }
 
 
+    /**
+     *  @return  object|false   Returns config object if config file exists and can be read. Otherwise it returns false
+     */
     public static function loadConfig()
     {
         return self::loadJSONOptions(Paths::getConfigFileName());
@@ -61,10 +67,12 @@ class Config
             'image-types' => 3,
             'destination-folder' => 'separate',
             'destination-extension' => 'append',
+            'destination-structure' => (Paths::canUseDocRootForRelPaths() ? 'doc-root' : 'image-roots'),
             'cache-control' => 'no-header',     /* can be "no-header", "set" or "custom" */
             'cache-control-custom' => 'public, max-age=31536000, stale-while-revalidate=604800, stale-if-error=604800',
             'cache-control-max-age' => 'one-week',
             'cache-control-public' => false,
+            'scope' => ['themes', 'uploads'],
 
             // redirection rules
             'enable-redirection-to-converter' => true,
@@ -121,7 +129,13 @@ class Config
                     ]
                     */
                 ]
+            ],
 
+            'environment-when-config-was-saved' => [
+                'doc-root-available' => null, // null means unavailable
+                'doc-root-resolvable' => null,
+                'doc-root-usable-for-structuring' => null,
+                'image-roots' => null,
             ]
         ];
     }
@@ -170,6 +184,7 @@ class Config
             ]);
             $config['alter-html']['only-for-webps-that-exists'] = true;
             $config['web-service']['enabled'] = false;
+            $config['scope'] = ['uploads'];
 
         }
 
@@ -192,14 +207,40 @@ class Config
             $defaultConfig = self::getDefaultConfig(true);
             $config = array_merge($defaultConfig, $config);
 
+            // Make sure new defaults below "alter-html" are added into the existing array
+            // (note that this will not remove old unused properties, if some key should become obsolete)
             $config['alter-html'] = array_replace_recursive($defaultConfig['alter-html'], $config['alter-html']);
+
+            // Make sure new defaults below "environment-when-config-was-saved" are added into the existing array
+            $config['environment-when-config-was-saved'] = array_replace_recursive($defaultConfig['environment-when-config-was-saved'], $config['environment-when-config-was-saved']);
         }
 
         if (!isset($config['base-htaccess-on-these-capability-tests'])) {
             self::runAndStoreCapabilityTests($config);
         }
 
+        // Apparently, migrate7 did not fix old "operation-mode" values for all.
+        // So fix here
+        if ($config['operation-mode'] == 'just-redirect') {
+            $config['operation-mode'] = 'no-conversion';
+        }
+        if ($config['operation-mode'] == 'no-varied-responses') {
+            $config['operation-mode'] = 'cdn-friendly';
+        }
+        if ($config['operation-mode'] == 'varied-responses') {
+            $config['operation-mode'] = 'varied-image-responses';
+        }
+
         $config = self::applyOperationMode($config);
+
+        // Fix scope: Remove invalid and put in correct order
+        $fixedScope = [];
+        foreach (Paths::getImageRootIds() as $rootId) {
+            if (in_array($rootId, $config['scope'])) {
+                $fixedScope[] = $rootId;
+            }
+        }
+        $config['scope'] = $fixedScope;
 
         if (!isset($config['web-service'])) {
             $config['web-service'] = [
@@ -425,16 +466,44 @@ class Config
         unset($obj['enabled']);
         $obj['destination-folder'] = $config['destination-folder'];
         $obj['destination-extension'] = $config['destination-extension'];
+        $obj['destination-structure'] = $config['destination-structure'];
+
+
+        $obj['bases'] = [];
+        foreach ($config['scope'] as $rootId) {
+            $obj['bases'][$rootId] = [
+                Paths::getAbsDirById($rootId),
+                Paths::getUrlById($rootId)
+            ];
+        }
+
+        /*
+        // TODO!
+        // Instead of "bases", use image root ids.
+        // Its a numeric array and there is no id called "content"
+
         $obj['bases'] = [
             'uploads' => [
                 Paths::getUploadDirAbs(),
                 Paths::getUploadUrl()
             ],
-            'content' => [
+        ];
+
+        if ($obj['destination-structure'] == 'doc-root') {
+            $obj['bases']['content'] = [
                 Paths::getContentDirAbs(),
                 Paths::getContentUrl()
-            ],
-        ];
+            ];
+        } else {
+            foreach (Paths::getImageRootIds() as $rootId) {
+                $obj['bases'][$rootId] = [
+                    Paths::getAbsDirById($rootId),
+                    Paths::getUrlById($rootId)
+                ];
+            }
+        }*/
+
+
         $obj['image-types'] = $config['image-types'];   // 0=none,1=jpg, 2=png, 3=both
 
         Option::updateOption(
@@ -447,9 +516,7 @@ class Config
     public static function saveConfigurationFile($config)
     {
         $config['paths-used-in-htaccess'] = [
-            'existing' => Paths::getPathToExisting(),
             'wod-url-path' => Paths::getWodUrlPath(),
-            'config-dir-rel' => Paths::getConfigDirRel()
         ];
 
         if (Paths::createConfigDirIfMissing()) {
@@ -609,9 +676,7 @@ class Config
             'destination-folder' => $config['destination-folder'],
             'forward-query-string' => $config['forward-query-string'],
             //'method-for-passing-source' => $config['method-for-passing-source'],
-            'paths' => [
-                'uploadDirRel' => Paths::getUploadDirRel()
-            ],
+            'image-roots' => Paths::getImageRootsDef(),
             'success-response' => $config['success-response'],
         ];
 

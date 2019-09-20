@@ -98,7 +98,7 @@ if (($config['operation-mode'] == 'cdn-friendly') && !$config['alter-html']['ena
         if ($webpEnabled) {
             Messenger::printMessage(
                 'info',
-                    'You should consider enabling Alter HTML. This is not neccessary, as you have <i>Cache Enabler</i> enabled, which alters HTML. ' .
+                    'You should consider enabling Alter HTML. This is not necessary, as you have <i>Cache Enabler</i> enabled, which alters HTML. ' .
                     'However, it is a good idea because currently <i>Cache Enabler</i> does not replace as many URLs as WebP Express (ie ' .
                     'background images in inline styles)'
             );
@@ -169,7 +169,7 @@ if (Config::isConfigFileThereAndOk() ) { // && PlatformInfo::definitelyGotModEnv
                 "It needs to be set to <i>All</i>, or at least <i>FileInfo</i> to allow rewrite rules in <i>.htaccess</i> files.)<br>" .
                 "Disabled <i>.htaccess</i> files is actually a good thing, both performance-wise and security-wise. <br> " .
                 "But it means you will have to insert the following rules into your apache configuration manually:" .
-                "<pre>" . htmlentities(print_r(Config::generateHTAccessRulesFromConfigFile(), true)) . "</pre>"
+                "<pre>" . htmlentities(print_r(Config::hmmm(), true)) . "</pre>"
         );
     }
 }*/

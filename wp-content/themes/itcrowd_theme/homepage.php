@@ -58,7 +58,7 @@
                             </span>
                         </div>
                         <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;">
-                            <div style="background-repeat: no-repeat; background-size: cover; background-image: url('<?php echo get_the_post_thumbnail_url($term); ?>'); position: absolute; top: 0px; left: 0px; width: 2500px; height: 1500px; overflow: hidden; pointer-events: none; margin-top: -245.561px; transform: translate3d(0px, 240.955px, 0px);"></div>
+                            <div style="background-repeat: no-repeat; background-size: cover; background-image: url('<?php echo get_the_post_thumbnail_url($term); ?>'); position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; margin-top: -245.561px; transform: translate3d(0px, 240.955px, 0px);"></div>
                         </div>
                     </section>
                 </div>
@@ -113,8 +113,8 @@
                                     <h4>
                                         <?php echo $term->post_title; ?>
                                     </h4>
-
-                                    <p class="text-left test">
+                                    
+                                    <p class="text-left">
                                         <?php echo $term->post_content; ?>
                                     </p>
                                 </div>
@@ -221,14 +221,14 @@
     </div>
     <div class="clear">
     </div>
-    <h2 class="text-uppercase text-center">How we do?</h2>
+    <h2 class="text-uppercase text-center">How we do it?</h2>
     <hr>
     <div class="row work-process-row-container">
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="work-process">
             <div class="progress-container">
                 <div class="progress-title first-title">
-                <h3>Requirement Analisys</h3>
+                <h3>Requirement analysis</h3>
 <!--                 <small>We pay attention to our clients wishes, what is important to them and what is the way should be done</small> -->
                 </div>
                 <!-- FIRST -->
@@ -294,7 +294,7 @@
                 </div>
                 </div>
                 <div class="progress-title fourth-title">
-                <h3>QA</h3>
+                <h3>Quality assurance</h3>
                 </div>
             </div>
             <!-- FIFTH -->
@@ -326,7 +326,7 @@
                 </div>
                 </div>
                 <div class="progress-title sixth-title">
-                <h3>Maintaince</h3>
+                <h3>Maintenance</h3>
                 </div>
             </div>
         </div>

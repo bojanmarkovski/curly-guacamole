@@ -2,26 +2,11 @@
 
 namespace WebPExpress;
 
-use \WebPExpress\ConvertHelperIndependent;
-use \WebPExpress\Paths;
-use \WebPExpress\PathHelper;
-
 class BulkConvert
 {
 
-    public static function getUploadFolder($destinationFolder)
-    {
-        switch ($destinationFolder) {
-            case 'mingled':
-                return Paths::getUploadDirAbs();
-            case 'separate':
-                return Paths::getCacheDirAbs() . '/doc-root/' . Paths::getUploadDirRel();
-        }
-    }
-
     public static function getList($config)
     {
-        //$cacheDir = self::getUploadFolder($config['destination-folder']);
 
 
         /*
@@ -34,11 +19,12 @@ class BulkConvert
 
         $listOptions = [
             //'root' => Paths::getUploadDirAbs(),
-            //'cache-root' => self::getUploadFolder($config['destination-folder']),
             'ext' => $config['destination-extension'],
             'destination-folder' => $config['destination-folder'],  /* hm, "destination-folder" is a bad name... */
             'webExpressContentDirAbs' => Paths::getWebPExpressContentDirAbs(),
             'uploadDirAbs' => Paths::getUploadDirAbs(),
+            'useDocRootForStructuringCacheDir' => (($config['destination-structure'] == 'doc-root') && (Paths::canUseDocRootForStructuringCacheDir())),
+            'imageRoots' => new ImageRoots(Paths::getImageRootsDefForSelectedIds($config['scope'])),   // (Paths::getImageRootsDef()
             'filter' => [
                 'only-converted' => false,
                 'only-unconverted' => true,
@@ -46,13 +32,42 @@ class BulkConvert
             ]
         ];
 
+        //$dirs = $config['scope'];
+
+        $rootIds = Paths::filterOutSubRoots($config['scope']);
+
         $groups = [];
+        foreach ($rootIds as $rootId) {
+            $groups[] = [
+                'groupName' => $rootId,
+                'root' => Paths::getAbsDirById($rootId)
+            ];
+        }
 
-        $groups[] = [
-            'groupName' => 'wp-content',
-            'root' => Paths::getContentDirAbs(),
-        ];
+/*
+        if (in_array('index', $config['scope'])) {
+            if (Paths::isWPContentDirMovedOutOfAbsPath()) {
 
+            }
+        } elseif (in_array('wp-content', $config['scope'])) {
+            $dirs[] = 'wp-content';
+            if (in_array('uploads', $config['scope']) && Paths::isUploadDirMovedOutOfWPContentDir()) {
+                $dirs[] = 'uploads';
+            }
+            if (in_array('plugins', $config['scope']) && Paths::isPluginDirMovedOutOfWpContent()) {
+                $dirs[] = 'plugins';
+            }
+            // ps: themes is always below wp-content
+        } else {
+            if (in_array('uploads', $config['scope'])) {
+                $dirs[] = 'uploads';
+            }
+            if (in_array('plugins', $config['scope'])) {
+                $dirs[] = 'plugins';
+            }
+        }
+
+/*
         if (Paths::isUploadDirMovedOutOfWPContentDir()) {
             $groups[] = [
                 'groupName' => 'uploads',
@@ -60,18 +75,28 @@ class BulkConvert
             ];
         }
 
+        $groups[] = [
+            'groupName' => 'themes',
+            'root' => Paths::getThemesDirAbs(),
+        ];
+
+        $groups[] = [
+            'groupName' => 'wp-content',
+            'root' => Paths::getContentDirAbs(),
+        ];
+
         if (Paths::isPluginDirMovedOutOfWpContent()) {
             $groups[] = [
                 'groupName' => 'plugins',
                 'root' => Paths::getPluginDirAbs(),
             ];
-        }
+        }*/
 
         foreach ($groups as $i => &$group) {
             $listOptions['root'] = $group['root'];
             /*
             No use, because if uploads is in wp-content, the cache root will be different for the files in uploads (if mingled)
-            $group['cache-root'] = ConvertHelperIndependent::getDestinationFolder(
+            $group['image-root'] = ConvertHelperIndependent::getDestinationFolder(
                 $group['root'],
                 $listOptions['destination-folder'],
                 $listOptions['ext'],
@@ -79,10 +104,8 @@ class BulkConvert
                 $listOptions['uploadDirAbs']
             );*/
             $group['files'] = self::getListRecursively('.', $listOptions);
-            //'cache-root' => ConvertHelperIndependent::getDestinationFolder()
+            //'image-root' => ConvertHelperIndependent::getDestinationFolder()
         }
-
-
 
         return $groups;
         //self::moveRecursively($toDir, $fromDir, $srcDir, $fromExt, $toExt);
@@ -133,13 +156,15 @@ class BulkConvert
                         $addThis = true;
 
                         if (($filter['only-converted']) || ($filter['only-unconverted'])) {
-                            //$cacheDir = $listOptions['cache-root'] . '/' . $relDir;
+                            //$cacheDir = $listOptions['image-root'] . '/' . $relDir;
                             $destination = ConvertHelperIndependent::getDestination(
                                 $dir . "/" . $filename,
                                 $listOptions['destination-folder'],
                                 $listOptions['ext'],
                                 $listOptions['webExpressContentDirAbs'],
-                                $listOptions['uploadDirAbs']
+                                $listOptions['uploadDirAbs'],
+                                $listOptions['useDocRootForStructuringCacheDir'],
+                                $listOptions['imageRoots']
                             );
                             $webpExists = @file_exists($destination);
 
