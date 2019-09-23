@@ -6,46 +6,164 @@
 
 <!-- Content -->
 <div class="container-fluid blur-modal">
-        <div class="row our-services">
-<h2 class="text-center">Services</h2>
-            <hr>
-            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 test">
+         <div class="row our-services">
+            <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+               
+                <?php
+                    $args = array( 
+                        'category'            => '7', 
+                        'posts_per_page'      => 500,
+                        'orderby'             => 'timestamp',
+                        'order'               => 'asc'
+                    );
+                    $myposts = get_posts( $args );
+                ?>
 
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 box-container-services">
-                        <h3 class="text-center">Technology <span>Consalting</span></h3>
-                        <i class="fas fa-clipboard-list"></i>
-                        <div>
-                            <p>We help our clients and partners in making the best possible decisions and adopting or building the best possible products and solutions regarding their needs and their plans for the future.</p>
-                        </div>
-                    </div>
+                <?php if ( $myposts ) {
 
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 box-container-services even-box-services">
-                        <h3 class="text-center">Software <span>Development</span></h3>
-                        <i class="fas fa-laptop-code"></i>
-                        <div>
-                            <p>We help our clients and partners in making the best possible decisions and adopting or building the best possible products and solutions regarding their needs and their plans for the future.</p>
-                        </div>
-                    </div>
+                    $counter = 0;
+                    foreach ( $myposts as $term ) {
 
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 box-container-services">
-                        <h3 class="text-center">Digital <span>Marketing</span></h3>
-                        <i class="fas fa-bullhorn"></i>
-                        <div>
-                            <p>We help our clients and partners in making the best possible decisions and adopting or building the best possible products and solutions regarding their needs and their plans for the future.</p>
+                        $classHelper = 'right-side-services';
+                        if ($counter % 2 == 0) {
+                            $classHelper = 'left-side-services';
+                        }
+
+                        // $icons = "fa-clipboard-list";
+                        // if($counter == 1){
+                        //     $icons = "fa-laptop-code";
+                        // } else if ($counter == 2) {
+                        //     $icons = "fa-bullhorn";                       
+                        // }
+
+                        ?>
+
+                        <!-- OUR-SERVICES BOX 1-->
+                        <div class="row our-services-box <?php echo $classHelper; ?>">
+                            
+                            <?php if ($counter % 2 == 0) { ?>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-sm-12 col-xs-12 reverse-mobile">
+                                    <div class="image-box">
+                                        <?php echo get_the_post_thumbnail($term); ?>
+                                    </div>
+
+
+                                    <div class="title-text pd-text-services">
+                                        <div style="display: inline-block">
+                                            
+                                        
+                                        <?php 
+                                            $parts = explode(' ', $term->post_title);
+                                            $firstWord = $parts[0];
+
+                                            $spanContainer = '';
+                                            for($i = 0; $i < strlen($firstWord); $i++) {
+
+                                                $spanContainer .= '<span class="color-red">';
+                                                $spanContainer .= $firstWord[$i]; 
+                                                $spanContainer .= '</span>';
+                                            } 
+                                        ?>
+
+                                        <?php echo $spanContainer; ?>
+                                        <span></span>
+
+                                        <?php
+                                            $parts = explode(' ', $term->post_title); 
+
+                                            $restOfTheTitle = '';
+                                            for($i = 1; $i < count($parts); $i++) {
+                                                $restOfTheTitle .= $parts[$i];
+                                                $restOfTheTitle .= ' ';
+                                            }
+
+                                        ?>
+
+                                        <span>
+                                            <?php echo $restOfTheTitle; ?>
+                                        </span>
+                                        <hr align="left" class="custom">
+                                        </div>
+                                        
+                                        <p>
+                                            <?php echo $term->post_content; ?>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            <?php } else { ?>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-sm-12 col-xs-12">
+
+                                <div class="title-text pd-text-services left-text">
+                                        <div style="display: inline-block">
+                                        
+                                        <?php 
+                                            $parts = explode(' ', $term->post_title);
+                                            $firstWord = $parts[0];
+
+                                            $spanContainer = '';
+                                            for($i = 0; $i < strlen($firstWord); $i++) {
+
+                                                $spanContainer .= '<span class="color-red">';
+                                                $spanContainer .= $firstWord[$i]; 
+                                                $spanContainer .= '</span>';
+                                            }
+                                        ?>
+
+                                        <?php echo $spanContainer; ?>
+                                        <span></span>
+
+                                        <?php
+                                            $parts = explode(' ', $term->post_title); 
+
+                                            $restOfTheTitle = '';
+                                            for($i = 1; $i < count($parts); $i++) {
+                                                $restOfTheTitle .= $parts[$i];
+                                                $restOfTheTitle .= ' ';
+                                            }
+
+                                        ?>
+
+                                        <span>
+                                            <?php echo $restOfTheTitle; ?>
+                                        </span>
+                                        <hr align="left" class="custom">
+
+                                        </div>
+                                        <p>
+                                        <?php echo $term->post_content; ?>
+                                    </p>
+                                    </div>
+
+
+                                    <div class="image-box right">
+                                        <?php echo get_the_post_thumbnail($term); ?>
+                                    </div>
+                                </div>
+
+                            <?php } ?>
+
+                            
                         </div>
-                    </div>
-                </div>
-                
-            </div>
-         </div>
-         <div class="row blur-modal">
+
+                        <?php $counter++; ?>
+
+                        <?php wp_reset_postdata(); ?>
+                    <?php } ?>
+
+                <?php } ?>
+
+               <div class="row blur-modal">
                   <div class="col-lg-6 col-lg-offset-3 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
                      <button type="button" id="button-hire-us" class="btn center-block" data-toggle="modal" data-target="#exampleModal">
                      HIRE US
                      </button>
                   </div>
                </div>
+            </div>
+         </div>
       </div>
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -106,7 +224,7 @@
                     </div>
                     <div class="modal-footer">
                         <button id="btn-close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-secondary btn-submit">Send e-mail</button>
+                        <button type="submit" class="btn btn-secondary btn-submit">Submit</button>
                     </div>
                 </form>
             </div>
