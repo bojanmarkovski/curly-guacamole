@@ -7,9 +7,9 @@ $(document).ready(function(){
   }
 
   if ($(window).width() < 991) {
-    $("hr").css("display", "inline-block", "!important");
+    // $("hr").css("display", "inline-block", "!important");
   } else {
-    $("hr").show(1100);
+    // $("hr").show(1100);
   }
   $(".our-services-box p").fadeIn(1300);
   $(".our-services-box .col-md-4").fadeIn(1300);
