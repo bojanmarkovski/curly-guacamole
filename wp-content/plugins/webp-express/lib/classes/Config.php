@@ -114,6 +114,7 @@ class Config
                 'only-for-webp-enabled-browsers' => true,     // If true, there will be two HTML versions of each page
                 'only-for-webps-that-exists' => false,
                 'alter-html-add-picturefill-js' => true,
+                'hostname-aliases' => []
             ],
 
             // web service
@@ -231,6 +232,14 @@ class Config
             $config['operation-mode'] = 'varied-image-responses';
         }
 
+        // In case doc root no longer can be used, use image-roots
+        // Or? No, changing here will not fix it for WebPOnDemand.php.
+        // An invalid setting requires that config is saved again and .htaccess files regenerated.
+        /*
+        if (($config['operation-mode'] == 'doc-root') && (!Paths::canUseDocRootForRelPaths())) {
+            $config['destination-structure'] = 'image-roots';
+        }*/
+
         $config = self::applyOperationMode($config);
 
         // Fix scope: Remove invalid and put in correct order
@@ -258,6 +267,10 @@ class Config
         if (($config['cache-control'] == 'set') && ($config['cache-control-max-age'] == '')) {
             $config['cache-control-max-age'] = 'one-week';
         }
+
+        /*if (is_null($config['alter-html']['hostname-aliases'])) {
+            $config['alter-html']['hostname-aliases'] = [];
+        }*/
 
         if (!is_array($config['converters'])) {
             $config['converters'] = [];
@@ -467,7 +480,6 @@ class Config
         $obj['destination-folder'] = $config['destination-folder'];
         $obj['destination-extension'] = $config['destination-extension'];
         $obj['destination-structure'] = $config['destination-structure'];
-
 
         $obj['bases'] = [];
         foreach ($config['scope'] as $rootId) {
@@ -751,7 +763,7 @@ class Config
             $options = self::generateWodOptionsFromConfigObj($config);
             if (self::saveWodOptionsFile($options)) {
                 if ($rewriteRulesNeedsUpdate) {
-                    $rulesResult = HTAccess::saveRules($config);
+                    $rulesResult = HTAccess::saveRules($config, false);
                     return [
                         'saved-both-config' => true,
                         'saved-main-config' => true,
@@ -760,7 +772,7 @@ class Config
                     ];
                 }
                 else {
-                    $rulesResult = HTAccess::saveRules($config);
+                    $rulesResult = HTAccess::saveRules($config, false);
                     return [
                         'saved-both-config' => true,
                         'saved-main-config' => true,

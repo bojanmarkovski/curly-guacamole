@@ -58,7 +58,7 @@
                             </span>
                         </div>
                         <div id="jarallax-container-0" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: -100;">
-                            <div style="background-repeat: no-repeat; background-size: cover; background-image: url('<?php echo get_the_post_thumbnail_url($term); ?>'); position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; margin-top: -245.561px; transform: translate3d(0px, 240.955px, 0px);"></div>
+                            <div style="background-repeat: no-repeat; background-size: cover; background-image: url('<?php echo get_site_url(); ?>/wp-content/uploads/main-img.jpeg'); position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; margin-top: -245.561px; transform: translate3d(0px, 240.955px, 0px);"></div>
                         </div>
                     </section>
                 </div>
@@ -129,8 +129,7 @@
     </div>
 
     <!-- TECHNOLOGY, WHAT WE USE -->
-    <h2 class="text-uppercase text-center">What we use?</h2>
-    <hr>
+    
     <div class="row our-skills-process">
         <div class="waveWrapper waveAnimation">
             <div class="waveWrapperInner bgBottom">
@@ -144,7 +143,8 @@
                 </div>
             </div>
         </div>
-
+<h2 class="text-uppercase text-center">What we use?</h2>
+    <hr>
         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 bg-color">
                             
             <?php 
@@ -228,7 +228,7 @@
         <div class="work-process">
             <div class="progress-container">
                 <div class="progress-title first-title">
-                <h3>Requirement analysis</h3>
+                <h4>Requirement analysis</h4>
 <!--                 <small>We pay attention to our clients wishes, what is important to them and what is the way should be done</small> -->
                 </div>
                 <!-- FIRST -->
@@ -262,13 +262,13 @@
                 </div>
                 </div>
                 <div class="progress-title second-title">
-                <h3>Design and planing</h3>
+                <h4>Design and planing</h4>
                 </div>
             </div>
             <!-- THIRD -->
             <div class="progress-container">
                 <div class="progress-title third-title">
-                <h3>Development</h3>
+                <h4>Development</h4>
                 </div>
                 <div class="container">
                 <ul class="chart-skills third">
@@ -294,13 +294,13 @@
                 </div>
                 </div>
                 <div class="progress-title fourth-title">
-                <h3>Quality assurance</h3>
+                <h4>Quality assurance</h4>
                 </div>
             </div>
             <!-- FIFTH -->
             <div class="progress-container">
                 <div class="progress-title fifth-title">
-                <h3>Deployment and evaulation</h3>
+                <h4>Deployment and evaulation</h4>
                 </div>
                 <div class="container">
                 <ul class="chart-skills fifth">
@@ -326,7 +326,7 @@
                 </div>
                 </div>
                 <div class="progress-title sixth-title">
-                <h3>Maintenance</h3>
+                <h4>Maintenance</h4>
                 </div>
             </div>
         </div>

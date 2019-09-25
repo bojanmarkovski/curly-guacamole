@@ -17,7 +17,7 @@ get_header();
             <div class="banner-text">
                <div class="row text-center">
                   <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                     <img class="error-img" src="http://www.qccollections.eu/images/404page.png">
+                     <img class="error-img" src="<?php echo get_site_url(); ?>/wp-content/uploads/404-error.png">
                      <h1 class="text-uppercase iq-font-white">Sorry page not found</h1>
                   </div>
                   <div class="clearr">

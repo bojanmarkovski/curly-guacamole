@@ -1,3 +1,17 @@
+= 0.16.0 =
+*(released: 24 sep 2019)*
+
+* Added option to specify CDN urls in Alter HTML. Thanks to Gunnar Peipman from Estonia for suggesting this.
+* Direct Nginx users to Nginx FAQ section on welcome page
+* Fixed Bulk Conversion halting due to nonce expiry
+* Fixed unexpected output upon reactivation
+* Added affiliate link to [Optimole](https://optimole.pxf.io/20b0M) in the "Don't despair - You have options!" message
+
+= 0.15.3 =
+*(released: 19 sep 2019)*
+
+* Fixed fatal error upon activation for systems which cannot use document root for structuring (rare)
+
 = 0.15.2 =
 
 * Fixed the bug when File extension was set to "Set to .webp". It was buggy when file extension contained uppercase letters.

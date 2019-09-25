@@ -11,18 +11,6 @@
 */
 
 /* ALL PAGES */
-/* .loader {
-	position: fixed;
-	z-index: 99;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
 /* LOADER */
 .loader {
 	position: fixed;
@@ -320,9 +308,20 @@ body {
 	color: lightgray;
 }
 
+.footer .contact-email-img{
+	margin-bottom: 0px;
+	width: 140px !important;
+    height: 28px !important;
+}
+
 .display-none-tablet a,
 .contact-information a{
 	color: lightgray;
+}
+
+.footer i.far.fa-envelope{
+	margin-right: 5px;
+    margin-left: 8px;
 }
 /* FOOTER END */
 
@@ -848,16 +847,11 @@ textarea::-webkit-scrollbar-track {
 	width: 350px;
 	float: left;
 	margin-right: 40px;
-	animation: one-animated 10s infinite;
-}
-
-.title-text.left-text{
-	float: left;
-	width: calc(100% - 390px);
+	animation: one-animated 13s infinite;
 }
 
 .our-services .our-services-box .image-box.right img{
-	border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+	border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
 	-webkit-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 	-moz-box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
 	box-shadow: 3px 7px 14px -3px rgba(0, 0, 0, 0.33);
@@ -865,6 +859,12 @@ textarea::-webkit-scrollbar-track {
 	width: 350px;
 	float: right;
 	margin-right: 0;
+	animation: two-animated 13s infinite;
+}
+
+.title-text.left-text{
+	float: left;
+	width: calc(100% - 390px);
 }
 
 .our-services .our-services-box p {
@@ -1341,7 +1341,6 @@ button.close:focus {
 	color: #C0392B;
 }
 .background-img-about-us{
-	background-image: url("https://dev.itcrowd.me/wp-content/uploads/main-img-1568x859.jpeg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -3313,24 +3312,32 @@ ul p {
 	position: absolute;
 }
 
+.progress-container:nth-child(1) {
+	left: 15px;
+}
+
 .progress-container:nth-child(2) {
-	left: 190px;
+	left: 205px;
 }
 
 .progress-container:nth-child(3) {
-	left: 380px;
+	left: 395px;
 }
 
 .progress-container:nth-child(4) {
-	left: 570px;
+	left: 585px;
 }
 
 .progress-container:nth-child(5) {
-	left: 760px;
+	left: 775px;
 }
 
 .progress-container:nth-child(6) {
-	left: 950px;
+	left: 980px;
+}
+
+.work-process .progress-container:last-child .container{
+	margin-right: 15px;
 }
 
 .progress-title {
@@ -4270,14 +4277,12 @@ ul p {
 @keyframes two-animated {
 	0% {
 		border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-		box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
 	}
 	25% {
 		border-radius: 40% 80% 30% 90% / 72% 65% 35% 28%;
 	}
 	50% {
 		border-radius: 65% 35% 45% 55% / 22% 48% 52% 78%;
-		box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
 	}
 	75% {
 		border-radius: 24% 76% 10% 90% / 44% 68% 32% 56%;
@@ -4287,14 +4292,12 @@ ul p {
 @keyframes three-animated {
 	0% {
 		border-radius: 12% 88% 40% 40% / 20% 15% 85% 80%;
-		box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
 	}
 	25% {
 		border-radius: 72% 28% 30% 90% / 15% 46% 54% 85%;
 	}
 	50% {
 		border-radius: 12% 88% 40% 40% / 20% 15% 85% 80%;
-		box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
 	}
 	75% {
 		border-radius: 18% 82% 10% 90% / 24% 68% 32% 76%;

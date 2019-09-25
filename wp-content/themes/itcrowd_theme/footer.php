@@ -20,10 +20,14 @@
 							<a href="/">
 							<img class="img-responsive" src="<?php echo get_site_url(); ?>/wp-content/uploads/2019/04/logo.png"></a>
 							<p> <i class="fas fa-map-marker-alt"></i>
-								<span>Ljubljanska 6, City Tower floor 1, 1000 Skopje</span>
+								<span>
+									<a href="https://www.google.com/maps/place/ITCrowd/@42.0059518,21.3903267,17z/data=!3m1!4b1!4m5!3m4!1s0x1354146cfeb7e323:0xf1620a06f29d429!8m2!3d42.0059478!4d21.3925154" target="_blank">
+									Ljubljanska 6, City Tower floor 1, 1000 Skopje
+										</a>
+								</span>
 							</p>
 							<p> <i class="far fa-envelope"></i>
-								<span>contact@itcrowd.me</span>
+								<span><img class="contact-email-img" src="<?php echo get_site_url(); ?>/wp-content/uploads/contact-email.png"></span>
 							</p>
 						</div>
 
